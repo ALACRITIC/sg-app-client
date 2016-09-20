@@ -1,8 +1,8 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {HomeFooter} from "../shared/footer/footer.component";
 import {HomeNavbar} from "../shared/navbar/navbar.component";
-import {Post} from "../../common/models/post.model";
-import {PostsService} from "../../common/services/posts.service";
+import {Post} from "../../shared/models/post.model";
+import {PostsService} from "../../shared/services/posts.service";
 import {ActivatedRoute} from "@angular/router";
 
 

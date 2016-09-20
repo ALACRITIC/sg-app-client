@@ -3,12 +3,12 @@
  */
 import {Component, OnInit} from '@angular/core';
 
-import {Listing} from "../../common/listing.model";
+import {Listing} from "../../shared/listing.model";
 import {HomeFooter} from "../shared/footer/footer.component";
 import {HomeNavbar} from "../shared/navbar/navbar.component";
 import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {Professor} from "../../common/models/professor.model";
-import {ProfessorsService} from "../../common/services/professors.service";
+import {Professor} from "../../shared/models/professor.model";
+import {ProfessorsService} from "../../shared/services/professors.service";
 
 
 

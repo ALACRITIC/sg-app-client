@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {TeamMembersService} from "../../common/services/team_members.service";
-import {TeamMember} from "../../common/models/team_member.model";
-import {Listing} from "../../common/listing.model";
+import {TeamMembersService} from "../../shared/services/team_members.service";
+import {TeamMember} from "../../shared/models/team_member.model";
+import {Listing} from "../../shared/listing.model";
 import {HomeFooter} from "../shared/footer/footer.component";
 import {HomeNavbar} from "../shared/navbar/navbar.component";
 

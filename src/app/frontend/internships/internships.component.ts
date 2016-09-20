@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Listing} from "../../common/listing.model";
+import {Listing} from "../../shared/listing.model";
 import {HomeFooter} from "../shared/footer/footer.component";
 import {HomeNavbar} from "../shared/navbar/navbar.component";
-import {InternshipsService} from "../../common/services/internships.service";
-import {Internship} from "../../common/models/internship.model";
+import {InternshipsService} from "../../shared/services/internships.service";
+import {Internship} from "../../shared/models/internship.model";
 import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
 
 

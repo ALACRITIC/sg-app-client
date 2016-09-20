@@ -1,10 +1,10 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
-import {Listing} from "../../common/listing.model";
+import {Listing} from "../../shared/listing.model";
 import {HomeFooter} from "../shared/footer/footer.component";
 import {HomeNavbar} from "../shared/navbar/navbar.component";
-import {ApplicationTemplate} from "../../common/models/application_template.model";
-import {ApplicationTemplatesService} from "../../common/services/application_templates.service";
+import {ApplicationTemplate} from "../../shared/models/application_template.model";
+import {ApplicationTemplatesService} from "../../shared/services/application_templates.service";
 import {NewApplicationSubmission} from "./new_application_submission.component";
 
 

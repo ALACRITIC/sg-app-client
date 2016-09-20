@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
+import {  FORM_DIRECTIVES } from '@angular/common';
 import {NavRoute} from "../../../../frontend/shared/navbar/navroute.model";//todo maybe move NavRoute to common?
 
 
@@ -9,7 +9,6 @@ import {NavRoute} from "../../../../frontend/shared/navbar/navroute.model";//tod
     selector: 'sidebar',
     templateUrl: 'sidebar.template.html',
     styleUrls: ['sidebar.styles.css'],
-    directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 
 export class Sidebar {

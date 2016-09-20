@@ -1,8 +1,8 @@
 import {Component, ViewEncapsulation , Input, OnInit} from '@angular/core';
 import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {Evaluation} from "../../../../common/models/evaluation.model";
-import {Listing} from "../../../../common/listing.model";
-import {EvaluationsService} from "../../../../common/services/evaluations.service";
+import {Evaluation} from "../../../../shared/models/evaluation.model";
+import {Listing} from "../../../../shared/listing.model";
+import {EvaluationsService} from "../../../../shared/services/evaluations.service";
 
 
 @Component({

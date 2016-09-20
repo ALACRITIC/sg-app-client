@@ -1,4 +1,5 @@
-import {RouterConfig} from "@angular/router";
+import { ModuleWithProviders }  from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import {Admin} from "./admin.component";
 import {Login} from "./login/login.component";
 import {AdminGuard} from "./adminGuard";
@@ -14,8 +15,7 @@ import {AdminPosts} from "./dashboard/posts/posts.component";
 import {PostComponent} from "./dashboard/posts/post.component";
 
 
-// async components must be named routes for WebpackAsyncRoute
-export const AdminRoutes:RouterConfig = [
+export const routing: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'admin', component: Admin,
         children: [
@@ -38,4 +38,4 @@ export const AdminRoutes:RouterConfig = [
 
         ]
     }
-];
+]);

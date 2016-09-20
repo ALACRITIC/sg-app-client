@@ -2,10 +2,9 @@
  * Created by hgeorgiev on 8/22/16.
  */
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {CORE_DIRECTIVES} from '@angular/common';
-import {CAROUSEL_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {PostsService} from "../../common/services/posts.service";
-import {Post} from "../../common/models/post.model";
+
+import {PostsService} from "../../shared/services/posts.service";
+import {Post} from "../../shared/models/post.model";
 
 
 
@@ -13,7 +12,6 @@ import {Post} from "../../common/models/post.model";
 @Component({
     selector: 'carousel',
     encapsulation: ViewEncapsulation.Emulated,
-    directives: [CAROUSEL_DIRECTIVES, CORE_DIRECTIVES, ],
     templateUrl: './carousel.template.html',
     styleUrls: ['./carousel.styles.css']
 })

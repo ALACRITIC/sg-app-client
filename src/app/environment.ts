@@ -5,7 +5,7 @@ import { enableDebugTools, disableDebugTools } from '@angular/platform-browser';
 import { enableProdMode, ApplicationRef } from '@angular/core';
 // Environment Providers
 let PROVIDERS: any[] = [
-  // common env directives
+  {provide: 'ApiEndpoint', useValue: "http://sgaubg.herokuapp.com/api/v1"},
 ];
 
 // Angular debug tools in the dev console

@@ -6,7 +6,7 @@ import { Title } from "../shared/title/title.service";
 import { Carousel } from  "./carousel.component";
 import {HomeFooter} from "../shared/footer/footer.component";
 import {FrontNews} from "./news.component";
-import {PostsService} from "../../common/services/posts.service";
+import {PostsService} from "../../shared/services/posts.service";
 
 
 

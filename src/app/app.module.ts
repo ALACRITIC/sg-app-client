@@ -14,10 +14,10 @@ import { ROUTES } from './app.routes';
 import { App } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InteralStateType } from './app.service';
-import { Home } from './home';
-import { About } from './about';
-import { NoContent } from './no-content';
-import { XLarge } from './home/x-large';
+import {NoContent} from "./no-content/no-content";
+import {AdminModule} from "./admin/admin.module";
+import {SharedModule} from "./shared/shared.module";
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -38,12 +38,11 @@ type StoreType = {
   bootstrap: [ App ],
   declarations: [
     App,
-    About,
-    Home,
-    NoContent,
-    XLarge
+    NoContent
   ],
   imports: [ // import Angular's modules
+    SharedModule,
+    AdminModule,
     BrowserModule,
     FormsModule,
     HttpModule,

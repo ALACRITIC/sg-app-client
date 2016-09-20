@@ -1,13 +1,12 @@
 import {Component, ViewEncapsulation , OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {Professor} from "../../../common/models/professor.model";
-import {ProfessorsService} from "../../../common/services/professors.service";
-import {AdminEvaluations} from "./evaluations/evaluations.component";
+import {Professor} from "../../../shared/models/professor.model";
+import {ProfessorsService} from "../../../shared/services/professors.service";
+
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [ProfessorsService],
-    directives: [AdminEvaluations],
     styleUrls: ['./professors.styles.css'],
     template: require('./professor-detail.template.html'),
 })

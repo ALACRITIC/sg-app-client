@@ -4,9 +4,9 @@
 
 import {Component, OnInit,ViewEncapsulation} from "@angular/core";
 import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {Listing} from "../../../common/listing.model";
-import {ApplicationTemplate} from "../../../common/models/application_template.model";
-import {ApplicationTemplatesService} from "../../../common/services/application_templates.service";
+import {Listing} from "../../../shared/listing.model";
+import {ApplicationTemplate} from "../../../shared/models/application_template.model";
+import {ApplicationTemplatesService} from "../../../shared/services/application_templates.service";
 
 
 @Component({

@@ -1,15 +1,13 @@
 
 import {Component, OnInit,ViewEncapsulation} from "@angular/core";
-import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {Listing} from "../../../common/listing.model";
-import {Internship} from "../../../common/models/internship.model";
-import {InternshipsService} from "../../../common/services/internships.service";
+import {Listing} from "../../../shared/listing.model";
+import {Internship} from "../../../shared/models/internship.model";
+import {InternshipsService} from "../../../shared/services/internships.service";
 
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [InternshipsService],
-    directives: [PAGINATION_DIRECTIVES],
     styleUrls: ['./internships.styles.css'],
     template: require('./internships.template.html'),
 

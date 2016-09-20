@@ -1,13 +1,11 @@
 import {Component, ViewEncapsulation , OnInit} from '@angular/core';
-import {Listing} from '../../../common/listing.model'
-import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {Professor} from "../../../common/models/professor.model";
-import {ProfessorsService} from "../../../common/services/professors.service";
-import {AdminProfessorDepartments} from "./departments/departments.component";
+import {Listing} from '../../../shared/listing.model'
+import {Professor} from "../../../shared/models/professor.model";
+import {ProfessorsService} from "../../../shared/services/professors.service";
+
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    directives: [PAGINATION_DIRECTIVES, AdminProfessorDepartments],
     providers: [ProfessorsService],
     styleUrls: ['./professors.styles.css'],
     template: require('./professors.template.html'),
