@@ -4,10 +4,12 @@ import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
 import {Professor} from "../../../common/models/professor.model";
 import {ProfessorsService} from "../../../common/services/professors.service";
 import {AdminProfessorDepartments} from "./departments/departments.component";
+import {ProfessorFormComponent} from "./professor-form/professor-form.component";
+
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    directives: [PAGINATION_DIRECTIVES, AdminProfessorDepartments],
+    directives: [PAGINATION_DIRECTIVES, AdminProfessorDepartments,ProfessorFormComponent],
     providers: [ProfessorsService],
     styleUrls: ['./professors.styles.css'],
     template: require('./professors.template.html'),
@@ -25,6 +27,7 @@ export class AdminProfessors implements OnInit{
         this.loadProfessors(1, 10);
        
     }
+
     
    
     
@@ -37,8 +40,13 @@ export class AdminProfessors implements OnInit{
     }
 
 
+
     private loadProfessors(page:number, itemsPerPage: number, department?:string) {
         this._service.query(page,itemsPerPage, department).then(listing => this.listing = listing);
+    }
+    professorAdded(professor:Professor){
+
+        this.listing.push(professor);
     }
 
    

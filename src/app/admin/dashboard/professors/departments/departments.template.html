@@ -1,11 +1,16 @@
-<span dropdown >
-    <a id="simple-dropdown" dropdownToggle>
-      Select a department
-    </a>
-    <ul class="dropdown-menu" dropdownMenu aria-labelledby="simple-dropdown">
 
-      <li *ngFor="let department of departments">
-        <a (click)="selectItem(department)" class="dropdown-item">{{department}}</a>
-      </li>
-    </ul>
-  </span>
+<div class="btn-group">
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select a Department
+        </button>
+
+        <div class="dropdown-menu">
+        <li *ngFor="let department of departments">
+            <a class="dropdown-item" (click)="selectItem(department)">{{department}}</a>
+        </li>
+
+        </div>
+    </div>
+
+</div>

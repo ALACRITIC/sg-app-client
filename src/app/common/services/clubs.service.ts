@@ -37,9 +37,4 @@ export class ClubsService {
             .then(res => res.json() as Club)
             .catch(this.handleError);
     }
-
-
-
-
-
 }

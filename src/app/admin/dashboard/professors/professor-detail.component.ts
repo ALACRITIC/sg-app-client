@@ -13,12 +13,11 @@ import {AdminEvaluations} from "./evaluations/evaluations.component";
 })
 export class AdminProfessorDetail implements OnInit, OnDestroy{
     public sub: any;
-    professor:Professor;
+    public professor:Professor;
 
     constructor(private _profService:ProfessorsService, private _route:ActivatedRoute) {
         this.professor = new Professor();
     }
-
 
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
@@ -29,10 +28,6 @@ export class AdminProfessorDetail implements OnInit, OnDestroy{
     ngOnDestroy() {
         this.sub.unsubscribe();
     }
-
-
-
- 
 
     private loadProfessor(id:number) {
         this._profService.get(id).then(professor => this.professor = professor);

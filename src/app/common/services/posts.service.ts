@@ -48,12 +48,6 @@ export class PostsService {
             .map(res => res.json())
     }
 
-
-
-
-
-
-
     //get POST
     get(id:string) {
         return this.http.get(this.postsUrl + `/${id}`)

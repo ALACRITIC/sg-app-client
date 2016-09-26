@@ -1,0 +1,17 @@
+<form>
+    <div class="form-group">
+        <label for="name">Title</label>
+        <input type="text" class="form-control" required [(ngModel)]="professor.name" name="title" #name="ngModel">
+
+    </div>
+    <div class="form-group">
+        <label for="name">Author</label>
+        <input type="text" class="form-control" required [(ngModel)]="professor.department" name="author" #name="ngModel">
+
+    </div>
+    <div class="form-group">
+        <label for="name">PictureUrl</label>
+        <input type="text" class="form-control" [(ngModel)]="professor.photo" name="pictures">
+    </div>
+    <button type="button" class="btn btn-primary"  (click)="addProfessor()">Add Professor</button>
+</form>

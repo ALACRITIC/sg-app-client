@@ -1,0 +1,10 @@
+<h2>Evaluations</h2>
+<span *ngIf="listing.collection && listing.collection.length == 0" class="text-lg-center text-muted">No evaluations found.</span>
+<div class="list-group" >
+    <div class="list-group-item list-group-item-action"  *ngFor="let evaluation of listing.collection">
+        <p class="list-group-item-text">{{evaluation.content}}</p>
+    </div>
+</div>
+<span *ngIf="listing.collection && listing.collection.length > 0">
+    <pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
+</span>
