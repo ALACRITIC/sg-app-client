@@ -1,7 +1,6 @@
 import { NgModule }           from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { FormsModule, ReactiveFormsModule }        from '@angular/forms';
-
 import {AdminApplicationTemplates} from "./dashboard/application_templates/application_templates.component";
 import {AdminApplicationSubmissions} from "./dashboard/application_templates/application_submissions/application_submissions.component";
 import {AdminClubs} from "./dashboard/clubs/clubs.component";
@@ -18,20 +17,24 @@ import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
 import {Admin} from "./admin.component";
 import {Login} from "./login/login.component";
 import {Dashboard} from "./dashboard/dashboard.component";
-import {HomeNavbar} from "./dashboard/shared/navbar/home-navbar.component";
+
 import {Sidebar} from "./dashboard/shared/sidebar/sidebar.component";
 import {PostComponent} from "./dashboard/posts/post.component";
 import {CKEditorModule} from 'ng2-ckeditor';
 import {FILE_UPLOAD_DIRECTIVES, FileUploader} from 'ng2-file-upload/ng2-file-upload';
 import { DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
+import {AdminNavbar} from "./dashboard/shared/navbar/home-navbar.component";
+import {SharedModule} from "../shared/shared.module";
+
+
 
 @NgModule({
-    imports:[ CommonModule, ReactiveFormsModule, FormsModule ,PaginationModule, CKEditorModule, DropdownModule, routing],
+    imports:[ CommonModule, ReactiveFormsModule, FormsModule ,PaginationModule, CKEditorModule, DropdownModule, routing, SharedModule],
     declarations: [
         Login,
         Admin,
-        Dashboard,
-        HomeNavbar,
+        AdminNavbar,
+        Dashboard, 
         Sidebar,
         PostComponent,
         AdminApplicationTemplates,
@@ -45,7 +48,8 @@ import { DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
         AdminTeamMembers,
         AdminProfessorDetail,
         AdminProfessors,
-        FILE_UPLOAD_DIRECTIVES,
+ 
+
 
     ],
 

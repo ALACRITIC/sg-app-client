@@ -17,6 +17,8 @@ import { AppState, InteralStateType } from './app.service';
 import {NoContent} from "./no-content/no-content";
 import {AdminModule} from "./admin/admin.module";
 import {SharedModule} from "./shared/shared.module";
+import {FrontModule} from "./frontend/front.module";
+import {FILE_UPLOAD_DIRECTIVES, FileUploader} from "ng2-file-upload/ng2-file-upload";
 
 
 // Application wide providers
@@ -38,11 +40,11 @@ type StoreType = {
   bootstrap: [ App ],
   declarations: [
     App,
-    NoContent
+    NoContent,
   ],
   imports: [ // import Angular's modules
-    SharedModule,
     AdminModule,
+    FrontModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -50,7 +52,8 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+
   ]
 })
 export class AppModule {

@@ -8,7 +8,7 @@ import {NavRoute} from "./navroute.model";
     encapsulation: ViewEncapsulation.None
 })
 
-export class HomeNavbar {
+export class FrontNavbar {
     public navbarRoutes:Array<NavRoute>;
     constructor() {
         this.navbarRoutes = [

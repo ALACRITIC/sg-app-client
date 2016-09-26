@@ -1,17 +1,15 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 import {Listing} from "../../shared/listing.model";
-import {HomeFooter} from "../shared/footer/footer.component";
-import {HomeNavbar} from "../shared/navbar/navbar.component";
+
 import {ApplicationTemplate} from "../../shared/models/application_template.model";
 import {ApplicationTemplatesService} from "../../shared/services/application_templates.service";
-import {NewApplicationSubmission} from "./new_application_submission.component";
+
 
 
 
 @Component({
     providers: [ApplicationTemplatesService],
-    directives: [HomeFooter, HomeNavbar, NewApplicationSubmission ],
     templateUrl: './application_templates.template.html',
     encapsulation: ViewEncapsulation.Emulated
 

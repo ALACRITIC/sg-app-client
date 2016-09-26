@@ -10,7 +10,7 @@ import {Post} from "../../shared/models/post.model";
     selector: 'front-news',
     templateUrl: './news.template.html',
     styleUrls: ['./news.styles.css'],
-    ecapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.Emulated
 })
 
 export class FrontNews implements OnInit {

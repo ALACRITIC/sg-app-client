@@ -1,18 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-
 import {Listing} from "../../shared/listing.model";
-import {HomeFooter} from "../shared/footer/footer.component";
-import {HomeNavbar} from "../shared/navbar/navbar.component";
 import {InternshipsService} from "../../shared/services/internships.service";
 import {Internship} from "../../shared/models/internship.model";
-import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
+
 
 
 
 @Component({
     selector: 'team-members',
     providers: [InternshipsService],
-    directives: [HomeFooter, HomeNavbar, PAGINATION_DIRECTIVES],
     templateUrl: './internships.template.html'
 
 })
