@@ -6,9 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 
 
 //declaration imports
-import {Professor} from "../../../common/models/professor.model";
+import {Professor} from "../../../shared/models/professor.model";
 import {FrontProfessors} from '../evaluations.component';
-import {ProfessorsService} from "../../../common/services/professors.service";
+import {ProfessorsService} from "../../../shared/services/professors.service";
 import {ProfessorEvaluationsComponent} from "./professor-evaluations.component";
 
 

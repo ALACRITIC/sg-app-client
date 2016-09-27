@@ -1,11 +1,10 @@
 import {Component, OnChanges Input, Inject, ViewEncapsulation} from '@angular/core';
 
-import {ApplicationTemplatesService} from "../../common/services/application_templates.service";
-import {ApplicationTemplate} from "../../common/models/application_template.model";
-import {FORM_DIRECTIVES} from "@angular/forms";
-import {CORE_DIRECTIVES, NgStyle, NgClass} from "@angular/common";
-import {FILE_UPLOAD_DIRECTIVES, FileUploader, FileItem} from "ng2-file-upload/ng2-file-upload";
-import {ApplicationSubmissionsService} from "../../common/services/application_submissions.service";
+import {ApplicationTemplatesService} from "../../shared/services/application_templates.service";
+import {ApplicationTemplate} from "../../shared/models/application_template.model";
+import { NgStyle, NgClass} from "@angular/common";
+import { FileUploader, FileItem} from "ng2-file-upload/ng2-file-upload";
+import {ApplicationSubmissionsService} from "../../shared/services/application_submissions.service";
 
 
 @Component({
@@ -14,7 +13,6 @@ import {ApplicationSubmissionsService} from "../../common/services/application_s
     templateUrl: 'new_application_submission.template.html',
     providers: [ApplicationSubmissionsService],
     styleUrls: ['new_application_submission.styles.css'],
-    directives: [FILE_UPLOAD_DIRECTIVES, NgClass, NgStyle, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 
 

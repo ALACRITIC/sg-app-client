@@ -6,8 +6,8 @@ import {UserService} from "../user.service";
 @Component({
     selector: 'login',
     encapsulation: ViewEncapsulation.None,
-    directives: [],
     template: require('./login.html'),
+    providers: [UserService],
 })
 export class Login implements OnInit{
 

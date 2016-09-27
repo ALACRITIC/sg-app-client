@@ -1,13 +1,12 @@
 import {Component, ViewEncapsulation , OnInit} from '@angular/core';
-import {Listing} from '../../../common/listing.model'
-import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {PostsService} from "../../../common/services/posts.service";
-import {Post} from "../../../common/models/post.model";
+import {Listing} from '../../../shared/listing.model'
+import {PostsService} from "../../../shared/services/posts.service";
+import {Post} from "../../../shared/models/post.model";
 
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    directives: [PAGINATION_DIRECTIVES],
+
     providers: [PostsService],
     template: require('./posts.template.html'),
     styleUrls: ['./posts.styles.css']

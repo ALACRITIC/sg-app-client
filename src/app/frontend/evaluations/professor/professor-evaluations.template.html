@@ -8,3 +8,10 @@
 <span *ngIf="listing.collection && listing.collection.length > 0">
     <pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
 </span>
+
+<div class="row">
+    <div class="form-group">
+        <input  class="form-control" [(ngModel)]="evaluation.content" name="name" placeholder="Name" />
+    </div>
+</div>
+<button  class="btn btn-success" (click)="addEvalutation()">Save Evaluation</button>

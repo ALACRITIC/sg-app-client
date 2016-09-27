@@ -1,6 +1,12 @@
 <h1>Professors</h1>
 
-<professor-form (onAdded)="professorAdded($event)" ></professor-form>
+
+
+<div class="row">
+    <div class="col-md-2">
+        <a routerLink="../newProfessor" class="btn btn-success">New Professor</a>
+    </div>
+</div>
 
 
 
@@ -20,8 +26,11 @@
                  {{professor.description}}
              </div>
          </div>
+
      </div>
 
+
  </div>
+
 <pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
 

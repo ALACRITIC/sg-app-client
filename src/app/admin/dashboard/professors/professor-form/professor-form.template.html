@@ -1,17 +1,46 @@
-<form>
-    <div class="form-group">
-        <label for="name">Title</label>
-        <input type="text" class="form-control" required [(ngModel)]="professor.name" name="title" #name="ngModel">
+<div class="row">
+    <div class="col-xs-3">
+        <a  routerLink="/admin/dashboard/professors" class="btn btn-primary ">Back</a>
 
     </div>
+</div>
+<div class="row">
     <div class="form-group">
-        <label for="name">Author</label>
-        <input type="text" class="form-control" required [(ngModel)]="professor.department" name="author" #name="ngModel">
+        <input  class="form-control" [(ngModel)]="professor.name" name="name" placeholder="Name" />
+    </div>
+    <div class="form-group">
+        <input  class="form-control" [(ngModel)]="professor.department" name="department" placeholder="Department" />
+    </div>
+
+</div>
+
+<div class="row">
+    Article photo
+    <div class="col-xs-6" *ngIf="professor.photo">
+        <img src="{{professor.photo}}" class="img-thumbnail">
+    </div>
+
+    <div class="col-xs-3" *ngIf="!professor.photo && uploader && uploader.getNotUploadedItems().length == 0">
+        <div ng2FileDrop
+             [ngClass]="{'file-over': hasBaseDropZoneOver}"
+             (fileOver)="fileOverBase($event)"
+             [uploader]="uploader"
+             class="well my-drop-zone">
+            Drop a photo here
+        </div>
+    </div>
+    <div class="col-xs-3" *ngIf="uploader && uploader.getNotUploadedItems().length > 0">
+        <div *ngFor="let item of uploader.queue">
+
+            {{item?._file}}
+
+        </div>
 
     </div>
-    <div class="form-group">
-        <label for="name">PictureUrl</label>
-        <input type="text" class="form-control" [(ngModel)]="professor.photo" name="pictures">
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <button  class="btn btn-success" (click)="addProfessor()">Save new Professor</button>
+
     </div>
-    <button type="button" class="btn btn-primary"  (click)="addProfessor()">Add Professor</button>
-</form>
+</div>

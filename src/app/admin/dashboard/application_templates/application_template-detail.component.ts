@@ -3,8 +3,8 @@
  */
 import {Component, ViewEncapsulation , OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {ApplicationTemplate} from "../../../common/models/application_template.model";
-import {ApplicationTemplatesService} from "../../../common/services/application_templates.service";
+import {ApplicationTemplate} from "../../../shared/models/application_template.model";
+import {ApplicationTemplatesService} from "../../../shared/services/application_templates.service";
 import {AdminApplicationSubmissions} from "./application_submissions/application_submissions.component";
 
 

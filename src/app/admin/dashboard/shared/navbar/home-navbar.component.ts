@@ -13,7 +13,7 @@ import {UserService} from "../../../user.service";
     templateUrl: 'home-navbar.template.html',
 })
 
-export class HomeNavbar {
+export class AdminNavbar {
     constructor(private _userService:UserService, private _router:Router) {
         
     }

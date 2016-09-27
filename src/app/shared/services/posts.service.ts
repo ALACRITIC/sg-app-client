@@ -62,7 +62,7 @@ export class PostsService {
 
         return Observable.create(observer =>  {
                     let formData: any = new FormData();
-                    let xhr:XMLHttpRequest = new XMLHttpRequest();
+            let xhr:XMLHttpRequest = new XMLHttpRequest();
                     formData.append("post[image]", file, fileName);
                     formData.append("post[title]", post.title);
                     formData.append("post[content]", post.content);

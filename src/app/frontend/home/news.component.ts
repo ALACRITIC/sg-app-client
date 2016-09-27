@@ -2,15 +2,15 @@
  * Created by hgeorgiev on 8/26/16.
  */
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {PostsService} from "../../common/services/posts.service";
-import {Post} from "../../common/models/post.model";
+import {PostsService} from "../../shared/services/posts.service";
+import {Post} from "../../shared/models/post.model";
 
 
 @Component({
     selector: 'front-news',
     templateUrl: './news.template.html',
     styleUrls: ['./news.styles.css'],
-    ecapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.Emulated
 })
 
 export class FrontNews implements OnInit {

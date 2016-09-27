@@ -1,7 +1,6 @@
 /**
  * Created by hgeorgiev on 8/22/16.
  */
-import {RouterConfig} from "@angular/router";
 import {Home} from "./home/home.component";
 import {FrontTeamMembers} from "./team_members/team_members.component";
 import {FrontClubs} from "./clubs/clubs.component";
@@ -10,10 +9,12 @@ import {FrontApplicationTemplates} from "./applications/application_templates.co
 import {FrontPostDetail} from "./posts/post-detail.component";
 import {FrontProfessors} from "./evaluations/evaluations.component";
 import {ProfessorDetailComponent} from "./evaluations/professor/professor-detail.component";
+import { ModuleWithProviders }  from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 
-export const FrontEndRoutes:RouterConfig = [
-    { path: '',      component: Home },
+export const routing: ModuleWithProviders = RouterModule.forChild([
+   // { path: '',      component: Home },
     { path: 'home',  component: Home },
     { path: 'members' , component: FrontTeamMembers},
     { path: 'clubs' , component: FrontClubs},
@@ -23,4 +24,6 @@ export const FrontEndRoutes:RouterConfig = [
     { path: 'evaluations' , component: FrontProfessors},
     { path: 'professor/:id' , component: ProfessorDetailComponent},
 
-];
+
+]);
+

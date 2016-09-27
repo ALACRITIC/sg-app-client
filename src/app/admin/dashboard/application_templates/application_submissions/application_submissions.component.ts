@@ -2,9 +2,9 @@
  * Created by hgeorgiev on 8/24/16.
  */
 import {Component, Input} from '@angular/core';
-import {ApplicationSubmission} from "../../../../common/models/application_submission.model";
-import {Listing} from "../../../../common/listing.model";
-import {ApplicationSubmissionsService} from "../../../../common/services/application_submissions.service";
+import {ApplicationSubmission} from "../../../../shared/models/application_submission.model";
+import {Listing} from "../../../../shared/listing.model";
+import {ApplicationSubmissionsService} from "../../../../shared/services/application_submissions.service";
 
 @Component({
     selector: 'admin-application-submissions',

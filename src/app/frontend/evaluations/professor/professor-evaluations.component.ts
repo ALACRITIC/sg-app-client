@@ -2,11 +2,13 @@
  * Created by Taulant on 9/21/2016.
  */
 import { Component, OnInit,Input } from '@angular/core';
-import {EvaluationsService} from "../../../common/services/evaluations.service";
-import {Evaluation} from "../../../common/models/evaluation.model";
-import {Listing} from "../../../common/listing.model";
+import {EvaluationsService} from "../../../shared/services/evaluations.service";
+import {Evaluation} from "../../../shared/models/evaluation.model";
+import {Listing} from "../../../shared/listing.model";
 import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
 import { ActivatedRoute } from '@angular/router';
+import {Evaluation} from "../../../shared/models/evaluation.model";
+
 
 
 @Component({
@@ -18,6 +20,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfessorEvaluationsComponent implements OnInit {
     listing: Listing<Evaluation>;
+    evaluation:Evaluation;
     public currentPage:number = 1;
     sub:any;
     public id:number;
@@ -25,6 +28,7 @@ export class ProfessorEvaluationsComponent implements OnInit {
     constructor(private _service:EvaluationsService,private _route:ActivatedRoute) {
 
         this.listing = new Listing<Evaluation>();
+        this.evaluation = new Evaluation();
     }
 
     public pageChanged(event:any):void {
@@ -42,4 +46,5 @@ export class ProfessorEvaluationsComponent implements OnInit {
 
         this._service.query(page,itemsPerPage,this.id).then(listing => this.listing = listing);
     }
+
 }

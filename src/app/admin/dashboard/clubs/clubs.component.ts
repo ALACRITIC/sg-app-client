@@ -2,15 +2,15 @@
  * Created by hgeorgiev on 8/19/16.
  */
 import {Component, ViewEncapsulation, OnInit} from '@angular/core';
-import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {Listing} from "../../../common/listing.model";
-import {Club} from "../../../common/models/club.model";
-import {ClubsService} from "../../../common/services/clubs.service";
+
+import {Listing} from "../../../shared/listing.model";
+import {Club} from "../../../shared/models/club.model";
+import {ClubsService} from "../../../shared/services/clubs.service";
 
 @Component({
     selector: 'clubs',
     template:require('./clubs.template.html'),
-    directives: [PAGINATION_DIRECTIVES],
+
     providers: [ClubsService],
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./clubs.styles.css']

@@ -1,8 +1,8 @@
 import {Component, ViewEncapsulation , Input, OnInit} from '@angular/core';
 import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {Evaluation} from "../../../../common/models/evaluation.model";
-import {Listing} from "../../../../common/listing.model";
-import {EvaluationsService} from "../../../../common/services/evaluations.service";
+import {Evaluation} from "../../../../shared/models/evaluation.model";
+import {Listing} from "../../../../shared/listing.model";
+import {EvaluationsService} from "../../../../shared/services/evaluations.service";
 
 
 @Component({
@@ -14,11 +14,13 @@ import {EvaluationsService} from "../../../../common/services/evaluations.servic
 })
 export class AdminEvaluations implements OnInit{
     @Input() professor_id;
-    listing: Listing<Evaluation>;
+    public listing: Listing<Evaluation>;
+    public evaluation:Evaluation;
     public currentPage:number = 1;
 
     constructor(private _service:EvaluationsService) {
         this.listing = new Listing<Evaluation>();
+        this.evaluation = new Evaluation();
     }
 
 
@@ -30,9 +32,6 @@ export class AdminEvaluations implements OnInit{
         }
     }
 
-
-
-
     public pageChanged(event:any):void {
         this.loadEvaluations(event.page, event.itemsPerPage);
     };
@@ -41,6 +40,12 @@ export class AdminEvaluations implements OnInit{
     private loadEvaluations(page:number, itemsPerPage: number) {
 
         this._service.query(page,itemsPerPage, this.professor_id ).then(listing => this.listing = listing);
+    }
+    deleteEvaluation(evaluation:Evaluation){
+        this._service.deleteEvaluation(this.professor_id,evaluation.id)
+                .then(()=>{
+                    this.listing.collection = this.listing.collection.filter(h => h !== evaluation);
+                });
     }
 
 

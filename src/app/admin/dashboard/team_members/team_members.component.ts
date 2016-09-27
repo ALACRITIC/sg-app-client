@@ -1,13 +1,12 @@
 
 import {Component, ViewEncapsulation, OnInit} from '@angular/core';
-import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-import {Listing} from "../../../common/listing.model";
-import {TeamMember} from "../../../common/models/team_member.model";
-import {TeamMembersService} from "../../../common/services/team_members.service";
+
+import {Listing} from "../../../shared/listing.model";
+import {TeamMember} from "../../../shared/models/team_member.model";
+import {TeamMembersService} from "../../../shared/services/team_members.service";
 
 @Component({
     template:require('./team_members.template.html'),
-    directives: [PAGINATION_DIRECTIVES],
     providers: [TeamMembersService],
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./team_members.styles.css']

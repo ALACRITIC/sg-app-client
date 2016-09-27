@@ -1,12 +1,10 @@
 import {Component, ViewEncapsulation, OnInit, Output , EventEmitter} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {ProfessorsService} from "../../../../common/services/professors.service";
-import {DROPDOWN_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
+import {ProfessorsService} from "../../../../shared/services/professors.service";
 
 @Component({
     selector: 'professor-departments',
     encapsulation: ViewEncapsulation.None,
-    directives: [DROPDOWN_DIRECTIVES],
     template: require('./departments.template.html'),
 })
 export class AdminProfessorDepartments implements OnInit{
