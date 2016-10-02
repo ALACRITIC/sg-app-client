@@ -14,6 +14,10 @@ import {AdminApplicationTemplateDetail} from "./dashboard/application_templates/
 import {AdminPosts} from "./dashboard/posts/posts.component";
 import {PostComponent} from "./dashboard/posts/post.component";
 import {ProfessorFormComponent} from "./dashboard/professors/professor-form/professor-form.component";
+import {ProfessorDetailComponent} from "../frontend/evaluations/professor/professor-detail.component";
+import {AdminProfessorEdit} from "./dashboard/professors/professor-form/professor-form";
+import {AdminClubDetail} from "./dashboard/clubs/club-detail.component";
+import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.component";
 
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
@@ -27,14 +31,14 @@ export const routing: ModuleWithProviders = RouterModule.forChild([
                     {path: 'professors' , component: AdminProfessors },
                     {path: 'professor/:id' , component: AdminProfessorDetail},
                     {path: 'clubs', component: AdminClubs},
+                    {path: 'club/:id', component: AdminClubDetail},
                     {path: 'team_members' , component: AdminTeamMembers},
                     {path: 'internships', component: AdminInternships},
+                    {path: 'internship/:id', component: AdminInternshipDetail},
                     {path: 'applications' , component: AdminApplicationTemplates},
                     {path: 'application_template/:id' , component: AdminApplicationTemplateDetail},
                     {path: 'posts', component: AdminPosts},
                     {path: 'post/:id', component: PostComponent},
-                    {path: 'newpost', component: PostComponent},
-                    {path: 'newProfessor',component: ProfessorFormComponent},
 
                 ]}
 

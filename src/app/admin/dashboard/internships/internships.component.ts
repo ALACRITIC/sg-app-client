@@ -27,12 +27,9 @@ export class AdminInternships implements OnInit{
 
     };
 
-
-
     public pageChanged(event:any):void {
         this.loadInternships(event.page, event.itemsPerPage);
     };
-
 
     private loadInternships(page:number, itemsPerPage: number) {
 

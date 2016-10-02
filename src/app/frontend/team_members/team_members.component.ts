@@ -25,7 +25,6 @@ export class FrontTeamMembers implements OnInit{
     ngOnInit() {
         this.listing = new Listing<TeamMember>();
         this._service.query(1,999).then(listing => this.listing = listing);//load all
-
     }
 
     

@@ -32,11 +32,9 @@ export class AdminApplicationSubmissions {
         }
     }
 
-
     public pageChanged(event:any):void {
         this.loadEvaluations(event.page, event.itemsPerPage);
     };
-
 
     private loadEvaluations(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage, this.template_id ).then(listing => this.listing = listing);

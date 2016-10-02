@@ -27,11 +27,12 @@ export class InternshipsService {
             .catch(this.handleError);
     }
 
-    get(internship: Internship) {
-        return this.http.get(this.internshipsUrl + `${internship.id}`)
+    get(id:number) {
+        return this.http.get(this.internshipsUrl + `${id}`)
             .toPromise()
             .then(res => res.json() as Internship)
             .catch(this.handleError);
     }
+
 
 }

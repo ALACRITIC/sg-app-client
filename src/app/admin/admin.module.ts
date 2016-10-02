@@ -26,7 +26,11 @@ import { DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 import {AdminNavbar} from "./dashboard/shared/navbar/home-navbar.component";
 import {SharedModule} from "../shared/shared.module";
 import {ProfessorFormComponent} from "./dashboard/professors/professor-form/professor-form.component";
-import {AdminProfessorEdit} from "./dashboard/professors/professor-edit/professor-edit";
+import {AdminProfessorEdit} from "./dashboard/professors/professor-form/professor-form";
+import {AdminClubDetail} from "./dashboard/clubs/club-detail.component";
+import {AdminClubForm} from "./dashboard/clubs/club-form/club-form.component";
+import {AdminProfessorForm} from "./dashboard/professors/professor-form/professor-form";
+import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.component";
 
 
 
@@ -49,11 +53,10 @@ import {AdminProfessorEdit} from "./dashboard/professors/professor-edit/professo
         AdminTeamMembers,
         AdminProfessorDetail,
         AdminProfessors,
-        ProfessorFormComponent,
-        AdminProfessorEdit
-
- 
-
+        AdminProfessorForm,
+        AdminClubDetail,
+        AdminClubForm,
+        AdminInternshipDetail
 
     ],
 

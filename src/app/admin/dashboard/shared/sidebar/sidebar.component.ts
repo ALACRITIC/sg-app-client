@@ -36,6 +36,10 @@ export class Sidebar {
                 name: 'Internships',
                 url: './internships'
             },
+            {
+                name: 'Members',
+                url: './team_members'
+            },
 
         ]
     }

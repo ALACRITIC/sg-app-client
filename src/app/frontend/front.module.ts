@@ -21,7 +21,8 @@ import {ProfessorDetailComponent} from "./evaluations/professor/professor-detail
 import {ProfessorProfileComponent} from "./evaluations/professor/professor-profile.component";
 import {ProfessorEvaluationsComponent} from "./evaluations/professor/professor-evaluations.component";
 import {HomeFooter} from "./shared/footer/footer.component";
-
+import {FrontClubDetail} from "./clubs/club-detail.component";
+import {FrontInternshipDetail} from "./internships/internship-detail.component";
 
 
 @NgModule({
@@ -38,11 +39,10 @@ import {HomeFooter} from "./shared/footer/footer.component";
         FrontNavbar,
         NewApplicationSubmission,
         ProfessorDetailComponent,
-        ProfessorProfileComponent,
         ProfessorEvaluationsComponent,
-        HomeFooter
-
-
+        HomeFooter,
+        FrontClubDetail,
+        FrontInternshipDetail,
         ],
     
 })

@@ -5,13 +5,13 @@
 
     <div class="list-group-item" *ngFor="let internship of listing.collection">
         <div class="media"  >
-            <a class="media-left" href="#">
+            <a class="media-left" >
                 <img class=" img-circle media-object media-img" src="{{internship.photo}}" >
             </a>
             <div class="media-body">
                 <h4 class="media-heading">{{internship.name}}</h4>
                 <small class="text-muted">
-                    <a href="{{internship.link}}">Link</a>
+                    <button class="btn btn-primary">More</button>
                 </small>
                 {{internship.description}}
             </div>

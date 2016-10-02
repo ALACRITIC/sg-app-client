@@ -52,6 +52,7 @@ export class ProfessorsService {
             .catch(this.handleError);
 
     }
+
     deleteProfessor(id: number) {
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
         let url = `${this.professorsUrl}/${id}`;
@@ -60,6 +61,7 @@ export class ProfessorsService {
             .then(() => null)
 
     }
+
     addProfessor(professor:Professor,file:File): Observable{
         return Observable.create(observer => {
             let formData: any = new FormData();
@@ -87,14 +89,19 @@ export class ProfessorsService {
         });
     }
 
-    updateProfessor(professor:Professor,file:File): Observable{
+    updateProfessor(professor:Professor,file:File,id:number): Observable{
         return Observable.create(observer => {
+            let url = `${this.professorsUrl}/${id}`;
             let formData: any = new FormData();
             let xhr:XMLHttpRequest = new XMLHttpRequest();
 
-            formData.append("professor[photo]",file);
+            if(file !== undefined){
+                formData.append("professor[photo]",file);
+            }
+
             formData.append("professor[name]",professor.name);
             formData.append("professor[department]",professor.department);
+
 
             xhr.onreadystatechange = () => {
                 if (xhr.readyState === 4) {
@@ -108,7 +115,7 @@ export class ProfessorsService {
 
             };
 
-            xhr.open("PUT", this.professorsUrl, true);
+            xhr.open("PUT", url , true);
             xhr.setRequestHeader('Authorization', this.authToken);
             xhr.send(formData);
         });
