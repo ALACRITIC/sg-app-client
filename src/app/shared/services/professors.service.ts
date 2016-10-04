@@ -96,6 +96,7 @@ export class ProfessorsService {
             let xhr:XMLHttpRequest = new XMLHttpRequest();
 
             if(file !== undefined){
+
                 formData.append("professor[photo]",file);
             }
 

@@ -14,6 +14,7 @@ import {AdminProfessorDepartments} from "../admin/dashboard/professors/departmen
 import {ProfessorProfileComponent} from "../frontend/evaluations/professor/professor-profile.component";
 import {FrontClubProfile} from "../frontend/clubs/club-profile.component";
 import {FrontInternshipProfile} from "../frontend/internships/internship-profile.component";
+import {FrontTeamMembersProfile} from "../frontend/team_members/team-members-profile/team-members-profile.component";
 
 @NgModule({
     imports: [CommonModule],
@@ -22,7 +23,17 @@ import {FrontInternshipProfile} from "../frontend/internships/internship-profile
         EvaluationsService, PostsService, ProfessorsService,
         TeamMembersService, UserService, AdminGuard,
     ],
-    declarations: [FILE_UPLOAD_DIRECTIVES,AdminProfessorDepartments,ProfessorProfileComponent,FrontClubProfile],
-    exports: [FILE_UPLOAD_DIRECTIVES,AdminProfessorDepartments,ProfessorProfileComponent,FrontClubProfile]
+    declarations: [FILE_UPLOAD_DIRECTIVES,
+                   AdminProfessorDepartments,
+                   ProfessorProfileComponent,
+                   FrontClubProfile,
+                   FrontTeamMembersProfile
+    ],
+    exports: [FILE_UPLOAD_DIRECTIVES,
+              AdminProfessorDepartments,
+              ProfessorProfileComponent,
+              FrontClubProfile,
+              FrontTeamMembersProfile
+    ]
 })
 export class SharedModule { }

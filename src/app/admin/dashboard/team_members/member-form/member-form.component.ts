@@ -1,27 +1,22 @@
 /**
- * Created by Taulant on 9/27/2016.
+ * Created by Taulant on 10/4/2016.
  */
-
 import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input } from '@angular/core';
-import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
-
-import {Professor} from "../../../../shared/models/professor.model";
-
+import {TeamMember} from "../../../../shared/models/team_member.model";
+import {FileUploader} from "../../../../../../node_modules/ng2-file-upload/components/file-upload/file-uploader.class";
+import {FileItem} from "../../../../../../node_modules/ng2-file-upload/components/file-upload/file-item.class";
 
 
 @Component({
-
-    selector: 'professor-form',
-    templateUrl: './professor-form.template.html',
-    styleUrls:['./professor-form.component.css'],
-
-
+    selector: 'member-form',
+    templateUrl: './member-form.template.html',
+    styleUrls:['./team-member.component.css']
 })
-export class AdminProfessorForm implements OnChanges {
-    @Input() inputProfessor:Professor;
-    @Output() outputProfessor = new EventEmitter();
+export class AdminMemberForm implements OnInit,OnChanges {
+    @Input() inputMember:TeamMember;
+    @Output() outputMember = new EventEmitter();
 
-    public professor:Professor;
+    public member:TeamMember;
     public uploader:FileUploader;
     public hasBaseDropZoneOver:boolean = false;
 
@@ -34,14 +29,14 @@ export class AdminProfessorForm implements OnChanges {
     constructor() {
         this.isEditing = false;
         this.isChanging = false;
-        this.professor = new Professor();
+        this.member = new TeamMember();
         this.uploader = new FileUploader({url:'someurl'})
     }
 
     ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
-        if (changes['inputProfessor'].currentValue != undefined) {
+        if (changes['inputMember'].currentValue != undefined) {
             this.isEditing= true;
-            this.professor = changes['inputProfessor'].currentValue;
+            this.member = changes['inputMember'].currentValue;
         }
     }
 
@@ -49,7 +44,7 @@ export class AdminProfessorForm implements OnChanges {
         this.hasBaseDropZoneOver = e;
     }
 
-    updateProfessor(){
+    updateMember(){
 
         if(this.uploader.queue.length !== 0){
 
@@ -58,15 +53,12 @@ export class AdminProfessorForm implements OnChanges {
         }
         console.log(this.uploader.queue[0]);
         //todo
-        this.outputProfessor.emit({
-            professor:this.professor,
+        this.outputMember.emit({
+            member:this.member,
             photo:photo});
-        this.professor = new Professor();
+        console.log(this.member);
+        this.member = new TeamMember();
         this.uploader = new FileUploader({url:'someurl'});
         this.isEditing = false;
     }
-
-
-
-
 }

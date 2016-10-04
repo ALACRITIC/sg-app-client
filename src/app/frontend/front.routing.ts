@@ -13,6 +13,8 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {FrontClubDetail} from "./clubs/club-detail.component";
 import {FrontInternshipDetail} from "./internships/internship-detail.component";
+import {FrontTeamMembersProfile} from "./team_members/team-members-profile/team-members-profile.component";
+import {FrontMemberDetail} from "./team_members/team-members-detail.component";
 
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
@@ -26,7 +28,7 @@ export const routing: ModuleWithProviders = RouterModule.forChild([
     { path: 'post/:id', component: FrontPostDetail},
     { path: 'evaluations' , component: FrontProfessors},
     { path: 'professor/:id' , component: ProfessorDetailComponent},
-
+    { path: 'member/:id' , component:FrontMemberDetail}
 
 
 ]);

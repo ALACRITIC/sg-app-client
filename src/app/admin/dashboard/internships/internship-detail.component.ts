@@ -13,6 +13,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class AdminInternshipDetail implements OnInit {
     internship:Internship;
+    public isEdit:boolean = false;
     sub:any;
 
     constructor(private _service: InternshipsService,private _router:Router,private _route:ActivatedRoute) {
@@ -27,4 +28,5 @@ export class AdminInternshipDetail implements OnInit {
     private loadInternship(id:number){
         this._service.get(id).then((res) => this.internship = res);
     }
+
 }

@@ -23,6 +23,7 @@ import {ProfessorEvaluationsComponent} from "./evaluations/professor/professor-e
 import {HomeFooter} from "./shared/footer/footer.component";
 import {FrontClubDetail} from "./clubs/club-detail.component";
 import {FrontInternshipDetail} from "./internships/internship-detail.component";
+import {FrontMemberDetail} from "./team_members/team-members-detail.component";
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {FrontInternshipDetail} from "./internships/internship-detail.component";
         HomeFooter,
         FrontClubDetail,
         FrontInternshipDetail,
+        FrontMemberDetail
         ],
     
 })

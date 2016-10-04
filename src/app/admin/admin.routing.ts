@@ -18,6 +18,7 @@ import {ProfessorDetailComponent} from "../frontend/evaluations/professor/profes
 import {AdminProfessorEdit} from "./dashboard/professors/professor-form/professor-form";
 import {AdminClubDetail} from "./dashboard/clubs/club-detail.component";
 import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.component";
+import {AdminMemberDetail} from "./dashboard/team_members/member-detail.component";
 
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
@@ -33,6 +34,7 @@ export const routing: ModuleWithProviders = RouterModule.forChild([
                     {path: 'clubs', component: AdminClubs},
                     {path: 'club/:id', component: AdminClubDetail},
                     {path: 'team_members' , component: AdminTeamMembers},
+                    {path: 'member/:id' , component: AdminMemberDetail},
                     {path: 'internships', component: AdminInternships},
                     {path: 'internship/:id', component: AdminInternshipDetail},
                     {path: 'applications' , component: AdminApplicationTemplates},

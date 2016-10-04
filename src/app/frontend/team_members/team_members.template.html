@@ -14,12 +14,13 @@
                         <h4 class="card-title">{{member.name}}</h4>
                         <p class="card-text"><small class="text-muted">{{member.title}}</small></p>
                         <p class="card-text">{{member.description}}</p>
+                        <a routerLink="/member/{{member.id}}"  class="btn btn-primary">Profile</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
 </div>
 
 <footer></footer>

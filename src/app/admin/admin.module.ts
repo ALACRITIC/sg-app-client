@@ -31,6 +31,9 @@ import {AdminClubDetail} from "./dashboard/clubs/club-detail.component";
 import {AdminClubForm} from "./dashboard/clubs/club-form/club-form.component";
 import {AdminProfessorForm} from "./dashboard/professors/professor-form/professor-form";
 import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.component";
+import {AdminInternShipForm} from "./dashboard/internships/internship-form/internship-form.component";
+import {AdminMemberDetail} from "./dashboard/team_members/member-detail.component";
+import {AdminMemberForm} from "./dashboard/team_members/member-form/member-form.component";
 
 
 
@@ -56,7 +59,10 @@ import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.c
         AdminProfessorForm,
         AdminClubDetail,
         AdminClubForm,
-        AdminInternshipDetail
+        AdminInternshipDetail,
+        AdminInternShipForm,
+        AdminMemberDetail,
+        AdminMemberForm
 
     ],
 
