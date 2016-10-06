@@ -3,8 +3,11 @@
 
 <div class="container">
     <h1 class="display-4">Professor Evaluations</h1>
+
+    <professor-departments (filteredDept)="filterDepts($event)"></professor-departments>
+
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="card-deck-wrapper">
                 <div class="card-deck">
                     <div class="card" *ngFor="let professor of listing.collection">
@@ -17,9 +20,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <professor-departments (filteredDept)="filterDepts($event)"></professor-departments>
         </div>
     </div>
     <pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>

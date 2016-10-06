@@ -17,9 +17,6 @@ import {ApplicationTemplatesService} from "../../shared/services/application_tem
 
 export class FrontApplicationTemplates implements OnInit{
     listing: Listing<ApplicationTemplate>;
-    
-    
-
 
     constructor(private _service:ApplicationTemplatesService) {
 

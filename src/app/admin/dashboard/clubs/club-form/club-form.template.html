@@ -3,22 +3,44 @@
         <div class="card-deck-wrapper">
             <div class="card-deck">
                 <div class="card">
+                    <!-- Club-form -->
                      <div class="row">
                         <div class="col-md-12">
                          <img src="{{club.logo}}" class="img-thumbnail">
-
                              <div class="form-group">
                                  <input  class="form-control" [(ngModel)]="club.name" name="name" placeholder="Name" />
                              </div>
                              <div class="form-group">
                                  <input  class="form-control" [(ngModel)]="club.president" name="president" placeholder="President" />
                              </div>
-
                          </div>
                     </div>
 
-                <div class="row">
+                    <!--if club is on edit mode -->
+                    <div *ngIf="club.logo" class="row">
+                        <div class="col-md-12">
+                            <button (click)="isChanging = true">Change Document</button>
+                        </div>
+                    </div>
 
+                <div class="row">
+                    <!--when there is the club photo and change photo button is clicked -->
+                    <!--then the upload drop zone is opened-->
+                    <div *ngIf="club.logo && isChanging">
+                        <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
+                            <div ng2FileDrop
+                                 [ngClass]="{'file-over': hasBaseDropZoneOver}"
+                                 (fileOver)="fileOverBase($event)"
+                                 [uploader]="uploader"
+                                 class="well my-drop-zone">
+                                Drop the Document here
+                            </div>
+                            <input type="file" ng2FileSelect [uploader]="uploader" />
+                        </div>
+                    </div>
+                    <!--end of edit mode-->
+
+                    <!--upload a photo on the new club form-->
                     <div class="col-md-4" *ngIf="!club.logo && uploader && uploader.getNotUploadedItems().length == 0">
                         <div ng2FileDrop
                              [ngClass]="{'file-over': hasBaseDropZoneOver}"
@@ -29,23 +51,25 @@
                         </div>
                         <input type="file" ng2FileSelect [uploader]="uploader" />
                     </div>
+                    <!--end of uploading drop zone-->
+
                     <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length > 0">
                         <div *ngFor="let item of uploader.queue">
-
                             {{item?._file}}
-
+                            <button type="button" class="btn btn-danger btn-xs"
+                                    (click)="item.remove()">
+                                <span class="glyphicon glyphicon-trash"></span> Remove
+                            </button>
                         </div>
-
                     </div>
                 </div>
-
 
                 <div class="row">
                     <div class="col-xs-12">
                         <button class="btn btn-success" (click)="updateClub()">Save Club</button>
-
                     </div>
                  </div>
+                    <!-- Club form end -->
                 </div>
             </div>
         </div>

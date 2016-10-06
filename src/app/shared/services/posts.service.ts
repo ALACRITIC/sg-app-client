@@ -55,6 +55,14 @@ export class PostsService {
             .then(res => res.json())
             .catch(this.handleError);
     }
+    deletePost(id: number) {
+        let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
+        let url = `${this.postsUrl}/${id}`;
+        return this.http.delete(url, {headers: headers})
+            .toPromise()
+            .then(() => null)
+
+    }
 
 
     //post POST
@@ -85,6 +93,38 @@ export class PostsService {
                     xhr.send(formData);
                 });
             }
+    edit(post:Post , file:File,fileName:string, id:number): Observable  {
+
+        return Observable.create(observer =>  {
+            let formData: any = new FormData();
+            let url = `${this.postsUrl}/${id}`;
+            let xhr:XMLHttpRequest = new XMLHttpRequest();
+
+
+                formData.append("post[image]", file,fileName);
+
+
+            formData.append("post[title]", post.title);
+            formData.append("post[content]", post.content);
+            formData.append("post[featured]", post.featured);
+            formData.append("post[styles]" , post.styles);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 201) {
+                        observer.next(JSON.parse(xhr.response));
+                        observer.complete();
+                    } else {
+                        observer.error(xhr.response);
+                    }
+                }
+            };
+
+
+            xhr.open("PUT", url, true);
+            xhr.setRequestHeader('Authorization', this.authToken);
+            xhr.send(formData);
+        });
+    }
 
 
 }

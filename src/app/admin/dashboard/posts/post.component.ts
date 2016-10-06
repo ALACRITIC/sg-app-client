@@ -22,6 +22,7 @@ export class PostComponent implements OnInit, OnDestroy{
     private sub:any;
     public post:Post;
     public uploader:FileUploader;
+    public isEdit:boolean;
     public hasBaseDropZoneOver:boolean = false;
 
     constructor(private _service:PostsService, private _router:Router, private _route:ActivatedRoute){
@@ -48,7 +49,7 @@ export class PostComponent implements OnInit, OnDestroy{
 
 
     onChange() {
-      
+
     }
 
     onReady() {
@@ -60,10 +61,16 @@ export class PostComponent implements OnInit, OnDestroy{
     }
 
 
-    savePost() {
-        let image:FileItem = this.uploader.queue[0];
-        this._service.save(this.post, image._file , image.file.name).subscribe(() => {
-            this._router.navigate(['admin/dashboard/posts']);
+    editPost($event) {
+        this._service.edit($event.post, $event.image,$event.imageName,this.post.id).subscribe((res) => {
+            this.post = res;
         });
+        this.isEdit = false;
     }
-};
+    deletePost(post:Post) {
+        this._service
+            .deletePost(post.id)
+            .then(() => this._router.navigate(['admin/dashboard/posts']) );
+    }
+
+}

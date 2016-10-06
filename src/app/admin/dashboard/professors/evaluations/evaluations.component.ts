@@ -23,8 +23,6 @@ export class AdminEvaluations implements OnInit{
         this.evaluation = new Evaluation();
     }
 
-
-
     ngOnChanges(changes:any):void {
         if(changes.professor_id.currentValue != undefined) {
             this.professor_id = changes.professor_id.currentValue;
@@ -43,10 +41,9 @@ export class AdminEvaluations implements OnInit{
     }
     deleteEvaluation(evaluation:Evaluation){
         this._service.deleteEvaluation(this.professor_id,evaluation.id)
-                .then(()=>{
-                    this.listing.collection = this.listing.collection.filter(h => h !== evaluation);
+                .then(()=> {
+                    this.loadEvaluations(1, 10);
                 });
     }
-
 
 }

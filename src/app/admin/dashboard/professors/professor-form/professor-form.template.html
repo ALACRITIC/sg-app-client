@@ -7,50 +7,37 @@
                         <div class="col-md-12">
                              <img class="card-img-top img-thumbnail" src="{{professor.photo}}">
 
-                            <!-- prfessor-form -->
+                            <!-- professor-form -->
                             <div class="row">
                                 <div class="col-md-12">
-
                                     <div class="form-group">
-                                        <input  class="form-control" [(ngModel)]="professor.name" name="name" placeholder="Name" />
+                                        <input  class="form-control"
+                                                [(ngModel)]="professor.name"
+                                                name="name"
+                                                placeholder="Name" />
                                     </div>
                                     <div class="form-group">
-                                        <input  class="form-control" [(ngModel)]="professor.department" name="department" placeholder="Department" />
+                                        <input  class="form-control"
+                                                [(ngModel)]="professor.department"
+                                                name="department"
+                                                placeholder="Department" />
                                     </div>
-
                                 </div>
                             </div>
 
-
+                            <!--if professor is on edit mode -->
                             <div *ngIf="professor.photo" class="row">
                                 <div class="col-md-12">
                                     <button (click)="isChanging = true">Change Photo</button>
-
                                 </div>
-
                             </div>
 
                             <div class="row">
-
-                                <div *ngIf="!professor.photo">
-
-                                    <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
-                                    <div ng2FileDrop
-                                         [ngClass]="{'file-over': hasBaseDropZoneOver}"
-                                         (fileOver)="fileOverBase($event)"
-                                         [uploader]="uploader"
-                                         class="well my-drop-zone">
-                                        Drop a photo here
-                                    </div>
-
-                                    <input type="file" ng2FileSelect [uploader]="uploader" />
-
-                                    </div>
-
-                                </div>
+                                <!--when there is the professor photo and change photo button is clicked -->
+                                <!--then the upload drop zone is opened-->
                                 <div *ngIf="professor.photo && isChanging">
-
-                                    <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
+                                    <div class="col-md-4"
+                                         *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
                                         <div ng2FileDrop
                                              [ngClass]="{'file-over': hasBaseDropZoneOver}"
                                              (fileOver)="fileOverBase($event)"
@@ -58,32 +45,41 @@
                                              class="well my-drop-zone">
                                             Drop a photo here
                                         </div>
-
                                         <input type="file" ng2FileSelect [uploader]="uploader" />
-
                                     </div>
-
                                 </div>
+                                <!--end of edit mode-->
 
+                                <!--upload a photo on the new professor form-->
+                                <div *ngIf="!professor.photo">
+                                    <div class="col-md-4"
+                                         *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
+                                        <div ng2FileDrop
+                                             [ngClass]="{'file-over': hasBaseDropZoneOver}"
+                                             (fileOver)="fileOverBase($event)"
+                                             [uploader]="uploader"
+                                             class="well my-drop-zone">
+                                            Drop a photo here
+                                        </div>
+                                    <input type="file" ng2FileSelect [uploader]="uploader" />
+                                    </div>
+                                </div>
+                                <!--end of uploading drop zone-->
 
-                                <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length > 0">
+                                <div class="col-md-4"
+                                     *ngIf="uploader && uploader.getNotUploadedItems().length > 0">
                                     <div *ngFor="let item of uploader.queue">
-
-
                                         {{item?._file}}
-
-                                    <button type="button" class="btn btn-danger btn-xs"
-                                            (click)="item.remove()">
-                                        <span class="glyphicon glyphicon-trash"></span> Remove
-                                    </button>
+                                        <button type="button" class="btn btn-danger btn-xs"
+                                                (click)="item.remove()">
+                                            <span class="glyphicon glyphicon-trash"></span> Remove
+                                        </button>
+                                    </div>
                                 </div>
-
-                                </div>
-
                             </div>
 
                             <div class="row">
-                                <div class="col-xs-12">
+                                <div class="col-md-4">
                                     <button class="btn btn-success" (click)="updateProfessor()">Save Professor</button>
                                 </div>
                             </div>

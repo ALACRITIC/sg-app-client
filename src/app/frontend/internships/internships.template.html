@@ -1,16 +1,15 @@
 <navbar></navbar>
 <div class="container">
-
     <h1 class="display-4">Internships</h1>
     <div class="row">
         <div class="col-xs-12">
             <div class="card-deck-wrapper">
                 <div class="card-deck">
                     <div class="card" *ngFor="let internship of listing.collection">
-                        <img class="card-img-top" src="{{internship.image}}">
+                        <img class="card-img-top img-thumbnail" src="{{internship.logo}}">
                         <div class="card-block">
                             <h4 class="card-title">{{internship.description}}</h4>
-                            <a   class="btn btn-primary">More Information</a>
+                            <a target="_blank"  href="{{internship.link}}" class="btn btn-primary">More Info</a>
                         </div>
                     </div>
                 </div>

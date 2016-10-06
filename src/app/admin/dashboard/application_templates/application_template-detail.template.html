@@ -1,29 +1,51 @@
-<div class="row">
+
+<div class="row"  *ngIf="!isEdited">
     <div class="col-xs-3">
         <a routerLink="../../applications" class="btn btn-primray ">Back</a>
+
     </div>
 </div>
+
+
+
 <div class="row">
-    <div class="col-md-8">
+    <div  *ngIf="!isEdit" class="col-md-12 col-xs-12">
         <div class="row">
-            <div class="col-xs-12">
-                <h1>{{application_template.name}}</h1>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>{{application_template.name}}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>Description: {{application_template.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <figure class="figure">
+                    <a href="{{application_template.document}}">Document URL</a>
+                </figure>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <p>{{application_template.description}}</p>
-            </div>
+
+        <div class="btn-group">
+            <button (click)="deleteApplicationTemplate(application_template)" class="btn btn-danger">Delete Application</button>
+            <button  class="btn btn-warning" (click)="isEdit = true">Edit Application</button>
         </div>
     </div>
-    <div class="col-md-4">
-        <figure class="figure">
-           <a href="{{application_template.document}}">Document URL</a>
-        </figure>
+    <div *ngIf="isEdit" class="col-md-4 col-xs-12">
+
+        <application-form [inputApplication]="application_template" (outputApplication)="updateApplicationTemplate($event)"></application-form>
+        <a  class="btn btn-primray " (click)="isEdit = false">Cancel</a>
     </div>
+
+
 </div>
 <div class="row">
     <div class="col-md-12">
-     <admin-application-submissions [template_id]="application_template.id"></admin-application-submissions>
+        <admin-application-submissions [template_id]="application_template.id"></admin-application-submissions>
     </div>
 </div>
+

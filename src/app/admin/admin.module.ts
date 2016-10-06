@@ -34,11 +34,21 @@ import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.c
 import {AdminInternShipForm} from "./dashboard/internships/internship-form/internship-form.component";
 import {AdminMemberDetail} from "./dashboard/team_members/member-detail.component";
 import {AdminMemberForm} from "./dashboard/team_members/member-form/member-form.component";
-
+import {AdminApplicationForm} from "./dashboard/application_templates/application-form/application-form.component";
+import {AdminPostForm} from "./dashboard/posts/post-form/post-form.component";
 
 
 @NgModule({
-    imports:[ CommonModule, ReactiveFormsModule, FormsModule ,PaginationModule, CKEditorModule, DropdownModule, routing, SharedModule],
+    imports:[ CommonModule,
+        ReactiveFormsModule,
+        FormsModule,
+        PaginationModule,
+        CKEditorModule,
+        DropdownModule,
+        routing,
+        SharedModule,
+
+    ],
     declarations: [
         Login,
         Admin,
@@ -62,8 +72,9 @@ import {AdminMemberForm} from "./dashboard/team_members/member-form/member-form.
         AdminInternshipDetail,
         AdminInternShipForm,
         AdminMemberDetail,
-        AdminMemberForm
-
+        AdminMemberForm,
+        AdminApplicationForm,
+        AdminPostForm
     ],
 
 })

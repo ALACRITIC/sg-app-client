@@ -3,31 +3,39 @@
 
 <div class="row">
     <div class="col-md-4">
-        <internship-form  (outputInternship)="addInternship($event)" (onDelete)="deleteInternship($event)" [inputInternship]="selectedInternship"></internship-form>
+        <internship-form
+                (outputInternship)="addInternship($event)"
+                (onDelete)="deleteInternship($event)"
+                [inputInternship]="selectedInternship">
+        </internship-form>
     </div>
 </div>
 <br>
 
 <div class="list-group">
+    <div (click)="selectedInternship = internship"
+         class="list-group-item"
+         *ngFor="let internship of listing.collection">
 
-    <div (click)="selectedInternship = internship" class="list-group-item" *ngFor="let internship of listing.collection">
         <div class="media"  >
             <a class="media-left" >
                 <img class="img-circle media-object media-img" src="{{internship.logo}}" >
             </a>
             <div class="media-body">
-                <!--<h4 class="media-heading">{{internship.name}}</h4>-->
                 <small class="text-muted">
-                    <a target="_blank"  href="{{internship.link}}" class="btn btn-primary">More Info</a>
+                    <a target="_blank"  href="{{internship.link}}" class="btn btn-primary">
+                        More Info
+                    </a>
                 </small>
                 {{internship.description}}
                 <br>
-
             </div>
         </div>
     </div>
-
-
 </div>
-<pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
+
+<pagination [totalItems]="listing.count"
+            [(ngModel)]="currentPage"
+            (pageChanged)="pageChanged($event)">
+</pagination>
 
