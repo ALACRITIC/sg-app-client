@@ -4,17 +4,12 @@
 
 import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input } from '@angular/core';
 import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
-
 import {Professor} from "../../../../shared/models/professor.model";
 
-
-
 @Component({
-
     selector: 'professor-form',
     templateUrl: './professor-form.template.html',
     styleUrls:['./professor-form.component.css'],
-
 
 })
 export class AdminProfessorForm implements OnChanges {
@@ -27,9 +22,6 @@ export class AdminProfessorForm implements OnChanges {
 
     public isEditing:boolean;
     public isChanging:boolean;
-    public hideButton:boolean;
-    public isAdding:boolean;
-
 
     constructor() {
         this.isEditing = false;
@@ -52,9 +44,7 @@ export class AdminProfessorForm implements OnChanges {
     updateProfessor(){
 
         if(this.uploader.queue.length !== 0){
-
             var photo:FileItem =this.uploader.queue[0]._file;
-
         }
         console.log(this.uploader.queue[0]);
         //todo
@@ -65,8 +55,5 @@ export class AdminProfessorForm implements OnChanges {
         this.uploader = new FileUploader({url:'someurl'});
         this.isEditing = false;
     }
-
-
-
 
 }

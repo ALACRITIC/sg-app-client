@@ -2,7 +2,6 @@
  * Created by hgeorgiev on 8/19/16.
  */
 import {Component, ViewEncapsulation, OnInit} from '@angular/core';
-
 import {Listing} from "../../../shared/listing.model";
 import {Club} from "../../../shared/models/club.model";
 import {ClubsService} from "../../../shared/services/clubs.service";
@@ -14,7 +13,6 @@ import {ClassArray} from "../../../../../node_modules/awesome-typescript-loader/
     providers: [ClubsService],
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./clubs.styles.css']
-
 })
 
 export class AdminClubs implements OnInit{

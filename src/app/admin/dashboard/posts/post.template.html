@@ -1,7 +1,7 @@
 
 <div class="row"  *ngIf="!isEdited">
     <div class="col-xs-3">
-        <a routerLink="../../posts" class="btn btn-primary ">Back</a>
+        <a routerLink="../../posts" class="btn btn-success">Back</a>
 
     </div>
 </div>
@@ -38,7 +38,7 @@
     <div class="col-md-6 col-xs-12">
 
         <post-form [inputPost]="post" (outputPost)="editPost($event)"></post-form>
-        <a  class="btn btn-primray " (click)="isEdit = false">Cancel</a>
+        <a  class="btn btn-primary " (click)="isEdit = false">Cancel</a>
     </div>
 </div>
 

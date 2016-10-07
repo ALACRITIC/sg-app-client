@@ -3,7 +3,6 @@ import { ActivatedRoute,Router } from '@angular/router';
 import {Professor} from "../../../shared/models/professor.model";
 import {ProfessorsService} from "../../../shared/services/professors.service";
 
-
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [ProfessorsService],
@@ -21,16 +20,14 @@ export class AdminProfessorDetail implements OnInit, OnDestroy{
 
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
-
             this.loadProfessor(params['id'])
-        })
+        });
     }
 
     deleteProfessor(professor:Professor) {
         this._profService
             .deleteProfessor(professor.id)
             .then(() => this._router.navigate(['admin/dashboard/professors']) );
-
     }
 
     updateProfessor($event) {
@@ -43,7 +40,6 @@ export class AdminProfessorDetail implements OnInit, OnDestroy{
     ngOnDestroy() {
         this.sub.unsubscribe();
     }
-
 
     private loadProfessor(id:number) {
         this._profService.get(id).then(professor => this.professor = professor);

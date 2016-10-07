@@ -1,9 +1,7 @@
 /**
  * Created by Taulant on 9/30/2016.
  */
-
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'internship-detail',
@@ -12,8 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrontInternshipDetail {
 
-    constructor() {
-
-    }
+    constructor() {}
 
 }

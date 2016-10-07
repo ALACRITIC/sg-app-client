@@ -7,7 +7,6 @@ import {FileUploader} from "../../../../../../node_modules/ng2-file-upload/compo
 import {FileItem} from "../../../../../../node_modules/ng2-file-upload/components/file-upload/file-item.class";
 
 @Component({
-
     selector: 'internship-form',
     templateUrl: './internship-form.template.html',
     styleUrls:['./internship-form.component.css'],

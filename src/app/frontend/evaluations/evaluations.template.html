@@ -1,6 +1,5 @@
 <navbar></navbar>
 
-
 <div class="container">
     <h1 class="display-4">Professor Evaluations</h1>
 
@@ -15,14 +14,22 @@
                         <div class="card-block">
                             <h4 class="card-title">{{professor.name}}</h4>
                             <p>{{professor.department}}</p>
-                            <a routerLink="/professor/{{professor.id}}"  class="btn btn-primary">Profile</a>
+                            <a routerLink="/professor/{{professor.id}}"
+                               class="btn btn-primary">
+                                Profile
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
+
+    <pagination [totalItems]="listing.count"
+                [(ngModel)]="currentPage"
+                (pageChanged)="pageChanged($event)">
+
+    </pagination>
 </div>
 
 <footer></footer>

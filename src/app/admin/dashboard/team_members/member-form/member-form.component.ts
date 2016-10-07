@@ -22,9 +22,6 @@ export class AdminMemberForm implements OnInit,OnChanges {
 
     public isEditing:boolean;
     public isChanging:boolean;
-    public hideButton:boolean;
-    public isAdding:boolean;
-
 
     constructor() {
         this.isEditing = false;
@@ -45,18 +42,14 @@ export class AdminMemberForm implements OnInit,OnChanges {
     }
 
     updateMember(){
-
         if(this.uploader.queue.length !== 0){
-
             var photo:FileItem =this.uploader.queue[0]._file;
-
         }
-        console.log(this.uploader.queue[0]);
         //todo
         this.outputMember.emit({
             member:this.member,
-            photo:photo});
-        console.log(this.member);
+            photo:photo
+        });
         this.member = new TeamMember();
         this.uploader = new FileUploader({url:'someurl'});
         this.isEditing = false;

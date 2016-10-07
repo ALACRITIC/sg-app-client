@@ -1,5 +1,8 @@
 <h2>Submissions</h2>
-<span *ngIf="listing.collection && listing.collection.length == 0" class="text-lg-center text-muted">No submissions found.</span>
+<span *ngIf="listing.collection && listing.collection.length == 0"
+      class="text-lg-center text-muted">
+    No submissions found.
+</span>
 <div class="list-group" >
     <div class="list-group-item list-group-item-action"
          [class.active]="submission == selectedSubmission"
@@ -16,7 +19,11 @@
            <hr>
            <div class="row" >
                 <div class="col-xs-12">
-                    <button (click)="deleteSubmission(submission)" class="btn btn-danger btn-sm">Delete</button>
+                    <button
+                            (click)="deleteSubmission(submission)"
+                            class="btn btn-danger btn-sm">
+                        Delete
+                    </button>
                 </div>
            </div>
         </span>
@@ -24,5 +31,9 @@
 </div>
 
 <span *ngIf="listing.collection && listing.collection.length > 0">
-    <pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
+    <pagination [totalItems]="listing.count"
+                [(ngModel)]="currentPage"
+                (pageChanged)="pageChanged($event)">
+
+    </pagination>
 </span>

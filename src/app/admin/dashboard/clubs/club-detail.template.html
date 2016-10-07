@@ -1,8 +1,7 @@
 
 <div class="row"  *ngIf="!isEdited">
     <div class="col-xs-3">
-        <a routerLink="../../clubs" class="btn btn-primray ">Back</a>
-
+        <a routerLink="../../clubs" class="btn btn-primary ">Back</a>
     </div>
 </div>
 
@@ -11,17 +10,19 @@
         <club-profile></club-profile>
 
         <div class="btn-group">
-
             <button (click)="deleteClub()" class="btn btn-danger">Delete Club</button>
             <button (click)="isEdit = true"   class="btn btn-warning">Edit Club</button>
         </div>
+
     </div>
     <div *ngIf="isEdit" class="col-md-4 col-xs-12">
 
-        <club-form [inputClub]="club" (outputClub)="updateClub($event)"></club-form>
-        <a  class="btn btn-primray " (click)="isEdit = false">Cancel</a>
+        <club-form [inputClub]="club"
+                   (outputClub)="updateClub($event)">
+
+        </club-form>
+
+        <a  class="btn btn-primary " (click)="isEdit = false">Cancel</a>
     </div>
-
-
 
 </div>

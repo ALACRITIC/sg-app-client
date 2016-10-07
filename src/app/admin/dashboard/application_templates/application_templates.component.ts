@@ -7,44 +7,41 @@ import {Listing} from "../../../shared/listing.model";
 import {ApplicationTemplate} from "../../../shared/models/application_template.model";
 import {ApplicationTemplatesService} from "../../../shared/services/application_templates.service";
 import {AdminApplicationForm} from "./application-template-form/application-form.component";
-
+import { CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [ApplicationTemplatesService],
     templateUrl:'./application_templates.template.html',
-
 })
 
 export class AdminApplicationTemplates implements OnInit{
     listing: Listing<ApplicationTemplate>;
     public currentPage:number = 1;
     public application_template:ApplicationTemplate;
+    public isCollapsed:boolean;
 
     constructor(private _service:ApplicationTemplatesService) {
         this.application_template = new ApplicationTemplate();
+        this.isCollapsed = true;
     }
 
     ngOnInit() {
         this.listing = new Listing<ApplicationTemplate>();
         this.loadApplicationTemplates(1, 10);
-
     };
-
-
 
     public pageChanged(event:any):void {
         this.loadApplicationTemplates(event.page, event.itemsPerPage);
     };
 
-
     private loadApplicationTemplates(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage).then(listing => this.listing = listing);
     }
     addApplication($event){
-
         this._service.addApplicationTemplate($event.application,$event.document).subscribe((res) => {
             this.application_template = res;
+            this.isCollapsed = true;
         });
     }
 }

@@ -13,8 +13,7 @@ import {Club} from "../../shared/models/club.model";
 export class FrontClubProfile implements OnInit {
     public club:Club;
     public sub:any;
-    constructor(private _service:ClubsService,private _router:Router, private _route:ActivatedRoute) {
-
+    constructor(private _service:ClubsService, private _route:ActivatedRoute) {
         this.club = new Club();
     }
 
@@ -26,6 +25,5 @@ export class FrontClubProfile implements OnInit {
     }
     private loadClub(id:number){
         this._service.get(id).then((club)=> this.club = club);
-
     }
 }

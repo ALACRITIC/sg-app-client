@@ -9,8 +9,6 @@ import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
 import { ActivatedRoute } from '@angular/router';
 import {Evaluation} from "../../../shared/models/evaluation.model";
 
-
-
 @Component({
     selector: 'professor-evaluations',
     templateUrl: 'professor-evaluations.template.html',
@@ -26,13 +24,11 @@ export class ProfessorEvaluationsComponent implements OnInit {
     public id:number;
 
     constructor(private _service:EvaluationsService,private _route:ActivatedRoute) {
-
         this.listing = new Listing<Evaluation>();
         this.evaluation = new Evaluation();
     }
 
     public pageChanged(event:any):void {
-
         this.loadEvaluations(event.page, event.itemsPerPage);
     };
     ngOnInit() {
@@ -43,7 +39,6 @@ export class ProfessorEvaluationsComponent implements OnInit {
     }
 
     private loadEvaluations(page:number, itemsPerPage: number) {
-
         this._service.query(page,itemsPerPage,this.id).then(listing => this.listing = listing);
     }
 

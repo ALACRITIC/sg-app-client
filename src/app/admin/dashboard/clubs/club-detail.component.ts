@@ -4,16 +4,12 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
-
 import {ClubsService} from "../../../shared/services/clubs.service";
 import {Club} from "../../../shared/models/club.model";
 
-
 @Component({
-
     selector: 'club-detail',
     templateUrl: './club-detail.template.html'
-
 })
 export class AdminClubDetail implements OnInit {
     public sub:any;
@@ -28,19 +24,16 @@ export class AdminClubDetail implements OnInit {
         this.sub = this._route.params.subscribe(params => {
             this.loadClub(params['id']);
         });
-
     }
 
     private loadClub(id:number){
         this._service.get(id).then((club)=> this.club = club);
-
     }
 
     deleteClub() {
         this._service
             .deleteClub(this.club.id)
             .then(() => this._router.navigate(['admin/dashboard/clubs']));
-
     }
 
     updateClub($event){

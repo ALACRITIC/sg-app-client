@@ -22,7 +22,7 @@ export class AdminApplicationForm implements OnChanges {
 
     public application_template:ApplicationTemplate;
 
-     constructor(@Inject('ApiEndpoint') private api: string) {
+     constructor() {
          this.isChanging = false;
          this.isEditing = false;
          this.application_template = new ApplicationTemplate();
@@ -39,19 +39,16 @@ export class AdminApplicationForm implements OnChanges {
         this.hasBaseDropZoneOver = e;
     }
 
-
     updateApplication(){
         if(this.uploader.queue.length !== 0){
-
             var document:FileItem =this.uploader.queue[0]._file;
-
         }
 
         this.outputApplication.emit({
             application:this.application_template,
             document:document
-
         });
+
         this.uploader = new FileUploader({url:'some url'});
         this.application_template = new ApplicationTemplate();
         this.isEditing = false;

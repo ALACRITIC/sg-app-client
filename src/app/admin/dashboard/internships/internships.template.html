@@ -3,14 +3,18 @@
 
 <div class="row">
     <div class="col-md-4">
-        <internship-form
-                (outputInternship)="addInternship($event)"
-                (onDelete)="deleteInternship($event)"
-                [inputInternship]="selectedInternship">
-        </internship-form>
+        <button (click)="isCollapsed = !isCollapsed" type="button" class="btn btn-primary">New Internship</button>
+        <div [collapse]="isCollapsed">
+            <internship-form
+                    (outputInternship)="addInternship($event)"
+                    (onDelete)="deleteInternship($event)"
+                    [inputInternship]="selectedInternship">
+            </internship-form>
+        </div>
     </div>
 </div>
 <br>
+
 
 <div class="list-group">
     <div (click)="selectedInternship = internship"
