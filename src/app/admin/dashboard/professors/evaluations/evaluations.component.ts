@@ -14,14 +14,14 @@ import {EvaluationsService} from "../../../../shared/services/evaluations.servic
 })
 export class AdminEvaluations implements OnInit{
     @Input() professor_id;
-    listing: Listing<Evaluation>;
+    public listing: Listing<Evaluation>;
+    public evaluation:Evaluation;
     public currentPage:number = 1;
 
     constructor(private _service:EvaluationsService) {
         this.listing = new Listing<Evaluation>();
+        this.evaluation = new Evaluation();
     }
-
-
 
     ngOnChanges(changes:any):void {
         if(changes.professor_id.currentValue != undefined) {
@@ -29,9 +29,6 @@ export class AdminEvaluations implements OnInit{
             this.loadEvaluations(1, 10);
         }
     }
-
-
-
 
     public pageChanged(event:any):void {
         this.loadEvaluations(event.page, event.itemsPerPage);
@@ -42,6 +39,11 @@ export class AdminEvaluations implements OnInit{
 
         this._service.query(page,itemsPerPage, this.professor_id ).then(listing => this.listing = listing);
     }
-
+    deleteEvaluation(evaluation:Evaluation){
+        this._service.deleteEvaluation(this.professor_id,evaluation.id)
+                .then(()=> {
+                    this.loadEvaluations(1, 10);
+                });
+    }
 
 }

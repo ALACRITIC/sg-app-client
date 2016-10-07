@@ -17,7 +17,13 @@ import {FrontNavbar} from "./shared/navbar/navbar.component";
 import {NewApplicationSubmission} from "./applications/new_application_submission.component";
 import {SharedModule} from "../shared/shared.module";
 import {Home} from "./home/home.component";
-
+import {ProfessorDetailComponent} from "./evaluations/professor/professor-detail.component";
+import {ProfessorProfileComponent} from "./evaluations/professor/professor-profile.component";
+import {ProfessorEvaluationsComponent} from "./evaluations/professor/professor-evaluations.component";
+import {HomeFooter} from "./shared/footer/footer.component";
+import {FrontClubDetail} from "./clubs/club-detail.component";
+import {FrontInternshipDetail} from "./internships/internship-detail.component";
+import {FrontMemberDetail} from "./team_members/team-members-detail.component";
 
 
 @NgModule({
@@ -32,7 +38,13 @@ import {Home} from "./home/home.component";
         FrontTeamMembers,
         FrontInternships,
         FrontNavbar,
-        NewApplicationSubmission
+        NewApplicationSubmission,
+        ProfessorDetailComponent,
+        ProfessorEvaluationsComponent,
+        HomeFooter,
+        FrontClubDetail,
+        FrontInternshipDetail,
+        FrontMemberDetail
         ],
     
 })

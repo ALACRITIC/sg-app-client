@@ -14,6 +14,7 @@ import {PostsService} from "../../shared/services/posts.service";
 
   selector: 'home',
 
+
   providers: [
     Title,
     PostsService

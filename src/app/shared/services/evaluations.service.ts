@@ -1,14 +1,17 @@
 
 import {Injectable, Inject} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http,Headers,RequestOptions,Response} from "@angular/http";
 import {QueryConstructor} from "../queryconstructor";
 import {Listing} from "../listing.model";
 import {Evaluation} from "../models/evaluation.model";
+
 
 @Injectable()
 
 
 export class EvaluationsService {
+
+    private authToken = localStorage.getItem('auth_token');
     constructor(private http:Http, @Inject('ApiEndpoint') private api: string) {}
 
     query(page:number, itemsPerPage: number, professor_id: number) {
@@ -20,10 +23,29 @@ export class EvaluationsService {
 
                 listing.collection = body.Items as Evaluation[] ;
                 listing.count = body.Count;
+                console.log(listing.collection)
 
                 return listing;
             } )
             .catch(this.handleError);
+    }
+
+    deleteEvaluation(professor_id:number,id:number){
+        let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
+        return this.http.delete(this.api + `/professors/${professor_id}/evaluations` + `/${id}`,{headers: headers})
+                .toPromise()
+                .then(() => null)
+
+
+    }
+    addEvaluation(evaluation:Evaluation,professor_id:number){
+        let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
+        let body = JSON.stringify(evaluation);
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.api + `/professors/${professor_id}/evaluations`, body, options)
+            .map((res: Response) => res.json());
+
     }
 
 

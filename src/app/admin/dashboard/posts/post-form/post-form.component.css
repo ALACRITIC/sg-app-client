@@ -1,0 +1,9 @@
+.well {
+    border: 2px solid red;
+
+    height: 50px;
+}
+
+.file-over {
+    border: 2px solid green;
+}

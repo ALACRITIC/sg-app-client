@@ -25,6 +25,7 @@ export class FrontPostDetail implements OnInit, OnDestroy{
            
                 this._service.get(params['id']).then(
                     res => { this.post = res}
+
                 );
             
         });

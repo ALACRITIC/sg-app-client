@@ -10,7 +10,11 @@ import {UserService} from "../admin/user.service";
 import {AdminGuard} from "../admin/adminGuard";
 import {FILE_UPLOAD_DIRECTIVES, FileUploader} from "ng2-file-upload/ng2-file-upload";
 import {CommonModule} from "@angular/common";
-
+import {AdminProfessorDepartments} from "../admin/dashboard/professors/departments/departments.component";
+import {ProfessorProfileComponent} from "../frontend/evaluations/professor/professor-profile.component";
+import {FrontClubProfile} from "../frontend/clubs/club-profile.component";
+import {FrontInternshipProfile} from "../frontend/internships/internship-profile.component";
+import {FrontTeamMembersProfile} from "../frontend/team_members/team-members-profile/team-members-profile.component";
 
 @NgModule({
     imports: [CommonModule],
@@ -19,7 +23,17 @@ import {CommonModule} from "@angular/common";
         EvaluationsService, PostsService, ProfessorsService,
         TeamMembersService, UserService, AdminGuard,
     ],
-    declarations: [FILE_UPLOAD_DIRECTIVES],
-    exports: [FILE_UPLOAD_DIRECTIVES]
+    declarations: [FILE_UPLOAD_DIRECTIVES,
+                   AdminProfessorDepartments,
+                   ProfessorProfileComponent,
+                   FrontClubProfile,
+                   FrontTeamMembersProfile
+    ],
+    exports: [FILE_UPLOAD_DIRECTIVES,
+              AdminProfessorDepartments,
+              ProfessorProfileComponent,
+              FrontClubProfile,
+              FrontTeamMembersProfile
+    ]
 })
 export class SharedModule { }

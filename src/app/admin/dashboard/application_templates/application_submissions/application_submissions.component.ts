@@ -1,11 +1,11 @@
 /**
  * Created by hgeorgiev on 8/24/16.
  */
-import {Component, Input} from '@angular/core';
+import {Component, Input,OnChanges,OnInit} from '@angular/core';
 import {ApplicationSubmission} from "../../../../shared/models/application_submission.model";
 import {Listing} from "../../../../shared/listing.model";
 import {ApplicationSubmissionsService} from "../../../../shared/services/application_submissions.service";
-
+import { ActivatedRoute,Router } from '@angular/router';
 @Component({
     selector: 'admin-application-submissions',
     providers: [ApplicationSubmissionsService],
@@ -13,34 +13,38 @@ import {ApplicationSubmissionsService} from "../../../../shared/services/applica
 
 })
 
-export class AdminApplicationSubmissions {
+export class AdminApplicationSubmissions implements OnInit, OnChanges{
     @Input() template_id:number;
+    sub:any;
     listing:Listing<ApplicationSubmission>;
     public currentPage:number = 1;
-
+    public submission:ApplicationSubmission;
 
     constructor(private _service:ApplicationSubmissionsService) {
-        console.log('asd');
         this.listing = new Listing<ApplicationSubmission>();
+        this.submission = new ApplicationSubmission();
     }
 
+
+
     ngOnChanges(changes:any):void {
-        console.log(changes);
         if(changes.template_id.currentValue != undefined) {
             this.template_id = changes.template_id.currentValue;
-            this.loadEvaluations(1, 10);
+            this.loadSubmissions(1, 10);
         }
     }
 
-
     public pageChanged(event:any):void {
-        this.loadEvaluations(event.page, event.itemsPerPage);
+        this.loadSubmissions(event.page, event.itemsPerPage);
     };
 
-
-    private loadEvaluations(page:number, itemsPerPage: number) {
-        this._service.query(page,itemsPerPage, this.template_id ).then(listing => this.listing = listing);
+    private loadSubmissions(page:number, itemsPerPage: number){
+        this._service.query(page,itemsPerPage, this.template_id)
+                     .then(listing => this.listing = listing);
     }
-
-
+    deleteSubmission(submission:ApplicationSubmission) {
+        this._service
+            .deleteSubmission(this.template_id,submission.id)
+            .then(() => this.loadSubmissions(1, 10));
+    }
 }

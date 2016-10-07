@@ -9,14 +9,18 @@ import {HomeNavbar} from "../shared/navbar/navbar.component";
 @Component({
     selector: 'team-members',
     providers: [TeamMembersService],
-    directives: [HomeFooter, HomeNavbar],
     templateUrl: './team_members.template.html'
     
 })
 
 export class FrontTeamMembers implements OnInit{
     listing: Listing<TeamMember>;
+    public currentPage:number = 1;
 
+    public pageChanged(event:any):void {
+        this.loadMembers(event.page, event.itemsPerPage);
+
+    };
 
     constructor(private _service:TeamMembersService) {
 
@@ -24,8 +28,13 @@ export class FrontTeamMembers implements OnInit{
 
     ngOnInit() {
         this.listing = new Listing<TeamMember>();
-        this._service.query(1,999).then(listing => this.listing = listing);//load all
+        this.loadMembers(1, 10);
+    }
+    private loadMembers(page:number, itemsPerPage: number) {
 
+        this._service.query(page,itemsPerPage).then(listing => {this.listing = listing
+
+        });
     }
 
     

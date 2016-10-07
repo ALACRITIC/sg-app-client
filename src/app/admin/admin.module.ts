@@ -25,11 +25,30 @@ import {FILE_UPLOAD_DIRECTIVES, FileUploader} from 'ng2-file-upload/ng2-file-upl
 import { DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 import {AdminNavbar} from "./dashboard/shared/navbar/home-navbar.component";
 import {SharedModule} from "../shared/shared.module";
-
+import {ProfessorFormComponent} from "./dashboard/professors/professor-form/professor-form.component";
+import {AdminProfessorEdit} from "./dashboard/professors/professor-form/professor-form";
+import {AdminClubDetail} from "./dashboard/clubs/club-detail.component";
+import {AdminClubForm} from "./dashboard/clubs/club-form/club-form.component";
+import {AdminProfessorForm} from "./dashboard/professors/professor-form/professor-form";
+import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.component";
+import {AdminInternShipForm} from "./dashboard/internships/internship-form/internship-form.component";
+import {AdminMemberDetail} from "./dashboard/team_members/member-detail.component";
+import {AdminMemberForm} from "./dashboard/team_members/member-form/member-form.component";
+import {AdminApplicationForm} from "./dashboard/application_templates/application-form/application-form.component";
+import {AdminPostForm} from "./dashboard/posts/post-form/post-form.component";
 
 
 @NgModule({
-    imports:[ CommonModule, ReactiveFormsModule, FormsModule ,PaginationModule, CKEditorModule, DropdownModule, routing, SharedModule],
+    imports:[ CommonModule,
+        ReactiveFormsModule,
+        FormsModule,
+        PaginationModule,
+        CKEditorModule,
+        DropdownModule,
+        routing,
+        SharedModule,
+
+    ],
     declarations: [
         Login,
         Admin,
@@ -44,13 +63,18 @@ import {SharedModule} from "../shared/shared.module";
         AdminEvaluations,
         AdminInternships,
         AdminPosts,
-        AdminProfessorDepartments,
         AdminTeamMembers,
         AdminProfessorDetail,
         AdminProfessors,
- 
-
-
+        AdminProfessorForm,
+        AdminClubDetail,
+        AdminClubForm,
+        AdminInternshipDetail,
+        AdminInternShipForm,
+        AdminMemberDetail,
+        AdminMemberForm,
+        AdminApplicationForm,
+        AdminPostForm
     ],
 
 })

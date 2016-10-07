@@ -1,5 +1,13 @@
 <h1>Professors</h1>
 
+<div class="row">
+    <div class="col-md-4">
+        <professor-form  (outputProfessor)="addProfessor($event)"></professor-form>
+    </div>
+</div>
+<br>
+
+
 <professor-departments (filteredDept)="filterDepts($event)"></professor-departments>
  <div class="list-group">
 
@@ -16,8 +24,11 @@
                  {{professor.description}}
              </div>
          </div>
+
      </div>
 
+
  </div>
+
 <pagination [totalItems]="listing.count" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
 
