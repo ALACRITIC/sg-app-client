@@ -36,7 +36,7 @@ import {AdminMemberDetail} from "./dashboard/team_members/member-detail.componen
 import {AdminMemberForm} from "./dashboard/team_members/member-form/member-form.component";
 import {AdminApplicationForm} from "./dashboard/application_templates/application-form/application-form.component";
 import {AdminPostForm} from "./dashboard/posts/post-form/post-form.component";
-
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @NgModule({
     imports:[ CommonModule,
@@ -45,6 +45,7 @@ import {AdminPostForm} from "./dashboard/posts/post-form/post-form.component";
         PaginationModule,
         CKEditorModule,
         DropdownModule,
+        Ng2BootstrapModule,
         routing,
         SharedModule,
 

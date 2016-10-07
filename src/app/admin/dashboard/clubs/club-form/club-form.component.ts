@@ -2,18 +2,15 @@
  * Created by Taulant on 9/29/2016.
  */
 import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input } from '@angular/core';
-
 import { FileUploader, FileItem} from "ng2-file-upload/ng2-file-upload";
 import {Club} from "../../../../shared/models/club.model";
 import {ClubsService} from "../../../../shared/services/clubs.service";
-
 
 @Component({
     selector: 'club-form',
     templateUrl: 'club-form.template.html',
     styleUrls:['../../professors/professor-form/professor-form.component.css'],
     providers:[ClubsService]
-
 })
 export class AdminClubForm implements OnChanges {
     @Input() inputClub:Club;
@@ -23,7 +20,6 @@ export class AdminClubForm implements OnChanges {
     public uploader:FileUploader;
     public hasBaseDropZoneOver:boolean = false;
     public isEditing:boolean;
-
 
     constructor() {
         this.isEditing = false;
@@ -43,14 +39,10 @@ export class AdminClubForm implements OnChanges {
 
     updateClub(){
         if(this.uploader.queue.length !== 0){
-
             var logo:FileItem =this.uploader.queue[0]._file;
-
         }
 
-
         this.club['logo'] = logo;
-
         this.outputClub.emit({
             club:this.club,
             logo:logo

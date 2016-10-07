@@ -8,10 +8,16 @@
                         <div class="col-md-12">
                          <img src="{{club.logo}}" class="img-thumbnail">
                              <div class="form-group">
-                                 <input  class="form-control" [(ngModel)]="club.name" name="name" placeholder="Name" />
+                                 <input  class="form-control"
+                                         [(ngModel)]="club.name"
+                                         name="name"
+                                         placeholder="Name" />
                              </div>
                              <div class="form-group">
-                                 <input  class="form-control" [(ngModel)]="club.president" name="president" placeholder="President" />
+                                 <input  class="form-control"
+                                         [(ngModel)]="club.president"
+                                         name="president"
+                                         placeholder="President" />
                              </div>
                          </div>
                     </div>
@@ -19,7 +25,9 @@
                     <!--if club is on edit mode -->
                     <div *ngIf="club.logo" class="row">
                         <div class="col-md-12">
-                            <button (click)="isChanging = true">Change Document</button>
+                            <button (click)="isChanging = true">
+                                Change Document
+                            </button>
                         </div>
                     </div>
 

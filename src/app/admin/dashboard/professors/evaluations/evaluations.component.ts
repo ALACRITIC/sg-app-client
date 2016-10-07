@@ -4,7 +4,6 @@ import {Evaluation} from "../../../../shared/models/evaluation.model";
 import {Listing} from "../../../../shared/listing.model";
 import {EvaluationsService} from "../../../../shared/services/evaluations.service";
 
-
 @Component({
     selector: 'admin-evaluations',
     encapsulation: ViewEncapsulation.None,
@@ -34,11 +33,11 @@ export class AdminEvaluations implements OnInit{
         this.loadEvaluations(event.page, event.itemsPerPage);
     };
 
-
     private loadEvaluations(page:number, itemsPerPage: number) {
 
         this._service.query(page,itemsPerPage, this.professor_id ).then(listing => this.listing = listing);
     }
+
     deleteEvaluation(evaluation:Evaluation){
         this._service.deleteEvaluation(this.professor_id,evaluation.id)
                 .then(()=> {

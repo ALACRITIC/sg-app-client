@@ -19,7 +19,7 @@ import {AdminProfessorEdit} from "./dashboard/professors/professor-form/professo
 import {AdminClubDetail} from "./dashboard/clubs/club-detail.component";
 import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.component";
 import {AdminMemberDetail} from "./dashboard/team_members/member-detail.component";
-
+import {AdminPostForm} from "./dashboard/posts/post-form/post-form.component";
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
     {
@@ -41,9 +41,8 @@ export const routing: ModuleWithProviders = RouterModule.forChild([
                     {path: 'application_template/:id' , component: AdminApplicationTemplateDetail},
                     {path: 'posts', component: AdminPosts},
                     {path: 'post/:id', component: PostComponent},
-
+                    {path: 'newPost',component: AdminPostForm}
                 ]}
-
         ]
     }
 ]);

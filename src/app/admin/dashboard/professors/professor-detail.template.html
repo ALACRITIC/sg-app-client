@@ -1,26 +1,35 @@
 
 <div class="row"  *ngIf="!isEdited">
     <div class="col-xs-3">
-        <a routerLink="../../professors" class="btn btn-primray ">Back</a>
-
+        <a routerLink="../../professors" class="btn btn-primary ">Back</a>
     </div>
 </div>
-
-
 
 <div class="row">
     <div  *ngIf="!isEdit" class="col-md-4 col-xs-12">
         <professor-profile></professor-profile>
 
         <div class="btn-group">
-        <button (click)="deleteProfessor(professor)" class="btn btn-danger">Delete Professor</button>
-        <button  class="btn btn-warning" (click)="isEdit = true">Edit Professor</button>
+        <button (click)="deleteProfessor(professor)"
+                class="btn btn-danger">
+            Delete Professor
+        </button>
+
+        <button  class="btn btn-warning"
+                 (click)="isEdit = true">
+            Edit Professor
+        </button>
+
         </div>
     </div>
     <div *ngIf="isEdit" class="col-md-4 col-xs-12">
 
-        <professor-form [inputProfessor]="professor" (outputProfessor)="updateProfessor($event)"></professor-form>
-        <a  class="btn btn-primray " (click)="isEdit = false">Cancel</a>
+        <professor-form [inputProfessor]="professor"
+                        (outputProfessor)="updateProfessor($event)">
+
+        </professor-form>
+
+        <a  class="btn btn-primary " (click)="isEdit = false">Cancel</a>
     </div>
 
     <div class="col-md-8 col-xs-12">

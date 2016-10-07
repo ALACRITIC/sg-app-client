@@ -16,7 +16,7 @@ export class AdminInternshipDetail implements OnInit {
     public isEdit:boolean = false;
     sub:any;
 
-    constructor(private _service: InternshipsService,private _router:Router,private _route:ActivatedRoute) {
+    constructor(private _service: InternshipsService,private _route:ActivatedRoute) {
         this.internship = new Internship();
     }
 
@@ -28,5 +28,4 @@ export class AdminInternshipDetail implements OnInit {
     private loadInternship(id:number){
         this._service.get(id).then((res) => this.internship = res);
     }
-
 }

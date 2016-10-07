@@ -1,19 +1,14 @@
 
 import {Component, ViewEncapsulation, OnInit} from '@angular/core';
-
 import {Listing} from "../../../shared/listing.model";
 import {TeamMember} from "../../../shared/models/team_member.model";
 import {TeamMembersService} from "../../../shared/services/team_members.service";
-import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
-
-
 
 @Component({
     template:require('./team_members.template.html'),
     providers: [TeamMembersService],
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./team_members.styles.css']
-
 })
 
 export class AdminTeamMembers implements OnInit{
@@ -28,7 +23,6 @@ export class AdminTeamMembers implements OnInit{
     ngOnInit() {
         this.listing = new Listing<TeamMember>();
         this.loadTeamMembers(1, 10);
-
     }
 
     public pageChanged(event:any):void {
@@ -36,18 +30,15 @@ export class AdminTeamMembers implements OnInit{
     };
 
     private loadTeamMembers(page:number, itemsPerPage: number) {
-
         this._service.query(page,itemsPerPage).then(listing => this.listing = listing);
     }
 
     addMember($event) {
         console.log($event.photo);
-        this._service.addMember($event.member,$event.photo).subscribe((res)=>
-            {
+        this._service.addMember($event.member,$event.photo).subscribe((res) => {
                 this.member = res;
                 this.loadTeamMembers(1, 10);
-            }
-        );
+        });
     }
 
 }

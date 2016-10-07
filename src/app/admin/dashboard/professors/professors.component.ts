@@ -1,10 +1,7 @@
 import {Component, ViewEncapsulation , OnInit} from '@angular/core';
-
 import {Listing} from '../../../shared/listing.model'
 import {Professor} from "../../../shared/models/professor.model";
 import {ProfessorsService} from "../../../shared/services/professors.service";
-import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
-
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -24,7 +21,6 @@ export class AdminProfessors implements OnInit{
     ngOnInit() {
         this.listing = new Listing<Professor>();
         this.loadProfessors(1, 10);
-       
     }
 
     public pageChanged(event:any):void {
@@ -37,13 +33,10 @@ export class AdminProfessors implements OnInit{
 
     addProfessor($event) {
         console.log($event.photo);
-        this._service.addProfessor($event.professor,$event.photo).subscribe((res)=>
-        {this.professor = res;
-            console.log(this.professor);
-           }
-        );
-
+        this._service.addProfessor($event.professor,$event.photo)
+            .subscribe((res) => this.professor = res);
     }
+
     private loadProfessors(page:number, itemsPerPage: number, department?:string) {
         this._service.query(page,itemsPerPage, department).then(listing => this.listing = listing);
     }

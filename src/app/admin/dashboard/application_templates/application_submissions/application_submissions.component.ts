@@ -10,13 +10,12 @@ import { ActivatedRoute,Router } from '@angular/router';
     selector: 'admin-application-submissions',
     providers: [ApplicationSubmissionsService],
     templateUrl: './application_submissions.template.html'
-
 })
 
 export class AdminApplicationSubmissions implements OnInit, OnChanges{
     @Input() template_id:number;
-    sub:any;
     listing:Listing<ApplicationSubmission>;
+
     public currentPage:number = 1;
     public submission:ApplicationSubmission;
 
@@ -24,8 +23,6 @@ export class AdminApplicationSubmissions implements OnInit, OnChanges{
         this.listing = new Listing<ApplicationSubmission>();
         this.submission = new ApplicationSubmission();
     }
-
-
 
     ngOnChanges(changes:any):void {
         if(changes.template_id.currentValue != undefined) {
@@ -42,6 +39,7 @@ export class AdminApplicationSubmissions implements OnInit, OnChanges{
         this._service.query(page,itemsPerPage, this.template_id)
                      .then(listing => this.listing = listing);
     }
+
     deleteSubmission(submission:ApplicationSubmission) {
         this._service
             .deleteSubmission(this.template_id,submission.id)

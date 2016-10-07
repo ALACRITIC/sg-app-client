@@ -4,10 +4,6 @@
  */
 import {Component,  OnInit, OnDestroy} from '@angular/core';
 import {Post} from "../../../shared/models/post.model";
-
-import './ckeditor.loader.ts';
-import { FileUploader, FileItem} from "ng2-file-upload/ng2-file-upload";
-
 import {PostsService} from "../../../shared/services/posts.service";
 import {Router, ActivatedRoute} from "@angular/router";
 
@@ -21,16 +17,11 @@ import {Router, ActivatedRoute} from "@angular/router";
 export class PostComponent implements OnInit, OnDestroy{
     private sub:any;
     public post:Post;
-    public uploader:FileUploader;
     public isEdit:boolean;
-    public hasBaseDropZoneOver:boolean = false;
 
     constructor(private _service:PostsService, private _router:Router, private _route:ActivatedRoute){
         this.post = new Post();
-        this.uploader = new FileUploader({url: 'someurl'});
     }
-
-
 
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
@@ -43,30 +34,17 @@ export class PostComponent implements OnInit, OnDestroy{
     }
 
     ngOnDestroy() {
-
        if(this.sub) {this.sub.unsubscribe() };
     }
 
-
-    onChange() {
-
-    }
-
-    onReady() {
-
-    }
-
-    public fileOverBase(e:any):void {
-        this.hasBaseDropZoneOver = e;
-    }
-
-
     editPost($event) {
-        this._service.edit($event.post, $event.image,$event.imageName,this.post.id).subscribe((res) => {
+        this._service.edit($event.post, $event.image,$event.imageName,this.post.id)
+                     .subscribe((res) => {
             this.post = res;
         });
         this.isEdit = false;
     }
+
     deletePost(post:Post) {
         this._service
             .deletePost(post.id)

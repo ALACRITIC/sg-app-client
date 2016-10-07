@@ -12,7 +12,6 @@ import {AdminApplicationSubmissions} from "./application_submissions/application
     encapsulation: ViewEncapsulation.None,
     providers: [ApplicationTemplatesService],
     directives: [AdminApplicationSubmissions],
-    //styleUrls: ['./application_templates.styles.css'],
     template: require('./application_template-detail.template.html'),
 })
 export class AdminApplicationTemplateDetail implements OnInit, OnDestroy{
@@ -24,7 +23,6 @@ export class AdminApplicationTemplateDetail implements OnInit, OnDestroy{
     }
 
     ngOnInit() {
-
         this.sub = this._route.params.subscribe(params => {
             this.loadApplicationTemplate(params['id'])
         })

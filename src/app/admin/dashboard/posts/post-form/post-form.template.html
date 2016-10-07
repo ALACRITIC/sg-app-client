@@ -1,3 +1,9 @@
+<div class="row"  *ngIf="!isEditing">
+    <div class="col-xs-3">
+        <a routerLink="../posts" class="btn btn-primary ">Back</a>
+
+    </div>
+</div>
 <div class="row">
     <div class="col-md-12">
         <div class="card-deck-wrapper">
@@ -93,7 +99,8 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <button class="btn btn-success" (click)="updatePost()">Save article</button>
+                                    <button class="btn btn-success" *ngIf="isEditing" (click)="updatePost()">Save article</button>
+                                    <button class="btn btn-success" *ngIf="!isEditing" (click)="addPost()">Save article</button>
                                 </div>
                             </div>
                             <!-- post form end -->

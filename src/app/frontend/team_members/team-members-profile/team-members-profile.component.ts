@@ -23,6 +23,7 @@ export class FrontTeamMembersProfile implements OnInit {
             this.loadTeamMember(params['id']);
         });
     }
+
     loadTeamMember(id:number) {
         this._service.get(id).then(member => {this.member = member});
     }

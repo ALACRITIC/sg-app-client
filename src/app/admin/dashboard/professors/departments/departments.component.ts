@@ -1,5 +1,4 @@
 import {Component, ViewEncapsulation, OnInit, Output , EventEmitter} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import {ProfessorsService} from "../../../../shared/services/professors.service";
 
 @Component({
@@ -11,7 +10,7 @@ export class AdminProfessorDepartments implements OnInit{
     departments:Array<String>;
     @Output() filteredDept = new EventEmitter<string>();
 
-    constructor(private _profService:ProfessorsService, private _route:ActivatedRoute) {
+    constructor(private _profService:ProfessorsService) {
        
     }
     ngOnInit() {
