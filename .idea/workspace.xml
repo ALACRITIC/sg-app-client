@@ -2,77 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="912d9b05-0481-4140-8ac3-12807311e8d1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/admin.module.ts" afterPath="$PROJECT_DIR$/src/app/admin/admin.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/admin.routing.ts" afterPath="$PROJECT_DIR$/src/app/admin/admin.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application-form/application-form.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application-form/application-form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application-form/application-form.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application-form/application-form.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_submissions/application_submissions.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_submissions/application_submissions.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_submissions/application_submissions.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_submissions/application_submissions.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_template-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_template-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_template-detail.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_template-detail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_templates.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_templates.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_templates.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application_templates.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/club-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/club-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/club-detail.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/club-detail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/club-form/club-form.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/club-form/club-form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/club-form/club-form.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/club-form/club-form.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/clubs.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/clubs.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/clubs.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/clubs/clubs.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/dashboard.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/dashboard.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/dashboard.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/dashboard.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/internships/internship-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/internships/internship-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/internships/internship-form/internship-form.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/internships/internship-form/internship-form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/internships/internships.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/internships/internships.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/internships/internships.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/internships/internships.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/posts/post-form/post-form.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/posts/post-form/post-form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/posts/post-form/post-form.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/posts/post-form/post-form.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/posts/post.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/posts/post.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/posts/post.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/posts/post.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/posts/posts.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/posts/posts.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/posts/posts.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/posts/posts.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/departments/departments.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/departments/departments.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/departments/departments.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/departments/departments.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/evaluations/evaluations.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/evaluations/evaluations.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/evaluations/evaluations.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/evaluations/evaluations.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professor-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professor-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professor-detail.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professor-detail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professor-form/professor-form.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professor-form/professor-form.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professors.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professors.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professors.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/professors/professors.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/member-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/member-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/member-detail.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/member-detail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/member-form/member-form.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/member-form/member-form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/team_members.component.ts" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/team_members.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/team_members.template.html" afterPath="$PROJECT_DIR$/src/app/admin/dashboard/team_members/team_members.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/applications/application_templates.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/applications/application_templates.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/applications/application_templates.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/applications/application_templates.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/applications/new_application_submission.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/applications/new_application_submission.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/applications/new_application_submission.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/applications/new_application_submission.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/clubs/club-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/clubs/club-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/clubs/club-detail.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/clubs/club-detail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/clubs/club-profile.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/clubs/club-profile.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/clubs/clubs.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/clubs/clubs.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/clubs/clubs.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/clubs/clubs.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/evaluations/evaluations.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/evaluations/evaluations.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/evaluations/evaluations.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/evaluations/evaluations.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-detail.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-detail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-evaluations.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-evaluations.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-evaluations.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-evaluations.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-profile.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-profile.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-profile.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/evaluations/professor/professor-profile.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/internships/internship-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/internships/internship-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/internships/internship-detail.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/internships/internship-detail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/internships/internships.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/internships/internships.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/internships/internships.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/internships/internships.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/posts/post-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/posts/post-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/team_members/team-members-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/team_members/team-members-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/team_members/team-members-detail.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/team_members/team-members-detail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/team_members/team-members-profile/team-members-profile.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/team_members/team-members-profile/team-members-profile.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/team_members/team-members-profile/team-members-profile.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/team_members/team-members-profile/team-members-profile.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/team_members/team_members.component.ts" afterPath="$PROJECT_DIR$/src/app/frontend/team_members/team_members.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/frontend/team_members/team_members.template.html" afterPath="$PROJECT_DIR$/src/app/frontend/team_members/team_members.template.html" />
     </list>
     <ignored path="sg_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -137,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="internship-detail.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="internship-detail.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/admin/dashboard/internships/internship-detail.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -145,6 +76,16 @@
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,18 +120,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application-form.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application-form/application-form.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application-form.component.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application-form/application-form.component.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -212,6 +141,7 @@
         <option value="$PROJECT_DIR$/src/app/admin/admin.module.ts" />
         <option value="$PROJECT_DIR$/src/app/admin/dashboard/application_templates/application-form/application-form.template.html" />
         <option value="$PROJECT_DIR$/src/app/admin/admin.routing.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -620,18 +550,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1475829368215</updated>
-      <workItem from="1475829369499" duration="1103000" />
+      <workItem from="1475829369499" duration="1252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1103000" />
+    <option name="totallyTimeSpent" value="1252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -762,6 +692,14 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
