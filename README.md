@@ -12,8 +12,6 @@
  
 ### Installation
 
-> Clone/Download the repo then edit `app.ts` inside [`/src/app/app.ts`](/src/app/app.ts)
-
 ```bash
   # clone our repo
   # --depth 1 removes all but one .git commit history
