@@ -34,6 +34,7 @@
 go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http://localhost:3000) in your browser
  
 
-
-
+### API Documentation
+This application communicates with a RoR API. You can find the API documentation here:
+[http://sgaubg.herokuapp.com/apipie](http://sgaubg.herokuapp.com/apipie)
  
