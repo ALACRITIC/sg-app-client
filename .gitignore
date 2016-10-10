@@ -53,6 +53,7 @@ node_modules/
 /src/*/dist/
 /dist/**
 .webpack.json
+.tmp/
 
 # Doc #
 /doc/

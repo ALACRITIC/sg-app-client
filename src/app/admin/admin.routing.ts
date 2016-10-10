@@ -13,9 +13,6 @@ import {AdminApplicationTemplates} from "./dashboard/application_templates/appli
 import {AdminApplicationTemplateDetail} from "./dashboard/application_templates/application_template-detail.component";
 import {AdminPosts} from "./dashboard/posts/posts.component";
 import {PostComponent} from "./dashboard/posts/post.component";
-import {ProfessorFormComponent} from "./dashboard/professors/professor-form/professor-form.component";
-import {ProfessorDetailComponent} from "../frontend/evaluations/professor/professor-detail.component";
-import {AdminProfessorEdit} from "./dashboard/professors/professor-form/professor-form";
 import {AdminClubDetail} from "./dashboard/clubs/club-detail.component";
 import {AdminInternshipDetail} from "./dashboard/internships/internship-detail.component";
 import {AdminMemberDetail} from "./dashboard/team_members/member-detail.component";
