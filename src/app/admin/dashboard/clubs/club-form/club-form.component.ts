@@ -9,7 +9,7 @@ import {ClubsService} from "../../../../shared/services/clubs.service";
 @Component({
     selector: 'club-form',
     templateUrl: 'club-form.template.html',
-    styleUrls:['../../professors/professor-form/professor-form.component.css'],
+    styleUrls:['../../shared/styles/styles.css'],
     providers:[ClubsService]
 })
 export class AdminClubForm implements OnChanges {

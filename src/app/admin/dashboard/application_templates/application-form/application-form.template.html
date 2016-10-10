@@ -20,30 +20,16 @@
                             </div>
 
 
-
-                            <!--if application_template is on edit mode -->
                             <div class="row">
-                                <div class="col-md-12">
-                                    <button (click)="isChanging = !isChanging">{{(application_template.document ? 'Change' : 'Add') }} Document</button>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <!--when there is an application_template document and change document button is clicked -->
-                                <!--then the upload drop zone is opened-->
-                                <div *ngIf="isChanging">
-                                    <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
-                                        <div ng2FileDrop
-                                             [ngClass]="{'file-over': hasBaseDropZoneOver}"
-                                             (fileOver)="fileOverBase($event)"
-                                             [uploader]="uploader"
-                                             class="well my-drop-zone">
-                                            Drop the Document here
-                                        </div>
-                                        <input type="file" ng2FileSelect [uploader]="uploader" />
+                                <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
+                                    <div class="fileUpload btn btn-primary">
+                                        <span *ngIf="!isEditing">Upload Document</span>
+                                        <span *ngIf="isEditing">Change Document</span>
+                                        <input type="file" class="upload" ng2FileSelect [uploader]="uploader" />
                                     </div>
+
                                 </div>
-                                <!--end of edit mode-->
 
                                 <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length > 0">
                                     <div *ngFor="let item of uploader.queue">

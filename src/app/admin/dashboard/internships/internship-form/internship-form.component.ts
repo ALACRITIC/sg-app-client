@@ -9,7 +9,7 @@ import {FileItem} from "../../../../../../node_modules/ng2-file-upload/component
 @Component({
     selector: 'internship-form',
     templateUrl: './internship-form.template.html',
-    styleUrls:['./internship-form.component.css'],
+    styleUrls:['../../shared/styles/styles.css'],
 })
 export class AdminInternShipForm implements OnChanges {
     @Input() inputInternship:Internship;

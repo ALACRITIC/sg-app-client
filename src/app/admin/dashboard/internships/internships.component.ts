@@ -39,6 +39,10 @@ export class AdminInternships implements OnInit{
 
         this._service.query(page,itemsPerPage).then(listing => this.listing = listing);
     }
+    selectInternship(internship:Internship){
+        this.selectedInternship = internship;
+        this.isCollapsed = false;
+    }
 
     addInternship($event) {
         if($event.internship.id){
