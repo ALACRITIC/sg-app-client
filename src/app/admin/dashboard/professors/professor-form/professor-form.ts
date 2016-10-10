@@ -9,7 +9,7 @@ import {Professor} from "../../../../shared/models/professor.model";
 @Component({
     selector: 'professor-form',
     templateUrl: './professor-form.template.html',
-    styleUrls:['./professor-form.component.css'],
+    styleUrls:['../../shared/styles/styles.css'],
 
 })
 export class AdminProfessorForm implements OnChanges {
@@ -20,10 +20,12 @@ export class AdminProfessorForm implements OnChanges {
     public uploader:FileUploader;
     public hasBaseDropZoneOver:boolean = false;
 
+
     public isEditing:boolean;
     public isChanging:boolean;
 
     constructor() {
+
         this.isEditing = false;
         this.isChanging = false;
         this.professor = new Professor();

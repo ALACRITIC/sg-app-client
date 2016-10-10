@@ -39,12 +39,6 @@
                                 <!--end of input-->
                             </div>
 
-                            <!--if post is on edit mode -->
-                            <div *ngIf="post.image" class="row">
-                                <div class="col-md-12">
-                                    <button (click)="isChanging = true">Change Image</button>
-                                </div>
-                            </div>
 
                             <div class="row">
                                 <!--post content editor-->
@@ -58,36 +52,15 @@
                                     </ckeditor>
                                 </div>
                             </div>
-                            <!--when there is the post photo and change photo button is clicked -->
-                            <!--then the upload drop zone is opened-->
-                            <div class="row" *ngIf="post.image && isChanging" >
-                                <div class="col-md-6"
-                                     *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
-                                    <div ng2FileDrop
-                                         [ngClass]="{'file-over': hasBaseDropZoneOver}"
-                                         (fileOver)="fileOverBase($event)"
-                                         [uploader]="uploader"
-                                         class="well my-drop-zone">
-                                        Drop a photo here
-                                    </div>
-                                </div>
-                            </div>
-                            <!--end of edit mode-->
 
-                            <!--upload a photo on the new post form-->
-                            <div  class="row" *ngIf="!post.image" >
-                                <div class="col-md-6"
-                                     *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
-                                    <div ng2FileDrop
-                                         [ngClass]="{'file-over': hasBaseDropZoneOver}"
-                                         (fileOver)="fileOverBase($event)"
-                                         [uploader]="uploader"
-                                         class="well my-drop-zone">
-                                        Drop a photo here
-                                    </div>
+                            <div class="col-md-4" *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
+                                <div class="fileUpload btn btn-primary">
+                                    <span *ngIf="!isEditing">Upload image</span>
+                                    <span *ngIf="isEditing">Change image</span>
+                                    <input type="file" class="upload" ng2FileSelect [uploader]="uploader" />
                                 </div>
+
                             </div>
-                            <!--end of uploading drop zone-->
 
                             <div class="col-xs-3"
                                  *ngIf="uploader && uploader.getNotUploadedItems().length > 0">

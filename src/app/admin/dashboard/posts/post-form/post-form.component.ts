@@ -10,7 +10,7 @@ import {PostsService} from "../../../../shared/services/posts.service";
 @Component({
     selector: 'post-form',
     templateUrl: 'post-form.template.html',
-    styleUrls:['./post-form.component.css']
+    styleUrls:['../../shared/styles/styles.css'],
 })
 export class AdminPostForm implements OnChanges {
     @Input() inputPost:Post;

@@ -1,10 +1,14 @@
 h1 Professors
 .row
     .col-md-4
-        professor-form((outputProfessor)="addProfessor($event)")
+        button.btn.btn-primary((click)="isCollapsed = !isCollapsed", type = "button") New Professor
+        div([collapse]='isCollapsed')
+            professor-form((outputProfessor)="addProfessor($event)")
+
+
 professor-departments((filteredDept)="filterDepts($event)")
 .list-group
-    .list-group-item(*ngFor="let professor of listing.collection")
+    a.list-group-item.list-group-item-action(*ngFor="let professor of listing.collection")
         .media(routerLink="../professor/{{professor.id}}")
             a.media-left
                 img.img-circle.media-object.media-img(src="{{professor.photo}}", alt="{{professor.name}}")

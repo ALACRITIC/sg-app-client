@@ -25,46 +25,13 @@
                                 </div>
                             </div>
 
-                            <!--if professor is on edit mode -->
-                            <div *ngIf="professor.photo" class="row">
-                                <div class="col-md-12">
-                                    <button (click)="isChanging = true">Change Photo</button>
-                                </div>
-                            </div>
 
                             <div class="row">
-                                <!--when there is the professor photo and change photo button is clicked -->
-                                <!--then the upload drop zone is opened-->
-                                <div *ngIf="professor.photo && isChanging">
-                                    <div class="col-md-4"
-                                         *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
-                                        <div ng2FileDrop
-                                             [ngClass]="{'file-over': hasBaseDropZoneOver}"
-                                             (fileOver)="fileOverBase($event)"
-                                             [uploader]="uploader"
-                                             class="well my-drop-zone">
-                                            Drop a photo here
-                                        </div>
-                                        <input type="file" ng2FileSelect [uploader]="uploader" />
-                                    </div>
+                                <div class="fileUpload btn btn-primary">
+                                    <span *ngIf="!isEditing">Upload image</span>
+                                    <span *ngIf="isEditing">Change image</span>
+                                    <input type="file" class="upload" ng2FileSelect [uploader]="uploader" />
                                 </div>
-                                <!--end of edit mode-->
-
-                                <!--upload a photo on the new professor form-->
-                                <div *ngIf="!professor.photo">
-                                    <div class="col-md-4"
-                                         *ngIf="uploader && uploader.getNotUploadedItems().length == 0">
-                                        <div ng2FileDrop
-                                             [ngClass]="{'file-over': hasBaseDropZoneOver}"
-                                             (fileOver)="fileOverBase($event)"
-                                             [uploader]="uploader"
-                                             class="well my-drop-zone">
-                                            Drop a photo here
-                                        </div>
-                                    <input type="file" ng2FileSelect [uploader]="uploader" />
-                                    </div>
-                                </div>
-                                <!--end of uploading drop zone-->
 
                                 <div class="col-md-4"
                                      *ngIf="uploader && uploader.getNotUploadedItems().length > 0">
