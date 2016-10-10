@@ -7,7 +7,7 @@ import {ProfessorsService} from "../../../shared/services/professors.service";
     encapsulation: ViewEncapsulation.None,
     providers: [ProfessorsService],
     styleUrls: ['./professors.styles.css'],
-    template: require('./professors.template.html'),
+    template: require('./professors.template.pug')
 })
 export class AdminProfessors implements OnInit{
      listing: Listing<Professor>;

@@ -197,7 +197,12 @@ module.exports = {
       { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
       // Bootstrap 4
-      { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
+      { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
+      // jade pug loader
+      {
+        test: /\.pug$/,
+        loader: 'pug-html-loader'
+      }
     ]
 
   },
