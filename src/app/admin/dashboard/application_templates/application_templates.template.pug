@@ -1,0 +1,14 @@
+h1 Application templates
+.row
+        .col-md-4
+            button.btn.btn-primary((click)='isCollapsed = !isCollapsed', type='button') New Template
+
+            div([collapse]='isCollapsed')
+                application-form((outputApplication)='addApplication($event)')
+.list-group
+        .list-group-item(routerLink='../application_template/{{application.id}}', *ngFor='let application of listing.collection')
+            h3 Application name: {{application.name}}
+
+            p Description: {{application.description}}
+
+pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

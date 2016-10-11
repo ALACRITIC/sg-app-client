@@ -12,7 +12,7 @@ import { CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [ApplicationTemplatesService],
-    templateUrl:'./application_templates.template.html',
+    templateUrl:'./application_templates.template.pug',
 })
 
 export class AdminApplicationTemplates implements OnInit{

@@ -1,0 +1,20 @@
+navbar
+.container
+        .row
+            .col-xs-12
+                h1.display-4 Applications
+
+        new-application-submission([template]='selectedTemplate')
+
+        .row
+            .card-deck-wrapper
+                .card-deck
+                     .card(*ngFor='let application_template of listing.collection')
+                         h3.card-header {{application_template.name}}
+
+                         .card-block
+                             p.card-text {{application_template.description}}
+
+                             a.btn.btn-primary((click)='selectedTemplate = application_template')
+                                | Apply
+footer

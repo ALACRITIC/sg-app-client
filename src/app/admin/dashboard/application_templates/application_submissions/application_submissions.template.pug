@@ -1,0 +1,19 @@
+h2 Submissions
+span.text-lg-center.text-muted(*ngIf='listing.collection && listing.collection.length == 0')
+    | No submissions found.
+.list-group
+    .list-group-item.list-group-item-action([class.active]='submission == selectedSubmission', (click)='selectedSubmission = submission', *ngFor='let submission of listing.collection')
+         figure.figure
+
+             a(href='{{submission.document}}') Document URL
+
+         p.list-group-item-text {{submission.notes}}
+
+         span(*ngIf='submission == selectedSubmission')
+
+                .row
+                  .col-xs-12
+                    button.btn.btn-danger.btn-sm((click)='deleteSubmission(submission)')
+                     | Delete
+span(*ngIf='listing.collection && listing.collection.length > 0')
+    pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

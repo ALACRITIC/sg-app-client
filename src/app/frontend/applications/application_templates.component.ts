@@ -6,7 +6,7 @@ import {ApplicationTemplatesService} from "../../shared/services/application_tem
 
 @Component({
     providers: [ApplicationTemplatesService],
-    templateUrl: './application_templates.template.html',
+    templateUrl: './application_templates.template.pug',
     encapsulation: ViewEncapsulation.Emulated
 })
 

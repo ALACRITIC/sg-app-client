@@ -9,7 +9,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 @Component({
     selector: 'admin-application-submissions',
     providers: [ApplicationSubmissionsService],
-    templateUrl: './application_submissions.template.html'
+    templateUrl: './application_submissions.template.pug'
 })
 
 export class AdminApplicationSubmissions implements OnInit, OnChanges{

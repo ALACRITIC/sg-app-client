@@ -12,7 +12,7 @@ import {AdminApplicationSubmissions} from "./application_submissions/application
     encapsulation: ViewEncapsulation.None,
     providers: [ApplicationTemplatesService],
     directives: [AdminApplicationSubmissions],
-    template: require('./application_template-detail.template.html'),
+    template: require('./application_template-detail.template.pug'),
 })
 export class AdminApplicationTemplateDetail implements OnInit, OnDestroy{
     sub: any;

@@ -9,7 +9,7 @@ import {ApplicationSubmissionsService} from "../../shared/services/application_s
 @Component({
     selector: 'new-application-submission',
     encapsulation: ViewEncapsulation.Emulated,
-    templateUrl: 'new_application_submission.template.html',
+    templateUrl: 'new_application_submission.template.pug',
     providers: [ApplicationSubmissionsService],
     styleUrls: ['new_application_submission.styles.css'],
 })

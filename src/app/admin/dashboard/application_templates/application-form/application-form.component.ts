@@ -7,7 +7,7 @@ import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-u
 
 @Component({
     selector: 'application-form',
-    templateUrl: './application-form.template.html',
+    templateUrl: './application-form.template.pug',
     styleUrls:['../../shared/styles/styles.css'],
 })
 export class AdminApplicationForm implements OnChanges {

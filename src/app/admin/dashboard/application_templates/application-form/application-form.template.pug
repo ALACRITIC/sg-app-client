@@ -1,0 +1,34 @@
+.row
+    .col-md-12
+        .card-deck-wrapper
+            .card-deck
+                .card
+                    .row
+                        .col-md-12
+                            .row
+                                .col-md-12
+                                    .form-group
+                                        input.form-control([(ngModel)]='application_template.name', name='name', placeholder='Name')
+
+                                    .form-group
+                                        input.form-control([(ngModel)]='application_template.description', name='description', placeholder='Description')
+
+                            .row
+                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
+                                     .fileUpload.btn.btn-primary
+                                        span(*ngIf='!isEditing') Upload Document
+
+                                        span(*ngIf='isEditing') Change Document
+
+                                        input.upload(type='file', ng2FileSelect [uploader]='uploader')
+
+                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
+                                     div(*ngFor='let item of uploader.queue')
+                                        | {{item?._file.name}}
+                                        button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
+                                            span.glyphicon.glyphicon-trash
+                                            |  Remove
+                            .row
+                                .col-md-4
+                                    button.btn.btn-success((click)='updateApplication()') Save Application
+

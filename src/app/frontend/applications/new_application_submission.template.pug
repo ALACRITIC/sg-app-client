@@ -1,0 +1,26 @@
+div(*ngIf='template')
+    .row
+        h2.text-muted Selected application
+
+        .col-xs-9
+            h3 {{template.name}}
+
+            p {{template.description}}
+
+        .col-xs-3
+            a(href='{{template.document}}') Download template
+
+    .row
+        .col-xs-3(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
+            .well.my-drop-zone(ng2FileDrop , [ngClass]="{'file-over': hasBaseDropZoneOver}", (fileOver)='fileOverBase($event)', [uploader]='uploader')
+                 | Drop your completed document here
+
+        .col-xs-3(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
+            div(*ngFor='let item of uploader.queue')
+                | {{item?.file?.name}}
+                button.btn.btn-primary-outline.btn-primary((click)='sendSubmission(item)', [disabled]='item.isReady || item.isUploading || item.isSuccess')
+                | Upload
+            | {{uploader.progress}}
+
+            .progress(style='')
+                .progress-bar(role='progressbar', [ngStyle]="{ 'width': uploader.progress + '%' }")
