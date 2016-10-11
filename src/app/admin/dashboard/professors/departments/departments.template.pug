@@ -1,0 +1,8 @@
+.btn-group
+    .btn-group
+        button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            | Select a Department
+
+        .dropdown-menu
+            li(*ngFor='let department of departments')
+              a.dropdown-item((click)='selectItem(department)') {{department}}

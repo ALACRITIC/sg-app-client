@@ -18,4 +18,4 @@ professor-departments((filteredDept)="filterDepts($event)")
                     | {{professor.department}}
                 |                  {{professor.description}}
 
-pagination([totalItems]="listing.count", [(ngModel)]="currentPage", (pagechanged)="pageChanged($event)")
+pagination([totalItems]="listing.count", [(ngModel)]="currentPage", (pageChanged)="pageChanged($event)")

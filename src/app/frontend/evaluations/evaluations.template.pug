@@ -1,0 +1,23 @@
+navbar
+.container
+        h1.display-4 Professor Evaluations
+
+        professor-departments((filteredDept)='filterDepts($event)')
+
+        .row
+            .col-md-12
+                .card-deck-wrapper
+                    .card-deck
+                        .card(*ngFor='let professor of listing.collection')
+                            img.card-img-top.img-thumbnail(src='{{professor.photo}}')
+
+                            .card-block
+                                h4.card-title {{professor.name}}
+
+                                p {{professor.department}}
+
+                                a.btn.btn-primary(routerLink='/professor/{{professor.id}}')
+                                    | Profile
+
+        pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+footer

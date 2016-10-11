@@ -9,7 +9,7 @@ import {EvaluationsService} from "../../../../shared/services/evaluations.servic
     encapsulation: ViewEncapsulation.None,
     providers: [EvaluationsService],
     directives: [PAGINATION_DIRECTIVES],
-    template: require('./evaluations.template.html'),
+    template: require('./evaluations.template.pug'),
 })
 export class AdminEvaluations implements OnInit{
     @Input() professor_id;

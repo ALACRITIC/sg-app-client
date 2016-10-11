@@ -8,7 +8,7 @@ import {Professor} from "../../../../shared/models/professor.model";
 
 @Component({
     selector: 'professor-form',
-    templateUrl: './professor-form.template.html',
+    template: require('./professor-form.template.pug'),
     styleUrls:['../../shared/styles/styles.css'],
 
 })

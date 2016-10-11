@@ -1,0 +1,17 @@
+h2 Evaluations
+
+span.text-lg-center.text-muted(*ngIf='listing.collection && listing.collection.length == 0')
+    | No evaluations found.
+.list-group
+    .list-group-item.list-group-item-action([class.active]='evaluation == selectedEvaluation', (click) = 'selectedEvaluation = evaluation', *ngFor='let evaluation of listing.collection')
+        p.list-group-item-text {{evaluation.content}}
+
+        span(*ngIf='evaluation == selectedEvaluation')
+        hr
+
+        .row
+            .col-xs-12
+                button.btn.btn-danger.btn-sm((click)='deleteEvaluation(evaluation)')
+                | Delete
+span(*ngIf='listing.collection && listing.collection.length > 0')
+    pagination([totalItems]='listing.count', [(ngModel)] = 'currentPage', (pageChanged) = 'pageChanged($event)')

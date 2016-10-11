@@ -1,0 +1,14 @@
+h2 Evaluations
+span.text-lg-center.text-muted(*ngIf='listing.collection && listing.collection.length == 0')
+    | No evaluations found.
+.list-group
+    .list-group-item.list-group-item-action(*ngFor='let evaluation of listing.collection')
+        p.list-group-item-text {{evaluation.content}}
+
+span(*ngIf='listing.collection && listing.collection.length > 0')
+    pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+
+.row
+    .form-group
+        input.form-control([(ngModel)]='evaluation.content', name = 'name', placeholder = 'Name')
+button.btn.btn-success((click)='addEvaluation()') Save Evaluation

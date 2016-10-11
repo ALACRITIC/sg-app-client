@@ -1,0 +1,27 @@
+.row(*ngIf='!isEdited')
+.col-xs-3
+a.btn.btn-success(routerlink="../../posts") Back
+    .row
+        .col-md-6.col-xs-12(*ngIf='!isEdit')
+        .row
+        .col-xs-12
+        .card-deck-wrapper
+        .card-deck
+        .card
+    //    img.card-img-top.img-thumbnail(src="{{post.image}}")
+    //        |
+    //        .card-block
+    //            h4.card-title {{post.title}}
+    //            |                                 {{post.content}}
+    //    |
+    //    .row
+    //        .col-md-6
+    //            .btn-group
+    //                button.btn.btn-danger((click)='deletePost(post)') Delete Post
+    //                |
+    //                button.btn.btn-warning((click)='isEdit = true') Edit Post
+    //.row(*ngif='isEdit')
+    //.col-md-6.col-xs-12
+    //post-form([inputpost]='post', (outputpost)='editPost($event)')
+    //|
+    //a.btn.btn-primary((click)='isEdit = false') Cancel

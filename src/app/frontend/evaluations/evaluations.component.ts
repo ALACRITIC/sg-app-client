@@ -10,7 +10,7 @@ import {ProfessorsService} from "../../shared/services/professors.service";
 @Component({
     selector: 'team-members',
     providers: [ProfessorsService],
-    templateUrl: './evaluations.template.html'
+    template: require('./evaluations.template.pug')
 })
 
 export class FrontProfessors implements OnInit {

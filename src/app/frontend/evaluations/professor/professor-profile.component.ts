@@ -10,7 +10,7 @@ import {ProfessorEvaluationsComponent} from "./professor-evaluations.component";
 
 @Component({
     selector: 'professor-profile',
-    templateUrl: 'professor-profile.template.html',
+    templateUrl: 'professor-profile.template.pug',
     providers:[ProfessorsService],
     directives:[ProfessorEvaluationsComponent]
 })

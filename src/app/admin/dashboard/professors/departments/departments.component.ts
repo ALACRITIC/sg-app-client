@@ -4,7 +4,7 @@ import {ProfessorsService} from "../../../../shared/services/professors.service"
 @Component({
     selector: 'professor-departments',
     encapsulation: ViewEncapsulation.None,
-    template: require('./departments.template.html'),
+    template: require('./departments.template.pug'),
 })
 export class AdminProfessorDepartments implements OnInit{
     departments:Array<String>;

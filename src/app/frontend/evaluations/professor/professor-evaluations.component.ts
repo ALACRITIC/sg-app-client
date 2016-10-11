@@ -11,7 +11,7 @@ import {Evaluation} from "../../../shared/models/evaluation.model";
 
 @Component({
     selector: 'professor-evaluations',
-    templateUrl: 'professor-evaluations.template.html',
+    templateUrl: 'professor-evaluations.template.pug',
     providers:[EvaluationsService],
     directives:[PAGINATION_DIRECTIVES]
 

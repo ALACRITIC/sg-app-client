@@ -7,7 +7,7 @@ import {ProfessorsService} from "../../../shared/services/professors.service";
     encapsulation: ViewEncapsulation.None,
     providers: [ProfessorsService],
     styleUrls: ['./professors.styles.css'],
-    template: require('./professor-detail.template.html'),
+    template: require('./professor-detail.template.pug'),
 })
 export class AdminProfessorDetail implements OnInit, OnDestroy{
     public sub: any;
