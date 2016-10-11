@@ -23,7 +23,7 @@ import {PostsService} from "../../shared/services/posts.service";
 
 
   styleUrls: [ './home.style.css' ],
-  templateUrl: './home.template.html'
+  templateUrl: './home.template.pug'
 })
 export class Home {
   // Set our default values

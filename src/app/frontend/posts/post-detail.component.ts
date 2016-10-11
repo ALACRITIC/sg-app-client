@@ -6,7 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
     selector: 'team-members',
     providers: [PostsService],
-    templateUrl: './post-detail.template.html'
+    templateUrl: './post-detail.template.pug'
 })
 
 export class FrontPostDetail implements OnInit, OnDestroy{

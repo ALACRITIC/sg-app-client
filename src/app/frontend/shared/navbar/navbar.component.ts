@@ -3,7 +3,7 @@ import {NavRoute} from "./navroute.model";
 
 @Component({
     selector: 'navbar',
-    templateUrl: './navbar.template.html',
+    templateUrl: './navbar.template.pug',
     styleUrls:['./navbar.styles.css'],
     encapsulation: ViewEncapsulation.None
 })

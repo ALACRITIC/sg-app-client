@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'team-profile',
-    templateUrl: './team-members-profile.template.html',
+    templateUrl: './team-members-profile.template.pug',
     providers:[TeamMembersService],
 })
 export class FrontTeamMembersProfile implements OnInit {

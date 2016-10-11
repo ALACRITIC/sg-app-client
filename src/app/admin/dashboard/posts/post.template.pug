@@ -19,7 +19,7 @@
                     button.btn.btn-danger((click)='deletePost(post)') Delete Post
 
                     button.btn.btn-warning((click)='isEdit = true') Edit Post
-        .row(*ngIf='isEdit')
+.row(*ngIf='isEdit')
              .col-md-6.col-xs-12
                  post-form([inputPost]='post', (outputPost)='editPost($event)')
                  a.btn.btn-primary((click)='isEdit = false') Cancel

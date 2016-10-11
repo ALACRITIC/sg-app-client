@@ -6,7 +6,7 @@ import {Internship} from "../../shared/models/internship.model";
 @Component({
     selector: 'team-members',
     providers: [InternshipsService],
-    templateUrl: './internships.template.html'
+    templateUrl: './internships.template.pug'
 })
 
 export class FrontInternships implements OnInit{

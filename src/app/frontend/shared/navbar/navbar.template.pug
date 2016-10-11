@@ -1,0 +1,7 @@
+nav.navbar.navbar-static-top.navbar-light.bg-faded
+    .container
+        a.navbar-brand(routerLink='/') AUBG Student Government
+
+        ul.nav.navbar-nav.pull-xs-right
+          li.nav-item(routerLinkActive='active', *ngFor='let route of navbarRoutes')
+            a.nav-link(routerLink='{{route.url}}') {{route.name}}

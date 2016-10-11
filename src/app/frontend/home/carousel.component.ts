@@ -12,7 +12,7 @@ import {Post} from "../../shared/models/post.model";
 @Component({
     selector: 'carousel',
     encapsulation: ViewEncapsulation.Emulated,
-    templateUrl: './carousel.template.html',
+    templateUrl: './carousel.template.pug',
     styleUrls: ['./carousel.styles.css']
 })
 export class Carousel implements OnInit{

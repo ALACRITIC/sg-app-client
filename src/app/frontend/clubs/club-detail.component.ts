@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'club-detail',
-    templateUrl: './club-detail.template.html'
+    templateUrl: './club-detail.template.pug'
 })
 export class FrontClubDetail {
     constructor() {

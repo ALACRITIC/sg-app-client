@@ -1,0 +1,12 @@
+navbar
+.container
+      .row
+        h1 {{post.title}}
+
+      .row
+        .col-md-12(*ngIf='post.image')
+          img.img-fluid(src='{{post.image}}')
+
+      .row
+        .col-md-12([innerHtml]='post.content')
+footer
