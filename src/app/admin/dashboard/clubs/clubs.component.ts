@@ -9,7 +9,7 @@ import {ClassArray} from "../../../../../node_modules/awesome-typescript-loader/
 
 @Component({
     selector: 'clubs',
-    template:require('./clubs.template.html'),
+    template:require('./clubs.template.pug'),
     providers: [ClubsService],
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./clubs.styles.css']
@@ -19,9 +19,11 @@ export class AdminClubs implements OnInit{
     listing: Listing<Club>;
     club:Club;
     public currentPage:number = 1;
+    public isCollapsed:boolean;
 
     constructor(private _service:ClubsService) {
         this.club = new Club();
+        this.isCollapsed = true;
     }
 
     ngOnInit() {

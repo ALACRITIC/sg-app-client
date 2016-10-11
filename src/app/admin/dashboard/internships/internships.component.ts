@@ -10,7 +10,7 @@ import { CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
     encapsulation: ViewEncapsulation.None,
     providers: [InternshipsService],
     styleUrls: ['./internships.styles.css'],
-    template: require('./internships.template.html'),
+    template: require('./internships.template.pug'),
 
 })
 

@@ -6,7 +6,7 @@ import {Post} from "../../../shared/models/post.model";
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [PostsService],
-    template: require('./posts.template.html'),
+    template: require('./posts.template.pug'),
     styleUrls: ['./posts.styles.css']
 })
 export class AdminPosts implements OnInit{

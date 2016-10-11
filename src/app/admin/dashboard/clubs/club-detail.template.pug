@@ -1,0 +1,16 @@
+.row(*ngIf='!isEdited')
+    .col-xs-3
+         a.btn.btn-primary(routerLink='../../clubs') Back
+.row
+    .col-md-4.col-xs-12(*ngIf='!isEdit')
+         club-profile
+
+         .btn-group
+            button.btn.btn-danger((click)='deleteClub()') Delete Club
+
+            button.btn.btn-warning((click)='isEdit = true') Edit Club
+
+    .col-md-4.col-xs-12(*ngIf='isEdit')
+         club-form([inputClub]='club', (outputClub)='updateClub($event)')
+
+         a.btn.btn-primary((click)='isEdit = false') Cancel

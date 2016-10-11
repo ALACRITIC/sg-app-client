@@ -9,7 +9,7 @@ import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
     providers: [PostsService],
-    templateUrl:'post.template.html',
+    templateUrl:'post.template.pug',
     styleUrls: ['post.styles.css']
 })
 

@@ -1,0 +1,18 @@
+.row(*ngIf='!isEdited')
+    .col-xs-3
+        a.btn.btn-primary(routerLink='../../team_members') Back
+.row
+    .col-md-4.col-xs-12(*ngIf='!isEdit')
+        team-profile
+
+        .btn-group
+          button.btn.btn-danger((click)='deleteMember(member)')
+            | Delete Member
+
+          button.btn.btn-warning((click)='isEdit = true')
+            | Edit Member
+
+    .col-md-4.col-xs-12(*ngIf='isEdit')
+        member-form([inputMember]='member', (outputMember)='updateMember($event)')
+
+        a.btn.btn-primary((click)='isEdit = false') Cancel

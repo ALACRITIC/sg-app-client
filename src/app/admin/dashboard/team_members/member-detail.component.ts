@@ -8,7 +8,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
     selector: 'member-detail',
-    templateUrl: './member-detail.template.html',
+    templateUrl: './member-detail.template.pug',
     providers:[TeamMembersService]
 })
 export class AdminMemberDetail implements OnInit,OnDestroy {

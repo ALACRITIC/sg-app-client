@@ -13,7 +13,7 @@ export class AdminProfessors implements OnInit{
      listing: Listing<Professor>;
      professor:Professor;
      public currentPage:number = 1;
-    public isCollapsed:boolean;
+     public isCollapsed:boolean;
 
     constructor(private _service:ProfessorsService) {
      this.professor = new Professor();

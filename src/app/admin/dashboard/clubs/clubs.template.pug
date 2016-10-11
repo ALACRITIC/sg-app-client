@@ -1,0 +1,20 @@
+h1 Clubs
+.row
+    .col-md-4
+        button.btn.btn-primary((click)="isCollapsed = !isCollapsed", type = "button") New Club
+        div([collapse]='isCollapsed')
+            club-form
+
+.list-group
+    a.list-group-item.list-group-item-action(*ngFor='let club of listing.collection')
+        .media(routerLink='../club/{{club.id}}')
+            a.media-left(href='#')
+                img.img-circle.media-object.media-img(src='{{club.logo}}', alt='{{club.name}}')
+
+            .media-body
+                h4.media-heading {{club.name}}
+
+                small.text-muted
+                    | President: {{club.president}}
+pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+

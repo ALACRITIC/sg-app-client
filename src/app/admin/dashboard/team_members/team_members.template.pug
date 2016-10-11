@@ -1,0 +1,21 @@
+h1 Team Members
+.row
+    .col-md-4
+        button.btn.btn-primary((click)="isCollapsed = !isCollapsed", type = "button") New Member
+        div([collapse]='isCollapsed')
+            member-form((outputMember)='addMember($event)')
+
+.list-group
+    .list-group-item(*ngFor='let member of listing.collection')
+        .media(routerLink='../member/{{member.id}}')
+            a.media-left(href='#')
+              img.img-circle.media-object.media-img(src='{{member.photo}}', alt='{{member.name}}')
+
+            .media-body
+              h4.media-heading {{member.name}}
+
+              small.text-muted
+                | {{member.title}}
+                //|  {{member.description}}
+
+pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

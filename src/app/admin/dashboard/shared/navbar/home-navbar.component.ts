@@ -10,7 +10,7 @@ import {UserService} from "../../../user.service";
     encapsulation: ViewEncapsulation.None,
     providers: [UserService],
     selector: 'home-navbar',
-    templateUrl: 'home-navbar.template.html',
+    templateUrl: 'home-navbar.template.pug',
 })
 
 export class AdminNavbar {

@@ -9,7 +9,7 @@ import {Club} from "../../../shared/models/club.model";
 
 @Component({
     selector: 'club-detail',
-    templateUrl: './club-detail.template.html'
+    templateUrl: './club-detail.template.pug'
 })
 export class AdminClubDetail implements OnInit {
     public sub:any;

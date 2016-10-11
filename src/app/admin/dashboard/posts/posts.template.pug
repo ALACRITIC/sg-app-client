@@ -1,0 +1,13 @@
+h1 Post
+.row
+    .col-md-8
+        a.btn.btn-primary(routerLink='../newPost') New Post
+.list-group
+      a.list-group-item.list-group-item-action(*ngFor="let post of listing.collection")
+        .media(routerLink='../post/{{post.id}}')
+          img.img-circle.media-object.media-img(src='{{post.image}}', alt='{{post.title}}')
+          .media-body
+            h4.media-heading {{post.title}}
+            small.text-muted.pull-md-right
+              | {{post.created_at | date}}
+pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

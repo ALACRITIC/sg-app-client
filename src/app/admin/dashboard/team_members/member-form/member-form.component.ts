@@ -9,8 +9,8 @@ import {FileItem} from "../../../../../../node_modules/ng2-file-upload/component
 
 @Component({
     selector: 'member-form',
-    templateUrl: './member-form.template.html',
-    styleUrls:['./team-member.component.css']
+    templateUrl: './member-form.template.pug',
+    styleUrls:['../../shared/styles/styles.css'],
 })
 export class AdminMemberForm implements OnInit,OnChanges {
     @Input() inputMember:TeamMember;

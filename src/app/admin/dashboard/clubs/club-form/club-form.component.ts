@@ -8,7 +8,7 @@ import {ClubsService} from "../../../../shared/services/clubs.service";
 
 @Component({
     selector: 'club-form',
-    templateUrl: 'club-form.template.html',
+    templateUrl: 'club-form.template.pug',
     styleUrls:['../../shared/styles/styles.css'],
     providers:[ClubsService]
 })

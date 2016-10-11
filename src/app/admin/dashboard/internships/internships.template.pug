@@ -1,0 +1,21 @@
+h1 Internships
+.row
+     .col-md-4
+         button.btn.btn-primary((click)='isCollapsed = !isCollapsed', type='button') New Internship
+
+         div([collapse]='isCollapsed')
+            internship-form((outputInternship)='addInternship($event)', (onDelete)='deleteInternship($event)', [inputInternship]='selectedInternship')
+.list-group
+     a.list-group-item.list-group-item-action((click)='selectInternship(internship)', *ngFor='let internship of listing.collection')
+        .media
+            a.media-left
+                img.img-circle.media-object.media-img(src='{{internship.logo}}')
+
+            .media-body
+                small.text-muted
+                    a.btn.btn-primary.pull-md-right(target='_blank', href='{{internship.link}}')
+                        | More Info
+                |  {{internship.description}}
+
+
+pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

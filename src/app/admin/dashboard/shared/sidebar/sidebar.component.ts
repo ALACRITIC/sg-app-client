@@ -7,7 +7,7 @@ import {NavRoute} from "../../../../frontend/shared/navbar/navroute.model";//tod
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'sidebar',
-    templateUrl: 'sidebar.template.html',
+    templateUrl: 'sidebar.template.pug',
     styleUrls: ['sidebar.styles.css'],
 })
 

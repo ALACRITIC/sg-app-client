@@ -8,7 +8,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
     selector: 'internship-detail',
-    templateUrl: 'internship-detail.template.html',
+    templateUrl: 'internship-detail.template.pug',
     providers:[InternshipsService]
 })
 export class AdminInternshipDetail implements OnInit {

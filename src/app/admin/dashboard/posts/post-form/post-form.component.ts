@@ -9,7 +9,7 @@ import {PostsService} from "../../../../shared/services/posts.service";
 
 @Component({
     selector: 'post-form',
-    templateUrl: 'post-form.template.html',
+    templateUrl: 'post-form.template.pug',
     styleUrls:['../../shared/styles/styles.css'],
 })
 export class AdminPostForm implements OnChanges {
