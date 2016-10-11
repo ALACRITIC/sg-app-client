@@ -15,6 +15,7 @@ import {ProfessorProfileComponent} from "../frontend/evaluations/professor/profe
 import {FrontClubProfile} from "../frontend/clubs/club-profile.component";
 import {FrontInternshipProfile} from "../frontend/internships/internship-profile.component";
 import {FrontTeamMembersProfile} from "../frontend/team_members/team-members-profile/team-members-profile.component";
+import {AsyncWaitDirective} from "./directives/asyncWait.directive";
 
 @NgModule({
     imports: [CommonModule],
@@ -27,13 +28,15 @@ import {FrontTeamMembersProfile} from "../frontend/team_members/team-members-pro
                    AdminProfessorDepartments,
                    ProfessorProfileComponent,
                    FrontClubProfile,
-                   FrontTeamMembersProfile
+                   FrontTeamMembersProfile,
+                   AsyncWaitDirective
     ],
     exports: [FILE_UPLOAD_DIRECTIVES,
               AdminProfessorDepartments,
               ProfessorProfileComponent,
               FrontClubProfile,
-              FrontTeamMembersProfile
+              FrontTeamMembersProfile ,
+              AsyncWaitDirective
     ]
 })
 export class SharedModule { }
