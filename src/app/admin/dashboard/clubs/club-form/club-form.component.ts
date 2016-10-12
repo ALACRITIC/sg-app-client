@@ -5,6 +5,7 @@ import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input } fr
 import { FileUploader, FileItem} from "ng2-file-upload/ng2-file-upload";
 import {Club} from "../../../../shared/models/club.model";
 import {ClubsService} from "../../../../shared/services/clubs.service";
+import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
     selector: 'club-form',
@@ -16,15 +17,26 @@ export class AdminClubForm implements OnChanges {
     @Input() inputClub:Club;
     @Output() outputClub = new EventEmitter();
 
+    public form:FormGroup;
+    public name:AbstractControl;
+    public president:AbstractControl;
+
     public club:Club;
     public uploader:FileUploader;
-    public hasBaseDropZoneOver:boolean = false;
     public isEditing:boolean;
 
-    constructor() {
+    constructor(fb:FormBuilder) {
         this.isEditing = false;
         this.club = new Club();
         this.uploader = new FileUploader({url:'someurl'})
+
+        this.form = fb.group({
+            'name': ['', Validators.compose([Validators.required])],
+            'president': ['', Validators.compose([Validators.required])]
+        });
+
+        this.name = this.form.controls['name'];
+        this.president = this.form.controls['president'];
     }
     ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
         if (changes['inputClub'].currentValue != undefined) {
@@ -33,15 +45,10 @@ export class AdminClubForm implements OnChanges {
         }
     }
 
-    public fileOverBase(e:any):void {
-        this.hasBaseDropZoneOver = e;
-    }
-
     updateClub(){
         if(this.uploader.queue.length !== 0){
             var logo:FileItem =this.uploader.queue[0]._file;
         }
-
         this.club['logo'] = logo;
         this.outputClub.emit({
             club:this.club,
@@ -50,5 +57,6 @@ export class AdminClubForm implements OnChanges {
         this.isEditing = false;
         this.club = new Club();
         this.uploader = new FileUploader({url:'someurl'});
+        this.form.reset()
     }
 }

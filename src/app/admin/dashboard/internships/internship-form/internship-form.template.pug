@@ -5,13 +5,22 @@
                 .card
                     .row
                         .col-md-12
-                                    img.card-img-top.img-thumbnail(src='{{internship.logo}}')
+                              img.card-img-top.img-thumbnail(src='{{internship.logo}}')
+                              form([formGroup]='form',(ngSubmit)='onSubmit()')
+                                    .form-group
+                                        label(for='link') Link
+                                            input#link.form-control([formControl]="link",type='text', required , name='link', [(ngModel)]='internship.link')
+                                            .alert.alert-danger(*ngIf='link.errors && (link.dirty || link.touched)')
+                                                div([hidden]='!link.errors.required')
+                                                     | Link is required
+
 
                                     .form-group
-                                        input.form-control([(ngModel)]='internship.link', name='link', placeholder='Link')
-
-                                    .form-group
-                                        input.form-control([(ngModel)]='internship.description', name='description', placeholder='Description')
+                                        label(for='description') Description
+                                            input#description.form-control([formControl]="description",type='text', required , name='description', [(ngModel)]='internship.description')
+                                            .alert.alert-danger(*ngIf='description.errors && (description.dirty || description.touched)')
+                                                div([hidden]='!description.errors.required')
+                                                    | Description is required
 
                                     .row
                                         .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
@@ -31,6 +40,7 @@
                                     .row
                                         .col-md-4
                                             .btn-group
-                                                button.btn.btn-success((click)='updateInternship()') Save Internship
+                                                button.btn.btn-success(*ngIf='!internship.id',(click)='updateInternship()',[disabled]='!form.valid || uploader.queue.length == 0') Save Internship
+                                                button.btn.btn-success(*ngIf='internship.id',(click)='updateInternship()',[disabled]='!form.valid') Save Internship
                                                 button.btn.btn-danger(*ngIf='internship.id', (click)='deleteInternship()') Delete
 

@@ -1,36 +1,39 @@
 .row
-    .col-md-12
-        .card-deck-wrapper
-            .card-deck
-                .card
-                    .row
-                        .col-md-12
-                            img.card-img-top.img-thumbnail(src='{{club.logo}}')
+   .col-md-12
+      .card-deck-wrapper
+         .card-deck
+            .card
+               img.card-img-top.img-thumbnail(src='{{club.logo}}')
+               form([formGroup]='form')
+                 .form-group
+                    label(for='name') Name
+                      input#name.form-control([formControl]="name",type='text', required , name='name', [(ngModel)]='club.name')
+                      .alert.alert-danger(*ngIf='name.errors && (name.dirty || name.touched)')
+                        div([hidden]='!name.errors.required')
+                          | Name is required
 
-                            .row
-                                .col-md-12
-                                    .form-group
-                                        input.form-control([(ngModel)]='club.name', name='name', placeholder='Name')
+                 .form-group
+                    label(for='president') President
+                      input#description.form-control([formControl]="president",type='text', required , name='president', [(ngModel)]='club.president')
+                      .alert.alert-danger(*ngIf='president.errors && (president.dirty || president.touched)')
+                         div([hidden]='!president.errors.required')
+                           | President is required
 
-                                    .form-group
-                                        input.form-control([(ngModel)]='club.president', name='president', placeholder='President')
+                 .row
+                    .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
+                       .fileUpload.btn.btn-primary
+                           span(*ngIf='!isEditing') Upload Logo
+                           span(*ngIf='isEditing') Change Logo
+                           input.upload(type='file', ng2FileSelect [uploader]='uploader')
 
-                            .row
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
-                                    .fileUpload.btn.btn-primary
-                                         span(*ngIf='!isEditing') Upload Logo
-
-                                         span(*ngIf='isEditing') Change Logo
-
-                                         input.upload(type='file', ng2FileSelect [uploader]='uploader')
-
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
-                                    div(*ngFor='let item of uploader.queue')
-                                         | {{item?._file.name}}
-                                         button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
-                                            span.glyphicon.glyphicon-trash
-                                               |  Remove
-                            .row
-                                .col-md-4
-                                    button.btn.btn-success((click)='updateClub()') Save Professor
+                    .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
+                       div(*ngFor='let item of uploader.queue')
+                          | {{item?._file.name}}
+                          button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
+                            span.glyphicon.glyphicon-trash
+                               |  Remove
+                 .row
+                    .col-md-4
+                       button.btn.btn-success(*ngIf='!club.logo',[disabled]='!form.valid || uploader.queue.length == 0',(click)='updateClub()') Save Club
+                       button.btn.btn-success(*ngIf='club.logo', [disabled] = '!form.valid', (click) = 'updateClub()') Save Club
 

@@ -55,7 +55,7 @@ export class AdminApplicationForm implements OnChanges {
         this.uploader = new FileUploader({url:'some url'});
         this.application_template = new ApplicationTemplate();
         this.isEditing = false;
-        this.form.reset()
+        this.form.reset();
     }
 
 }
