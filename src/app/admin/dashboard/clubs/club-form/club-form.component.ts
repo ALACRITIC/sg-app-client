@@ -34,7 +34,6 @@ export class AdminClubForm implements OnChanges {
             'name': ['', Validators.compose([Validators.required])],
             'president': ['', Validators.compose([Validators.required])]
         });
-
         this.name = this.form.controls['name'];
         this.president = this.form.controls['president'];
     }

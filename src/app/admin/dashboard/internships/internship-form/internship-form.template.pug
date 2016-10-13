@@ -1,46 +1,42 @@
 .row
-    .col-md-12
-        .card-deck-wrapper
-            .card-deck
-                .card
-                    .row
-                        .col-md-12
-                              img.card-img-top.img-thumbnail(src='{{internship.logo}}')
-                              form([formGroup]='form',(ngSubmit)='onSubmit()')
-                                    .form-group
-                                        label(for='link') Link
-                                            input#link.form-control([formControl]="link",type='text', required , name='link', [(ngModel)]='internship.link')
-                                            .alert.alert-danger(*ngIf='link.errors && (link.dirty || link.touched)')
-                                                div([hidden]='!link.errors.required')
-                                                     | Link is required
+  .col-md-12
+    .card-deck-wrapper
+      .card-deck
+        .card
+          img.card-img-top.img-thumbnail(src='{{internship.logo}}')
+          form([formGroup]='form',(ngSubmit)='onSubmit()')
+             .form-group
+                label(for='link') Link
+                  input#link.form-control([formControl]="link",type='text', required , name='link', [(ngModel)]='internship.link')
+                  .alert.alert-danger(*ngIf='link.errors && (link.dirty || link.touched)')
+                    div([hidden]='!link.errors.required')
+                       | Link is required
 
+             .form-group
+                label(for='description') Description
+                  input#description.form-control([formControl]="description",type='text', required , name='description', [(ngModel)]='internship.description')
+                  .alert.alert-danger(*ngIf='description.errors && (description.dirty || description.touched)')
+                     div([hidden]='!description.errors.required')
+                        | Description is required
 
-                                    .form-group
-                                        label(for='description') Description
-                                            input#description.form-control([formControl]="description",type='text', required , name='description', [(ngModel)]='internship.description')
-                                            .alert.alert-danger(*ngIf='description.errors && (description.dirty || description.touched)')
-                                                div([hidden]='!description.errors.required')
-                                                    | Description is required
+             .row
+                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
+                  .fileUpload.btn.btn-primary
+                     span(*ngIf='!isEditing') Upload Logo
+                     span(*ngIf='isEditing') Change Logo
+                     input.upload(type='file', ng2FileSelect [uploader]='uploader')
 
-                                    .row
-                                        .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
-                                            .fileUpload.btn.btn-primary
-                                                span(*ngIf='!isEditing') Upload Logo
+                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
+                   div(*ngFor='let item of uploader.queue')
+                      | {{item?._file.name}}
+                      button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
+                        span.glyphicon.glyphicon-trash
+                           |  Remove
 
-                                                span(*ngIf='isEditing') Change Logo
-
-                                                input.upload(type='file', ng2FileSelect [uploader]='uploader')
-
-                                        .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
-                                            div(*ngFor='let item of uploader.queue')
-                                                | {{item?._file.name}}
-                                                button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
-                                                    span.glyphicon.glyphicon-trash
-                                                        |  Remove
-                                    .row
-                                        .col-md-4
-                                            .btn-group
-                                                button.btn.btn-success(*ngIf='!internship.id',(click)='updateInternship()',[disabled]='!form.valid || uploader.queue.length == 0') Save Internship
-                                                button.btn.btn-success(*ngIf='internship.id',(click)='updateInternship()',[disabled]='!form.valid') Save Internship
-                                                button.btn.btn-danger(*ngIf='internship.id', (click)='deleteInternship()') Delete
+             .row
+                .col-md-4
+                  .btn-group
+                    button.btn.btn-success(*ngIf='!internship.id',(click)='updateInternship()',[disabled]='!form.valid || uploader.queue.length == 0') Save Internship
+                    button.btn.btn-success(*ngIf='internship.id',(click)='updateInternship()',[disabled]='!form.valid') Save Internship
+                    button.btn.btn-danger(*ngIf='internship.id', (click)='deleteInternship()') Delete
 

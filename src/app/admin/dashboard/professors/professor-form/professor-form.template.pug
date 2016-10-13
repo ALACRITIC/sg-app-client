@@ -1,36 +1,39 @@
 .row
-    .col-md-12
-        .card-deck-wrapper
-            .card-deck
-                .card
-                    .row
-                        .col-md-12
-                            img.card-img-top.img-thumbnail(src='{{professor.photo}}')
+  .col-md-12
+    .card-deck-wrapper
+      .card-deck
+        .card
+          img.card-img-top.img-thumbnail(src='{{professor.photo}}')
+          form([formGroup]='form')
+             .form-group
+               label(for='name') Name
+                 input#name.form-control([formControl]="name",type='text', required , name='name', [(ngModel)]='professor.name')
+                 .alert.alert-danger(*ngIf='name.errors && (name.dirty || name.touched)')
+                   div([hidden]='!name.errors.required')
+                     | Name is required
 
-                            .row
-                                .col-md-12
-                                    .form-group
-                                        input.form-control([(ngModel)]='professor.name', name='name', placeholder='Name')
+             .form-group
+               label(for='department') Department
+                 input#department.form-control([formControl]="department",type='text', required , name='department', [(ngModel)]='professor.department')
+                 .alert.alert-danger(*ngIf='department.errors && (department.dirty || department.touched)')
+                   div([hidden]='!department.errors.required')
+                     | Department is required
 
-                                    .form-group
-                                        input.form-control([(ngModel)]='professor.department', name='department', placeholder='Department')
+             .row
+               .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
+                 .fileUpload.btn.btn-primary
+                   span(*ngIf='!isEditing') Upload image
+                   span(*ngIf='isEditing') Change image
+                   input.upload(type='file', ng2FileSelect [uploader]='uploader')
 
-                            .row
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
-                                    .fileUpload.btn.btn-primary
-                                        span(*ngIf='!isEditing') Upload image
-
-                                        span(*ngIf='isEditing') Change image
-
-                                        input.upload(type='file', ng2FileSelect [uploader]='uploader')
-
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
-                                     div(*ngFor='let item of uploader.queue')
-                                         | {{item?._file.name}}
-                                         button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
-                                            span.glyphicon.glyphicon-trash
-                                            |  Remove
-                            .row
-                                .col-md-4
-                                    button.btn.btn-success((click)='updateProfessor()') Save Professor
+               .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
+                 div(*ngFor='let item of uploader.queue')
+                   | {{item?._file.name}}
+                   button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
+                     span.glyphicon.glyphicon-trash
+                        |  Remove
+             .row
+               .col-md-4
+                  button.btn.btn-success(*ngIf='!professor.photo',[disabled]='!form.valid || uploader.queue.length == 0',(click)='updateProfessor()') Save Professor
+                  button.btn.btn-success(*ngIf='professor.photo', [disabled] = '!form.valid', (click) = 'updateProfessor()') Save Professor
 
