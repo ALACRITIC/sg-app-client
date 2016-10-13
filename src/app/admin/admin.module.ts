@@ -1,6 +1,6 @@
 import { NgModule }           from '@angular/core';
 import { CommonModule }       from '@angular/common';
-import { FormsModule, ReactiveFormsModule }        from '@angular/forms';
+
 import {AdminApplicationTemplates} from "./dashboard/application_templates/application_templates.component";
 import {AdminApplicationSubmissions} from "./dashboard/application_templates/application_submissions/application_submissions.component";
 import {AdminClubs} from "./dashboard/clubs/clubs.component";
@@ -35,8 +35,6 @@ import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @NgModule({
     imports:[ CommonModule,
-        ReactiveFormsModule,
-        FormsModule,
         PaginationModule,
         CKEditorModule,
         DropdownModule,

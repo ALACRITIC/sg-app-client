@@ -15,6 +15,7 @@ import {ProfessorsService} from "../../shared/services/professors.service";
 
 export class FrontProfessors implements OnInit {
     listing:Listing<Professor>;
+    professor:Professor;
     public currentPage:number = 1;
 
     constructor(private _service:ProfessorsService) {
@@ -23,6 +24,7 @@ export class FrontProfessors implements OnInit {
     ngOnInit() {
         this.listing = new Listing<Professor>();
         this.loadProfessors(1, 10);
+
     };
 
     public pageChanged(event:any):void {
@@ -38,4 +40,5 @@ export class FrontProfessors implements OnInit {
             this.listing = listing
         });
     }
+
 }

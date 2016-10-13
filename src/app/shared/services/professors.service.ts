@@ -1,12 +1,13 @@
 
 import { Injectable, Inject } from '@angular/core';
-import { Http,Headers,Response } from '@angular/http';
+import { Http,Headers,Response,URLSearchParams } from '@angular/http';
 import { Listing } from '../listing.model';
 import {QueryConstructor} from '../queryconstructor';
 
 import {Professor} from "../models/professor.model";
 import {Evaluation} from "../models/evaluation.model";
 import { Observable } from 'rxjs/Rx';
+
 
 
 @Injectable()
@@ -44,6 +45,17 @@ export class ProfessorsService {
             .catch(this.handleError);
     }
 
+    search(name:string){
+        let params = new URLSearchParams();
+        params.set('starts_with', name);
+        return this.http.get(this.professorsUrl + `?`, {search: params})
+                   .toPromise()
+                   .then(res => {
+                       let body = res.json();
+                       let items = body.Items;
+                    return  items;
+               });
+    }
 
     departments() {
         return this.http.get(this.professorsUrl +'/departments')

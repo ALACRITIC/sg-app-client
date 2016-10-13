@@ -15,9 +15,11 @@ import {ProfessorProfileComponent} from "../frontend/evaluations/professor/profe
 import {FrontClubProfile} from "../frontend/clubs/club-profile.component";
 import {FrontInternshipProfile} from "../frontend/internships/internship-profile.component";
 import {FrontTeamMembersProfile} from "../frontend/team_members/team-members-profile/team-members-profile.component";
-
+import {ProfessorSearch} from "../admin/dashboard/professors/professor-search/professor-search.component";
+import { FormsModule, ReactiveFormsModule }        from '@angular/forms';
+import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
 @NgModule({
-    imports: [CommonModule],
+    imports: [CommonModule, ReactiveFormsModule,FormsModule,TypeaheadModule],
     providers: [ ApplicationSubmissionsService,
         ApplicationTemplatesService, ClubsService,
         EvaluationsService, PostsService, ProfessorsService,
@@ -27,13 +29,18 @@ import {FrontTeamMembersProfile} from "../frontend/team_members/team-members-pro
                    AdminProfessorDepartments,
                    ProfessorProfileComponent,
                    FrontClubProfile,
-                   FrontTeamMembersProfile
+                   FrontTeamMembersProfile,
+                   ProfessorSearch
     ],
     exports: [FILE_UPLOAD_DIRECTIVES,
               AdminProfessorDepartments,
               ProfessorProfileComponent,
               FrontClubProfile,
-              FrontTeamMembersProfile
+              FrontTeamMembersProfile,
+              ProfessorSearch,
+              ReactiveFormsModule,
+              FormsModule,
+              TypeaheadModule
     ]
 })
 export class SharedModule { }

@@ -26,6 +26,7 @@ export class ProfessorProfileComponent implements OnInit {
         this.sub = this._route.params.subscribe(params => {
             this.loadProfessor(params['id']);
         });
+
     }
     loadProfessor(id:number) {
         this._profService.get(id).then(professor => {this.professor = professor});
