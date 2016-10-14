@@ -1,9 +1,12 @@
 h1 Clubs
+
 .row
     .col-md-4
         button.btn.btn-primary((click)="isCollapsed = !isCollapsed", type = "button") New Club
         div([collapse]='isCollapsed')
-            club-form
+            club-form((outputClub)='addClub($event)')
+            professor-search((selectedSearchItem)='professorClub($event)')
+
 
 .list-group
     a.list-group-item.list-group-item-action(*ngFor='let club of listing.collection')

@@ -45,7 +45,7 @@ export class ClubsService {
             .then(() => null );
 
     }
-    addClub(club:Club,file:File): Observable{
+    addClub(club:Club,file:File,professor_id:number): Observable{
 
         return Observable.create(observer => {
             let formData: any = new FormData();
@@ -54,8 +54,7 @@ export class ClubsService {
             formData.append("club[logo]",file);
             formData.append("club[name]",club.name);
             formData.append("club[president]",club.president);
-            formData.append("club[professor_id]",club.professor_id);
-
+            formData.append("club[professor_id]",professor_id);
 
             xhr.onreadystatechange = () => {
                 if (xhr.readyState === 4) {

@@ -3,6 +3,7 @@ navbar
         h1.display-4 Professor Evaluations
 
         professor-departments((filteredDept)='filterDepts($event)')
+        professor-search((selectedSearchItem)='goToProfessor($event)')
 
         .row
             .col-md-12

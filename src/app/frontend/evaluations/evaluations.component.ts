@@ -6,6 +6,7 @@ import {Listing} from "../../shared/listing.model";
 import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
 import {Professor} from "../../shared/models/professor.model";
 import {ProfessorsService} from "../../shared/services/professors.service";
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'team-members',
@@ -18,13 +19,12 @@ export class FrontProfessors implements OnInit {
     professor:Professor;
     public currentPage:number = 1;
 
-    constructor(private _service:ProfessorsService) {
+    constructor(private _service:ProfessorsService,private _router:Router) {
     }
 
     ngOnInit() {
         this.listing = new Listing<Professor>();
         this.loadProfessors(1, 10);
-
     };
 
     public pageChanged(event:any):void {
@@ -33,6 +33,9 @@ export class FrontProfessors implements OnInit {
 
     public filterDepts(department:string):void {
         this.loadProfessors(1, 10, department);
+    }
+    goToProfessor($event){
+        this._router.navigate([`professor/${$event.id}`]);
     }
 
     private loadProfessors(page:number, itemsPerPage:number, department?:string) {

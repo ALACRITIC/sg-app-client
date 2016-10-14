@@ -2,7 +2,6 @@
  * Created by hgeorgiev on 8/22/16.
  */
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-
 import {PostsService} from "../../shared/services/posts.service";
 import {Post} from "../../shared/models/post.model";
 
@@ -23,9 +22,9 @@ export class Carousel implements OnInit{
     public constructor(private _post:PostsService) {
 
     }
-    
     ngOnInit() {
         this._post.getFeatured(1,5).then(result => {
+            console.log(this.slides);
             this.slides = result.Items;
         })
     }

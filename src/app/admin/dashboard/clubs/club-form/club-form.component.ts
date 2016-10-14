@@ -48,7 +48,6 @@ export class AdminClubForm implements OnChanges {
         if(this.uploader.queue.length !== 0){
             var logo:FileItem =this.uploader.queue[0]._file;
         }
-        this.club['logo'] = logo;
         this.outputClub.emit({
             club:this.club,
             logo:logo

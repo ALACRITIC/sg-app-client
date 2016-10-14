@@ -47,14 +47,15 @@ export class ProfessorsService {
 
     search(name:string){
         let params = new URLSearchParams();
-        params.set('starts_with', name);
-        return this.http.get(this.professorsUrl + `?`, {search: params})
+            params.set('starts_with', name);
+         return this.http.get(this.professorsUrl + `?`, {search: params})
                    .toPromise()
                    .then(res => {
                        let body = res.json();
                        let items = body.Items;
-                    return  items;
-               });
+                       console.log(items);
+                       return  items;
+                     });
     }
 
     departments() {
@@ -125,7 +126,6 @@ export class ProfessorsService {
                         observer.error(xhr.response);
                     }
                 }
-
             };
 
             xhr.open("PUT", url , true);

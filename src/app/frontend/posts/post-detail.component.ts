@@ -19,15 +19,16 @@ export class FrontPostDetail implements OnInit, OnDestroy{
 
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
-           
-                this._service.get(params['id']).then(res => {
-                        this.post = res
-                });
+           this.getPost(params['id']);
         });
     }
 
     ngOnDestroy() {
         this.sub.unsubscribe()
+    }
+
+    getPost(id:number){
+        this._service.get(id).then(res => this.post = res);
     }
 
 

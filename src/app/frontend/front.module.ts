@@ -44,7 +44,7 @@ import {FrontMemberDetail} from "./team_members/team-members-detail.component";
         HomeFooter,
         FrontClubDetail,
         FrontInternshipDetail,
-        FrontMemberDetail
+        FrontMemberDetail,
         ],
     
 })
