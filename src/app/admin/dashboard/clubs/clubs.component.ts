@@ -45,9 +45,8 @@ export class AdminClubs implements OnInit{
     }
     addClub($event) {
         this._service.addClub($event.club,$event.logo,this.selectedProfessor).subscribe((res)=>{
-
             this.club = res;
-            //console.log(this.club.professor_id);
+            this.loadClubs(1,10);
         });
 
     }

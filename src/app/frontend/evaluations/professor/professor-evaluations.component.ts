@@ -43,6 +43,7 @@ export class ProfessorEvaluationsComponent implements OnInit {
         this._service.query(page,itemsPerPage,this.id).then(listing => this.listing = listing);
     }
     addEvaluation(evaluation:Evaluation){
+        console.log(this.id);
         this._service.addEvaluation(evaluation,this.id).subscribe(res => {
             this.evaluation = res
         });

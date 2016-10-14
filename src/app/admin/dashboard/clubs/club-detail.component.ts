@@ -37,7 +37,9 @@ export class AdminClubDetail implements OnInit {
     }
 
     updateClub($event){
-        this._service.updateClub($event.club,$event.logo,this.club.id).subscribe((res) =>
-        this.club = res);
+        this._service.updateClub($event.club,$event.logo,this.club.id).subscribe((res) =>{
+            this.club = res;
+            this.isEdit = false;
+        });
     }
 }

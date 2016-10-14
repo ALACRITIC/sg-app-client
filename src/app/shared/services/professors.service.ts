@@ -45,9 +45,15 @@ export class ProfessorsService {
             .catch(this.handleError);
     }
 
-    search(name:string){
+    search(name:string,department?:string){
         let params = new URLSearchParams();
+
             params.set('starts_with', name);
+        if(department){
+            params.set('department',department);
+        }
+
+
          return this.http.get(this.professorsUrl + `?`, {search: params})
                    .toPromise()
                    .then(res => {

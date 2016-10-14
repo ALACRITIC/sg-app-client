@@ -1,13 +1,8 @@
-    <!-- Asynchronous results -->
-h4 Asynchronous results
-.row
-  .col-md-6
-    .input-group
-      input.form-control([(ngModel)]='asyncSelected', [typeahead]='dataSource', (typeaheadLoading)='changeTypeaheadLoading($event)', (typeaheadNoResults)='changeTypeaheadNoResults($event)',(typeaheadOnSelect)="typeaheadOnSelect($event)", [typeaheadOptionsLimit]='7', [typeaheadOptionField]="'name'", placeholder='Locations loaded with timeout')
 
-      div(*ngIf='typeaheadLoading===true')
-        i.glyphicon.glyphicon-refresh.ng-hide(style='')
-      div(*ngIf='typeaheadNoResults===true', style='')
-        i.glyphicon.glyphicon-remove
-        |  No Results Found
+
+input.form-control([(ngModel)]='asyncSelected', [typeahead]='dataSource', (typeaheadLoading)='changeTypeaheadLoading($event)', (typeaheadNoResults)='changeTypeaheadNoResults($event)',(typeaheadOnSelect)="typeaheadOnSelect($event)", [typeaheadOptionsLimit]='7', [typeaheadOptionField]="'name'", placeholder='Professor search...')
+
+div(*ngIf='typeaheadLoading===true')
+  i.glyphicon.glyphicon-refresh.ng-hide(style='')
+
 

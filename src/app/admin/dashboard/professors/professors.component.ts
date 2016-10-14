@@ -25,8 +25,6 @@ export class AdminProfessors implements OnInit{
     ngOnInit() {
         this.listing = new Listing<Professor>();
         this.loadProfessors(1, 10);
-
-
     }
 
     public pageChanged(event:any):void {

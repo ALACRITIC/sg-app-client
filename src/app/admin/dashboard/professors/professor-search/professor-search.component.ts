@@ -27,13 +27,15 @@ export class ProfessorSearch  {
 
     public changeTypeaheadLoading(e:boolean):void {
         this.typeaheadLoading = e;
+        console.log('typeahead loading',e);
     }
 
     public changeTypeaheadNoResults(e:boolean):void {
         this.typeaheadNoResults = e;
+        console.log(e);
     }
     public typeaheadOnSelect(e:TypeaheadMatch):void {
-        this.selectedSearchItem.emit(e.item.id);
-        //console.log('Selected value: ', e.item.id);
+        this.selectedSearchItem.emit(e.item);
+        console.log('Selected value: ', e.value);
     }
 }
