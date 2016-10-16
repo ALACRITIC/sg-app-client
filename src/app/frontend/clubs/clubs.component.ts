@@ -6,7 +6,7 @@ import {ClubsService} from "../../shared/services/clubs.service";
 @Component({
     selector: 'clubs',
     providers: [ClubsService],
-    templateUrl: './clubs.template.html',
+    templateUrl: './clubs.template.pug',
     styleUrls: ['./clubs.styles.css'],
     encapsulation: ViewEncapsulation.Emulated
 

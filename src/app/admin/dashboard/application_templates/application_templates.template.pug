@@ -6,7 +6,7 @@ h1 Application templates
             div([collapse]='isCollapsed')
                 application-form((outputApplication)='addApplication($event)')
 .list-group
-        .list-group-item(routerLink='../application_template/{{application.id}}', *ngFor='let application of listing.collection')
+        a.list-group-item.list-group-item-action(routerLink='../application_template/{{application.id}}', *ngFor='let application of listing.collection')
             h3 Application name: {{application.name}}
 
             p Description: {{application.description}}

@@ -4,6 +4,7 @@
 import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input,Inject } from '@angular/core';
 import {ApplicationTemplate} from "../../../../shared/models/application_template.model";
 import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
+import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
     selector: 'application-form',
@@ -14,19 +15,26 @@ export class AdminApplicationForm implements OnChanges {
     @Input() inputApplication:ApplicationTemplate;
     @Output() outputApplication = new EventEmitter();
 
+    public form:FormGroup;
+    public name:AbstractControl;
+    public description:AbstractControl;
+
     public uploader:FileUploader;
-    public hasBaseDropZoneOver:boolean = false;
-
-    public isChanging:boolean;
     public isEditing:boolean;
-
     public application_template:ApplicationTemplate;
 
-     constructor() {
-         this.isChanging = false;
+     constructor(fb:FormBuilder) {
          this.isEditing = false;
          this.application_template = new ApplicationTemplate();
          this.uploader = new FileUploader({url:'some url'});
+
+         this.form = fb.group({
+             'name': ['', Validators.compose([Validators.required])],
+             'description': ['', Validators.compose([Validators.required])]
+         });
+
+         this.name = this.form.controls['name'];
+         this.description = this.form.controls['description'];
 
     }
     ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
@@ -35,23 +43,19 @@ export class AdminApplicationForm implements OnChanges {
             this.application_template = changes['inputApplication'].currentValue;
         }
     }
-    public fileOverBase(e:any):void {
-        this.hasBaseDropZoneOver = e;
-    }
 
-    updateApplication(){
+    onSubmit() {
         if(this.uploader.queue.length !== 0){
             var document:FileItem =this.uploader.queue[0]._file;
         }
-
         this.outputApplication.emit({
             application:this.application_template,
             document:document
         });
-
         this.uploader = new FileUploader({url:'some url'});
         this.application_template = new ApplicationTemplate();
         this.isEditing = false;
+        this.form.reset();
     }
 
 }

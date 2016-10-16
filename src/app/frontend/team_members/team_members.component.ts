@@ -6,7 +6,7 @@ import {Listing} from "../../shared/listing.model";
 @Component({
     selector: 'team-members',
     providers: [TeamMembersService],
-    templateUrl: './team_members.template.html'
+    templateUrl: './team_members.template.pug'
 })
 
 export class FrontTeamMembers implements OnInit{

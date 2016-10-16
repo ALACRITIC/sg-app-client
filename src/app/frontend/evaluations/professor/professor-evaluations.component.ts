@@ -23,6 +23,7 @@ export class ProfessorEvaluationsComponent implements OnInit {
     sub:any;
     public id:number;
 
+
     constructor(private _service:EvaluationsService,private _route:ActivatedRoute) {
         this.listing = new Listing<Evaluation>();
         this.evaluation = new Evaluation();
@@ -41,5 +42,10 @@ export class ProfessorEvaluationsComponent implements OnInit {
     private loadEvaluations(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage,this.id).then(listing => this.listing = listing);
     }
-
+    addEvaluation(evaluation:Evaluation){
+        console.log(this.id);
+        this._service.addEvaluation(evaluation,this.id).subscribe(res => {
+            this.evaluation = res
+        });
+    }
 }

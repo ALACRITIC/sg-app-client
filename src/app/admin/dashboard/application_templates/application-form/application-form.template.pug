@@ -1,34 +1,40 @@
 .row
-    .col-md-12
-        .card-deck-wrapper
-            .card-deck
-                .card
-                    .row
-                        .col-md-12
-                            .row
-                                .col-md-12
-                                    .form-group
-                                        input.form-control([(ngModel)]='application_template.name', name='name', placeholder='Name')
+  .col-md-12
+    .card-deck-wrapper
+       .card-deck
+         .card
+               form([formGroup]='form' , (ngSubmit)='onSubmit()')
+                  .form-group
+                     label(for='name') Name
+                       input#name.form-control([formControl]="name",type='text', required , name='name', [(ngModel)]='application_template.name')
+                       .alert.alert-danger(*ngIf='name.errors && (name.dirty || name.touched)')
+                         div([hidden]='!name.errors.required')
+                           | Name is required
 
-                                    .form-group
-                                        input.form-control([(ngModel)]='application_template.description', name='description', placeholder='Description')
+                  .form-group
+                     label(for='description') Description
+                       input#description.form-control([formControl]="description",type='text', required , name='description', [(ngModel)]='application_template.description')
+                       .alert.alert-danger(*ngIf='description.errors && (description.dirty || description.touched)')
+                          div([hidden]='!description.errors.required')
+                             | Description is required
 
-                            .row
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
-                                     .fileUpload.btn.btn-primary
-                                        span(*ngIf='!isEditing') Upload Document
+                  .row
+                     .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
+                       .fileUpload.btn.btn-primary
+                          span(*ngIf='!isEditing') Upload Document
 
-                                        span(*ngIf='isEditing') Change Document
+                          span(*ngIf='isEditing') Change Document
 
-                                        input.upload(type='file', ng2FileSelect [uploader]='uploader')
+                          input.upload(type='file', ng2FileSelect [uploader]='uploader')
 
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
-                                     div(*ngFor='let item of uploader.queue')
-                                        | {{item?._file.name}}
-                                        button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
-                                            span.glyphicon.glyphicon-trash
-                                            |  Remove
-                            .row
-                                .col-md-4
-                                    button.btn.btn-success((click)='updateApplication()') Save Application
 
+                     .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
+                        div(*ngFor='let item of uploader.queue')
+                          | {{item?._file.name}}
+                          button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
+                            span.glyphicon.glyphicon-trash
+                               |  Remove
+                  .row
+                     .col-md-4
+                       button.btn.btn-success(type='submit',*ngIf='!application_template.document',[disabled]='!form.valid || uploader.queue.length == 0') Save Application
+                       button.btn.btn-success(type='submit',*ngIf='application_template.document',[disabled]='!form.valid') Save Application

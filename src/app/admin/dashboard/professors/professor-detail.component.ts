@@ -22,6 +22,7 @@ export class AdminProfessorDetail implements OnInit, OnDestroy{
         this.sub = this._route.params.subscribe(params => {
             this.loadProfessor(params['id'])
         });
+
     }
 
     deleteProfessor(professor:Professor) {

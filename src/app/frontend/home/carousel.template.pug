@@ -1,0 +1,9 @@
+carousel([interval]='myInterval', [noWrap]='noWrapSlides')
+    slide(*ngFor='let post of slides; let index=index', [active]='post.active')
+        img([src]='post.image', style='margin:auto;')
+
+        .carousel-caption
+          h4 {{post.title}}
+
+          p {{post.created_at}}
+            | taulant disha

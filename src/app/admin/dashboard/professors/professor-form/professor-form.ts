@@ -5,6 +5,8 @@
 import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input } from '@angular/core';
 import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
 import {Professor} from "../../../../shared/models/professor.model";
+import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+
 
 @Component({
     selector: 'professor-form',
@@ -16,20 +18,25 @@ export class AdminProfessorForm implements OnChanges {
     @Input() inputProfessor:Professor;
     @Output() outputProfessor = new EventEmitter();
 
+    public form:FormGroup;
+    public name:AbstractControl;
+    public department:AbstractControl;
+
     public professor:Professor;
     public uploader:FileUploader;
-    public hasBaseDropZoneOver:boolean = false;
-
-
     public isEditing:boolean;
-    public isChanging:boolean;
 
-    constructor() {
-
+    constructor(fb:FormBuilder) {
         this.isEditing = false;
-        this.isChanging = false;
         this.professor = new Professor();
-        this.uploader = new FileUploader({url:'someurl'})
+        this.uploader = new FileUploader({url:'someurl'});
+
+        this.form = fb.group({
+            'name': ['', Validators.compose([Validators.required])],
+            'department': ['', Validators.compose([Validators.required])]
+        });
+        this.name = this.form.controls['name'];
+        this.department = this.form.controls['department'];
     }
 
     ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
@@ -39,23 +46,18 @@ export class AdminProfessorForm implements OnChanges {
         }
     }
 
-    public fileOverBase(e:any):void {
-        this.hasBaseDropZoneOver = e;
-    }
-
     updateProfessor(){
 
         if(this.uploader.queue.length !== 0){
             var photo:FileItem =this.uploader.queue[0]._file;
         }
-        console.log(this.uploader.queue[0]);
-        //todo
         this.outputProfessor.emit({
             professor:this.professor,
             photo:photo});
         this.professor = new Professor();
         this.uploader = new FileUploader({url:'someurl'});
         this.isEditing = false;
+        this.form.reset();
     }
 
 }

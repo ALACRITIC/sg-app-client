@@ -18,6 +18,7 @@ import {ClassArray} from "../../../../../node_modules/awesome-typescript-loader/
 export class AdminClubs implements OnInit{
     listing: Listing<Club>;
     club:Club;
+    public selectedProfessor:number;
     public currentPage:number = 1;
     public isCollapsed:boolean;
 
@@ -38,9 +39,16 @@ export class AdminClubs implements OnInit{
     private loadClubs(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage).then(listing => this.listing = listing);
     }
+    professorClub($event){
+        this.selectedProfessor = $event;
+        console.log(typeof $event);
+    }
     addClub($event) {
-        this._service.addProfessor($event.club,$event.logo).subscribe((res)=>
-            this.club = res);
+        this._service.addClub($event.club,$event.logo,this.selectedProfessor).subscribe((res)=>{
+            this.club = res;
+            this.loadClubs(1,10);
+        });
+
     }
 
 

@@ -1,0 +1,25 @@
+navbar
+.container
+      .row
+        .col-xs-12
+          h1.display-4 Team members
+
+      .row
+        .card-deck-wrapper
+          .card-deck
+            .card(*ngFor='let member of listing.collection')
+              img.card-img-top(src='{{member.photo}}', alt='{{member.name}}')
+
+              .card-block
+                h4.card-title {{member.name}}
+
+                p.card-text
+                  small.text-muted {{member.title}}
+
+                p.card-text {{member.description}}
+
+                a.btn.btn-primary(routerLink='/member/{{member.id}}')
+                  | Profile
+
+pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+home-footer

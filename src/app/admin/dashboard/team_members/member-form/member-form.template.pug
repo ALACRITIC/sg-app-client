@@ -1,39 +1,48 @@
 .row
-    .col-md-12
-        .card-deck-wrapper
-            .card-deck
-                .card
-                    .row
-                        .col-md-12
-                            img.card-img-top.img-thumbnail(src='{{member.photo}}')
+  .col-md-12
+    .card-deck-wrapper
+      .card-deck
+        .card
+          img.card-img-top.img-thumbnail(src='{{member.photo}}')
+          form([formGroup]='form')
+             .form-group
+               label(for='name') Name
+                input#name.form-control([formControl]="name",type='text', required , name='name', [(ngModel)]='member.name')
+                .alert.alert-danger(*ngIf='name.errors && (name.dirty || name.touched)')
+                  div([hidden]='!name.errors.required')
+                    | Name is required
 
-                            .row
-                                .col-md-12
-                                    .form-group
-                                        input.form-control([(ngModel)]='member.name', name='name', placeholder='Name')
+             .form-group
+               label(for='title') Title
+                 input#title.form-control([formControl]="title",type='text', required , name='title', [(ngModel)]='member.title')
+                 .alert.alert-danger(*ngIf='title.errors && (title.dirty || title.touched)')
+                   div([hidden]='!title.errors.required')
+                     | Title is required
 
-                                    .form-group
-                                        input.form-control([(ngModel)]='member.title', name='title', placeholder='title')
+             .form-group
+               label(for='description') Description
+                 input#description.form-control([formControl]="description",type='text', required , name='description', [(ngModel)]='member.description')
+                 .alert.alert-danger(*ngIf='description.errors && (description.dirty || description.touched)')
+                   div([hidden]='!description.errors.required')
+                     | Description is required
 
-                                    .form-group
-                                        input.form-control([(ngModel)]='member.description', name = 'description', placeholder = 'Description')
+             .row
+                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
+                  .fileUpload.btn.btn-primary
+                     span(*ngIf='!isEditing') Upload image
 
-                            .row
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
-                                    .fileUpload.btn.btn-primary
-                                        span(*ngIf='!isEditing') Upload image
+                     span(*ngIf='isEditing') Change image
 
-                                        span(*ngIf='isEditing') Change image
+                     input.upload(type='file', ng2FileSelect [uploader]='uploader')
 
-                                        input.upload(type='file', ng2FileSelect [uploader]='uploader')
-
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
-                                    div(*ngFor='let item of uploader.queue')
-                                        | {{item?._file.name}}
-                                        button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
-                                            span.glyphicon.glyphicon-trash
-                                            |  Remove
-                            .row
-                                .col-md-4
-                                    button.btn.btn-success((click)='updateMember()') Save Member
+                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
+                    div(*ngFor='let item of uploader.queue')
+                        | {{item?._file.name}}
+                        button.btn.btn-danger.btn-xs(type='button', (click)='item.remove()')
+                            span.glyphicon.glyphicon-trash
+                            |  Remove
+             .row
+                 .col-md-4
+                     button.btn.btn-success(*ngIf='!member.photo',[disabled]='!form.valid || uploader.queue.length == 0',(click)='updateMember()') Save Member
+                     button.btn.btn-success(*ngIf='member.photo', [disabled] = '!form.valid', (click) = 'updateMember()') Save Member
 

@@ -1,48 +1,45 @@
 .row(*ngIf='!isEditing')
-    .col-xs-3
-        a.btn.btn-primary(routerLink='../posts') Back
+  .col-xs-3
+    a.btn.btn-primary(routerLink='../posts') Back
 .row
-    .col-md-12
-        .card-deck-wrapper
-            .card-deck
-                .card
-                    .row
-                        .col-md-12
-                            .row
-                                .col-md-4
-                                     .form-group
-                                         img.img-thumbnail(src='{{post.logo}}')
+  .col-md-12
+    .card-deck-wrapper
+      .card-deck
+        .card
+          img.img-thumbnail(src='{{post.logo}}')
+          form([formGroup]='form')
+             .form-group
+               label(for='title') Title
+                 input#title.form-control([formControl]="title",type='text', required , name='title', [(ngModel)]='post.title')
+                 .alert.alert-danger(*ngIf='title.errors && (title.dirty || title.touched)')
+                   div([hidden]='!title.errors.required')
+                     | Title is required
 
-                                         input.form-control([(ngModel)]='post.title', name='title', placeholder='Title')
+             .form-group
+               label(for='featured') Article is featured?
+                 input#featured.form-control([formControl]="featured",type='checkbox',name='featured' [(ngModel)]='post.featured')
 
-                                     .form-group
-                                         | Article is featured?
-                                         input(type='checkbox', [(ngModel)]='post.featured')
+             .form-group
+               label(for='styles') Styles
+                 input#styles.form-control([formControl]="styles",type='text', required , name='styles', [(ngModel)]='post.styles')
+                 .alert.alert-danger(*ngIf='styles.errors && (styles.dirty || styles.touched)')
+                   div([hidden]='!styles.errors.required')
+                     | Styles are required
 
-                                     .form-group
-                                         | Article styles
-                                         input.form-control([(ngModel)]='post.styles', name='styles', placeholder='Styles')
+          .row
+            .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
+              .fileUpload.btn.btn-primary
+                span(*ngIf='!isEditing') Upload image
+                span(*ngIf='isEditing') Change image
+                input.upload(type='file', ng2FileSelect, [uploader]='uploader')
 
+            .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
+               div(*ngFor='let item of uploader.queue')
+                 | {{item?.file?.name}} {{item?._file}}
 
+          ckeditor([(ngModel)]='post.content', [config] = "{uiColor: '#FFFFFF'}", (change) = 'onChange($event)', (ready) = 'onReady($event)', debounce = '500')
 
-                                .col-md-8
-                                         ckeditor([(ngModel)]='post.content', [config]="{uiColor: '#FFFFFF'}", (change)='onChange($event)', (ready)='onReady($event)', debounce='500')
-                            .row
-
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length == 0')
-                                    .fileUpload.btn.btn-primary
-                                        span(*ngIf='!isEditing') Upload image
-
-                                        span(*ngIf='isEditing') Change image
-
-                                        input.upload(type='file', ng2FileSelect, [uploader]='uploader')
-
-                                .col-md-4(*ngIf='uploader && uploader.getNotUploadedItems().length > 0')
-                                    div(*ngFor='let item of uploader.queue')
-                                         | {{item?.file?.name}} {{item?._file}}
-
-                            .row
-                                .col-md-4
-                                    button.btn.btn-success(*ngIf='isEditing', (click)='updatePost()') Save article
-
-                                    button.btn.btn-success(*ngIf='!isEditing', (click)='addPost()') Save article
+          .row
+            .col-md-4
+               button.btn.btn-success(*ngIf='isEditing', [disabled] = '!form.valid', (click)='updatePost()') Save article
+               button.btn.btn-success(*ngIf='!isEditing',[disabled]='!form.valid || !post.content || uploader.queue.length == 0', (click)='addPost()') Save article

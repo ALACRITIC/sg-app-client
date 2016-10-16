@@ -6,7 +6,7 @@ h1 Team Members
             member-form((outputMember)='addMember($event)')
 
 .list-group
-    .list-group-item(*ngFor='let member of listing.collection')
+    a.list-group-item.list-group-item-action(*ngFor='let member of listing.collection')
         .media(routerLink='../member/{{member.id}}')
             a.media-left(href='#')
               img.img-circle.media-object.media-img(src='{{member.photo}}', alt='{{member.name}}')

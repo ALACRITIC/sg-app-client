@@ -8,7 +8,7 @@ import {Post} from "../../shared/models/post.model";
 
 @Component({
     selector: 'front-news',
-    templateUrl: './news.template.html',
+    templateUrl: './news.template.pug',
     styleUrls: ['./news.styles.css'],
     encapsulation: ViewEncapsulation.Emulated
 })

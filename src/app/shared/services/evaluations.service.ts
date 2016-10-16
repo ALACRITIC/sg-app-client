@@ -39,12 +39,12 @@ export class EvaluationsService {
 
     }
     addEvaluation(evaluation:Evaluation,professor_id:number){
-        let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
+        let headers = new Headers({'Content-Type': 'application/json'});
         let body = JSON.stringify(evaluation);
         let options = new RequestOptions({ headers: headers });
 
         return this.http.post(this.api + `/professors/${professor_id}/evaluations`, body, options)
-            .map((res: Response) => res.json());
+            .map((res: Response) => console.log(res.json()));
 
     }
 

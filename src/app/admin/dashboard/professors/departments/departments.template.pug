@@ -1,8 +1,14 @@
-.btn-group
-    .btn-group
+.row
+  .col-lg-6
+    .input-group
+      .input-group-btn
         button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
             | Select a Department
 
         .dropdown-menu
             li(*ngFor='let department of departments')
               a.dropdown-item((click)='selectItem(department)') {{department}}
+      input.form-control([(ngModel)]='asyncSelected', [typeahead]='dataSource', (typeaheadLoading)='changeTypeaheadLoading($event)', (typeaheadNoResults)='changeTypeaheadNoResults($event)',(typeaheadOnSelect)="typeaheadOnSelect($event)", [typeaheadOptionsLimit]='7', [typeaheadOptionField]="'name'", placeholder='Departments search...')
+
+      div(*ngIf='typeaheadLoading===true')
+        i.glyphicon.glyphicon-refresh.ng-hide(style='')
