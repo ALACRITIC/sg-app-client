@@ -1,24 +1,53 @@
-//colors
-$black_20: rgba(0,0,0,0.2);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 
 .profile {
-	padding: 10px;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 4px 8px 0 $black_20;
-	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	background-color: #FFFFFF;
+	margin: 20px;
+	padding-top: 10px;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 	border-radius: 5px;
 	&:hover {
-		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-		box-shadow: 0 8px 16px 0 $black_20;
+		box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
 	}
 }
+
 img {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 	border-radius: 5px 5px 0 0;
 	height: auto;
 	display: block;
-	margin: auto;
-	max-width: 100%;
+	max-width: 160px;
+}
+
+.dept-sidebar {
+	background-color: #0D335F;
+}
+
+.professor-header {
+	background-color: #E1DFE0;
+	padding: 10px 0;
+}
+
+.row-centered,.col-centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.header-name {
+	text-align: center;
+	font-family: "Lato";
+	font-weight: 300;
+	color:black;
+	font-size:52px;
+	line-height: 57px;
+}
+.professors{
+	background-color:#9C9E9D;
+
+}
+.professor-search{
+	display: block;
+	float:right;
+
 }

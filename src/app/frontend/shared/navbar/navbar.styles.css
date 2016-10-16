@@ -1,10 +1,9 @@
 nav{
-    height: 80px;
     background-color:#05162E;
 }
 a.navbar-brand{
     color:white;
 }
 a.nav-link{
-    color:white;
+    color:red;
 }

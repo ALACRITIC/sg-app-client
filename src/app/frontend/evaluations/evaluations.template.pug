@@ -1,20 +1,29 @@
 navbar
-.container
-     .row
-
-        .col-sm-3.profile(*ngFor='let professor of listing.collection')
-              img.card-img(src='{{professor.photo}}')
-
-              h4.card-title {{professor.name}}
-              p.card-text
-                | {{professor.department}}
-              p.card-text
-                small.text-muted Last updated 3 mins ago
-
-              //a.btn.btn-primary(routerLink='/professor/{{professor.id}}')
-              //     | Profile
+.container-fluid
+    .row
+       .col-xs-12.col-md-12.professor-header
+         .row
+           .col-md-4
+               h4.header-name PROFESSORS
+           .col-sm-8.col-md-8.col-md-push-5.professor-search
+               //professor-departments((filteredDept)="filterDepts($event)")
+               professor-search((selectedSearchItem)='goToProfessor($event)')
 
 
-     pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
-footer
+    .row.professors
+       .col-md-2.dept-sidebar
+           .row
+             .col-md-12.departments
+       .col-md-9.row-centered
+             .row
+              .col-xs-3.col-md-2.col-centered.profile(*ngFor='let professor of listing.collection',routerLink='/professor/{{professor.id}}')
+
+                img(src='{{professor.photo}}')
+                h5.card-title {{professor.name}}
+                p.card-text {{professor.department}}
+
+
+
+//     pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+//footer
 

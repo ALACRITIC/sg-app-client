@@ -8,7 +8,6 @@
         .dropdown-menu
             li(*ngFor='let department of departments')
               a.dropdown-item((click)='selectItem(department)') {{department}}
-      input.form-control([(ngModel)]='asyncSelected', [typeahead]='dataSource', (typeaheadLoading)='changeTypeaheadLoading($event)', (typeaheadNoResults)='changeTypeaheadNoResults($event)',(typeaheadOnSelect)="typeaheadOnSelect($event)", [typeaheadOptionsLimit]='7', [typeaheadOptionField]="'name'", placeholder='Departments search...')
 
       div(*ngIf='typeaheadLoading===true')
         i.glyphicon.glyphicon-refresh.ng-hide(style='')

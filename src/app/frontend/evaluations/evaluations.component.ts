@@ -26,7 +26,7 @@ export class FrontProfessors implements OnInit {
     ngOnInit() {
         this.listing = new Listing<Professor>();
         this.loadProfessors(1, 10);
-        //this._service.search('','r');
+
     };
 
     public pageChanged(event:any):void {
