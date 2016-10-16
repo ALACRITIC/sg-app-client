@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'team-members',
     providers: [ProfessorsService],
-    template: require('./evaluations.template.pug')
+    template: require('./evaluations.template.pug'),
+    style:require('./evaluations.styles.scss')
 })
 
 export class FrontProfessors implements OnInit {

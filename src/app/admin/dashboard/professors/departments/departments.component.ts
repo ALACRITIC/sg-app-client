@@ -23,7 +23,7 @@ export class AdminProfessorDepartments implements OnInit{
             observer.next(this.asyncSelected);
         }).mergeMap((token:string) => this._service.search('',token));
     }
-   
+
     ngOnInit() {
         this._service.departments().then(res => {
             this.departments = res;

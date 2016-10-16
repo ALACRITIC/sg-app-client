@@ -1,24 +1,20 @@
 navbar
 .container
-        h1.display-4 Professor Evaluations
+     .row
 
-        professor-departments((filteredDept)='filterDepts($event)')
-        professor-search((selectedSearchItem)='goToProfessor($event)')
+        .col-sm-3.profile(*ngFor='let professor of listing.collection')
+              img.card-img(src='{{professor.photo}}')
 
-        .row
-            .col-md-12
-                .card-deck-wrapper
-                    .card-deck
-                        .card(*ngFor='let professor of listing.collection')
-                            img.card-img-top.img-thumbnail(src='{{professor.photo}}')
+              h4.card-title {{professor.name}}
+              p.card-text
+                | {{professor.department}}
+              p.card-text
+                small.text-muted Last updated 3 mins ago
 
-                            .card-block
-                                h4.card-title {{professor.name}}
+              //a.btn.btn-primary(routerLink='/professor/{{professor.id}}')
+              //     | Profile
 
-                                p {{professor.department}}
 
-                                a.btn.btn-primary(routerLink='/professor/{{professor.id}}')
-                                    | Profile
-
-        pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+     pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
 footer
+
