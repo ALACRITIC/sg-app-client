@@ -13,11 +13,15 @@ import {CommonModule} from "@angular/common";
 import {AdminProfessorDepartments} from "../admin/dashboard/professors/departments/departments.component";
 import {ProfessorProfileComponent} from "../frontend/evaluations/professor/professor-profile.component";
 import {FrontClubProfile} from "../frontend/clubs/club-profile.component";
-import {FrontInternshipProfile} from "../frontend/internships/internship-profile.component";
 import {FrontTeamMembersProfile} from "../frontend/team_members/team-members-profile/team-members-profile.component";
+<<<<<<< HEAD
+import {AsyncWaitDirective} from "./directives/asyncWait.directive";
+
+=======
 import {ProfessorSearch} from "../admin/dashboard/professors/professor-search/professor-search.component";
 import { FormsModule, ReactiveFormsModule }        from '@angular/forms';
 import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
+>>>>>>> 2a1bc46cfca826c7bf8d93d2c56163a4ef84c5dd
 @NgModule({
     imports: [CommonModule, ReactiveFormsModule,FormsModule,TypeaheadModule],
     providers: [ ApplicationSubmissionsService,
@@ -30,17 +34,26 @@ import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
                    ProfessorProfileComponent,
                    FrontClubProfile,
                    FrontTeamMembersProfile,
+<<<<<<< HEAD
+                   AsyncWaitDirective
+=======
                    ProfessorSearch
+>>>>>>> 2a1bc46cfca826c7bf8d93d2c56163a4ef84c5dd
     ],
     exports: [FILE_UPLOAD_DIRECTIVES,
               AdminProfessorDepartments,
               ProfessorProfileComponent,
               FrontClubProfile,
+<<<<<<< HEAD
+              FrontTeamMembersProfile ,
+              AsyncWaitDirective
+=======
               FrontTeamMembersProfile,
               ProfessorSearch,
               ReactiveFormsModule,
               FormsModule,
               TypeaheadModule
+>>>>>>> 2a1bc46cfca826c7bf8d93d2c56163a4ef84c5dd
     ]
 })
 export class SharedModule { }

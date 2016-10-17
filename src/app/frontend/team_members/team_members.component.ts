@@ -1,12 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit,ViewEncapsulation} from '@angular/core';
 import {TeamMembersService} from "../../shared/services/team_members.service";
 import {TeamMember} from "../../shared/models/team_member.model";
 import {Listing} from "../../shared/listing.model";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: 'team-members',
     providers: [TeamMembersService],
-    templateUrl: './team_members.template.pug'
+    templateUrl: './team_members.template.pug',
+    style:require(['./team-members.styles.scss','../shared/styles/styles.scss'])
 })
 
 export class FrontTeamMembers implements OnInit{

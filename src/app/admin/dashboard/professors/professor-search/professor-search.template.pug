@@ -1,8 +1,8 @@
 
 
 input.form-control([(ngModel)]='asyncSelected', [typeahead]='dataSource', (typeaheadLoading)='changeTypeaheadLoading($event)', (typeaheadNoResults)='changeTypeaheadNoResults($event)',(typeaheadOnSelect)="typeaheadOnSelect($event)", [typeaheadOptionsLimit]='7', [typeaheadOptionField]="'name'", placeholder='Professor search...')
-
-div(*ngIf='typeaheadLoading===true')
-  i.glyphicon.glyphicon-refresh.ng-hide(style='')
+//
+//div(*ngIf='typeaheadLoading===true')
+//  i.glyphicon.glyphicon-refresh.ng-hide(style='')
 
 

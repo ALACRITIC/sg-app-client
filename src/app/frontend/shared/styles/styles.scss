@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+//header
+.main-header {
+  background-color: #E1DFE0;
+  padding: 1.2em 0;
+  a.header-link {
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+//header-name
+.header-name {
+  font-family: "Lato";
+  font-weight: 300;
+  color: black;
+  font-size: 3.250em;
+  line-height: 67px;
+}
