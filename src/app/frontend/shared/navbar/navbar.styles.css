@@ -4,7 +4,7 @@ nav {
     padding: 15px 0;
 }
 
-.active  a.nav-link{
+.navbar .active  a.nav-link{
     color: red;
 }
 .navbar a {
