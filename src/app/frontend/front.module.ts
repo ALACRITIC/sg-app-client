@@ -7,6 +7,7 @@ import {PaginationModule, CarouselModule} from "ng2-bootstrap/ng2-bootstrap";
 import {FrontApplicationTemplates} from "./applications/application_templates.component";
 import {FrontClubs} from "./clubs/clubs.component";
 import {FrontNews} from "./home/news.component";
+import {NewsCarousel} from "./home/carousel.component"
 import {FrontPostDetail} from "./posts/post-detail.component";
 import {FrontProfessors} from "./evaluations/evaluations.component";
 import {FrontTeamMembers} from "./team_members/team_members.component";
@@ -33,6 +34,7 @@ import {FrontMemberDetail} from "./team_members/team-members-detail.component";
         FrontApplicationTemplates, 
         FrontClubs,
         FrontNews,
+        NewsCarousel,
         FrontPostDetail,
         FrontProfessors,
         FrontTeamMembers,

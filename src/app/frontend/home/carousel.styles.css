@@ -1,0 +1,14 @@
+carousel .carousel.slide{
+    background-color: green;
+}
+slide{
+    height:400px;
+}
+carousel slide img{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
