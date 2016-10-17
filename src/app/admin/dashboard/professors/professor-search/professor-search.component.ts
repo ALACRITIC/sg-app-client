@@ -4,7 +4,7 @@
 import { Component,Output,EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import { TypeaheadMatch } from '../../../components/typeahead/typeahead-match.class';
+
 import {ProfessorsService} from "../../../../shared/services/professors.service";
 
 @Component({

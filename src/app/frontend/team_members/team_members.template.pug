@@ -1,25 +1,24 @@
 navbar
-.container
+.container-fluid
+  .row
+    .col-xs-12.col-md-12.main-header
+     .container
       .row
-        .col-xs-12
-          h1.display-4 Team members
+        .col-xs-12.col-sm-4.col-md-4
+          a.header-link()
+          h4.header-name MEMBERS
 
+  .row
+    .col-md-9.row-centered
       .row
-        .card-deck-wrapper
-          .card-deck
-            .card(*ngFor='let member of listing.collection')
-              img.card-img-top(src='{{member.photo}}', alt='{{member.name}}')
+        .col-xs-3.col-md-2.col-centered(*ngFor='let member of listing.collection')
+          img(src='{{member.photo}}', alt='{{member.name}}')
+          h4.card-title {{member.name}}
+          p.card-text
+             small.text-muted {{member.title}}
 
-              .card-block
-                h4.card-title {{member.name}}
+          p.card-text {{member.description}}
 
-                p.card-text
-                  small.text-muted {{member.title}}
 
-                p.card-text {{member.description}}
-
-                a.btn.btn-primary(routerLink='/member/{{member.id}}')
-                  | Profile
-
-pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
-home-footer
+//pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+//home-footer

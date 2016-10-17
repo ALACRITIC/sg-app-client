@@ -1,28 +1,36 @@
 navbar
+.main-header
+    .container
+        .row
+           .col-md-6
+                   a.header-link((click)='loadProfessors(1,10)')
+                    h4.header-name PROFESSORS
+
+           .col-md-5
+            .row
+              .col-md-12.professor-search
+                professor-search((selectedSearchItem)='goToProfessor($event)')
+              .col-xs-12.filtered-dept
+                professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
+
+
+
 .container-fluid
-    .row
-       .col-xs-12.col-md-12.professor-header
-         .row
-           .col-md-4
-               h4.header-name PROFESSORS
-           .col-sm-8.col-md-8.col-md-push-5.professor-search
-               //professor-departments((filteredDept)="filterDepts($event)")
-               professor-search((selectedSearchItem)='goToProfessor($event)')
-
-
     .row.professors
        .col-md-2.dept-sidebar
-           .row
-             .col-md-12.departments
+           h5.dept-header DEPARTMENTS
+           .departments
+                div(*ngFor='let department of departments')
+                 li.listed-depts
+                  a((click)='loadProfessors(1,10,department)', routerLinkActive='active') {{department}}
        .col-md-9.row-centered
-             .row
-              .col-xs-3.col-md-2.col-centered.profile(*ngFor='let professor of listing.collection',routerLink='/professor/{{professor.id}}')
+           .row
+                 .col-xs-3.col-md-2.col-centered.profile(*ngFor='let professor of listing.collection',routerLink='/professor/{{professor.id}}')
+                    img(src='{{professor.photo}}')
+                    h5.card-title {{professor.name}}
+                    p.card-text {{professor.department}}
 
-                img(src='{{professor.photo}}')
-                h5.card-title {{professor.name}}
-                p.card-text {{professor.department}}
+           .col-centered
+                pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
 
-
-
-     pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
 home-footer

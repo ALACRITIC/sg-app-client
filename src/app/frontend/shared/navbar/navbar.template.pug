@@ -1,9 +1,10 @@
 nav.navbar
-    .container-fluid
-
-        img.navbar-brand(alt="Brand" src='/assets/img/New_SG_Logo.png')
-        a.navbar-brand(routerLink='/') STUDENT GOVERNMENT
-
-        ul.nav.navbar-nav.pull-xs-right
+    .container
+      .row
+       .col-md-6
+        img(alt="Brand" src='/assets/img/New_SG_Logo.png')
+        a(routerLink='/') &nbsp; STUDENT GOVERNMENT
+       .col-md-6
+        ul.nav.navbar-nav
           li.nav-item(routerLinkActive='active', *ngFor='let route of navbarRoutes')
-            a.nav-link(routerLink='{{route.url}}') {{route.name}}
+              a.nav-link(routerLink='{{route.url}}') {{route.name}}

@@ -3,6 +3,7 @@ import {ProfessorsService} from "../../../../shared/services/professors.service"
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { TypeaheadMatch } from '../../../components/typeahead/typeahead-match.class';
+import {EventEmitter} from "../../../../../../node_modules/@angular/common/src/facade/async";
 
 @Component({
     selector: 'professor-departments',
@@ -12,6 +13,7 @@ import { TypeaheadMatch } from '../../../components/typeahead/typeahead-match.cl
 export class AdminProfessorDepartments implements OnInit{
     departments:Array<String>;
     @Output() filteredDept = new EventEmitter<string>();
+    @Output() outputDepts = new EventEmitter();
 
     public dataSource:Observable<any>;
     public asyncSelected:string = '';
@@ -27,6 +29,7 @@ export class AdminProfessorDepartments implements OnInit{
     ngOnInit() {
         this._service.departments().then(res => {
             this.departments = res;
+            this.outputDepts.emit(this.departments);
         });
     }
 
@@ -38,6 +41,7 @@ export class AdminProfessorDepartments implements OnInit{
         this.typeaheadLoading = e;
         console.log('typeahead loading',e);
     }
+
 
     public changeTypeaheadNoResults(e:boolean):void {
         this.typeaheadNoResults = e;

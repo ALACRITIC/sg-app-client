@@ -1,36 +1,30 @@
 
 nav {
     background-color: #05162E;
-}
-
-navbar {
     padding: 15px 0;
-}
-
-
-@media (min-width: 992px) {
-    .navbar {
-        padding: 15px 100px;
-    }
 }
 
 .active  a.nav-link{
     color: red;
 }
-a.navbar-brand {
+.navbar a {
     color: white;
 }
 
-a.nav-link:hover {
+.navbar a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a.nav-link:hover {
     color: red;
 }
 
-a.nav-link {
+.navbar a.nav-link {
     color: white;
 }
 
-img.navbar-brand {
-    /*width: 50px;*/
+.navbar img{
     height: 40px;
 }
 
