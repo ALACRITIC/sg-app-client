@@ -30,6 +30,6 @@
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-    color: white;
-
+    color: #fff;
+    background-color: #428bca;
 }

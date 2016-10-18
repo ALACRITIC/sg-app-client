@@ -9,7 +9,7 @@ import {ProfessorsService} from "../../shared/services/professors.service";
 import { Router } from '@angular/router';
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
+    encapsulation: ViewEncapsulation.Emulated,
     selector: 'team-members',
     providers: [ProfessorsService],
     template: require('./evaluations.template.pug'),
@@ -17,10 +17,10 @@ import { Router } from '@angular/router';
 })
 
 export class FrontProfessors implements OnInit {
-    listing:Listing<Professor>;
-    professor:Professor;
-    departments:Array<String>;
-    selectedDept;
+    public listing:Listing<Professor>;
+    public professor:Professor;
+    public departments:Array<String>;
+    public selectedDept:string;
     public currentPage:number = 1;
 
     constructor(private _service:ProfessorsService,private _router:Router) {
@@ -31,33 +31,38 @@ export class FrontProfessors implements OnInit {
         this.loadProfessors(1, 10);
     };
 
-    public pageChanged(event:any):void {
-        this.loadProfessors(event.page, event.itemsPerPage);
+    public pageChanged($event):void {
+        this.loadProfessors($event.page, $event.itemsPerPage);
     };
 
     public filterDepts(department:string):void {
         this.loadProfessors(1, 10, department);
-
     }
+
     goToProfessor($event){
         this._router.navigate([`professor/${$event.id}`]);
     }
 
+    //fetching the list of departments through outputDepts event
     sideDepts($event){
        this.departments = $event;
     }
+
     selectedDepartment(department:string){
         this.selectedDept = department;
     }
-    loadAll(num1:number,num2:number,department:string){
+
+    loadAll(num1:number,num2:number,department?:string){
         this.loadProfessors(num1,num2,department);
         this.selectedDepartment(department);
     }
 
     private loadProfessors(page:number, itemsPerPage:number, department?:string) {
-        this._service.query(page, itemsPerPage, department).then(listing => {
-            this.listing = listing
-        });
-    }
 
+        this._service.query(page, itemsPerPage, department).then(listing => {
+            this.listing = listing;
+            this.currentPage = page;
+        });
+        this.selectedDept = undefined;
+    }
 }

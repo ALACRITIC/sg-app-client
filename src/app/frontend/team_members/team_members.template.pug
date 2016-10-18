@@ -1,23 +1,23 @@
 navbar
-.container-fluid
-  .row
-    .col-xs-12.col-md-12.main-header
+.main-header
      .container
       .row
         .col-xs-12.col-sm-4.col-md-4
           a.header-link()
           h4.header-name MEMBERS
 
+.container-fluid
   .row
     .col-md-9.row-centered
       .row
-        .col-xs-3.col-md-2.col-centered(*ngFor='let member of listing.collection')
-          img(src='{{member.photo}}', alt='{{member.name}}')
-          h4.card-title {{member.name}}
-          p.card-text
-             small.text-muted {{member.title}}
+        .col-xs-3.col-md-2.col-centered.members(*ngFor='let member of listing.collection')
+         .hvr-sweep-to-bottom
+          p.member-description Description
+          p.description-body {{member.description}}
+          img.member-image(src='{{member.photo}}', alt='{{member.name}}')
+          h5.member-name {{member.name}}
+          h5.member-title {{member.title}}
 
-          p.card-text {{member.description}}
 
 
 //pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

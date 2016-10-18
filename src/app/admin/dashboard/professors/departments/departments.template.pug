@@ -9,5 +9,3 @@
             li(*ngFor='let department of departments')
               a.dropdown-item((click)='selectItem(department)') {{department}}
 
-      div(*ngIf='typeaheadLoading===true')
-        i.glyphicon.glyphicon-refresh.ng-hide(style='')

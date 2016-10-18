@@ -35,7 +35,6 @@ export class AdminProfessorDepartments implements OnInit{
 
     selectItem(department:string) {
         this.filteredDept.emit(department);
-        //console.log(departments);
     }
     public changeTypeaheadLoading(e:boolean):void {
         this.typeaheadLoading = e;

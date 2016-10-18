@@ -4,7 +4,7 @@ import {TeamMember} from "../../shared/models/team_member.model";
 import {Listing} from "../../shared/listing.model";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
+    encapsulation: ViewEncapsulation.Emulated,
     selector: 'team-members',
     providers: [TeamMembersService],
     templateUrl: './team_members.template.pug',

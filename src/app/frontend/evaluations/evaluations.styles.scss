@@ -1,18 +1,13 @@
+//main header container
+.main-header{
+  .professor-search {
+    padding-top: 1.000em;
 
-
-.professor-search {
-  padding-top: 1.000em;
-
-}
-
-//filtered dept input shown only on mobile view
-.filtered-dept {
-  display: none;
-}
-
-//side bar list on click color change
-a.selected {
-	color:red;
+  }
+  //filtered dept input shown only on mobile view
+  .filtered-dept {
+    display: none;
+  }
 }
 
 //body
@@ -24,37 +19,45 @@ a.selected {
 		background-color: #0D335F;
 		color: white;
 		font-weight: 400;
-		text-align: center;
+
 
 		//sidebar-header
 		.dept-header {
-
 			padding: 20px 0;
 			font-size: 1.250em;
 			line-height: 2.500em;
+            text-align: center;
 		}
 		//sidebar list of departments
 		.departments {
 
-			.listed-depts {
-				list-style: none;
-				background-color: transparent;
-				border: none;
-				color: white;
-				padding: 10px;
-				a.dept-link {
-					//list styles
-					cursor: pointer;
-					font-size: 1.000em;
-					line-height: 1.438em;
+            //list of departments
+           .list-group-item.listed-depts {
+            list-style: none;
+            background-color: transparent;
+            border: none;
+            color: white;
+            margin-left: 0;
+            padding: 5px;
 
-					//listed departments on hover
-					&:hover {
-						text-decoration: none;
-						color: red;
-					}
-				}
-			}
+             //side bar list on click color change
+             a.selected {
+               color:red;
+             }
+
+            a.dept-link {
+              //list styles
+              cursor: pointer;
+              font-size: 1.000em;
+              line-height: 1.438em;
+
+              //listed departments on hover
+              &:hover {
+                text-decoration: none;
+                color: red;
+              }
+            }
+           }
 		}
 	}
 }
@@ -63,6 +66,7 @@ a.selected {
 //professor's profile
 .profile {
   background-color: #FFFFFF;
+  display: block;
   margin: 1.250em;
   padding-top: 0.625em;
   box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
@@ -71,25 +75,55 @@ a.selected {
   &:hover {
     box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
   }
-  img {
+  //professor profile image
+  img.professor-image {
     border-radius: 0.313em 0.313em 0 0;
     height: auto;
     display: block;
     max-width: 10.000em;
   }
+  //professor profile name
+  .professor-name{
+    clear: left;
+    float: left;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+    padding-top: 10px;
+    margin: 0;
+  }
+  //professor profile department
+  .professor-department{
+    clear: left;
+    float: left;
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 400;
+    color: #999;
+    margin: 7px 0;
+  }
+
 }
 
-//centering all the row's and column's "profiles"
+//centering the row
 .row-centered {
-  padding-bottom: 20px;
+  //centering the profiles column's
   .col-centered {
-    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  //centering the pagination column
+  .col-centered.pagination{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-
   }
 }
+
 
 //mobile view
 @media screen and (max-width: 750px) {

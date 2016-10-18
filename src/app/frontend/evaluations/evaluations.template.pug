@@ -20,17 +20,19 @@ navbar
        .col-md-2.dept-sidebar
            h5.dept-header DEPARTMENTS
            .departments
+              .container-fluid
                 ul.list-group(*ngFor='let department of departments')
                  li.list-group-item.listed-depts
                   a.dept-link((click)='loadAll(1,10,department)',[class.selected]='department === selectedDept') {{department}}
        .col-md-9.row-centered
            .row
-                 .col-xs-3.col-md-2.col-centered.profile(*ngFor='let professor of listing.collection',routerLink='/professor/{{professor.id}}')
-                    img(src='{{professor.photo}}')
-                    h5.card-title {{professor.name}}
-                    p.card-text {{professor.department}}
+              .col-xs-3.col-md-2.col-centered.profile(*ngFor='let professor of listing.collection',routerLink='/professor/{{professor.id}}')
+                    img.professor-image(src='{{professor.photo}}')
+                    p.professor-name {{professor.name}}
+                    p.professor-department {{professor.department}}
 
-           .col-centered
+
+           .col-centered.pagination
                 pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
 
 home-footer
