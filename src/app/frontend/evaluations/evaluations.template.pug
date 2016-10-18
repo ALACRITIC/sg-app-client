@@ -1,20 +1,10 @@
 navbar
-.main-header
-    .container
-        .row
-           .col-md-6
-                   a.header-link((click)='loadProfessors(1,10)')
-                    h4.header-name PROFESSORS
-
-           .col-md-5
-            .row
-              .col-md-12.professor-search
-                professor-search((selectedSearchItem)='goToProfessor($event)')
-              .col-xs-12.filtered-dept
-                professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
-
-
-
+header(headerName='professors')
+    .row
+      .col-md-12.professor-search
+        professor-search((selectedSearchItem)='goToProfessor($event)')
+      .col-xs-12.filtered-dept
+        professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
 .container-fluid
     .row.professors
        .col-md-2.dept-sidebar

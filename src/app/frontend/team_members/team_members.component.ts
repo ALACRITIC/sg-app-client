@@ -8,7 +8,7 @@ import {Listing} from "../../shared/listing.model";
     selector: 'team-members',
     providers: [TeamMembersService],
     templateUrl: './team_members.template.pug',
-    style:require(['./team-members.styles.scss','../shared/styles/styles.scss'])
+    style:require(['./team-members.styles.scss'])
 })
 
 export class FrontTeamMembers implements OnInit{
