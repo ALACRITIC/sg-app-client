@@ -3,7 +3,7 @@ import {AlertComponent} from 'ng2-bootstrap/ng2-bootstrap';
 import { AppState } from '../../app.service';
 
 import { Title } from "../shared/title/title.service";
-import { Carousel } from  "./carousel.component";
+import { NewsCarousel } from  "./carousel.component";
 import {HomeFooter} from "../shared/footer/footer.component";
 import {FrontNews} from "./news.component";
 import {PostsService} from "../../shared/services/posts.service";

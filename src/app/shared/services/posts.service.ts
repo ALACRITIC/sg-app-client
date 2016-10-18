@@ -15,7 +15,6 @@ export class PostsService {
     private authToken = localStorage.getItem('auth_token');
     private postsUrl = this.api + '/posts' ;
     constructor(private http:Http, @Inject('ApiEndpoint') private api: string) {
-  
     }
 
     //get all POSTS
