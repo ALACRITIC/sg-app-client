@@ -20,9 +20,9 @@ navbar
        .col-md-2.dept-sidebar
            h5.dept-header DEPARTMENTS
            .departments
-                div(*ngFor='let department of departments')
-                 li.listed-depts
-                  a((click)='loadProfessors(1,10,department)', routerLinkActive='active') {{department}}
+                ul.list-group(*ngFor='let department of departments')
+                 li.list-group-item.listed-depts
+                  a.dept-link((click)='loadAll(1,10,department)',[class.selected]='department === selectedDept') {{department}}
        .col-md-9.row-centered
            .row
                  .col-xs-3.col-md-2.col-centered.profile(*ngFor='let professor of listing.collection',routerLink='/professor/{{professor.id}}')

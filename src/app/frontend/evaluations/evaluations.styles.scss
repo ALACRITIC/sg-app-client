@@ -1,41 +1,51 @@
-
-
-
 //professor's search input
 .professor-search{
 	padding-top: 1.000em;
-
 }
+
 //filtered dept input shown only on mobile view
 .filtered-dept {
 	display: none;
 }
 
+//side bar list on click color change
+a.selected {
+	color:red;
+}
+
 //body
 .professors {
 	background-color: #9C9E9D;
+
 	//sidebar
 	.dept-sidebar {
 		background-color: #0D335F;
 		color: white;
 		font-weight: 400;
+		text-align: center;
+
 		//sidebar-header
 		.dept-header {
+
 			padding: 20px 0;
 			font-size:1.250em;
 			line-height: 2.500em;
 		}
 		//sidebar list of departments
 		.departments{
+
 			.listed-depts {
 				list-style: none;
-				padding: 0.250em;
-				a {
+				background-color: transparent;
+				border: none;
+				color: white;
+				padding: 10px;
+				a.dept-link {
 					//list styles
 					cursor: pointer;
 					font-size: 1.000em;
-					color: white;
 					line-height: 1.438em;
+
 					//listed departments on hover
 					&:hover {
 						text-decoration: none;
@@ -106,11 +116,6 @@
 
 
 	}
-	@media screen and (min-width: 1024px){
-		.container{
-			margin-right: 25px;
-		}
 
-	}
 
 
