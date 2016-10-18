@@ -12,23 +12,16 @@ import { AppState } from './app.service';
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: [
-    './app.style.css'
-  ],
+  styleUrls:require( ['./app.styles.scss']),
   template: `<router-outlet></router-outlet>`
 })
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
   name = 'AUBG Student Government';
   url = 'https://twitter.com/AngularClass';
 
   constructor(
     public appState: AppState) {
 
-  }
-
-  ngOnInit() {
-    console.log('Initial App State', this.appState.state);
   }
 
 }

@@ -25,6 +25,7 @@ import {HomeFooter} from "./shared/footer/footer.component";
 import {FrontClubDetail} from "./clubs/club-detail.component";
 import {FrontInternshipDetail} from "./internships/internship-detail.component";
 import {FrontMemberDetail} from "./team_members/team-members-detail.component";
+import {FrontHeader} from "./shared/header/header.component";
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import {FrontMemberDetail} from "./team_members/team-members-detail.component";
         ProfessorDetailComponent,
         ProfessorEvaluationsComponent,
         HomeFooter,
+        FrontHeader,
         FrontClubDetail,
         FrontInternshipDetail,
         FrontMemberDetail,

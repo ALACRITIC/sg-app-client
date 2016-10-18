@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
     selector: 'team-members',
     providers: [ProfessorsService],
     template: require('./evaluations.template.pug'),
-    style:require(['./evaluations.styles.scss','../shared/styles/styles.scss'])
+    style:require(['./evaluations.styles.scss'])
 })
 
 export class FrontProfessors implements OnInit {
