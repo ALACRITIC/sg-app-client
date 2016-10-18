@@ -18,6 +18,10 @@ import {AsyncWaitDirective} from "./directives/asyncWait.directive";
 import {ProfessorSearch} from "../admin/dashboard/professors/professor-search/professor-search.component";
 import { FormsModule, ReactiveFormsModule }        from '@angular/forms';
 import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7ad0be5769369433ea76e526a25aa172d99ed5e4
 @NgModule({
     imports: [CommonModule, ReactiveFormsModule,FormsModule,TypeaheadModule],
     providers: [ ApplicationSubmissionsService,
@@ -44,6 +48,10 @@ import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
               ReactiveFormsModule,
               FormsModule,
               TypeaheadModule
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7ad0be5769369433ea76e526a25aa172d99ed5e4
     ]
 })
 export class SharedModule { }

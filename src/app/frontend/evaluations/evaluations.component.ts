@@ -20,6 +20,7 @@ export class FrontProfessors implements OnInit {
     listing:Listing<Professor>;
     professor:Professor;
     departments:Array<String>;
+    selectedDept;
     public currentPage:number = 1;
 
     constructor(private _service:ProfessorsService,private _router:Router) {
@@ -44,6 +45,13 @@ export class FrontProfessors implements OnInit {
 
     sideDepts($event){
        this.departments = $event;
+    }
+    selectedDepartment(department:string){
+        this.selectedDept = department;
+    }
+    loadAll(num1:number,num2:number,department:string){
+        this.loadProfessors(num1,num2,department);
+        this.selectedDepartment(department);
     }
 
     private loadProfessors(page:number, itemsPerPage:number, department?:string) {
