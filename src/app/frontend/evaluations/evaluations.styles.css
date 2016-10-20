@@ -1,0 +1,93 @@
+.main-header .professor-search {
+  padding-top: 1.000em; }
+.main-header .filtered-dept {
+  display: none; }
+
+a.selected {
+  color: red; }
+
+.professors {
+  background-color: #D3D3D3; }
+  .professors .dept-sidebar {
+    background-color: #0D335F;
+    color: white;
+    font-weight: 400; }
+    .professors .dept-sidebar .dept-header {
+      padding: 20px 0;
+      font-size: 1.250em;
+      line-height: 2.500em;
+      text-align: center; }
+    .professors .dept-sidebar .departments .list-group-item.listed-depts {
+      list-style: none;
+      background-color: transparent;
+      border: none;
+      margin-left: 0;
+      padding: 5px; }
+      .professors .dept-sidebar .departments .list-group-item.listed-depts a.dept-link {
+        cursor: pointer;
+        color: white;
+        font-size: 1.000em;
+        line-height: 1.438em; }
+        .professors .dept-sidebar .departments .list-group-item.listed-depts a.dept-link:hover {
+          text-decoration: none;
+          color: red; }
+
+.profile {
+  background-color: #FFFFFF;
+  display: block;
+  margin: 1.250em;
+  padding-top: 0.625em;
+  box-shadow: 0 0.25em 0.25em 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 0.313em; }
+  .profile:hover {
+    box-shadow: 0 0.5em 0.75em 0 rgba(0, 0, 0, 0.2); }
+  .profile img.professor-image {
+    border-radius: 0.313em 0.313em 0 0;
+    height: auto;
+    display: block;
+    max-width: 10.000em; }
+  .profile .professor-name {
+    clear: left;
+    float: left;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+    padding-top: 10px;
+    margin: 0; }
+  .profile .professor-department {
+    clear: left;
+    float: left;
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 400;
+    color: #999;
+    margin: 7px 0; }
+
+.col-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; }
+
+.col-centered.pagination {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+@media screen and (max-width: 750px) {
+  .filtered-dept {
+    display: block;
+    padding-top: 1.000em; }
+
+  .dept-sidebar {
+    display: none; } }
+@media screen and (min-width: 755px) and (max-width: 1024px) {
+  .header-name {
+    text-align: center;
+    font-size: 1.652em;
+    line-height: 2.174em; } }
+
+/*# sourceMappingURL=evaluations.styles.css.map */

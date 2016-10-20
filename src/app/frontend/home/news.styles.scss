@@ -1,4 +1,31 @@
-.card-img-top {
-    width: auto;
-    height: 60px;
+.regular-news {
+  background-color: #D3D3D3;
+
+  .container{
+    padding-top: 60px;
+  }
+
+
+    .card {
+      margin: 20px;
+
+      .card-img-top {
+        width: inherit;
+        height: auto;
+      }
+
+    }
+
+
+
+}
+
+
+
+//-------------------   PHONE --------------------
+@media screen and (max-width: 800px) {
+  .regular-news .card {
+    width: 300px;
+    margin: 20px 10px;
+  }
 }

@@ -69,6 +69,7 @@ export class AdminPostForm implements OnChanges {
     }
 
     addPost(){
+        console.log(this.post);
         var image:FileItem =this.uploader.queue[0]._file;
         var imageName =this.uploader.queue[0].file.name;
         this._service.save(this.post, image,imageName).subscribe((res) => {

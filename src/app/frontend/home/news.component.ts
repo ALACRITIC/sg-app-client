@@ -9,7 +9,7 @@ import {Post} from "../../shared/models/post.model";
 @Component({
     selector: 'front-news',
     templateUrl: './news.template.pug',
-    styleUrls: ['./news.styles.css'],
+    style:require(['./news.styles.scss']),
     encapsulation: ViewEncapsulation.Emulated
 })
 
@@ -20,6 +20,6 @@ export class FrontNews implements OnInit {
     }
     
     ngOnInit() {
-        this._post.getRegular(1, 10).subscribe(res => { this.posts = res.Items } , err => {})
+        this._post.getRegular(1, 10).subscribe(res => { this.posts = res.Items } , err => {});
     }
 }

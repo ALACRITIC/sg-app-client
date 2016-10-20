@@ -1,11 +1,18 @@
 carousel .carousel.slide{
-    background-color: green;
+    background-color: #D3D3D3;
 }
 slide{
+    cursor: pointer;
     height:400px;
 }
-carousel slide img{
 
+.carousel-caption{
+    text-align: left;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+carousel slide img{
     position: absolute;
     top: 50%;
     left: 50%;

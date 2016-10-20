@@ -17,7 +17,7 @@
 
              .form-group
                label(for='featured') Article is featured?
-                 input#featured.form-control([formControl]="featured",type='checkbox',name='featured' [(ngModel)]='post.featured')
+                 input#featured.form-control([formControl]="featured",type='checkbox',name='featured', [(ngModel)]='post.featured')
 
              .form-group
                label(for='styles') Styles
@@ -42,4 +42,4 @@
           .row
             .col-md-4
                button.btn.btn-success(*ngIf='isEditing', [disabled] = '!form.valid', (click)='updatePost()') Save article
-               button.btn.btn-success(*ngIf='!isEditing',[disabled]='!form.valid || !post.content || uploader.queue.length == 0', (click)='addPost()') Save article
+               button.btn.btn-success(*ngIf='!isEditing',[disabled]='!form.valid || !post.content || uploader.queue.length == 0', (click)='addPost()') Add new Post

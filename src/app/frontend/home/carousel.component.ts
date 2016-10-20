@@ -10,7 +10,7 @@ import {Post} from "../../shared/models/post.model";
     selector: 'news-carousel',
     encapsulation: ViewEncapsulation.Emulated,
     templateUrl: './carousel.template.pug',
-    styleUrls: ['./carousel.styles.css']
+    style:require(['./carousel.styles.scss'])
 })
 export class NewsCarousel implements OnInit{
     public myInterval:number = 5000;
@@ -21,7 +21,6 @@ export class NewsCarousel implements OnInit{
 
     }
     ngOnInit() {
-        console.log("we got the carousel");
         this._post.getFeatured(1,5).then(result => {
             console.log(this.slides);
             this.slides = result.Items;

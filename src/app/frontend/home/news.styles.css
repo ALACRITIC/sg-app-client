@@ -1,0 +1,16 @@
+.regular-news {
+  background-color: #D3D3D3; }
+  .regular-news .container {
+    padding-top: 60px; }
+  .regular-news .card {
+    margin: 20px; }
+    .regular-news .card .card-img-top {
+      width: inherit;
+      height: auto; }
+
+@media screen and (max-width: 800px) {
+  .regular-news .card {
+    width: 300px;
+    margin: 20px 10px; } }
+
+/*# sourceMappingURL=news.styles.css.map */

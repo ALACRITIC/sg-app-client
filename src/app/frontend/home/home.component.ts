@@ -10,10 +10,9 @@ import {PostsService} from "../../shared/services/posts.service";
 
 
 @Component({
-
   selector: 'home',
   providers: [PostsService],
-  styleUrls: [ './home.style.css' ],
+  style:require([ './home.style.scss' ]),
   templateUrl: './home.template.pug'
 })
 export class Home {
