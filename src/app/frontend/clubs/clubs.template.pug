@@ -1,18 +1,5 @@
 navbar
-.main-header
-  .container
-    .row
-      .col-md-6
-        a.header-link((click)='loadProfessors(1,10)')
-          h4.header-name CLUBS
-
-      .col-md-5
-        .row
-          .col-md-12.professor-search
-            professor-search((selectedSearchItem)='goToProfessor($event)')
-          .col-xs-12.filtered-dept
-            professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
-
+header(headerName='members')
 .container
       .row
         .col-xs-12
@@ -27,7 +14,6 @@ navbar
 
                 .card-img-overlay
                   h4.card-title {{club.name}}
-
                   p.card-text President:&nbsp;{{club.president}}
 home-footer
 

@@ -14,23 +14,22 @@ import {Listing} from "../../shared/listing.model";
 export class FrontTeamMembers implements OnInit{
     listing: Listing<TeamMember>;
     public currentPage:number = 1;
-    public isCollapsed:boolean;
 
     public pageChanged(event:any):void {
         this.loadMembers(event.page, event.itemsPerPage);
-        this.isCollapsed = true;
     };
 
-    constructor(private _service:TeamMembersService) {
-    }
+    constructor(private _service:TeamMembersService) {}
 
     ngOnInit() {
         this.listing = new Listing<TeamMember>();
         this.loadMembers(1, 10);
     }
+
     private loadMembers(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage).then(listing => {
-            this.listing = listing
+            this.listing = listing;
+            this.currentPage = page;
         });
     }
     

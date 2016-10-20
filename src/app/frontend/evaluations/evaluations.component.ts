@@ -1,9 +1,8 @@
 /**
  * Created by hgeorgiev on 9/10/16.
  */
-import {Component, OnInit,Input,ViewEncapsulation} from '@angular/core';
+import {Component, OnInit,ViewEncapsulation} from '@angular/core';
 import {Listing} from "../../shared/listing.model";
-//import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
 import {Professor} from "../../shared/models/professor.model";
 import {ProfessorsService} from "../../shared/services/professors.service";
 import { Router } from '@angular/router';
@@ -43,26 +42,20 @@ export class FrontProfessors implements OnInit {
         this._router.navigate([`professor/${$event.id}`]);
     }
 
-    //fetching the list of departments through outputDepts event
+    //-------------fetching the list of departments through outputDepts event------------>
     sideDepts($event){
        this.departments = $event;
     }
 
-    selectedDepartment(department:string){
+    loadDepartments(page:number,itemsPerPage:number,department?:string){
+        this.loadProfessors(page,itemsPerPage,department);
         this.selectedDept = department;
     }
 
-    loadAll(num1:number,num2:number,department?:string){
-        this.loadProfessors(num1,num2,department);
-        this.selectedDepartment(department);
-    }
-
     private loadProfessors(page:number, itemsPerPage:number, department?:string) {
-
         this._service.query(page, itemsPerPage, department).then(listing => {
             this.listing = listing;
             this.currentPage = page;
         });
-        this.selectedDept = undefined;
     }
 }
