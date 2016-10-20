@@ -1,0 +1,18 @@
+navbar
+header(headerName='members')
+.container
+      .row
+        .col-xs-12
+          h1.display-4 Clubs
+
+      .row
+        .card-deck-wrapper
+          .card-deck
+            .card.card-inverse(*ngFor='let club of listing.collection')
+              div(routerLink='../club/{{club.id}}')
+                img.card-img.img-fluid(src='{{club.logo}}', alt='{{club.name}}')
+
+                .card-img-overlay
+                  h4.card-title {{club.name}}
+                  p.card-text President:&nbsp;{{club.president}}
+home-footer
