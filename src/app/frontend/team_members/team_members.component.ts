@@ -13,6 +13,8 @@ import {Listing} from "../../shared/listing.model";
 
 export class FrontTeamMembers implements OnInit{
     listing: Listing<TeamMember>;
+    selectedMember:TeamMember;
+    public closeHover:boolean = false;
     public currentPage:number = 1;
 
     public pageChanged(event:any):void {
@@ -24,6 +26,15 @@ export class FrontTeamMembers implements OnInit{
     ngOnInit() {
         this.listing = new Listing<TeamMember>();
         this.loadMembers(1, 10);
+    }
+    unExpand(event) {
+        if (event.target.className !== 'btn btn-primary more-info') {
+            this.selectedMember = null;
+        }
+
+    }
+    expandClick(member:TeamMember){
+        this.selectedMember = member;
     }
 
     private loadMembers(page:number, itemsPerPage: number) {
