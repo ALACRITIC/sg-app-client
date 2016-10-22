@@ -4,13 +4,13 @@
   .container {
     padding: 50px 0;
 
+    .card {
+      margin: 30px 0;
+    }
   }
 
-
-
-  .card-img {
-    height: inherit;
-
+  img.card-img.img-fluid {
+    width: 100%;
   }
 
   .card-img-overlay {
@@ -30,7 +30,7 @@
 
   //------------------  MOBILE --------------------
   @media screen and (max-width: 800px) {
-    .card-img-overlay  {
+    .card-img-overlay {
       opacity: 1;
     }
   }
