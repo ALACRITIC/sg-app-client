@@ -2,15 +2,15 @@ navbar
 header(headerName='clubs')
 .clubs
   .container
-    .card-deck-wrapper
-      .card-deck
-        .card.card-inverse(*ngFor='let club of listing.collection' routerLink='../club/{{club.id}}')
-          img.card-img.img-fluid(src='https://www.aubg.edu/upload/event/group-1/709/AUBG%20Olympics.jpg', alt='{{club.name}}')
-          //img.card-img.img-fluid(src='{{club.logo}}', alt='{{club.name}}')
+    .row
+      .col-xs-9.col-centered
+        .row
+          .col-xs-12.col-sm-6.col-md-4.col-lg-3.club-style(*ngFor='let club of listing.collection' routerLink='../club/{{club.id}}')
+            .card.card-inverse
+              img.card-img.img-fluid(src='{{club.logo}}', alt='{{club.name}}')
 
-          .card-img-overlay
-            h4.card-title {{club.name}}
-            //p.card-text President:&nbsp;{{club.president}}
+              .card-img-overlay
+                h4.card-title {{club.name | uppercase}}
 
 
 home-footer

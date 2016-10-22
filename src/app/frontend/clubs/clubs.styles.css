@@ -1,25 +1,20 @@
-.clubs{
-    background-color: #D3D3D3;
-}
-
-.card-img {
-    height: inherit;
-}
-
-/*.card {*/
-/*max-width: 18%;*/
-/*}*/
-
-.card.card-inverse {
-    width: 230px;
-    margin: 5px;
-}
-
-.card-img-overlay {
+.clubs {
+  background-color: #D3D3D3; }
+  .clubs .container {
+    padding: 50px 0; }
+  .clubs .card-img {
+    height: inherit; }
+  .clubs .card-img-overlay {
     background: rgba(25, 25, 25, 0.4);
-    display: none;
-}
+    top: 60%;
+    opacity: 0;
+    transition: all .3s ease .15s; }
+  .clubs .card:hover .card-img-overlay {
+    opacity: 1; }
+  .clubs .club-style {
+    border-radius: 5px; }
+  @media screen and (max-width: 800px) {
+    .clubs .card-img-overlay {
+      opacity: 1; } }
 
-.card:hover .card-img-overlay {
-    display: block;
-}
+/*# sourceMappingURL=clubs.styles.css.map */
