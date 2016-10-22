@@ -1,20 +1,49 @@
-carousel .carousel.slide {
+carousel {
   background-color: #D3D3D3; }
+  carousel slide {
+    height: 400px; }
+    carousel slide img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    carousel slide .carousel-caption.carousel-caption-panel {
+      text-align: left;
+      position: absolute;
+      width: 25%;
+      margin-top: 40px;
+      bottom: 15%;
+      left: 20%; }
+      carousel slide .carousel-caption.carousel-caption-panel .carousel-caption-inner {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 15px 20px; }
+        carousel slide .carousel-caption.carousel-caption-panel .carousel-caption-inner h2 {
+          text-transform: uppercase;
+          margin-top: 0;
+          font-weight: 700;
+          font-size: 30px; }
+        carousel slide .carousel-caption.carousel-caption-panel .carousel-caption-inner p {
+          font-size: 18px;
+          line-height: 1.6em;
+          color: #d6d3d8;
+          margin: 0; }
+      carousel slide .carousel-caption.carousel-caption-panel .carousel-caption-footer {
+        background-color: #e34f47;
+        padding: 15px 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-style: italic;
+        font-size: 14px;
+        text-align: left;
+        text-shadow: none;
+        cursor: pointer; }
 
-slide {
-  cursor: pointer;
-  height: 400px; }
-
-.carousel-caption {
-  text-align: left;
-  position: absolute;
-  top: 20%;
-  left: 20%; }
-
-carousel slide img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+@media screen and (max-width: 1000px) {
+  .carousel-caption.carousel-caption-panel {
+    width: 45%; } }
+@media screen and (max-width: 650px) {
+  .carousel-caption.carousel-caption-panel {
+    width: 60%; }
+    .carousel-caption.carousel-caption-panel .carousel-caption-inner h2 {
+      font-size: 20px; } }
 
 /*# sourceMappingURL=carousel.styles.css.map */
