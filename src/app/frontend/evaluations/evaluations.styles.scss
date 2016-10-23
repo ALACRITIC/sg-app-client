@@ -1,13 +1,13 @@
 //<----------------------main header container--------------->
-.main-header {
-  .professor-search {
-    padding-top: 1.000em;
 
-  }
-  //filtered dept input shown only on mobile view
-  .filtered-dept {
-    display: none;
-  }
+.professor-search {
+  padding-top: 1.000em;
+
+}
+
+//filtered dept input shown only on mobile view
+.filtered-dept {
+  display: none;
 }
 
 //side bar list on click color change
@@ -76,7 +76,7 @@ a.selected {
   //professor profile image
   img.professor-image {
     border-radius: 0.313em 0.313em 0 0;
-    height: auto;
+    height: 160px;
     display: block;
     max-width: 10.000em;
   }
@@ -86,7 +86,7 @@ a.selected {
     float: left;
     font-size: 18px;
     line-height: 20px;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
     color: black;
     padding-top: 10px;
@@ -124,7 +124,7 @@ a.selected {
 @media screen and (max-width: 750px) {
   .filtered-dept {
     display: block;
-    padding-top: 1.000em;
+
   }
   .dept-sidebar {
     display: none;

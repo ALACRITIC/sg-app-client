@@ -7,7 +7,7 @@ import {ClubsService} from "../../shared/services/clubs.service";
     selector: 'clubs',
     providers: [ClubsService],
     templateUrl: './clubs.template.pug',
-    styleUrls: ['./clubs.styles.css'],
+    style:require(['./clubs.styles.scss']),
     encapsulation: ViewEncapsulation.Emulated
 
 })
@@ -19,7 +19,10 @@ export class FrontClubs implements OnInit{
 
     ngOnInit() {
         this.listing = new Listing<Club>();
-        this._service.query(1,999).then(listing => this.listing = listing);//load all
+        this._service.query(1,999).then(listing => {
+            this.listing = listing
+            console.log(this.listing);
+        });//load all
     }
 
 

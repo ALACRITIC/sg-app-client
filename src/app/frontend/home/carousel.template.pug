@@ -1,8 +1,10 @@
 carousel([interval]='myInterval', [noWrap]='noWrapSlides')
-    slide(*ngFor='let post of slides; let index=index', [active]='post.active' routerLink='/post/{{post.id}}')
+    slide(*ngFor='let post of slides; let index=index', [active]='post.active')
         img([src]='post.image', style='margin:auto;' )
 
-        .carousel-caption
-          h4 {{post.title}}
-          p {{post.created_at | date:"fullDate" }}
+        .carousel-caption.carousel-caption-panel
+            .carousel-caption-inner
+                h2 {{post.title}}
+                p {{post.created_at | date:"fullDate" }}
+            .carousel-caption-footer(routerLink='/post/{{post.id}}') Read More
 

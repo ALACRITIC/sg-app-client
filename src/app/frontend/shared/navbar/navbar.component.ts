@@ -4,7 +4,7 @@ import {NavRoute} from "./navroute.model";
 @Component({
     selector: 'navbar',
     templateUrl: './navbar.template.pug',
-    styleUrls:['./navbar.styles.css'],
+    styleUrls:require(['./navbar.styles.scss']),
     encapsulation: ViewEncapsulation.None
 })
 

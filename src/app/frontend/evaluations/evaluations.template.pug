@@ -1,7 +1,7 @@
 navbar
 header(headerName='professors')
     .row
-      .col-md-12.professor-search
+      .col-xs-12.col-md-12.professor-search
         professor-search((selectedSearchItem)='goToProfessor($event)')
       .col-xs-12.filtered-dept
         professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')

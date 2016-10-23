@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 })
 
 export class FrontProfessors implements OnInit {
+
     public listing:Listing<Professor>;
     public professor:Professor;
     public departments:Array<String>;

@@ -1,16 +1,19 @@
 navbar
-header(headerName='members')
+header(headerName='members',(click)='selectedMember = undefined')
 
 .container-fluid
-  .row.team-members
+  .row.team-members((click)='selectedMember = undefined')
     .col-md-9.col-centered
       .row
-         .col-xs-3.col-md-2.col-centered.members-profile(*ngFor='let member of listing.collection')
-           img.member-image(src='{{member.photo}}', alt='{{member.name}}')
-           h5.member-name {{member.name}}
-           h5.member-title {{member.title}}
-           p.member-description Description
-           p.description-body {{member.description}}
+         .col-xs-3.col-md-2.col-centered.members-profile(*ngFor='let member of listing.collection',[ngClass]="{'activeProfile':member === selectedMember}",(click)="$event.stopPropagation()")
+             img.member-image(src='{{member.photo}}', alt='{{member.name}}')
+             h5.member-name {{member.name}}
+             h5.member-title {{member.title}}
+             button.btn.btn-primary.more-info(type='button',(click)="expandClick(member)") Default
+             .row
+               p.member-description Description
+               p.description-body {{member.description}}
+
 
       .col-centered.pagination
           pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

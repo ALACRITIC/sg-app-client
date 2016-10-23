@@ -12,7 +12,8 @@ import {Listing} from "../../shared/listing.model";
 })
 
 export class FrontTeamMembers implements OnInit{
-    listing: Listing<TeamMember>;
+    public listing: Listing<TeamMember>;
+    public selectedMember:TeamMember;
     public currentPage:number = 1;
 
     public pageChanged(event:any):void {
@@ -25,6 +26,11 @@ export class FrontTeamMembers implements OnInit{
         this.listing = new Listing<TeamMember>();
         this.loadMembers(1, 10);
     }
+    
+    expandClick(member:TeamMember){
+        this.selectedMember = member;
+        event.stopPropagation();
+    }
 
     private loadMembers(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage).then(listing => {
@@ -32,5 +38,4 @@ export class FrontTeamMembers implements OnInit{
             this.currentPage = page;
         });
     }
-    
 }
