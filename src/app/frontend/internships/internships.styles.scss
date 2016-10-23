@@ -1,0 +1,105 @@
+//internships main container-fluid
+.internships {
+  background-color: #D3D3D3;
+  height: 100%;
+
+  //internship body container
+  .internship-body {
+    background-color: #D3D3D3;
+    padding-top: 10px;
+
+    //centering the internships
+    .internships-centered {
+      margin-left: auto;
+      margin-right: auto;
+
+      //internship list-item
+      .internship-list {
+        background-color: white;
+        margin-bottom: 10px;
+        height: 110px;
+        border-radius: 5px;
+
+        //internship photo
+        img.internship-image {
+          height: 80px;
+          width: 80px;
+          border-radius: 3px;
+
+        }
+        //internship link "More Info"
+        //the overflow is hidden
+        a.internship-link {
+          position: absolute;
+          right: 10px;
+          bottom: 25px;
+          cursor: pointer;
+          text-decoration: none;
+          font-size: 1.000em;
+          line-height: 1.438em;
+
+        }
+        //internship description
+        p.internship-description {
+          overflow: hidden;
+          height: 90px;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 1.438em;
+        }
+        //internship list-item on hover
+        &:hover {
+          box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+          //background-color: #0D335F;
+          transition: 0.3s;
+          //on internship hover description shown
+          .internship-description {
+            //color: white;
+            overflow: auto;
+            //transition: all .2s ease .15s;
+          }
+          //.internship-description scroll-bar styles
+          .internship-description::-webkit-scrollbar {
+            width: 5px;
+          }
+
+          .internship-description::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          }
+
+          .internship-description::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            outline: 1px solid slategrey;
+          }
+          //.internship-description scroll-bar styles end----
+
+          //more info link on internship hover
+          a.internship-link {
+            color: red;
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//pagination center
+.pagination {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//tablet view
+@media screen and (min-width: 755px) and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 755px) {
+  img.internship-image {
+    display: none;
+  }
+
+}

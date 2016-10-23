@@ -26,7 +26,7 @@ export class FrontTeamMembers implements OnInit{
         this.listing = new Listing<TeamMember>();
         this.loadMembers(1, 10);
     }
-    
+
     expandClick(member:TeamMember){
         this.selectedMember = member;
         event.stopPropagation();

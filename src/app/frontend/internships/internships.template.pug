@@ -1,18 +1,22 @@
 navbar
 header(headerName='internships')
-.container
-      .row
-        .col-xs-12
-          .card-deck-wrapper
-            .card-deck
-              .card(*ngFor='let internship of listing.collection')
-                img.card-img-top.img-thumbnail(src='{{internship.logo}}')
 
-                .card-block
-                  h4.card-title {{internship.description}}
+.container-fluid.internships
+    .container.internship-body
+        .row
+         .col-sm-12.col-md-10.internships-centered
+              .list-group
+               .internship-list.list-group-item(*ngFor='let internship of listing.collection')
+                 .row
+                   .col-xs-12.col-sm-1.col-md-1
+                     img.internship-image(src='{{internship.logo}}', alt='{{internship.link}}')
+                   .col-xs-9.col-sm-9.col-md-9
+                     p.internship-description {{internship.description}}
+                 .row
+                   .col-xs-12.col-sm-12.col-md-12
+                     a.internship-link(target='_blank',href='{{internship.link}}') More Info
 
-                  a.btn.btn-primary(target='_blank', href='{{internship.link}}')
-                    | More Info
 
-pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+         .col-centered
+              pagination.pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
 home-footer

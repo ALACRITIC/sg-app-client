@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 import {ProfessorsService} from "../../../../shared/services/professors.service";
+import {TypeaheadMatch} from "ng2-bootstrap";
 
 @Component({
     selector: 'professor-search',
