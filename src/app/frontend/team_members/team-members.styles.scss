@@ -10,7 +10,8 @@
   padding-top: 10px;
   border-radius: 5px;
   position: relative;
-  transition: all 0.7s ease-in-out;
+  box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
   //<-------------------members image styles-------------------------------->
   img.member-image {
     border-radius: 0.313em 0.313em 0 0;
@@ -81,13 +82,14 @@
 //<-----------------members profile styles end----------------------------->
 
 //<-----------------members profile hover affects----------------------------->
-.more-info {
+.member-button {
   position: absolute;
-  opacity: 0;
 }
 .members-profile:hover{
-  .more-info{
-    opacity: 1;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+  padding-bottom: 30px;
+  .member-button{
+
   }
 }
 

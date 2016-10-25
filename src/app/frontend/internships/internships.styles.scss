@@ -6,7 +6,8 @@
   //internship body container
   .internship-body {
     background-color: #D3D3D3;
-    padding-top: 10px;
+    padding-top: 20px;
+
 
     //centering the internships
     .internships-centered {
@@ -15,6 +16,8 @@
 
       //internship list-item
       .internship-list {
+        box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
         background-color: white;
         margin-bottom: 10px;
         height: 110px;
@@ -51,7 +54,7 @@
         &:hover {
           box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
           //background-color: #0D335F;
-          transition: 0.3s;
+
           //on internship hover description shown
           .internship-description {
             //color: white;

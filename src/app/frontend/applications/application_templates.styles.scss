@@ -1,0 +1,77 @@
+.applications{
+  background-color: #D3D3D3;
+}
+.template-body {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+.application-description{
+  padding-top: 15px;
+  font-size: 16px;
+  line-height: 23px;
+
+}
+
+.panel-heading {
+  text-align:left;
+  background-color: #0D335F;
+}
+
+.submission-body{
+  padding-top: 18px;
+}
+.panel-title a:focus{
+  outline: none;
+}
+.panel-title{
+  margin:0;
+}
+.panel-title a {
+  border-bottom: 2px solid #D3D3D3;
+  display: block;
+  color: white;
+  padding: 25px;
+  position: relative;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26px;
+  text-decoration: none;
+  transition: all 1.5s;
+}
+
+.accordion-toggle:after {
+  font-family: 'FontAwesome';
+  content: "\f078";
+  background-color: #E50000;
+  padding: 25px 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}
+
+.active .accordion-toggle:after {
+  font-family: 'FontAwesome';
+  content: "\f077";
+  font-size: 16px;
+  background-color: #E50000;
+  padding: 25px 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+.container.body{
+  height: 200px;
+  background-color: white;
+  border-bottom: 2px solid #D3D3D3;
+  box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
+}
+
+
+

@@ -18,6 +18,7 @@ export class NewApplicationSubmission implements OnChanges {
     @Input() template: ApplicationTemplate;
     public uploader:FileUploader;
     public hasBaseDropZoneOver:boolean = false;
+    downloaded:boolean = false;
 
     constructor(private _templateService:ApplicationTemplatesService, @Inject('ApiEndpoint') private api: string ) {
         this.template = new ApplicationTemplate();
@@ -34,15 +35,21 @@ export class NewApplicationSubmission implements OnChanges {
     }
 
     public fileOverBase(e:any):void {
+        this.downloaded = true;
         this.hasBaseDropZoneOver = e;
+        event.stopPropagation();
     }
 
     public sendSubmission(item:FileItem) {
+        this.downloaded = true;
         item.alias = "application_submission[document]";
         item.upload();
         this.uploader.onCompleteAll = () => {
             this.uploader.clearQueue();
+            this.downloaded = false;
         };
+        event.stopPropagation();
+
     }
 
 }

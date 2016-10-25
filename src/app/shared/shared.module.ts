@@ -18,9 +18,9 @@ import {AsyncWaitDirective} from "./directives/asyncWait.directive";
 import {ProfessorSearch} from "../admin/dashboard/professors/professor-search/professor-search.component";
 import { FormsModule, ReactiveFormsModule }        from '@angular/forms';
 import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
-
+import { AccordionModule } from 'ng2-bootstrap/components/accordion';
 @NgModule({
-    imports: [CommonModule, ReactiveFormsModule,FormsModule,TypeaheadModule],
+    imports: [CommonModule, ReactiveFormsModule,FormsModule,TypeaheadModule,AccordionModule],
     providers: [ ApplicationSubmissionsService,
         ApplicationTemplatesService, ClubsService,
         EvaluationsService, PostsService, ProfessorsService,
@@ -44,7 +44,8 @@ import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
               ProfessorSearch,
               ReactiveFormsModule,
               FormsModule,
-              TypeaheadModule
+              TypeaheadModule,
+              AccordionModule
 
     ]
 })

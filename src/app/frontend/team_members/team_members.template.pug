@@ -9,7 +9,8 @@ header(headerName='members',(click)='selectedMember = undefined')
              img.member-image(src='{{member.photo}}', alt='{{member.name}}')
              h5.member-name {{member.name}}
              h5.member-title {{member.title}}
-             button.btn.btn-primary.more-info(type='button',(click)="expandClick(member)") Default
+             .member-button
+                button.btn.btn-primary(type='button',(click)="expandClick(member)") Default
              .row
                p.member-description Description
                p.description-body {{member.description}}
