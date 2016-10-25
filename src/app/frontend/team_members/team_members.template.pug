@@ -10,7 +10,7 @@ header(headerName='members',(click)='selectedMember = undefined')
              h5.member-name {{member.name}}
              h5.member-title {{member.title}}
              .member-button
-                button.btn.btn-primary(type='button',(click)="expandClick(member)") Default
+                button(type='button',(click)="expandClick(member)") More Info
              .row
                p.member-description Description
                p.description-body {{member.description}}
