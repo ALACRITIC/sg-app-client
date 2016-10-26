@@ -130,7 +130,12 @@ a.selected {
     display: none;
   }
 }
-
+@media screen and (min-width: 1520px){
+  .container-fluid{
+    padding-right:  15%;
+    padding-left:  15%;
+  }
+}
 //tablet view
 @media screen and (min-width: 755px) and (max-width: 1024px) {
   .header-name {
