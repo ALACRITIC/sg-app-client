@@ -5,9 +5,9 @@ header(headerName='professors')
         professor-search((selectedSearchItem)='goToProfessor($event)')
       .col-xs-12.filtered-dept
         professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
-.container-fluid
+.container-fluid.container-evaluations
     .row.professors
-       .col-md-2.dept-sidebar
+       .col-md-2.col-lg-2.col-xl-2.dept-sidebar
            h5.dept-header DEPARTMENTS
            .departments
               .container-fluid

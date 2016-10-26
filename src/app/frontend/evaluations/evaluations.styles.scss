@@ -34,11 +34,11 @@ a.selected {
     }
     //sidebar list of departments
     .departments {
-
+      background-color: #0D335F;
       //list of departments
       .list-group-item.listed-depts {
         list-style: none;
-        background-color: transparent;
+        background-color: #0D335F;
         border: none;
         margin-left: 0;
         padding: 5px;
@@ -131,9 +131,25 @@ a.selected {
   }
 }
 @media screen and (min-width: 1520px){
-  .container-fluid{
-    padding-right:  15%;
-    padding-left:  15%;
+  .dept-sidebar {
+
+  }
+  .container-evaluations{
+    padding-right:  6%;
+    //padding-left:  6%;
+    width: 100%;
+    background-color:#D3D3D3 ;
+  }
+}
+@media screen and (min-width: 1650px){
+  .dept-sidebar {
+
+  }
+  .container-evaluations{
+    padding-right:  8%;
+    //padding-left:  6%;
+    width: 100%;
+    background-color:#D3D3D3 ;
   }
 }
 //tablet view

@@ -1,8 +1,8 @@
 navbar
 header(headerName='members',(click)='selectedMember = undefined')
 
-.container-fluid
-  .row.team-members((click)='selectedMember = undefined')
+.container-fluid.container-members((click)='selectedMember = undefined')
+  .row.team-members
     .col-md-9.col-centered
       .row
          .col-xs-3.col-md-2.col-centered.members-profile(*ngFor='let member of listing.collection',[ngClass]="{'activeProfile':member === selectedMember}",(click)="$event.stopPropagation()")
