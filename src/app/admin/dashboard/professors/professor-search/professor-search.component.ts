@@ -10,7 +10,8 @@ import {TypeaheadMatch} from "ng2-bootstrap";
 
 @Component({
     selector: 'professor-search',
-    templateUrl: './professor-search.template.pug'
+    templateUrl: './professor-search.template.pug',
+    styles:require(['./professor-search.styles.scss'])
 })
 export class ProfessorSearch  {
     @Output() selectedSearchItem = new EventEmitter();
@@ -22,10 +23,12 @@ export class ProfessorSearch  {
 
     public constructor(private _service:ProfessorsService) {
         this.dataSource = Observable.create((observer:any) => {
-            observer.next(this.asyncSelected);
+            observer.next(this.firstLetter(this.asyncSelected));
         }).mergeMap((token:string) => this._service.search(token));
     }
-
+    firstLetter(str:string) {
+         return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    }
     public changeTypeaheadLoading(e:boolean):void {
         this.typeaheadLoading = e;
         console.log('typeahead loading',e);
