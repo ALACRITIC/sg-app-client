@@ -3,9 +3,9 @@
  */
 import { Component, OnInit,ViewEncapsulation ,Output,EventEmitter} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {Professor} from "../../../shared/models/professor.model";
-import {ProfessorsService} from "../../../shared/services/professors.service";
-import {ProfessorEvaluationsComponent} from "./professor-evaluations.component";
+import {Professor} from "../../../../shared/models/professor.model";
+import {ProfessorsService} from "../../../../shared/services/professors.service";
+import {ProfessorEvaluationsComponent} from "../professor-evaluations/professor-evaluations.component";
 
 
 @Component({

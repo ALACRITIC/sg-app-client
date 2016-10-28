@@ -19,7 +19,7 @@ import {AdminModule} from "./admin/admin.module";
 import {SharedModule} from "./shared/shared.module";
 import {FrontModule} from "./frontend/front.module";
 import {FILE_UPLOAD_DIRECTIVES, FileUploader} from "ng2-file-upload/ng2-file-upload";
-import {BreadcrumbComponent} from "./frontend/evaluations/professor/breadcrumbs.component";
+import {BreadcrumbComponent} from "./frontend/shared/breadcrumbs/breadcrumbs.component";
 
 
 // Application wide providers

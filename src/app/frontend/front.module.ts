@@ -18,15 +18,16 @@ import {FrontNavbar} from "./shared/navbar/navbar.component";
 import {NewApplicationSubmission} from "./applications/new_application_submission.component";
 import {SharedModule} from "../shared/shared.module";
 import {Home} from "./home/home.component";
-import {ProfessorDetailComponent} from "./evaluations/professor/professor-detail.component";
-import {ProfessorProfileComponent} from "./evaluations/professor/professor-profile.component";
-import {ProfessorEvaluationsComponent} from "./evaluations/professor/professor-evaluations.component";
+import {ProfessorDetailComponent} from "./evaluations/professor/professor-detail/professor-detail.component";
+import {ProfessorEvaluationsComponent} from "./evaluations/professor/professor-evaluations/professor-evaluations.component";
 import {HomeFooter} from "./shared/footer/footer.component";
 import {FrontClubDetail} from "./clubs/club-detail.component";
 import {FrontInternshipDetail} from "./internships/internship-detail.component";
 import {FrontMemberDetail} from "./team_members/team-members-detail.component";
 import {FrontHeader} from "./shared/header/header.component";
-import {BreadcrumbComponent} from "./evaluations/professor/breadcrumbs.component";
+import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
+import {NewProfessorEvaluation} from "./evaluations/professor/professor-evaluations/new-professor-evaluation.component";
+
 
 
 
@@ -51,7 +52,8 @@ import {BreadcrumbComponent} from "./evaluations/professor/breadcrumbs.component
         FrontClubDetail,
         FrontInternshipDetail,
         FrontMemberDetail,
-        BreadcrumbComponent
+        BreadcrumbComponent,
+        NewProfessorEvaluation
         ],
     
 })

@@ -3,7 +3,7 @@ import {Component,ViewEncapsulation} from '@angular/core';
 @Component({
     encapsulation: ViewEncapsulation.Emulated,
     selector: 'professor-detail',
-    templateUrl: './professor-detail.template.pug',
+    templateUrl: 'professor-detail.template.pug',
     styles:require(['./professor-detail.styles.scss'])
 })
 

@@ -23,7 +23,7 @@ export class EvaluationsService {
 
                 listing.collection = body.Items as Evaluation[] ;
                 listing.count = body.Count;
-                console.log(listing.collection)
+
 
                 return listing;
             } )
@@ -44,9 +44,7 @@ export class EvaluationsService {
         let options = new RequestOptions({ headers: headers });
 
         return this.http.post(this.api + `/professors/${professor_id}/evaluations`, body, options)
-            .map((res: Response) => console.log(res.json()));
-
+            .toPromise()
+            .then((res: Response) =>  res.json());
     }
-
-
 }

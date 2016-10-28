@@ -8,7 +8,8 @@ import {Club} from "../../shared/models/club.model";
 
 @Component({
     selector: 'club-profile',
-    templateUrl: 'club-profile.template.pug'
+    template:require ('./club-profile.template.pug'),
+    styles:require(['./club-profile.styles.scss'])
 })
 export class FrontClubProfile implements OnInit {
     public club:Club;

@@ -6,11 +6,13 @@
 
     .card {
       margin: 20px 0;
+      width: 200px;
     }
   }
 
   img.card-img.img-fluid {
-    width: 100%;
+    width: 200px;
+    height: 180px;
   }
 
   .card-img-overlay {

@@ -1,0 +1,27 @@
+
+.container-fluid.evaluation-body
+
+
+
+.row
+   .col-md-12
+    .list-group.evaluation-group
+        .list-group-item.active.eval-list.list-group-item-action
+            h4.list-group-item-heading
+                | Evaluations
+        .list-group-item.list-group-item-action.evaluation-list(*ngFor='let evaluation of listing.collection')
+            p.list-group-item-text.description([ngClass]="{'show-more':showMore}") {{evaluation.content}}
+            .row
+                .col-xs-12
+                 a.show-more-btn.pull-right((click)='showMore = !showMore') {{!showMore ? 'Show More' : 'Show Less'}}
+
+.row
+    .col-md-12
+        span.text-lg-center.text-muted(*ngIf='listing.collection && listing.collection.length == 0')
+            | No evaluations found.
+
+new-evaluation((outputEvaluation)='addEvaluation($event)')
+.row
+    .col-md-12
+        .pagination-evaluation
+            pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

@@ -1,0 +1,36 @@
+.add-evaluation{
+  padding-top: 15px;
+  padding-bottom: 30px;
+  outline: hidden;
+
+}
+.evaluation-group{
+  box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  &:hover{
+    box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
+  }
+}
+textarea.form-control{
+  outline: hidden;
+  resize: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.button-eval{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #0D335F;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+i.fa.fa-share{
+  padding-top: 28px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 30px;
+  color: white;
+
+}

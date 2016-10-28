@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, NavigationEnd, Params, PRIMARY_OUTLET } from "@
 import "rxjs/add/operator/filter";
 
 interface IBreadcrumb {
+    name: string;
     label: string;
     params: Params;
     url: string;
@@ -25,6 +26,7 @@ export class BreadcrumbComponent implements OnInit {
     }
 
     ngOnInit() {
+        const ROUTE_DATA_BREADCRUMB: string = "breadcrumb";
 
         //subscribe to the NavigationEnd event
         this.router.events.filter(event => event instanceof NavigationEnd).subscribe(event => {
@@ -36,6 +38,7 @@ export class BreadcrumbComponent implements OnInit {
 
             //set the url to an empty string
             let url: string = "";
+
             //iterate from activated route to children
             while (currentRoute.children.length > 0) {
                 let childrenRoutes: ActivatedRoute[] = currentRoute.children;
@@ -48,20 +51,24 @@ export class BreadcrumbComponent implements OnInit {
                     if (route.outlet !== PRIMARY_OUTLET) {
                         return;
                     }
+                    //verify the custom data property "breadcrumb" is specified on the route
+                    if (!route.snapshot.data.hasOwnProperty(ROUTE_DATA_BREADCRUMB)) {
+                        return;
+                    }
 
                     //get the route's URL segment
                     let routeURL: string = route.snapshot.url.map(segment => segment.path).join("/");
-
+                    console.log(url);
                     //append route URL to URL
                     url += `/${routeURL}`;
-                    //add breadcrumb
 
+                    //add breadcrumb
                     let breadcrumb: IBreadcrumb = {
+                        name: route.snapshot.data[ROUTE_DATA_BREADCRUMB],
                         label: route.snapshot.params.name,
                         params: route.snapshot.params,
                         url: url
                     };
-                    console.log(breadcrumb.params);
 
                     this.breadcrumbs.push(breadcrumb);
                 });
