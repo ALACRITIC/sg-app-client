@@ -1,0 +1,20 @@
+.filtered-professors{
+    background-color: white;
+    border: 4px;
+    padding-left: 4px;
+
+}
+button.btn.btn-default{
+    border: 5px;
+    outline: none;
+    padding-left: 4px;
+}
+.filtered-somne{
+    padding: 0;
+}
+/*@media screen and (max-width: 750px) {*/
+    /*.filtered-somne{*/
+        /*width: 395px;*/
+        /*padding-left: 17px;*/
+    /*}*/
+/*}*/

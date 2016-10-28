@@ -42,6 +42,9 @@ export class FrontProfessors implements OnInit {
     goToProfessor($event){
         this._router.navigate([`professor/${$event.id}`]);
     }
+    goToProfile(professor:Professor){
+        this._router.navigate(['/professor',  professor.id, professor.name ]);
+    }
 
     //-------------fetching the list of departments through outputDepts event------------>
     sideDepts($event){

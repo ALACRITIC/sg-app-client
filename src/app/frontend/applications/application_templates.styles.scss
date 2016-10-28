@@ -1,5 +1,6 @@
 .applications{
   background-color: #D3D3D3;
+  padding-bottom: 30px;
 }
 .template-body {
   margin-left: auto;
@@ -28,7 +29,7 @@
   margin:0;
 }
 .panel-title a {
-  border-bottom: 2px solid #D3D3D3;
+  border-bottom: 5px solid #D3D3D3;
   display: block;
   color: white;
   padding: 25px;
@@ -69,9 +70,46 @@
 .container.body{
   height: 200px;
   background-color: white;
-  border-bottom: 2px solid #D3D3D3;
+  border-bottom: 5px solid #D3D3D3;
   box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
 }
+@media screen  and (max-width: 640px) {
+  .application-description{
+    position: absolute;
+    width: 460px;
+  }
+  .new-templates{
+    display: none;
+  }
+  .panel-title a {
+    font-size: 19px;
+  }
+  .template-body{
+    //padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+//tablet view
+@media screen and (min-width: 755px) and (max-width: 1024px) {
 
+  .application-description{
+    //position: absolute;
+    //width: 460px;
+  }
+  .new-templates{
+    display: none;
+  }
+  .panel-title a {
+    font-size: 19px;
+  }
+  .template-body{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+}
 
 

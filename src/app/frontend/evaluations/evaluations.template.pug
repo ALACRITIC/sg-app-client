@@ -16,7 +16,7 @@ header(headerName='professors')
                   a.dept-link((click)='loadDepartments(1,10,department)',[class.selected]='department === selectedDept') {{department}}
        .col-md-9.col-centered
            .row
-              .col-xs-3.col-md-2.col-lg-2.col-centered.profile(*ngFor='let professor of listing.collection',routerLink='/professor/{{professor.id}}')
+              .col-xs-3.col-md-2.col-lg-2.col-centered.profile(*ngFor='let professor of listing.collection',(click)='goToProfile(professor)')
                     img.professor-image(src='{{professor.photo}}')
                     p.professor-name {{professor.name}}
                     p.professor-department {{professor.department}}

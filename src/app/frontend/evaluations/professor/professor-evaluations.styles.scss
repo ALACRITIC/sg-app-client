@@ -1,0 +1,41 @@
+p.list-group-item-text.description{
+  height: 85px;
+  overflow: auto;
+}
+.evaluation-body{
+  padding-top: 140px;
+}
+.list-group-item.active.eval-list{
+  background-color: #0D335F;
+}
+.evaluation-list{
+  font-size: 16px;
+  line-height: 30px;
+  border-bottom: 5px solid #D3D3D3;
+}
+.add-evaluation{
+  padding-bottom: 30px;
+}
+
+i.fa.fa-paper-plane{
+  color:green;
+}
+//tablet view
+@media screen and (min-width: 755px) and (max-width: 1024px) {
+  .evaluation-body{
+    padding-top: 20px;
+  }
+  p.list-group-item-text.description{
+    height: 145px;
+    overflow: auto;
+  }
+}
+@media screen and (max-width: 755px){
+  .evaluation-body{
+    padding-top: 20px;
+  }
+  p.list-group-item-text.description{
+    height: 145px;
+    overflow: auto;
+  }
+}

@@ -2,9 +2,10 @@
 
 .professor-search {
   padding-top: 1.000em;
-
 }
-
+.container-evaluations{
+  height: 100%;
+}
 //filtered dept input shown only on mobile view
 .filtered-dept {
   display: none;
@@ -18,12 +19,14 @@ a.selected {
 //body
 .professors {
   background-color: #D3D3D3;
-
   //sidebar
   .dept-sidebar {
     background-color: #0D335F;
     color: white;
     font-weight: 400;
+    height: 80%;
+    min-height: 650px;
+
 
     //sidebar-header
     .dept-header {
@@ -118,32 +121,32 @@ a.selected {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 //mobile view
 @media screen and (max-width: 750px) {
   .filtered-dept {
     display: block;
-
+    width: 200px;
   }
   .dept-sidebar {
     display: none;
+    min-height:900px ;
+  }
+  .col-centered.pagination{
+    padding-bottom: 60px;
   }
 }
 @media screen and (min-width: 1520px){
-  .dept-sidebar {
-
-  }
   .container-evaluations{
     padding-right:  6%;
-    //padding-left:  6%;
     width: 100%;
     background-color:#D3D3D3 ;
   }
 }
 @media screen and (min-width: 1650px){
   .dept-sidebar {
-
   }
   .container-evaluations{
     padding-right:  8%;
@@ -159,6 +162,18 @@ a.selected {
     font-size: 1.652em;
     line-height: 2.174em;
   }
+  .col-centered.pagination{
+    padding-bottom: 40px;
+  }
+  .dept-sidebar {
+    display: none;
+  }
+
+  .filtered-dept {
+    display: block;
+  }
+
+
 }
 
 

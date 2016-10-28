@@ -13,7 +13,8 @@ import { AppState } from './app.service';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls:require( ['./app.styles.scss']),
-  template: `<router-outlet></router-outlet>`
+  template: `
+<router-outlet></router-outlet>`
 })
 export class App {
   name = 'AUBG Student Government';

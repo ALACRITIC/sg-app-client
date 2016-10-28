@@ -97,12 +97,17 @@
 
 //tablet view
 @media screen and (min-width: 755px) and (max-width: 1024px) {
-
+  .pagination{
+    padding-bottom: 20px;
+  }
 }
 
 @media screen and (max-width: 755px) {
   img.internship-image {
     display: none;
+  }
+  .pagination{
+    padding-bottom: 30px;
   }
 
 }

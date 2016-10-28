@@ -1,14 +1,30 @@
-h2 Evaluations
-span.text-lg-center.text-muted(*ngIf='listing.collection && listing.collection.length == 0')
-    | No evaluations found.
-.list-group
-    .list-group-item.list-group-item-action(*ngFor='let evaluation of listing.collection')
-        p.list-group-item-text {{evaluation.content}}
 
+.container-fluid.evaluation-body
+//span.text-lg-center.text-muted(*ngIf='listing.collection && listing.collection.length == 0')
+//    | No evaluations found.
 .row
-    .form-group
-        input.form-control([(ngModel)]='evaluation.content', name = 'name', placeholder = 'Name')
-        button.btn.btn-success((click)='addEvaluation(evaluation)') Save Evaluation
+   .col-md-12
+    .list-group.evaluation-group
+        .list-group-item.active.eval-list.list-group-item-action
+            h4.list-group-item-heading
+                | Evaluations
+        .list-group-item.list-group-item-action.evaluation-list([ngClass]="{'show-more':showMore}")
+            p.list-group-item-text.description Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32
+        .list-group-item.list-group-item-action.evaluation-list
+            p.list-group-item-text.description Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32
+
 
 span(*ngIf='listing.collection && listing.collection.length > 0')
     pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+
+.row
+    .col-md-12.add-evaluation
+     .input-group
+        input.form-control.cont-input([(ngModel)]='evaluation.content', name = 'name', placeholder = 'Write an Evaluation')
+        span.input-group-btn
+            button.btn.btn-secondary.evaluation-submit((click)='addEvaluation(evaluation)')
+                i.fa.fa-paper-plane(aria-hidden='true')
+
+
+//{{evaluation.content}}
+//    (*ngFor='let evaluation of listing.collection')

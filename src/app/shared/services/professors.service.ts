@@ -29,6 +29,7 @@ export class ProfessorsService {
             .then(res => {
                 let body = res.json();
                 let listing = new Listing<Professor>();
+                console.log('params',params);
 
                 listing.collection = body.Items as Professor[] ;
                 listing.count = body.Count;
@@ -38,7 +39,7 @@ export class ProfessorsService {
             .catch(this.handleError);
     }
 
-    get(id:number) {
+    get(id?:number) {
         return this.http.get(this.professorsUrl + `/${id}`)
             .toPromise()
             .then(res => { return res.json() as Professor })

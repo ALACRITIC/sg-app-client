@@ -4,18 +4,18 @@ header(headerName='applications')
 .container-fluid.applications
     .container.applications-body
       .row
-        .col-md-9.template-body
+        .col-md-9.col-xs-12.template-body
           accordion([closeOthers]="oneAtATime")
             accordion-group(*ngFor="let application_template of listing.collection" ,[heading]="application_template.name | uppercase",(click)="selectedTemp(application_template)",[ngClass]="{'active':selectedTemplate === application_template}")
              .container.body((click)="$event.stopPropagation()")
                .row
-                  .col-md-6
+                  .col-md-6.col-sm-12
                    .application-description {{ application_template.description }}
-                  .col-md-6
+                  .col-md-6.new-templates
                       .row
-                         .col-xs-5
+                         .col-md-5
 
-                         .col-xs-7.new-application
+                         .col-md-7.new-application
                            new-application-submission([template]='selectedTemplate',(click)="$event.stopPropagation()")
 
 home-footer

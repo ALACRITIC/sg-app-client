@@ -1,0 +1,71 @@
+//header with the professor name
+.profile-header {
+  background-color: #E1DFE0;
+  height: 120px;
+  position: absolute;
+  width: 100%;
+}
+
+//professor name
+.profName {
+  padding-top: 25px;
+  font-family: "Lato";
+  font-weight: 300;
+  color: black;
+  font-size: 3.250em;
+  line-height: 67px;
+}
+
+//professor profile
+.professor-image-eval {
+  padding-top: 23px;
+}
+
+//tablet view
+@media screen and (min-width: 755px) and (max-width: 1024px) {
+  // professor name
+  .profName {
+    padding-top: 25px;
+    font-size: 1.652em;
+    line-height: 2.174em;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .col-md-3.professor-image-eval {
+    padding-top: 140px;
+    padding-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .col-md-9.professor-evaluations {
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 755px) {
+  //professor name
+  .profName {
+    padding-top: 25px;
+    font-size: 1.652em;
+    line-height: 2.174em;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .col-md-3.professor-image-eval {
+    padding-top: 140px;
+    padding-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .col-md-9.professor-evaluations {
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+}

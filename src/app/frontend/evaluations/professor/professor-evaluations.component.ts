@@ -12,6 +12,7 @@ import {Evaluation} from "../../../shared/models/evaluation.model";
 @Component({
     selector: 'professor-evaluations',
     templateUrl: 'professor-evaluations.template.pug',
+    styles:require(['./professor-evaluations.styles.scss']),
     providers:[EvaluationsService],
     directives:[PAGINATION_DIRECTIVES]
 

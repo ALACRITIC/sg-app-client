@@ -1,10 +1,9 @@
-.container.professor-prof
+
+.professor-prof
   .row
     .col-xs-12
-                .card
-                    img.card-img-top.img-thumbnail(src='{{professor.photo}}')
+         .card.professor-card
+            img.card-img-top.img-thumbnail.image(src='{{professor.photo}}')
 
-                    .card-block
-                        h4.card-title {{professor.name}}
-
-                        p.card-description {{professor.department}}
+            .card-block
+                p.card-description {{professor.department}}

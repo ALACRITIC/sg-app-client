@@ -1,23 +1,18 @@
-.professor-prof{
-
+//professor card
+.card.professor-card{
+  margin-top: 15px;
+  border: none;
+  width: 240px;
+  height: 280px;
 }
-.card-img-top{
+//professor image
+img.card-img-top.img-thumbnail.image{
   border-radius: 0.313em 0.313em 0 0;
-  height: 160px;
+  height: 220px;
+  width: 240px;
   display: block;
-  max-width: 10.000em;
 }
-h4.card-title{
-  clear: left;
-  float: left;
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: 600;
-  font-style: normal;
-  color: black;
-
-  margin: 0;
-}
+//professor department
 p.card-description{
   clear: left;
   float: left;
@@ -25,5 +20,4 @@ p.card-description{
   line-height: 1.1;
   font-weight: 400;
   color: #999;
-  margin: 7px 0;
 }

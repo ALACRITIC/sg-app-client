@@ -1,11 +1,19 @@
 navbar
-.row(*ngIf='!isEdited')
-    .col-xs-3
-        a.btn.btn-primary(routerLink='../../evaluations') Back
-.row
-    .col-md-4
-        professor-profile
 
-    .col-md-8
-        professor-evaluations
-        //footer
+breadcrumb
+.profile-header
+   .container
+    .row
+       .col-md-3.col-sm-12
+
+       .col-md-9.col-sm-12
+         .profName {{professorName | uppercase}}
+
+.container-fluid.professor-detail
+    .container
+        .row
+            .col-md-3.professor-image-eval
+                professor-profile((professorName)='getName($event)')
+            .col-md-9.professor-evaluations
+                professor-evaluations
+home-footer

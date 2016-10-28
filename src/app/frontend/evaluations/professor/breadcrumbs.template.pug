@@ -1,0 +1,9 @@
+//
+   Created by Centroida-2 on 10/27/2016.
+.container-fluid.fluid-bread
+    .container
+           .btn-group.btn-breadcrumb(*ngFor='let breadcrumb of breadcrumbs')
+            a.btn.btn-default(href='#')
+              i.fa.fa-home(aria-hidden='true')
+            a.btn.btn-default(routerLink="") Professors
+            a.btn.btn-default([routerLink]='[breadcrumb.url, breadcrumb.params]') {{breadcrumb.label}}

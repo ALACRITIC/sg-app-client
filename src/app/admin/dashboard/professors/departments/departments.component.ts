@@ -9,6 +9,7 @@ import {EventEmitter} from "../../../../../../node_modules/@angular/common/src/f
     selector: 'professor-departments',
     encapsulation: ViewEncapsulation.None,
     template: require('./departments.template.pug'),
+    styleUrls:['./dept.style.css']
 })
 export class AdminProfessorDepartments implements OnInit{
     departments:Array<String>;

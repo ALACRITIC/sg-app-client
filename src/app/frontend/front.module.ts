@@ -26,6 +26,8 @@ import {FrontClubDetail} from "./clubs/club-detail.component";
 import {FrontInternshipDetail} from "./internships/internship-detail.component";
 import {FrontMemberDetail} from "./team_members/team-members-detail.component";
 import {FrontHeader} from "./shared/header/header.component";
+import {BreadcrumbComponent} from "./evaluations/professor/breadcrumbs.component";
+
 
 
 @NgModule({
@@ -49,6 +51,7 @@ import {FrontHeader} from "./shared/header/header.component";
         FrontClubDetail,
         FrontInternshipDetail,
         FrontMemberDetail,
+        BreadcrumbComponent
         ],
     
 })

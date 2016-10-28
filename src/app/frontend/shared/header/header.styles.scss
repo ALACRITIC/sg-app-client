@@ -5,12 +5,15 @@
 
 }
 
-
 //header-name
 .header-name {
   font-family: "Lato";
   font-weight: 300;
   color: black;
   font-size: 3.250em;
+  line-height: 67px;
+}
+@media screen  and (max-width: 640px) {
+  font-size: 1.250em;
   line-height: 67px;
 }
