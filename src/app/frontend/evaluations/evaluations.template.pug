@@ -6,7 +6,7 @@ header(headerName='professors')
       .col-xs-12.filtered-dept
         professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
 .container-fluid.container-evaluations
-    .row.professors
+    .row.professors(*ngIf="loadingSpinner === false")
        .col-md-2.col-lg-2.col-xl-2.dept-sidebar
            h5.dept-header DEPARTMENTS
            .departments
@@ -24,5 +24,7 @@ header(headerName='professors')
 
            .col-centered.pagination
                 pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
-
+    .row(*ngIf="loadingSpinner === true")
+        .col-md-12.loading-spinner
+            loading-spinner
 home-footer

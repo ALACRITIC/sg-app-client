@@ -24,9 +24,8 @@ export class EvaluationsService {
                 listing.collection = body.Items as Evaluation[] ;
                 listing.count = body.Count;
 
-
                 return listing;
-            } )
+            })
             .catch(this.handleError);
     }
 
@@ -45,6 +44,6 @@ export class EvaluationsService {
 
         return this.http.post(this.api + `/professors/${professor_id}/evaluations`, body, options)
             .toPromise()
-            .then((res: Response) =>  res.json());
+            .then((res) =>  res.json());
     }
 }

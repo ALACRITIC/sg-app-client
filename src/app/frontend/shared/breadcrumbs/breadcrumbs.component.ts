@@ -65,7 +65,7 @@ export class BreadcrumbComponent implements OnInit {
                     //add breadcrumb
                     let breadcrumb: IBreadcrumb = {
                         name: route.snapshot.data[ROUTE_DATA_BREADCRUMB],
-                        label: route.snapshot.params.name,
+                        label: route.snapshot.params.name.replace(/_/g, " "),
                         params: route.snapshot.params,
                         url: url
                     };

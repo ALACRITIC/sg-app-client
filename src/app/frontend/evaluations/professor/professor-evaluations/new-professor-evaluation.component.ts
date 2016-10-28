@@ -1,7 +1,7 @@
 /**
  * Created by Centroida-2 on 10/28/2016.
  */
-import {Component, OnInit, Output,EventEmitter} from '@angular/core';
+import {Component, Output,EventEmitter} from '@angular/core';
 import {Evaluation} from "../../../../shared/models/evaluation.model";
 
 
@@ -18,9 +18,9 @@ export class NewProfessorEvaluation  {
         this.evaluation = new Evaluation();
     }
 
-    addEvaluation(evaluation){
-
-        this.outputEvaluation.emit(evaluation);
+    addEvaluation(){
+        console.log(this.evaluation);
+        this.outputEvaluation.emit(this.evaluation);
     }
 
 }

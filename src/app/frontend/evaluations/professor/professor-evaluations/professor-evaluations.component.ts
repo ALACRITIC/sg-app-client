@@ -37,19 +37,26 @@ export class ProfessorEvaluationsComponent implements OnInit {
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
             this.id = +params['id'];
-            this.loadEvaluations(1,10,this.id);
+            // this.loadEvaluations(1,10,this.id);
+            this._service.query(1,10,+params['id']).then(listing => {
+                this.listing = listing;
+                console.log(listing);
+            });
         });
     }
+    //
+    // private loadEvaluations(page:number, itemsPerPage: number,id:number) {
+    //     this._service.query(page,itemsPerPage,id).then(listing => {
+    //         this.listing = listing;
+    //         console.log(listing);
+    //     });
+    // }
 
-    private loadEvaluations(page:number, itemsPerPage: number,id:number) {
-        this._service.query(page,itemsPerPage,id).then(listing => {
-            this.listing = listing
-        });
-    }
-
-    addEvaluation(event){
-        this._service.addEvaluation(event,this.id).subscribe(res => {
+    addEvaluation(evaluation:Evaluation){
+       evaluation.professor_id = this.id;
+        this._service.addEvaluation(evaluation,this.id).then(res => {
             this.evaluation = res;
+            console.log(res);
         });
     }
 }

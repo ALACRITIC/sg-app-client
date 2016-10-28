@@ -22,6 +22,7 @@ export class FrontProfessors implements OnInit {
     public departments:Array<String>;
     public selectedDept:string;
     public currentPage:number = 1;
+    public loadingSpinner:boolean = true;
 
     constructor(private _service:ProfessorsService,private _router:Router) {
     }
@@ -43,7 +44,7 @@ export class FrontProfessors implements OnInit {
         this._router.navigate([`professor/${$event.id}`]);
     }
     goToProfile(professor:Professor){
-        this._router.navigate(['/professor',  professor.id, professor.name ]);
+        this._router.navigate(['/professor',  professor.id, professor.name.replace(/ /g, "_") ]);
     }
 
     //-------------fetching the list of departments through outputDepts event------------>
@@ -57,9 +58,12 @@ export class FrontProfessors implements OnInit {
     }
 
     private loadProfessors(page:number, itemsPerPage:number, department?:string) {
+        setTimeout(() => {
         this._service.query(page, itemsPerPage, department).then(listing => {
             this.listing = listing;
             this.currentPage = page;
+            this.loadingSpinner = false;
         });
+        }, 300);
     }
 }

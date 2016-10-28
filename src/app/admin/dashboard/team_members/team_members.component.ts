@@ -36,7 +36,6 @@ export class AdminTeamMembers implements OnInit{
     }
 
     addMember($event) {
-        console.log($event.photo);
         this._service.addMember($event.member,$event.photo).subscribe((res) => {
                 this.member = res;
                 this.loadTeamMembers(1, 10);

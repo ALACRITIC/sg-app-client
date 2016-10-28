@@ -27,7 +27,7 @@ export class TeamMembersService {
                 listing.count = body.Count;
 
                 return listing;
-            } )
+            })
             .catch(this.handleError);
     }
 

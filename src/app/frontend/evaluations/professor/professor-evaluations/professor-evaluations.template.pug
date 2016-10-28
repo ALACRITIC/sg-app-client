@@ -20,7 +20,12 @@
         span.text-lg-center.text-muted(*ngIf='listing.collection && listing.collection.length == 0')
             | No evaluations found.
 
-new-evaluation((outputEvaluation)='addEvaluation($event)')
+.row
+    .col-md-12.add-evaluation
+        .input-group.evaluation-group
+            textarea.form-control([(ngModel)]='evaluation.content',rows='3',placeholder="Write an Evaluation")
+            .button-eval((click)='addEvaluation(evaluation)')
+                i.fa.fa-share(aria-hidden='true')
 .row
     .col-md-12
         .pagination-evaluation
