@@ -1,7 +1,7 @@
 /*
  * Angular 2 decorators and services
  */
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
 
 import { AppState } from './app.service';
 
@@ -10,8 +10,8 @@ import { AppState } from './app.service';
  * Top Level Component
  */
 @Component({
+  // encapsulation: ViewEncapsulation.Emulated,
   selector: 'app',
-  encapsulation: ViewEncapsulation.Emulated,
   styleUrls:require( ['./app.styles.scss']),
   template: `
 <router-outlet></router-outlet>`
@@ -24,6 +24,7 @@ export class App {
     public appState: AppState) {
 
   }
+
 
 }
 

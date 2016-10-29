@@ -30,7 +30,6 @@ import {NewProfessorEvaluation} from "./evaluations/professor/professor-evaluati
 
 
 
-
 @NgModule({
     imports: [CommonModule, PaginationModule, routing, SharedModule, CarouselModule],
     declarations: [
@@ -54,7 +53,6 @@ import {NewProfessorEvaluation} from "./evaluations/professor/professor-evaluati
         FrontMemberDetail,
         BreadcrumbComponent,
         NewProfessorEvaluation,
-
         ],
     
 })

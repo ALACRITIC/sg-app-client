@@ -42,6 +42,7 @@ type StoreType = {
   declarations: [
     App,
     NoContent,
+
   ],
   imports: [ // import Angular's modules
     AdminModule,

@@ -1,5 +1,4 @@
-//<----------------------main header container--------------->
-
+//<----------------------professor search bar and professor dept styles--------------->
 .professor-search {
   padding-top: 1.000em;
 }
@@ -10,6 +9,11 @@
 .filtered-dept {
   display: none;
 }
+//<----------------------professor search bar and professor dept styles end --------------->
+
+
+//<---- evaluations styles and professor profiles----->
+
 
 //side bar list on click color change
 a.selected {
@@ -19,14 +23,14 @@ a.selected {
 //body
 .professors {
   background-color: #D3D3D3;
-  //sidebar
+
+  //<-----sidebar styles ------------->
   .dept-sidebar {
     background-color: #0D335F;
     color: white;
     font-weight: 400;
     height: 80%;
     min-height: 650px;
-
 
     //sidebar-header
     .dept-header {
@@ -62,67 +66,76 @@ a.selected {
       }
     }
   }
-}
+  //<------sidebar styles end----->
 
-//professor's profile
-.profile {
-  background-color: #FFFFFF;
-  display: block;
-  margin: 1.250em;
-  padding-top: 0.625em;
-  box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 0.313em;
-  &:hover {
-    box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
-  }
-  //professor profile image
-  img.professor-image {
-    border-radius: 0.313em 0.313em 0 0;
-    height: 160px;
+  //-------professor's profile styles----->
+  .profile {
+    background-color: #FFFFFF;
     display: block;
-    max-width: 10.000em;
+    margin: 1.250em;
+    padding-top: 0.625em;
+    box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 0.313em;
+    &:hover {
+      box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
+    }
+    //professor profile image
+    img.professor-image {
+      border-radius: 0.313em 0.313em 0 0;
+      height: 160px;
+      display: block;
+      max-width: 10.000em;
+    }
+    //professor profile name
+    .professor-name {
+      clear: left;
+      float: left;
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 600;
+      font-style: normal;
+      color: black;
+      padding-top: 10px;
+      margin: 0;
+    }
+    //professor profile department
+    .professor-department {
+      clear: left;
+      float: left;
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 400;
+      color: #999;
+      margin: 7px 0;
+    }
   }
-  //professor profile name
-  .professor-name {
-    clear: left;
-    float: left;
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: 600;
-    font-style: normal;
-    color: black;
-    padding-top: 10px;
-    margin: 0;
-  }
-  //professor profile department
-  .professor-department {
-    clear: left;
-    float: left;
-    font-size: 16px;
-    line-height: 1.1;
-    font-weight: 400;
-    color: #999;
-    margin: 7px 0;
-  }
-
+  //-------professor's profile styles end----->
+}
+//<-----font awesome spinner before professors loading--->
+i.fa.fa-spinner.fa-spin.fa-3x.fa-fw{
+  margin: 200px auto;
+  color: white;
 }
 
 //centering the profiles column's
-.col-centered {
+.centered-professors,.col-centered.profile {
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
 }
 
-//centering the pagination column
-.col-centered.pagination {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding-bottom: 20px;
-}
+////centering the pagination column
+//.col-centered.pagination {
+//  margin-left: auto;
+//  margin-right: auto;
+//  text-align: center;
+//  padding-bottom: 20px;
+//}
+
+
+
 
 //mobile view
 @media screen and (max-width: 750px) {

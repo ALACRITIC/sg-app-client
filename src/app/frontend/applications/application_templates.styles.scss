@@ -1,114 +1,144 @@
-.applications{
+.applications {
   background-color: #D3D3D3;
   padding-bottom: 30px;
-}
-.template-body {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 20px;
-}
-.application-description{
-  padding-top: 15px;
-  font-size: 16px;
-  line-height: 23px;
+  //application template styles
+  // centering accordions
+  .template-body {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+
+    //<------ accordion styles------>
+
+    //adding padding between application templates
+    .panel.panel-default {
+      padding-bottom: 20px;
+    }
+    //panel heading styles
+    .panel-heading {
+      text-align: left;
+      background-color: #0D335F;
+      box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      //adding shadows
+      &:hover{
+        box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+    .panel-body{
+      box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      //adding shadows
+      &:hover{
+        box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+    //panel title name
+    .panel-title {
+      margin: 0;
+    }
+    //panel title link
+    .panel-title a {
+      display: block;
+      color: white;
+      padding: 25px;
+      position: relative;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 26px;
+      text-decoration: none;
+      transition: all 1.5s;
+      &:focus {
+        outline: none;
+      }
+    }
+    //accordion arrow in red styles
+    .accordion-toggle:after {
+      font-family: 'FontAwesome';
+      content: "\f078";
+      background-color: #E50000;
+      padding: 25px 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 16px;
+      transform: rotate(0deg);
+      transition: all 0.5s;
+    }
+    //accordion arrow in red styles ngClass
+    //rotates on click
+    .active .accordion-toggle:after {
+      font-family: 'FontAwesome';
+      content: "\f077";
+      font-size: 16px;
+      background-color: #E50000;
+      padding: 25px 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: rotate(180deg);
+      transition: all 0.5s;
+    }
+    //<------ accordion styles end ------>
+
+    //accordion body styles
+    .container.body {
+      height: 200px;
+      background-color: white;
+
+      //application text description
+      .application-description {
+        padding-top: 15px;
+        font-size: 16px;
+        line-height: 23px;
+        text-align: justify;
+
+      }
+
+    }
+    //container body end
+
+  }
+  //template body end
 
 }
+//applications end
 
-.panel-heading {
-  text-align:left;
-  background-color: #0D335F;
-}
+//<---- main styles end----->
 
-.submission-body{
-  padding-top: 18px;
-}
-.panel-title a:focus{
-  outline: none;
-}
-.panel-title{
-  margin:0;
-}
-.panel-title a {
-  border-bottom: 5px solid #D3D3D3;
-  display: block;
-  color: white;
-  padding: 25px;
-  position: relative;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 26px;
-  text-decoration: none;
-  transition: all 1.5s;
-}
+//<-----on small and extra small devices downloading the template and applying are hidden----->
 
-.accordion-toggle:after {
-  font-family: 'FontAwesome';
-  content: "\f078";
-  background-color: #E50000;
-  padding: 25px 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 16px;
-  transform: rotate(0deg);
-  transition: all 0.5s;
-}
-
-.active .accordion-toggle:after {
-  font-family: 'FontAwesome';
-  content: "\f077";
-  font-size: 16px;
-  background-color: #E50000;
-  padding: 25px 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: rotate(180deg);
-  transition: all 0.5s;
-}
-
-.container.body{
-  height: 200px;
-  background-color: white;
-  border-bottom: 5px solid #D3D3D3;
-  box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
-}
-@media screen  and (max-width: 640px) {
-  .application-description{
+//mobile view
+@media screen and (max-width: 640px) {
+  .application-description {
     position: absolute;
     width: 460px;
   }
-  .new-templates{
+  .new-templates {
     display: none;
   }
   .panel-title a {
     font-size: 19px;
   }
-  .template-body{
-    //padding: 0;
+  .template-body {
     margin-left: auto;
     margin-right: auto;
   }
 }
+
 //tablet view
 @media screen and (min-width: 755px) and (max-width: 1024px) {
 
-  .application-description{
-    //position: absolute;
-    //width: 460px;
-  }
-  .new-templates{
+  .new-templates {
     display: none;
   }
   .panel-title a {
     font-size: 19px;
   }
-  .template-body{
+  .template-body {
     margin-left: auto;
     margin-right: auto;
   }
-
-
 
 }
 
