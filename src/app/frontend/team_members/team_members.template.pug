@@ -19,7 +19,7 @@ header(headerName='members',(click)='selectedMember = undefined')
 
           pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
   .row(*ngIf="loadingSpinner === true")
-     .col-md-12.loading-spinner
-        loading-spinner
+
+
 
 home-footer
