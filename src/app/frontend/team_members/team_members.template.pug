@@ -1,8 +1,10 @@
 navbar
 header(headerName='members',(click)='selectedMember = undefined')
 
+
 .container-fluid.container-members((click)='selectedMember = undefined')
-  .row.team-members(*ngIf="loadingSpinner === false")
+  loading-spinner(*ngIf="!listing['collection']")
+  .row.team-members
     .col-md-9.col-centered
       .row
          .col-xs-3.col-md-2.col-centered.members-profile(*ngFor='let member of listing.collection',[ngClass]="{'activeProfile':member === selectedMember}",(click)="$event.stopPropagation()")
@@ -18,8 +20,5 @@ header(headerName='members',(click)='selectedMember = undefined')
       .col-centered.pagination
 
           pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
-  .row(*ngIf="loadingSpinner === true")
-     .col-md-12.loading-spinner
-        loading-spinner
 
 home-footer

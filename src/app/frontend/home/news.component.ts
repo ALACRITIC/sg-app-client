@@ -22,4 +22,6 @@ export class FrontNews implements OnInit {
     ngOnInit() {
         this._post.getRegular(1, 10).subscribe(res => { this.posts = res.Items } , err => {});
     }
+
+
 }

@@ -3,6 +3,7 @@ header(headerName='applications')
 
 .container-fluid.applications
     .container.applications-body
+      loading-spinner(*ngIf="!listing['collection']")
       .row
         .col-md-9.col-xs-12.template-body
           accordion([closeOthers]="oneAtATime")

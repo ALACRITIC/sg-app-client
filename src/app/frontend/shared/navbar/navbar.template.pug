@@ -1,11 +1,13 @@
 nav.navbar.navbar-static-top.navbar-default
     .navbar-inner
         .container
-          .row
-           .col-md-6
-              img(alt="Brand" src='/assets/img/New_SG_Logo.png')
-              a(routerLink='/') &nbsp; &nbsp; &nbsp; STUDENT GOVERNMENT
-           .col-md-6
-            ul.nav.navbar-nav
-              li.nav-item(routerLinkActive='active', *ngFor='let route of navbarRoutes')
-                  a.nav-link(routerLink='{{route.url}}') {{route.name}}
+            .row
+                .col-md-6
+                    .navbar-header
+                        img(alt="Brand" src='/assets/img/New_SG_Logo.png')
+                        a(routerLink='/') &nbsp; &nbsp; &nbsp; STUDENT GOVERNMENT
+                .col-md-6
+                    .collapse.navbar-collapse([collapse]="isCollapsed")
+                        ul.nav.navbar-nav
+                          li.nav-item(routerLinkActive='active', *ngFor='let route of navbarRoutes')
+                              a.nav-link(routerLink='{{route.url}}') {{route.name}}

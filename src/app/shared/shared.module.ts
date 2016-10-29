@@ -14,11 +14,12 @@ import {AdminProfessorDepartments} from "../admin/dashboard/professors/departmen
 import {ProfessorProfileComponent} from "../frontend/evaluations/professor/professor-profile/professor-profile.component";
 import {FrontClubProfile} from "../frontend/clubs/club-profile.component";
 import {FrontTeamMembersProfile} from "../frontend/team_members/team-members-profile/team-members-profile.component";
-import {AsyncWaitDirective} from "./directives/asyncWait.directive";
 import {ProfessorSearch} from "../admin/dashboard/professors/professor-search/professor-search.component";
 import { FormsModule, ReactiveFormsModule }        from '@angular/forms';
 import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
 import { AccordionModule } from 'ng2-bootstrap/components/accordion';
+import {LoadingSpinner} from "./components/loading-spinner/loading-spinner.component";
+import { CollapseDirective } from 'ng2-bootstrap'
 @NgModule({
     imports: [CommonModule, ReactiveFormsModule,FormsModule,TypeaheadModule,AccordionModule],
     providers: [ ApplicationSubmissionsService,
@@ -31,21 +32,24 @@ import { AccordionModule } from 'ng2-bootstrap/components/accordion';
                    ProfessorProfileComponent,
                    FrontClubProfile,
                    FrontTeamMembersProfile,
-                   AsyncWaitDirective,
-                   ProfessorSearch
+                   LoadingSpinner,
+                   ProfessorSearch,
+                   CollapseDirective
+
     ],
     exports: [FILE_UPLOAD_DIRECTIVES,
               AdminProfessorDepartments,
               ProfessorProfileComponent,
               FrontClubProfile,
               FrontTeamMembersProfile ,
-              AsyncWaitDirective,
+              LoadingSpinner,
               FrontTeamMembersProfile,
               ProfessorSearch,
               ReactiveFormsModule,
               FormsModule,
               TypeaheadModule,
-              AccordionModule
+              AccordionModule,
+              CollapseDirective
 
     ]
 })

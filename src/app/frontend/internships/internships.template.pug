@@ -3,10 +3,11 @@ header(headerName='internships')
 
 .container-fluid.internships
     .container.internship-body
+        loading-spinner(*ngIf="!listing['collection']")
         .row
-         .col-sm-12.col-md-10.internships-centered
+            .col-sm-12.col-md-10.internships-centered
               .list-group
-               .internship-list.list-group-item(*ngFor='let internship of listing.collection')
+                .internship-list.list-group-item(*ngFor='let internship of listing.collection')
                  .row
                    .col-xs-12.col-sm-1.col-md-1
                      img.internship-image(src='{{internship.logo}}', alt='{{internship.link}}')
@@ -17,6 +18,6 @@ header(headerName='internships')
                      a.internship-link(target='_blank',href='{{internship.link}}') More Info
 
 
-         .col-centered
+        .col-centered
               pagination.pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
 home-footer

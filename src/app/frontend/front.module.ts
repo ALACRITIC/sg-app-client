@@ -55,7 +55,6 @@ import {LoadingSpinner} from "./shared/loading-spinner/loading-spinner.component
         FrontMemberDetail,
         BreadcrumbComponent,
         NewProfessorEvaluation,
-        LoadingSpinner
 
         ],
     
