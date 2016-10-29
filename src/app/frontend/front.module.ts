@@ -27,7 +27,6 @@ import {FrontMemberDetail} from "./team_members/team-members-detail.component";
 import {FrontHeader} from "./shared/header/header.component";
 import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
 import {NewProfessorEvaluation} from "./evaluations/professor/professor-evaluations/new-professor-evaluation.component";
-import {LoadingSpinner} from "./shared/loading-spinner/loading-spinner.component";
 
 
 

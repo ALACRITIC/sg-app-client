@@ -20,16 +20,20 @@ export const routing: ModuleWithProviders = RouterModule.forChild([
     {path: 'home', component: Home},
     {path: 'members', component: FrontTeamMembers},
     {path: 'clubs', component: FrontClubs},
-    {path: 'club/:id/:name', component: FrontClubDetail,
+    {
+        path: 'club/:id/:name', component: FrontClubDetail,
         data: {
             breadcrumb: "Clubs"
         }
     },
     {path: 'internships', component: FrontInternships},
     {path: 'applications', component: FrontApplicationTemplates},
-    {path: 'post/:id', component: FrontPostDetail},
+    {
+        path: 'post/:id', component: FrontPostDetail
+    },
     {path: 'evaluations', component: FrontProfessors},
-    {path: 'professor/:id/:name', component: ProfessorDetailComponent,
+    {
+        path: 'professor/:id/:name', component: ProfessorDetailComponent,
         data: {
             breadcrumb: "Evaluations"
         }
