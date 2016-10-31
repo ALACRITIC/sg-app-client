@@ -28,6 +28,9 @@
 
   .club-style {
     border-radius: 5px;
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   .card-title {

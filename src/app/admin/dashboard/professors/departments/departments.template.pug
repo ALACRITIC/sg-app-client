@@ -1,9 +1,8 @@
 .row
   .col-md-12.filtered-somne
-    .input-group.filtered-professors
-      .input-group-btn.filtered-professors
-        button.btn.btn-default.dropdown-toggle.filtered-professors(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-            | Select a Department
+        button.btn.btn-secondary.dropdown-toggle.department-btn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          .select-dept  {{selectDept}}
+
 
         .dropdown-menu
             li(*ngFor='let department of departments')

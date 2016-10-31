@@ -2,14 +2,14 @@
  * Created by hgeorgiev on 8/22/16.
  */
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {PostsService} from "../../shared/services/posts.service";
-import {Post} from "../../shared/models/post.model";
+import {PostsService} from "../../../shared/services/posts.service";
+import {Post} from "../../../shared/models/post.model";
 
 
 @Component({
     selector: 'news-carousel',
     encapsulation: ViewEncapsulation.Emulated,
-    templateUrl: './carousel.template.pug',
+    templateUrl: 'carousel.template.pug',
     style:require(['./carousel.styles.scss'])
 })
 export class NewsCarousel implements OnInit{

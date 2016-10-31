@@ -2,9 +2,9 @@ import {Component} from '@angular/core';
 import {AlertComponent} from 'ng2-bootstrap/ng2-bootstrap';
 import { AppState } from '../../app.service';
 
-import { NewsCarousel } from  "./carousel.component";
+import { NewsCarousel } from  "./carousel/carousel.component";
 import {HomeFooter} from "../shared/footer/footer.component";
-import {FrontNews} from "./news.component";
+import {FrontNews} from "./news/news.component";
 import {PostsService} from "../../shared/services/posts.service";
 
 

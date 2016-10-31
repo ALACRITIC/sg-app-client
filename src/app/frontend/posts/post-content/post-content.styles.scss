@@ -1,0 +1,12 @@
+.post-content{
+  text-align: justify;
+}
+.psto-cont{
+  border:20px solid white;
+}
+//mobile view
+@media screen and (max-width: 750px) {
+  .post-content{
+    text-align: inherit;
+  }
+}

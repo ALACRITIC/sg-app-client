@@ -6,5 +6,5 @@ carousel([interval]='myInterval', [noWrap]='noWrapSlides')
             .carousel-caption-inner
                 h2 {{post.title}}
                 p {{post.created_at | date:"fullDate" }}
-            .carousel-caption-footer(routerLink='/post/{{post.id}}') Read More
+            .carousel-caption-footer(routerLink='/post/{{post.id}}/{{post.title}}') Read More
 

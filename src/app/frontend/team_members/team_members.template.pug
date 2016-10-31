@@ -1,7 +1,11 @@
 navbar
 header(headerName='members',(click)='selectedMember = undefined')
 
+
 .container-fluid.container-members((click)='selectedMember = undefined')
+
+  loading-spinner(*ngIf="!listing['collection']")
+
   .row.team-members
     .col-md-9.col-centered
       .row

@@ -33,7 +33,10 @@ export class ProfessorProfileComponent implements OnInit {
     loadProfessor(id:number) {
         this._profService.get(id).then(professor => {
             this.professor = professor;
-            this.professorName.emit(professor.name);
+            this.professorName.emit({
+                professorName:professor.name,
+                professorId:professor.id
+            });
         });
     }
 }

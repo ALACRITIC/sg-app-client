@@ -2,7 +2,6 @@
 .main-header {
   background-color: #E1DFE0;
   padding: 1.2em 0;
-
 }
 
 //header-name
@@ -14,6 +13,8 @@
   line-height: 67px;
 }
 @media screen  and (max-width: 640px) {
-  font-size: 1.250em;
-  line-height: 67px;
+  .header-name {
+    font-size: 2.250em;
+    line-height: 67px;
+  }
 }

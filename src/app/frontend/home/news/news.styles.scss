@@ -1,11 +1,9 @@
 .regular-news {
   background-color: #D3D3D3;
 
-  .container{
+  .container.regular-news-layout {
     padding-top: 60px;
-  }
-
-
+    padding-bottom: 20px;
     .card {
       margin: 20px;
 
@@ -16,15 +14,18 @@
 
     }
 
-
+  }
 
 }
 
 
 //-------------------   PHONE --------------------
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 640px) {
   .regular-news .card {
     width: 300px;
     margin: 20px 10px;
+  }
+  .container.regular-news-layout {
+    margin-bottom: 20px;
   }
 }

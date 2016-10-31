@@ -17,7 +17,7 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
  * Webpack Constants
  */
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'AUBG Student Government',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };

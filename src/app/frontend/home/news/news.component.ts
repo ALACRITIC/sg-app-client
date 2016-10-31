@@ -2,14 +2,14 @@
  * Created by hgeorgiev on 8/26/16.
  */
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {PostsService} from "../../shared/services/posts.service";
-import {Post} from "../../shared/models/post.model";
+import {PostsService} from "../../../shared/services/posts.service";
+import {Post} from "../../../shared/models/post.model";
 
 
 @Component({
     selector: 'front-news',
-    templateUrl: './news.template.pug',
-    style:require(['./news.styles.scss']),
+    templateUrl: 'news.template.pug',
+    styles:require(['./news.styles.scss']),
     encapsulation: ViewEncapsulation.Emulated
 })
 
@@ -22,4 +22,6 @@ export class FrontNews implements OnInit {
     ngOnInit() {
         this._post.getRegular(1, 10).subscribe(res => { this.posts = res.Items } , err => {});
     }
+
+
 }

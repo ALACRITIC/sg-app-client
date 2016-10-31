@@ -14,6 +14,7 @@ export class AdminProfessorDetail implements OnInit, OnDestroy{
     public isEdit:boolean = false;
     public professor:Professor;
 
+
     constructor(private _profService:ProfessorsService,private _router:Router, private _route:ActivatedRoute) {
         this.professor = new Professor();
     }
@@ -33,7 +34,7 @@ export class AdminProfessorDetail implements OnInit, OnDestroy{
 
     updateProfessor($event) {
         this._profService.updateProfessor($event.professor,$event.photo,this.professor.id).subscribe((res)=> {
-            this.professor = res
+            this.professor = res;
             this.isEdit = false
         });
     }

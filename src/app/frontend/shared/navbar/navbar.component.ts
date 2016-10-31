@@ -10,6 +10,7 @@ import {NavRoute} from "./navroute.model";
 
 export class FrontNavbar {
     public navbarRoutes:Array<NavRoute>;
+    public isCollapsed: boolean = true;
     constructor() {
         this.navbarRoutes = [
             {

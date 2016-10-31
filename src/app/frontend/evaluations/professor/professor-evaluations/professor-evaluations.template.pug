@@ -1,19 +1,10 @@
 
-.container-fluid.evaluation-body
 
-
-
-.row
-   .col-md-12
-    .list-group.evaluation-group
-        .list-group-item.active.eval-list.list-group-item-action
-            h4.list-group-item-heading
-                | Evaluations
-        .list-group-item.list-group-item-action.evaluation-list(*ngFor='let evaluation of listing.collection')
-            p.list-group-item-text.description([ngClass]="{'show-more':showMore}") {{evaluation.content}}
-            .row
-                .col-xs-12
-                 a.show-more-btn.pull-right((click)='showMore = !showMore') {{!showMore ? 'Show More' : 'Show Less'}}
+.list-group-item.list-group-item-action.evaluation-list(*ngFor='let evaluation of listing.collection')
+    p.list-group-item-text.description([ngClass]="{'show-more': selectedEvaluation === evaluation}") {{evaluation.content}}
+    .row
+        .col-xs-12(*ngIf="evaluation.content.split(' ').length > 60")
+         a.show-more-btn.pull-right((click)="selectEval(evaluation)") {{selectedEvaluation !== evaluation ? "Show More" : "Show Less"}}
 
 .row
     .col-md-12
@@ -21,12 +12,5 @@
             | No evaluations found.
 
 .row
-    .col-md-12.add-evaluation
-        .input-group.evaluation-group
-            textarea.form-control([(ngModel)]='evaluation.content',rows='3',placeholder="Write an Evaluation")
-            .button-eval((click)='addEvaluation(evaluation)')
-                i.fa.fa-share(aria-hidden='true')
-.row
-    .col-md-12
-        .pagination-evaluation
+    .col-md-12.pagination-evaluation
             pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')

@@ -58,7 +58,6 @@ export class BreadcrumbComponent implements OnInit {
 
                     //get the route's URL segment
                     let routeURL: string = route.snapshot.url.map(segment => segment.path).join("/");
-                    console.log(url);
                     //append route URL to URL
                     url += `/${routeURL}`;
 

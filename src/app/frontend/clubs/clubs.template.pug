@@ -2,6 +2,7 @@ navbar
 header(headerName='clubs')
 .clubs
   .container
+    loading-spinner(*ngIf="!listing['collection']")
     .row
       .col-xs-10.col-centered
         .row

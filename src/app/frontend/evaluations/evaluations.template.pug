@@ -7,6 +7,8 @@ header(headerName='professors')
         professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
 
 .container-fluid.container-evaluations
+    .col-md-9.col-centered
+        loading-spinner(*ngIf="!listing['collection']")
     .row.professors
        .col-md-2.col-lg-2.col-xl-2.dept-sidebar
            h5.dept-header DEPARTMENTS
@@ -16,6 +18,7 @@ header(headerName='professors')
                  li.list-group-item.listed-depts
                   a.dept-link((click)='loadDepartments(1,10,department)',[class.selected]='department === selectedDept') {{department}}
        .col-md-9.centered-professors
+
            .row
               .col-xs-3.col-md-2.col-lg-2.col-centered.profile(*ngFor='let professor of listing.collection',(click)='goToProfile(professor)')
                     img.professor-image(src='{{professor.photo}}')
@@ -24,6 +27,8 @@ header(headerName='professors')
 
 
            .pagination-evaluations
-                pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+                    pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+
+
 
 home-footer

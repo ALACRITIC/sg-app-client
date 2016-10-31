@@ -4,8 +4,6 @@
     .container
           .breadcrumb(*ngFor='let breadcrumb of breadcrumbs')
             li.breadcrumb.list
-                a(href='#') Home
-            li.breadcrumb.list
                 a(routerLink="../../../{{breadcrumb.name | lowercase}}") {{breadcrumb.name}}
             li.breadcrumb.list
                 a([routerLink]='[breadcrumb.url, breadcrumb.params]') {{breadcrumb.label}}

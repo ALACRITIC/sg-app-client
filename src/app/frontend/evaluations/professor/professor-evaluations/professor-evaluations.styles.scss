@@ -1,9 +1,12 @@
+
 p.list-group-item-text.description{
-  max-height: 100px;
-  transition: max-height 0.55s ease-in-out;
+  padding-bottom: 40px;
+  max-height: 42px;
   overflow: hidden;
+  transition: max-height 0.8s;
 }
-.list-group.evaluation-group{
+.list-group-item.list-group-item-action.evaluation-list{
+  margin-bottom: 10px;
   box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   &:hover{
@@ -14,7 +17,7 @@ p.list-group-item-text.description{
   cursor: pointer;
 }
 p.list-group-item-text.description.show-more{
-  max-height: 1000px;
+  max-height: 500px;
 }
 .evaluation-body{
   padding-top: 140px;
@@ -42,6 +45,9 @@ p.list-group-item-text.description.show-more{
 @media screen and (max-width: 755px){
   .evaluation-body{
     padding-top: 20px;
+  }
+  .col-md-12.eva{
+    width: 100%;
   }
 
 }

@@ -14,6 +14,11 @@
     .panel.panel-default {
       padding-bottom: 20px;
     }
+    accordion-group:last-child{
+      .panel.panel-default {
+        padding-bottom: 10px;
+      }
+    }
     //panel heading styles
     .panel-heading {
       text-align: left;
@@ -111,18 +116,18 @@
 //mobile view
 @media screen and (max-width: 640px) {
   .application-description {
-    position: absolute;
-    width: 460px;
+
   }
   .new-templates {
     display: none;
   }
-  .panel-title a {
+  .applications .template-body .panel-title a {
     font-size: 19px;
   }
   .template-body {
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 20px;
   }
 }
 
@@ -138,7 +143,13 @@
   .template-body {
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 0;
   }
+  .application-description{
+    position: absolute;
+    width: 460px;
+  }
+
 
 }
 

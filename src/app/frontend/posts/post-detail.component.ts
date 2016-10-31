@@ -1,12 +1,14 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {Post} from "../../shared/models/post.model";
 import {PostsService} from "../../shared/services/posts.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-    selector: 'team-members',
+    encapsulation: ViewEncapsulation.Emulated,
+    selector: 'post-detail',
     providers: [PostsService],
-    templateUrl: './post-detail.template.pug'
+    template:require ('./post-detail.template.pug'),
+    styles:require(['./post-detail.styles.scss'])
 })
 
 export class FrontPostDetail implements OnInit, OnDestroy{

@@ -1,37 +1,50 @@
 /*
  * Angular 2 decorators and services
  */
-import { Component,ViewEncapsulation } from '@angular/core';
 
-import { AppState } from './app.service';
 
-/*
- * App Component
- * Top Level Component
- */
+
+import { Component, ViewEncapsulation } from '@angular/core';
+import { Event as RouterEvent } from '@angular/router'
+import {Router, NavigationStart, NavigationEnd} from "@angular/router";
+
+
 @Component({
   // encapsulation: ViewEncapsulation.Emulated,
   selector: 'app',
   styleUrls:require( ['./app.styles.scss']),
   template: `
+ <div class="loading-overlay" *ngIf="loading"> 
+   <i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw text-center"></i>
+   <span class="sr-only">Loading...</span>
+ </div>
 <router-outlet></router-outlet>`
 })
 export class App {
   name = 'AUBG Student Government';
   url = 'https://twitter.com/AngularClass';
 
-  constructor(
-    public appState: AppState) {
+  loading:boolean = true;
 
+  constructor(public router:Router) {
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe((event: RouterEvent): void => {
+      this.navigationInterceptor(event);
+    });
+  }
+
+  navigationInterceptor(event: RouterEvent): void {
+    if (event instanceof NavigationStart) {
+      this.loading = true;
+    }
+    if (event instanceof NavigationEnd) {
+        this.loading = false;
+    }
+    // Additionally there's NavigationCancel and NavigationError
   }
 
 
 }
 
-/*
- * Please review the https://github.com/AngularClass/angular2-examples/ repo for
- * more angular app examples that you may copy/paste
- * (The examples may not be updated as quickly. Please open an issue on github for us to update it)
- * For help or questions please contact us at @AngularClass on twitter
- * or our chat on Slack at https://AngularClass.com/slack-join
- */

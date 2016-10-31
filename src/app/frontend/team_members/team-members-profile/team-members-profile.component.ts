@@ -1,12 +1,13 @@
 /**
  * Created by Taulant on 10/3/2016.
  */
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TeamMember} from "../../../shared/models/team_member.model";
 import {TeamMembersService} from "../../../shared/services/team_members.service";
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
+    encapsulation: ViewEncapsulation.Emulated,
     selector: 'team-profile',
     templateUrl: './team-members-profile.template.pug',
     providers:[TeamMembersService],

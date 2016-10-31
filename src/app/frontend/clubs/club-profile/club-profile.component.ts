@@ -2,9 +2,9 @@
  * Created by Taulant on 9/29/2016.
  */
 import { Component, OnInit } from '@angular/core';
-import {ClubsService} from "../../shared/services/clubs.service";
+import {ClubsService} from "../../../shared/services/clubs.service";
 import { ActivatedRoute,Router } from '@angular/router';
-import {Club} from "../../shared/models/club.model";
+import {Club} from "../../../shared/models/club.model";
 
 @Component({
     selector: 'club-profile',

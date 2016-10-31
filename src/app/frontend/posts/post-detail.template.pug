@@ -1,12 +1,12 @@
 navbar
-.container
-      .row
-        h1 {{post.title}}
+breadcrumb
+.post-profile-header
+.container.posts
+       .row
+        .col-md-12.post-details
+              .post-title {{post.title}}
+              p.post-containerNews
 
-      .row
-        .col-md-12(*ngIf='post.image')
-          img.img-fluid(src='{{post.image}}')
-
-      .row
-        .col-md-12([innerHtml]='post.content')
+                post-photo([postImage]="post.image")
+                post-content([postContent]="post.content")
 home-footer

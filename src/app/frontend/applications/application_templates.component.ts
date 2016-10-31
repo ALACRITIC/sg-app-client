@@ -27,26 +27,18 @@ export class FrontApplicationTemplates implements OnInit{
     ngOnInit() {
         this.listing = new Listing<ApplicationTemplate>();
         this._service.query(1,999).then(listing => this.listing = listing);//load all
-        console.log(event.target)
     }
     stopClick(){
-
         if(event.target.className === 'panel-title'){
-
             event.stopPropagation();
-
         }
     }
     selectedTemp(application_template:ApplicationTemplate){
-
         if(this.selectedTemplate === application_template){
             this.selectedTemplate = undefined;
-
         }else{
             this.selectedTemplate = application_template;
         }
-
-
     }
 
 

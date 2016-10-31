@@ -1,20 +1,29 @@
-.filtered-professors{
+.dropdown-toggle:after{
+    float: right;
+    border-top:0;
+    font-family: 'FontAwesome';
+    content: "\f078";
+    font-size: 14px;
+    transition: all 0.5s;
+    position: absolute;
+    top:10px;
+    right:30px;
+}
+.select-dept{
+    text-align: left;
+}
+button.btn.btn-secondary.dropdown-toggle.department-btn {
+    outline: none;
+    width: 100%;
     background-color: white;
-    border: 4px;
-    padding-left: 4px;
 
 }
-button.btn.btn-default{
-    border: 5px;
-    outline: none;
-    padding-left: 4px;
+button.btn.btn-secondary.dropdown-toggle.department-btn:hover{
+    /*color:blue;*/
+}
+.dropdown-menu{
+    left:15px;
 }
 .filtered-somne{
-    padding: 0;
+    width: 100%;
 }
-/*@media screen and (max-width: 750px) {*/
-    /*.filtered-somne{*/
-        /*width: 395px;*/
-        /*padding-left: 17px;*/
-    /*}*/
-/*}*/

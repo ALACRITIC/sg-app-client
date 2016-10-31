@@ -78,6 +78,7 @@ a.selected {
     transition: 0.3s;
     border-radius: 0.313em;
     &:hover {
+      cursor: pointer;
       box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
     }
     //professor profile image
@@ -112,11 +113,7 @@ a.selected {
   }
   //-------professor's profile styles end----->
 }
-//<-----font awesome spinner before professors loading--->
-i.fa.fa-spinner.fa-spin.fa-3x.fa-fw{
-  margin: 200px auto;
-  color: white;
-}
+
 
 //centering the profiles column's
 .centered-professors,.col-centered.profile {
@@ -126,13 +123,12 @@ i.fa.fa-spinner.fa-spin.fa-3x.fa-fw{
   text-align: left;
 }
 
-////centering the pagination column
-//.col-centered.pagination {
-//  margin-left: auto;
-//  margin-right: auto;
-//  text-align: center;
-//  padding-bottom: 20px;
-//}
+.pagination-evaluations {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 20px;
+}
 
 
 
@@ -147,9 +143,10 @@ i.fa.fa-spinner.fa-spin.fa-3x.fa-fw{
     display: none;
     min-height:900px ;
   }
-  .col-centered.pagination{
-    padding-bottom: 60px;
+  .pagination-evaluations {
+    margin-bottom: 40px;
   }
+
 }
 @media screen and (min-width: 1520px){
   .container-evaluations{
@@ -163,7 +160,6 @@ i.fa.fa-spinner.fa-spin.fa-3x.fa-fw{
   }
   .container-evaluations{
     padding-right:  8%;
-    //padding-left:  6%;
     width: 100%;
     background-color:#D3D3D3 ;
   }
@@ -175,15 +171,16 @@ i.fa.fa-spinner.fa-spin.fa-3x.fa-fw{
     font-size: 1.652em;
     line-height: 2.174em;
   }
-  .col-centered.pagination{
-    padding-bottom: 40px;
-  }
   .dept-sidebar {
     display: none;
   }
 
   .filtered-dept {
     display: block;
+  }
+  .container-evaluations{
+    padding-right:  6%;
+    padding-bottom: 30px;
   }
 
 

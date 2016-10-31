@@ -9,9 +9,9 @@ import {ApplicationSubmissionsService} from "../../shared/services/application_s
 @Component({
     selector: 'new-application-submission',
     encapsulation: ViewEncapsulation.Emulated,
-    templateUrl: 'new_application_submission.template.pug',
+    template:require ('./new_application_submission.template.pug'),
     providers: [ApplicationSubmissionsService],
-    styleUrls: ['new_application_submission.styles.css'],
+    styles:require (['./new_application_submission.styles.scss'])
 })
 
 export class NewApplicationSubmission implements OnChanges {

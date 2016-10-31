@@ -1,4 +1,5 @@
 import {Component,ViewEncapsulation} from '@angular/core';
+import {Evaluation} from "../../../../shared/models/evaluation.model";
 
 @Component({
     encapsulation: ViewEncapsulation.Emulated,
@@ -8,10 +9,18 @@ import {Component,ViewEncapsulation} from '@angular/core';
 })
 
 export class ProfessorDetailComponent {
+    public evaluation:Evaluation;
     public professorName:string;
-    constructor() {}
-    getName(event){
-        this.professorName = event;
+
+    constructor() {
+        this.evaluation = new Evaluation();
     }
+    getName(event){
+       this.professorName = event.professorName;
+    }
+    getEvaluation($event){
+
+    }
+
 
 }

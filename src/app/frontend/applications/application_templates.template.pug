@@ -3,18 +3,18 @@ header(headerName='applications')
 
 .container-fluid.applications
     .container.applications-body
+      loading-spinner(*ngIf="!listing['collection']")
       .row
         .col-md-9.col-xs-12.template-body
           accordion([closeOthers]="oneAtATime")
             accordion-group(*ngFor="let application_template of listing.collection" ,[heading]="application_template.name | uppercase",(click)="selectedTemp(application_template)",[ngClass]="{'active':selectedTemplate === application_template}")
              .container.body((click)="$event.stopPropagation()")
                .row
-                  .col-md-6.col-sm-12
+                  .col-md-6.app-des
                    .application-description {{ application_template.description }}
                   .col-md-6.new-templates
                       .row
                          .col-md-5
-
                          .col-md-7.new-application
                            new-application-submission([template]='selectedTemplate',(click)="$event.stopPropagation()")
 

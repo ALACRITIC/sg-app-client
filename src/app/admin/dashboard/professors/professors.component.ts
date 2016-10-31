@@ -2,7 +2,6 @@ import {Component, ViewEncapsulation , OnInit} from '@angular/core';
 import {Listing} from '../../../shared/listing.model'
 import {Professor} from "../../../shared/models/professor.model";
 import {ProfessorsService} from "../../../shared/services/professors.service";
-import { Observable } from 'rxjs/Rx';
 import { ActivatedRoute,Router } from '@angular/router';
 @Component({
     encapsulation: ViewEncapsulation.None,

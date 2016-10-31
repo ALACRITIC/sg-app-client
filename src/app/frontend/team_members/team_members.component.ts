@@ -14,7 +14,6 @@ export class FrontTeamMembers implements OnInit{
     public listing: Listing<TeamMember>;
     public selectedMember:TeamMember;
     public currentPage:number = 1;
-    public loadingSpinner:boolean = true;
 
     public pageChanged(event:any):void {
         this.loadMembers(event.page, event.itemsPerPage);
@@ -34,13 +33,10 @@ export class FrontTeamMembers implements OnInit{
     }
 
     private loadMembers(page:number, itemsPerPage: number) {
-        setTimeout(() => {
             this._service.query(page,itemsPerPage).then(listing => {
                 this.listing = listing;
                 this.currentPage = page;
-                this.loadingSpinner = false;
             });
-        }, 300);
 
     }
 }

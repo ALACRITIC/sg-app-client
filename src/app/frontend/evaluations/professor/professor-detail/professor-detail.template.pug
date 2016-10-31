@@ -1,11 +1,9 @@
 navbar
-
 breadcrumb
 .profile-header
    .container
     .row
        .col-md-3.col-sm-12
-
        .col-md-9.col-sm-12
          .profName {{professorName | uppercase}}
 
@@ -15,5 +13,12 @@ breadcrumb
             .col-md-3.professor-image-eval
                 professor-profile((professorName)='getName($event)')
             .col-md-9.professor-evaluations
-                professor-evaluations
+                .row
+                    .col-md-12.eva
+                        .list-group.evaluation-group
+                            .list-group-item.active.eval-list.list-group-item-action
+                                h4.list-group-item-heading
+                                    | Evaluations
+                            professor-evaluations
+                            new-evaluation((outputEvaluation)="getEvaluation($event)")
 home-footer

@@ -20,6 +20,7 @@ import {Evaluation} from "../../../../shared/models/evaluation.model";
 export class ProfessorEvaluationsComponent implements OnInit {
     listing: Listing<Evaluation>;
     evaluation:Evaluation;
+    public selectedEvaluation;
     public currentPage:number = 1;
     sub:any;
     public id:number;
@@ -37,26 +38,22 @@ export class ProfessorEvaluationsComponent implements OnInit {
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
             this.id = +params['id'];
-            // this.loadEvaluations(1,10,this.id);
-            this._service.query(1,10,+params['id']).then(listing => {
-                this.listing = listing;
-                console.log(listing);
-            });
+            this.loadEvaluations(1, 10, this.id);
         });
     }
-    //
-    // private loadEvaluations(page:number, itemsPerPage: number,id:number) {
-    //     this._service.query(page,itemsPerPage,id).then(listing => {
-    //         this.listing = listing;
-    //         console.log(listing);
-    //     });
-    // }
+    selectEval(evaluation){
+        event.stopPropagation();
+        if(this.selectedEvaluation === evaluation){
+            this.selectedEvaluation = undefined;
+        }else{
+            this.selectedEvaluation = evaluation;
+        }
 
-    addEvaluation(evaluation:Evaluation){
-       evaluation.professor_id = this.id;
-        this._service.addEvaluation(evaluation,this.id).then(res => {
-            this.evaluation = res;
-            console.log(res);
+    }
+    private loadEvaluations(page:number, itemsPerPage: number,id:number) {
+        this._service.query(page,itemsPerPage,id).then(listing => {
+            this.listing = listing;
+            console.log(this.listing);
         });
     }
 }
