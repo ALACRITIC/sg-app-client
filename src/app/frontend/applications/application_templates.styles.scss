@@ -16,7 +16,7 @@
     }
     accordion-group:last-child{
       .panel.panel-default {
-        padding-bottom: 10px;
+        padding-bottom: 5px;
       }
     }
     //panel heading styles
@@ -115,9 +115,6 @@
 
 //mobile view
 @media screen and (max-width: 640px) {
-  .application-description {
-
-  }
   .new-templates {
     display: none;
   }
@@ -133,7 +130,6 @@
 
 //tablet view
 @media screen and (min-width: 755px) and (max-width: 1024px) {
-
   .new-templates {
     display: none;
   }
@@ -149,7 +145,6 @@
     position: absolute;
     width: 460px;
   }
-
 
 }
 

@@ -123,14 +123,11 @@ a.selected {
   text-align: left;
 }
 
-.pagination-evaluations {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding-bottom: 20px;
+.pagination-professors  {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
 }
-
-
 
 
 //mobile view
@@ -143,8 +140,14 @@ a.selected {
     display: none;
     min-height:900px ;
   }
-  .pagination-evaluations {
-    margin-bottom: 40px;
+  .pagination-professors {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .centered-professors{
+    padding-bottom: 50px;
   }
 
 }
@@ -178,9 +181,18 @@ a.selected {
   .filtered-dept {
     display: block;
   }
-  .container-evaluations{
-    padding-right:  6%;
-    padding-bottom: 30px;
+  .pagination-professors {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .centered-professors{
+    padding-bottom: 50px;
+  }
+  .professors{
+    margin-left: 6%;
+    margin-right: 6%;
   }
 
 

@@ -14,6 +14,7 @@
     .internships-centered {
       margin-left: auto;
       margin-right: auto;
+      padding-bottom: 70px;
 
 
       //internship list-item
@@ -94,15 +95,22 @@
 
 //pagination center
 .pagination-internship {
- margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.no-pagination{
+  padding-bottom: 80px;
+}
+.center-pagination{
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
 }
 
 //tablet view
 @media screen and (min-width: 755px) and (max-width: 1024px) {
   .pagination-internship{
-    padding-bottom: 20px;
+    margin-left: 11.5%;
   }
   .internships .internship-body .internships-centered .internship-list{
     height: 150px;
@@ -127,10 +135,13 @@
   }
   img.internship-image {
     display: none;
-
   }
   .pagination-internship{
-    padding-bottom: 30px;
+    margin-left: 4.2%;
+    padding-bottom: 20px;
+  }
+  .internship-body {
+    padding-bottom: 20px;
   }
 
 }

@@ -37,6 +37,7 @@ export class FrontProfessors implements OnInit {
 
     public filterDepts(department:string):void {
         if(department === "ShowAll"){
+            console.log('here');
            return this.loadProfessors(1,10);
         }
         this.loadProfessors(1, 10, department);
@@ -51,11 +52,13 @@ export class FrontProfessors implements OnInit {
 
     //-------------fetching the list of departments through outputDepts event------------>
     sideDepts($event){
+        console.log($event);
        this.departments = $event;
     }
 
     loadDepartments(page:number,itemsPerPage:number,department?:string){
         this.loadProfessors(page,itemsPerPage,department);
+        console.log(this.selectedDept);
         this.selectedDept = department;
     }
 

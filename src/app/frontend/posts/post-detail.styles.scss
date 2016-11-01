@@ -15,13 +15,14 @@
   .post-title {
     padding-top: 10px;
     padding-bottom: 10px;
-    font-weight: 600;
+    font-weight: 300;
     color: black;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 37px;
   }
   //post photo and content & their hover styles
   p.post-containerNews {
+    min-height: 330px;
     background-color: white;
     box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;

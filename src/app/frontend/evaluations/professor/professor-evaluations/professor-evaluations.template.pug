@@ -13,4 +13,5 @@
 
 .row
     .col-md-12.pagination-evaluation
-            pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+        .pagination-evaluations(*ngIf="listing.count > 5")
+            pagination([totalItems]='listing.count', [(ngModel)]='currentPage',itemsPerPage="5", (pageChanged)='pageChanged($event)',class="pagination-sm")

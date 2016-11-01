@@ -32,13 +32,14 @@ export class ProfessorEvaluationsComponent implements OnInit {
     }
 
     public pageChanged(event:any):void {
+        // event.itemsPerPage = 5;
         this.loadEvaluations(event.page, event.itemsPerPage);
     }
 
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
             this.id = +params['id'];
-            this.loadEvaluations(1, 10, this.id);
+            this.loadEvaluations(1, 5, this.id);
         });
     }
     selectEval(evaluation){
@@ -50,10 +51,10 @@ export class ProfessorEvaluationsComponent implements OnInit {
         }
 
     }
-    private loadEvaluations(page:number, itemsPerPage: number,id:number) {
-        this._service.query(page,itemsPerPage,id).then(listing => {
+    private loadEvaluations(page:number, itemsPerPage: number) {
+        this._service.query(page,itemsPerPage,this.id).then(listing => {
+            this.currentPage = page;
             this.listing = listing;
-            console.log(this.listing);
         });
     }
 }

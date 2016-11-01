@@ -25,9 +25,10 @@ header(headerName='professors')
                     p.professor-name {{professor.name}}
                     p.professor-department {{professor.department}}
 
-
-           .pagination-evaluations
-                    pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+           .row
+               .col-md-12.pagination-professors
+                 .pagination-evaluations(*ngIf='listing.count > 10')
+                            pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',class="pagination-sm")
 
 
 

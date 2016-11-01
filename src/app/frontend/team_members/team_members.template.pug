@@ -19,8 +19,8 @@ header(headerName='members',(click)='selectedMember = undefined')
                p.member-description Description
                p.description-body {{member.description}}
 
-      .col-centered.pagination
-
-          pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)')
+  .col-centered.pagination
+      .pagination-members(*ngIf='listing.count > 10')
+          pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',class="pagination-sm")
 
 home-footer
