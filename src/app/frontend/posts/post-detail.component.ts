@@ -12,8 +12,8 @@ import {ActivatedRoute} from "@angular/router";
 })
 
 export class FrontPostDetail implements OnInit, OnDestroy{
-    post:Post;
-    sub:any;
+    public post:Post;
+    public sub:any;
 
     constructor(private _service:PostsService, private _route:ActivatedRoute) {
         this.post = new Post();
@@ -26,13 +26,10 @@ export class FrontPostDetail implements OnInit, OnDestroy{
     }
 
     ngOnDestroy() {
-        this.sub.unsubscribe()
+        this.sub.unsubscribe();
     }
 
     getPost(id:number){
         this._service.get(id).then(res => this.post = res);
     }
-
-
-
 }

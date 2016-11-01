@@ -1,35 +1,33 @@
 navbar
 header(headerName='professors')
     .row
-      .col-xs-12.col-md-12.professor-search
-        professor-search((selectedSearchItem)='goToProfessor($event)')
-      .col-xs-12.filtered-dept
-        professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
+        .col-xs-12.col-md-12.professor-search
+            professor-search((selectedSearchItem)='goToProfessor($event)')
+        .col-xs-12.filtered-dept
+            professor-departments((filteredDept)="filterDepts($event)",(outputDepts)='sideDepts($event)')
 
 .container-fluid.container-evaluations
     .col-md-9.col-centered
         loading-spinner(*ngIf="!listing['collection']")
     .row.professors
-       .col-md-2.col-lg-2.col-xl-2.dept-sidebar
-           h5.dept-header DEPARTMENTS
-           .departments
-              .container-fluid
-                ul.list-group(*ngFor='let department of departments')
-                 li.list-group-item.listed-depts
-                  a.dept-link((click)='loadDepartments(1,10,department)',[class.selected]='department === selectedDept') {{department}}
-       .col-md-9.centered-professors
+        .col-md-2.col-lg-2.col-xl-2.dept-sidebar
+            h5.dept-header DEPARTMENTS
+            .departments
+                .container-fluid
+                    ul.list-group(*ngFor='let department of departments')
+                        li.list-group-item.listed-depts
+                            a.dept-link((click)='loadDepartments(1,10,department)',[class.selected]='department === selectedDept') {{department}}
+        .col-md-9.centered-professors
 
-           .row
-              .col-xs-3.col-md-2.col-lg-2.col-centered.profile(*ngFor='let professor of listing.collection',(click)='goToProfile(professor)')
+            .row
+                .col-xs-3.col-md-2.col-lg-2.col-centered.profile(*ngFor='let professor of listing.collection',(click)='goToProfile(professor)')
                     img.professor-image(src='{{professor.photo}}')
                     p.professor-name {{professor.name}}
                     p.professor-department {{professor.department}}
 
-           .row
-               .col-md-12.pagination-professors
-                 .pagination-evaluations(*ngIf='listing.count > 10')
-                            pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',class="pagination-sm")
-
-
+            .row
+                .col-md-12.pagination-professors
+                    .pagination-evaluations(*ngIf='listing.count > 10')
+                        pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',class="pagination-sm")
 
 home-footer

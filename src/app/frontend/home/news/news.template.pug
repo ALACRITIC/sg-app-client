@@ -1,14 +1,14 @@
 .regular-news
-  .container.regular-news-layout
-    .card-columns
-        .card(*ngFor='let post of posts')
-          img.card-img-top(src='{{post.image}}', alt='Card image cap')
+    .container.regular-news-layout
+        .card-columns
+            .card(*ngFor='let post of posts')
+                img.card-img-top(src='{{post.image}}', alt='Card image cap')
 
-          .card-block
+                .card-block
 
-            p.card-text {{post.created_at | date:"fullDate" }}
+                    p.card-text {{post.created_at | date:"fullDate" }}
 
-            a.card-link(routerLink='/post/{{post.id}}/{{post.title}}') Read More
+                    a.card-link(routerLink='/post/{{post.id}}/{{post.title}}') Read More
 
 
 loading-spinner(*ngIf="!posts")

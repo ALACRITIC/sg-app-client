@@ -19,10 +19,7 @@ export class FrontClubs implements OnInit{
 
     ngOnInit() {
         this.listing = new Listing<Club>();
-        this._service.query(1,999).then(listing => {
-            this.listing = listing
-            console.log(this.listing);
-        });//load all
+        this._service.query(1,999).then(listing => this.listing = listing);//load all
     }
 
 

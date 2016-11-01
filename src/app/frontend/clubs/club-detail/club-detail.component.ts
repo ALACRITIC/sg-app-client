@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
     styles:require   (['./club-detail.styles.scss'])
 })
 export class FrontClubDetail {
-    constructor() {
-    }
+    constructor() {}
 
 }

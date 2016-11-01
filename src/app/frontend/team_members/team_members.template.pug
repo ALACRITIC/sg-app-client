@@ -4,23 +4,23 @@ header(headerName='members',(click)='selectedMember = undefined')
 
 .container-fluid.container-members((click)='selectedMember = undefined')
 
-  loading-spinner(*ngIf="!listing['collection']")
+    loading-spinner(*ngIf="!listing['collection']")
 
-  .row.team-members
-    .col-md-9.col-centered
-      .row
-         .col-xs-3.col-md-2.col-centered.members-profile(*ngFor='let member of listing.collection',[ngClass]="{'activeProfile':member === selectedMember}",(click)="$event.stopPropagation()")
-             img.member-image(src='{{member.photo}}', alt='{{member.name}}')
-             h5.member-name {{member.name}}
-             h5.member-title {{member.title}}
-             .member-button
-                button(type='button',(click)="expandClick(member)") More Info
-             .row
-               p.member-description Description
-               p.description-body {{member.description}}
+    .row.team-members
+        .col-md-9.col-centered
+            .row
+                .col-xs-3.col-md-2.col-centered.members-profile(*ngFor='let member of listing.collection',[ngClass]="{'activeProfile':member === selectedMember}",(click)="$event.stopPropagation()")
+                    img.member-image(src='{{member.photo}}', alt='{{member.name}}')
+                    h5.member-name {{member.name}}
+                    h5.member-title {{member.title}}
+                    .member-button
+                        button(type='button',(click)="expandClick(member)") More Info
+                    .row
+                        p.member-description Description
+                        p.description-body {{member.description}}
 
-  .col-centered.pagination
-      .pagination-members(*ngIf='listing.count > 10')
-          pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',class="pagination-sm")
+    .col-centered.pagination
+        .pagination-members(*ngIf='listing.count > 10')
+            pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',class="pagination-sm")
 
 home-footer

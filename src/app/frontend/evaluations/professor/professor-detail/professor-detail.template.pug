@@ -1,11 +1,11 @@
 navbar
 breadcrumb
 .profile-header
-   .container
-    .row
-       .col-md-3.col-sm-12
-       .col-md-9.col-sm-12
-         .profName {{professorName | uppercase}}
+    .container
+        .row
+            .col-md-3.col-sm-12
+            .col-md-9.col-sm-12
+                .profName {{professorName | uppercase}}
 
 .container-fluid.professor-detail
     .container
@@ -20,5 +20,5 @@ breadcrumb
                                 h4.list-group-item-heading
                                     | Evaluations
                             professor-evaluations
-                            new-evaluation((outputEvaluation)="getEvaluation($event)")
+                            new-evaluation
 home-footer

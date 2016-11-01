@@ -1,17 +1,17 @@
 navbar
 header(headerName='clubs')
 .clubs
-  .container
-    loading-spinner(*ngIf="!listing['collection']")
-    .row
-      .col-xs-10.col-centered
+    .container
+        loading-spinner(*ngIf="!listing['collection']")
         .row
-          .col-xs-10.col-sm-6.col-md-4.col-lg-3.club-style(*ngFor='let club of listing.collection' routerLink='../club/{{club.id}}/{{club.name}}')
-            .card.card-inverse
-              img.card-img.img-fluid(src='{{club.logo}}', alt='{{club.name}}')
+            .col-xs-10.col-centered
+                .row
+                    .col-xs-10.col-sm-6.col-md-4.col-lg-3.club-style(*ngFor='let club of listing.collection' routerLink='../club/{{club.id}}/{{club.name}}')
+                        .card.card-inverse
+                            img.card-img.img-fluid(src='{{club.logo}}', alt='{{club.name}}')
 
-              .card-img-overlay
-                h4.card-title {{club.name | uppercase}}
+                            .card-img-overlay
+                                h4.card-title {{club.name | uppercase}}
 
 
 home-footer

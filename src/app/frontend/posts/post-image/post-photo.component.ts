@@ -1,7 +1,7 @@
 /**
  * Created by Centroida-2 on 10/31/2016.
  */
-import { Component, OnInit,Input,ViewEncapsulation } from '@angular/core';
+import { Component,Input,ViewEncapsulation } from '@angular/core';
 
 @Component({
     encapsulation: ViewEncapsulation.Emulated,
@@ -9,7 +9,6 @@ import { Component, OnInit,Input,ViewEncapsulation } from '@angular/core';
     template:require ('./post-photo.template.pug'),
     styles:require(['./post-photo.styles.scss'])
 })
-export class FrontPostPhoto implements OnInit {
+export class FrontPostPhoto  {
     @Input() postImage;
-
 }

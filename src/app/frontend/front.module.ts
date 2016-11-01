@@ -14,15 +14,13 @@ import {FrontTeamMembers} from "./team_members/team_members.component";
 import {FrontInternships} from "./internships/internships.component";
 import {routing} from "./front.routing";
 import {FrontNavbar} from "./shared/navbar/navbar.component";
-
-import {NewApplicationSubmission} from "./applications/new_application_submission.component";
+import {NewApplicationSubmission} from "./applications/new-application/new_application_submission.component";
 import {SharedModule} from "../shared/shared.module";
 import {Home} from "./home/home.component";
 import {ProfessorDetailComponent} from "./evaluations/professor/professor-detail/professor-detail.component";
 import {ProfessorEvaluationsComponent} from "./evaluations/professor/professor-evaluations/professor-evaluations.component";
 import {HomeFooter} from "./shared/footer/footer.component";
 import {FrontClubDetail} from "./clubs/club-detail/club-detail.component";
-import {FrontInternshipDetail} from "./internships/internship-detail.component";
 import {FrontHeader} from "./shared/header/header.component";
 import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
 import {NewProfessorEvaluation} from "./evaluations/professor/professor-evaluations/new-professor-evaluation.component";
@@ -51,15 +49,11 @@ import {FrontPostContent} from "./posts/post-content/post-content.component";
         HomeFooter,
         FrontHeader,
         FrontClubDetail,
-        FrontInternshipDetail,
         BreadcrumbComponent,
         NewProfessorEvaluation,
         FrontPostPhoto,
         FrontPostContent
         ],
-    
 })
 
-export class FrontModule { 
-    
-} 
+export class FrontModule {}

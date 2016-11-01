@@ -11,7 +11,7 @@ import {Internship} from "../../shared/models/internship.model";
 })
 
 export class FrontInternships implements OnInit{
-    listing: Listing<Internship>;
+    public listing: Listing<Internship>;
     public currentPage:number = 1;
     public maxSize:number = 5;
 
@@ -20,9 +20,7 @@ export class FrontInternships implements OnInit{
     }
 
     ngOnInit() {
-
         this.loadInternships(1, 10);
-
     };
 
     public pageChanged(event:any):void {
@@ -32,7 +30,6 @@ export class FrontInternships implements OnInit{
     private loadInternships(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage).then(listing => {
             this.listing = listing;
-
         });
     }
 

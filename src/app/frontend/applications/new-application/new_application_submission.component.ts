@@ -1,10 +1,9 @@
 
 import {Component, OnChanges Input, Inject, ViewEncapsulation} from '@angular/core';
-import {ApplicationTemplatesService} from "../../shared/services/application_templates.service";
-import {ApplicationTemplate} from "../../shared/models/application_template.model";
-import { NgStyle, NgClass} from "@angular/common";
+import {ApplicationTemplatesService} from "../../../shared/services/application_templates.service";
+import {ApplicationTemplate} from "../../../shared/models/application_template.model";
 import { FileUploader, FileItem} from "ng2-file-upload/ng2-file-upload";
-import {ApplicationSubmissionsService} from "../../shared/services/application_submissions.service";
+import {ApplicationSubmissionsService} from "../../../shared/services/application_submissions.service";
 
 @Component({
     selector: 'new-application-submission',

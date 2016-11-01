@@ -1,10 +1,10 @@
-
-
 .list-group-item.list-group-item-action.evaluation-list(*ngFor='let evaluation of listing.collection')
+    //assigning 'show-more' css class on selected evaluation
     p.list-group-item-text.description([ngClass]="{'show-more': selectedEvaluation === evaluation}") {{evaluation.content}}
     .row
+        //display Show More link if there is more than 60 words
         .col-xs-12(*ngIf="evaluation.content.split(' ').length > 60")
-         a.show-more-btn.pull-right((click)="selectEval(evaluation)") {{selectedEvaluation !== evaluation ? "Show More" : "Show Less"}}
+            a.show-more-btn.pull-right((click)="selectEval(evaluation)") {{selectedEvaluation !== evaluation ? "Show More" : "Show Less"}}
 
 .row
     .col-md-12

@@ -20,6 +20,7 @@ export class NewProfessorEvaluation {
     }
 
     addEvaluation(evaluation: Evaluation) {
+        //getting professor id with route params and assigning it to addEvaluation from service
          this._route.params.subscribe(params => {
             evaluation.professor_id = +params['id'];
             this._service.addEvaluation(evaluation, +params['id']).then(res => {

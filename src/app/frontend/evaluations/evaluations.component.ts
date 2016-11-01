@@ -16,15 +16,13 @@ import { Router } from '@angular/router';
 })
 
 export class FrontProfessors implements OnInit {
-
     public listing:Listing<Professor>;
     public professor:Professor;
     public departments:Array<String>;
     public selectedDept:string;
     public currentPage:number = 1;
 
-    constructor(private _service:ProfessorsService,private _router:Router) {
-    }
+    constructor(private _service:ProfessorsService,private _router:Router) {}
 
     ngOnInit() {
         this.listing = new Listing<Professor>();
@@ -36,23 +34,22 @@ export class FrontProfessors implements OnInit {
     };
 
     public filterDepts(department:string):void {
+        //if Show All is selected return loading all the professors
         if(department === "ShowAll"){
-            console.log('here');
            return this.loadProfessors(1,10);
         }
         this.loadProfessors(1, 10, department);
     }
 
-    goToProfessor($event){
+    public goToProfessor($event){
         this._router.navigate([`professor/${$event.id}`]);
     }
-    goToProfile(professor:Professor){
+    public goToProfile(professor:Professor){
         this._router.navigate(['/professor',  professor.id, professor.name.replace(/ /g, "_") ]);
     }
 
     //-------------fetching the list of departments through outputDepts event------------>
-    sideDepts($event){
-        console.log($event);
+    public sideDepts($event){
        this.departments = $event;
     }
 

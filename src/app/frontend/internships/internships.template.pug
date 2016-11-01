@@ -7,16 +7,16 @@ header(headerName='internships')
         .row
             .col-sm-12.col-md-10.internships-centered([ngClass]="{'no-pagination':listing.count <= 10}")
                 .internship-list.list-group-item(*ngFor='let internship of listing.collection')
-                 .row
-                   .col-xs-2.col-sm-1.col-md-1
-                     img.internship-image.pull-left(src='{{internship.logo}}', alt='{{internship.link}}')
-                   .col-xs-12.col-sm-9.col-md-9
-                     p.internship-description {{internship.description}}
-                 .row
-                   .col-xs-12.col-sm-12.col-md-12
-                     a.internship-link(target='_blank',href='{{internship.link}}') More Info
+                    .row
+                        .col-xs-2.col-sm-1.col-md-1
+                            img.internship-image.pull-left(src='{{internship.logo}}', alt='{{internship.link}}')
+                        .col-xs-12.col-sm-9.col-md-9
+                            p.internship-description {{internship.description}}
+                    .row
+                        .col-xs-12.col-sm-12.col-md-12
+                            a.internship-link(target='_blank',href='{{internship.link}}') More Info
     .row
-            .col-md-12.center-pagination
-                .pagination-internship(*ngIf='listing.count > 10')
-                  pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',[maxSize]="maxSize",class="pagination-sm")
+        .col-md-12.center-pagination
+            .pagination-internship(*ngIf='listing.count > 10')
+                pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',[maxSize]="maxSize",class="pagination-sm")
 home-footer

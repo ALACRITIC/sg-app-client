@@ -17,12 +17,10 @@ export class NewsCarousel implements OnInit{
     public noWrapSlides:boolean = false;
     public slides:Array<Post> = [];
 
-    constructor(private _post:PostsService) {
+    constructor(private _post:PostsService) {}
 
-    }
     ngOnInit() {
         this._post.getFeatured(1,5).then(result => {
-            console.log(this.slides);
             this.slides = result.Items;
         })
     }

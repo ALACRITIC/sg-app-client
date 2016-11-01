@@ -15,10 +15,8 @@ import {Post} from "../../../shared/models/post.model";
 
 export class FrontNews implements OnInit {
     posts:Array<Post>;
-    constructor(private _post:PostsService) {
-        
-    }
-    
+    constructor(private _post:PostsService) {}
+
     ngOnInit() {
         this._post.getRegular(1, 10).subscribe(res => { this.posts = res.Items } , err => {});
     }

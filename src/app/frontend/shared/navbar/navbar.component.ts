@@ -1,16 +1,17 @@
-import  { Component, ViewEncapsulation} from '@angular/core';
+import  {Component, ViewEncapsulation} from '@angular/core';
 import {NavRoute} from "./navroute.model";
 
 @Component({
     selector: 'navbar',
     templateUrl: './navbar.template.pug',
-    styleUrls:require(['./navbar.styles.scss']),
+    styleUrls: require(['./navbar.styles.scss']),
     encapsulation: ViewEncapsulation.None
 })
 
 export class FrontNavbar {
-    public navbarRoutes:Array<NavRoute>;
+    public navbarRoutes: Array<NavRoute>;
     public isCollapsed: boolean = true;
+
     constructor() {
         this.navbarRoutes = [
             {

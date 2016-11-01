@@ -2,7 +2,7 @@
    Created by Centroida-2 on 10/27/2016.
 .container-fluid.fluid-bread
     .container
-          .breadcrumb(*ngFor='let breadcrumb of breadcrumbs')
+        .breadcrumb(*ngFor='let breadcrumb of breadcrumbs')
             li.breadcrumb.list
                 a(routerLink="../../../{{breadcrumb.name | lowercase}}") {{breadcrumb.name}}
             li.breadcrumb.list

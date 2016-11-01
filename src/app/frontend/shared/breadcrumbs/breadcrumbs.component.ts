@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { Router, ActivatedRoute, NavigationEnd, Params, PRIMARY_OUTLET } from "@angular/router";
+import {Component, OnInit} from "@angular/core";
+import {Router, ActivatedRoute, NavigationEnd, Params, PRIMARY_OUTLET} from "@angular/router";
 import "rxjs/add/operator/filter";
 
 interface IBreadcrumb {
@@ -12,16 +12,14 @@ interface IBreadcrumb {
 @Component({
     selector: "breadcrumb",
     template: require('./breadcrumbs.template.pug'),
-    styles:require(['./breadcrumbs.styles.scss'])
+    styles: require(['./breadcrumbs.styles.scss'])
 })
+
 export class BreadcrumbComponent implements OnInit {
 
     public breadcrumbs: IBreadcrumb[];
 
-    constructor(
-        private activatedRoute: ActivatedRoute,
-        private router: Router,
-    ) {
+    constructor(private activatedRoute: ActivatedRoute,private router: Router) {
         this.breadcrumbs = [];
     }
 
