@@ -8,7 +8,7 @@
 
                     p.card-text {{post.created_at | date:"fullDate" }}
 
-                    a.card-link(routerLink='/post/{{post.id}}/{{post.title}}') Read More
+                    a.card-link((click)='goToProfile(post)') Read More
 
 
 loading-spinner(*ngIf="!posts")

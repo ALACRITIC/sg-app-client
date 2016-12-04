@@ -28,6 +28,7 @@ export class Login implements OnInit{
 
     ngOnInit() {
         if(this._userService.isLoggedIn()) {
+
             this._router.navigate(['admin/dashboard/professors']);
         }
     }

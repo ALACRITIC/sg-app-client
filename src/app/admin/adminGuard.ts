@@ -16,26 +16,9 @@ export class AdminGuard implements CanActivate {
             console.log('yes');
             return true;
         } else {
-            this.router.navigate(['/admin/login']);
+            this.router.navigate(['/login']);
             return false;
         }
     }
 }
 
-
-//reference
-// constructor(protected router: Router, protected authService: AuthService)
-// {
-//
-// }
-//
-// canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-//
-//   if (state.url !== '/login' && !this.authService.isAuthenticated()) {
-//     this.router.navigate(['/login']);
-//     return false;
-//   }
-//
-//   return true;
-// }
-// }

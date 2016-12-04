@@ -22,10 +22,13 @@ import {ProfessorEvaluationsComponent} from "./evaluations/professor/professor-e
 import {HomeFooter} from "./shared/footer/footer.component";
 import {FrontClubDetail} from "./clubs/club-detail/club-detail.component";
 import {FrontHeader} from "./shared/header/header.component";
-import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
+
 import {NewProfessorEvaluation} from "./evaluations/professor/professor-evaluations/new-professor-evaluation.component";
 import {FrontPostPhoto} from "./posts/post-image/post-photo.component";
 import {FrontPostContent} from "./posts/post-content/post-content.component";
+import {BreadcrumbComponent} from "ng2-breadcrumbs/lib/BreadcrumbComponent";
+
+
 
 
 
@@ -52,7 +55,8 @@ import {FrontPostContent} from "./posts/post-content/post-content.component";
         BreadcrumbComponent,
         NewProfessorEvaluation,
         FrontPostPhoto,
-        FrontPostContent
+        FrontPostContent,
+
         ],
 })
 

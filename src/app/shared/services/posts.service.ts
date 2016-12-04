@@ -4,7 +4,7 @@
 
 
 import { Injectable, Inject } from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, RequestOptions} from '@angular/http';
 import { Listing } from '../listing.model'
 import { QueryConstructor} from '../queryconstructor'
 import {Post} from "../models/post.model";
@@ -14,12 +14,15 @@ import {Observable} from 'rxjs/Rx';
 export class PostsService {
     private authToken = localStorage.getItem('auth_token');
     private postsUrl = this.api + '/posts' ;
+
     constructor(private http:Http, @Inject('ApiEndpoint') private api: string) {
     }
 
     //get all POSTS
     query(page:number, itemsPerPage: number) {
-        return this.http.get(this.postsUrl, {search:  QueryConstructor(page, itemsPerPage)})
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+        return this.http.get(this.postsUrl, {search:  QueryConstructor(page, itemsPerPage)},options)
             .toPromise()
             .then(res => {
                 let body = res.json();
@@ -34,7 +37,9 @@ export class PostsService {
     }
     //get Featured
     getFeatured(page:number, itemsPerPage: number) {
-        return this.http.get(this.postsUrl + '/featured', {search:  QueryConstructor(page, itemsPerPage)})
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.get(this.postsUrl + '/featured', {search:  QueryConstructor(page, itemsPerPage)},options)
             .toPromise()
             .then(res => {
                 return res.json();
@@ -43,13 +48,17 @@ export class PostsService {
     }
 
     getRegular(page:number, itemsPerPage: number):Observable {
-        return this.http.get(this.postsUrl + '/regular', {search:  QueryConstructor(page, itemsPerPage)})
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.get(this.postsUrl + '/regular', {search:  QueryConstructor(page, itemsPerPage)},options)
             .map(res => res.json())
     }
 
     //get POST
     get(id:string) {
-        return this.http.get(this.postsUrl + `/${id}`)
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.get(this.postsUrl + `/${id}`,options)
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);

@@ -1,11 +1,11 @@
 navbar
-breadcrumb
+ng2-breadcrumb
 .post-profile-header
 .container.posts
     .row
         .col-md-12.post-details
             .post-title {{post.title}}
             p.post-containerNews
-                post-photo([postImage]="post.image")
+                post-photo.post-photo([postImage]="post.image")
                 post-content([postContent]="post.content")
 home-footer

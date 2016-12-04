@@ -50,9 +50,7 @@ export class ProfessorsService {
         let params = new URLSearchParams();
 
             params.set('starts_with', name);
-        //if(department){
-        //    params.set('department',department);
-        //}
+
 
 
          return this.http.get(this.professorsUrl + `?`, {search: params})
@@ -60,7 +58,7 @@ export class ProfessorsService {
                    .then(res => {
                        let body = res.json();
                        let items = body.Items;
-                       console.log(items);
+                       console.log(items,'items');
                        return  items;
                      });
     }

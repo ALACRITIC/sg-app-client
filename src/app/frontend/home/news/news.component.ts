@@ -4,6 +4,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {PostsService} from "../../../shared/services/posts.service";
 import {Post} from "../../../shared/models/post.model";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -15,10 +16,13 @@ import {Post} from "../../../shared/models/post.model";
 
 export class FrontNews implements OnInit {
     posts:Array<Post>;
-    constructor(private _post:PostsService) {}
+    constructor(private _post:PostsService,private _router:Router) {}
 
     ngOnInit() {
         this._post.getRegular(1, 10).subscribe(res => { this.posts = res.Items } , err => {});
+    }
+    public goToProfile(post:Post){
+        this._router.navigate(['/post',  post.id, post.title.replace(/ /g, "_") ]);
     }
 
 

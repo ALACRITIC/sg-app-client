@@ -6,12 +6,13 @@ header(headerName='clubs')
         .row
             .col-xs-10.col-centered
                 .row
-                    .col-xs-10.col-sm-6.col-md-4.col-lg-3.club-style(*ngFor='let club of listing.collection' routerLink='../club/{{club.id}}/{{club.name}}')
+                    .col-xs-10.col-sm-6.col-md-4.col-lg-3.club-style(*ngFor='let club of listing.collection' ,(click)='goToProfile(club)')
                         .card.card-inverse
                             img.card-img.img-fluid(src='{{club.logo}}', alt='{{club.name}}')
 
                             .card-img-overlay
-                                h4.card-title {{club.name | uppercase}}
+                                .card-title {{club.name}}
 
 
 home-footer
+//([ngClass]="{'no-pagination':listing.count <= 10}")

@@ -1,8 +1,8 @@
-
-
-input.form-control([(ngModel)]='asyncSelected', [typeahead]='dataSource', (typeaheadLoading)='changeTypeaheadLoading($event)', (typeaheadNoResults)='changeTypeaheadNoResults($event)',(typeaheadOnSelect)="typeaheadOnSelect($event)", [typeaheadOptionsLimit]='7', [typeaheadOptionField]="'name'", placeholder='Professor search...')
-i.fa.fa-search(aria-hidden='true')
-//div(*ngIf='typeaheadLoading===true')
-//  i.glyphicon.glyphicon-refresh.ng-hide(style='')
+.row.professor-search-admin
+    .col-md-12
+        input.form-control([(ngModel)]='asyncSelected', [typeahead]='dataSource', (typeaheadLoading)='changeTypeaheadLoading($event)', (typeaheadNoResults)='changeTypeaheadNoResults($event)',(typeaheadOnSelect)="typeaheadOnSelect($event)", [typeaheadOptionsLimit]='7', [typeaheadOptionField]="'name'", placeholder='Professor search...')
+        i.fa.fa-search(aria-hidden='true')
+        //div(*ngIf='typeaheadLoading===true')
+        //  i.glyphicon.glyphicon-refresh.ng-hide(style='')
 
 

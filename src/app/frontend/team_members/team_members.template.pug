@@ -15,9 +15,8 @@ header(headerName='members',(click)='selectedMember = undefined')
                     h5.member-title {{member.title}}
                     .member-button
                         button(type='button',(click)="expandClick(member)") More Info
-                    .row
-                        p.member-description Description
-                        p.description-body {{member.description}}
+                    p.member-description Description
+                    p.description-body {{member.description}}
 
     .col-centered.pagination
         .pagination-members(*ngIf='listing.count > 10')

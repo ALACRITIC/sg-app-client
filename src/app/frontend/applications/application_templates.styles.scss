@@ -19,6 +19,12 @@
         padding-bottom: 5px;
       }
     }
+    .panel-collapse{
+      display: block;
+    }
+    .panel-collapse.collapse.in{
+      display: block;
+    }
     //panel heading styles
     .panel-heading {
       text-align: left;

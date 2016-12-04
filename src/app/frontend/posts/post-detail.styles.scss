@@ -22,7 +22,7 @@
   }
   //post photo and content & their hover styles
   p.post-containerNews {
-    min-height: 330px;
+    height: 100%!important;
     background-color: white;
     box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;

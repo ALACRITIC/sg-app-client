@@ -36,7 +36,7 @@ export class FrontProfessors implements OnInit {
     public filterDepts(department:string):void {
         //if Show All is selected return loading all the professors
         if(department === "ShowAll"){
-           return this.loadProfessors(1,10);
+            this.loadProfessors(1,10);
         }
         this.loadProfessors(1, 10, department);
     }

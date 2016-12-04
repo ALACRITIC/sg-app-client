@@ -1,5 +1,6 @@
 .post-details-image {
   //border: 20px solid white;
+
 }
 
 .post-details-image img {
@@ -8,10 +9,6 @@
   height: 40%;
   margin: 20px;
   box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  &:hover {
-    box-shadow: 0 0.500em 0.750em 0 rgba(0, 0, 0, 0.2);
-  }
 }
 
 //mobile view

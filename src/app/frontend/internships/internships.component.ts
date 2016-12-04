@@ -7,7 +7,7 @@ import {Internship} from "../../shared/models/internship.model";
     selector: 'team-members',
     providers: [InternshipsService],
     templateUrl: './internships.template.pug',
-    styles:require(['./internships.styles.scss'])
+    styles:require(['./internships.styles.scss']),
 })
 
 export class FrontInternships implements OnInit{
@@ -32,6 +32,4 @@ export class FrontInternships implements OnInit{
             this.listing = listing;
         });
     }
-
-
 }

@@ -3,7 +3,8 @@
 .container-fluid.fluid-bread
     .container
         .breadcrumb(*ngFor='let breadcrumb of breadcrumbs')
+            |{{breadcrumb | json}}
             li.breadcrumb.list
-                a(routerLink="../../../{{breadcrumb.name | lowercase}}") {{breadcrumb.name}}
+                a((click)="goToParentRoute(breadcrumb.name)") {{breadcrumb.name}}
             li.breadcrumb.list
                 a([routerLink]='[breadcrumb.url, breadcrumb.params]') {{breadcrumb.label}}
