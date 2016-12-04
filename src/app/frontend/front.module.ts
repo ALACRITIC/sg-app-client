@@ -26,7 +26,8 @@ import {FrontHeader} from "./shared/header/header.component";
 import {NewProfessorEvaluation} from "./evaluations/professor/professor-evaluations/new-professor-evaluation.component";
 import {FrontPostPhoto} from "./posts/post-image/post-photo.component";
 import {FrontPostContent} from "./posts/post-content/post-content.component";
-import {BreadcrumbComponent} from "ng2-breadcrumbs/lib/BreadcrumbComponent";
+import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
+
 
 
 
@@ -34,7 +35,7 @@ import {BreadcrumbComponent} from "ng2-breadcrumbs/lib/BreadcrumbComponent";
 
 
 @NgModule({
-    imports: [CommonModule, PaginationModule, routing, SharedModule, CarouselModule],
+    imports: [CommonModule ,PaginationModule, routing, SharedModule, CarouselModule],
     declarations: [
         Home,
         FrontApplicationTemplates, 
