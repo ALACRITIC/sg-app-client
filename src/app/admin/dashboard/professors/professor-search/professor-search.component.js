@@ -28,15 +28,15 @@ var ProfessorSearch = (function () {
     };
     ProfessorSearch.prototype.changeTypeaheadLoading = function (e) {
         this.typeaheadLoading = e;
-        console.log('typeahead loading', e);
+
     };
     ProfessorSearch.prototype.changeTypeaheadNoResults = function (e) {
         this.typeaheadNoResults = e;
-        console.log(e);
+
     };
     ProfessorSearch.prototype.typeaheadOnSelect = function (e) {
         this.selectedSearchItem.emit(e.item);
-        console.log('Selected value: ', e.value);
+
     };
     __decorate([
         core_1.Output()

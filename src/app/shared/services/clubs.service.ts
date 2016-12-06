@@ -9,6 +9,7 @@ import { Listing } from '../listing.model'
 import { QueryConstructor} from '../queryconstructor'
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Rx';
+import {handleError} from "../error_handler";
 @Injectable()
 export class ClubsService {
     private authToken = localStorage.getItem('auth_token');
@@ -28,14 +29,14 @@ export class ClubsService {
 
                 return listing;
             } )
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
     get(id:number) {
         return this.http.get(this.clubsUrl + `/${id}`)
             .toPromise()
             .then(res => res.json() as Club)
-            .catch(this.handleError);
+            .catch(handleError);
     }
     deleteClub(id: number) {
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
@@ -45,7 +46,7 @@ export class ClubsService {
             .then(() => null );
 
     }
-    addClub(club:Club,file:File,professor_id:number): Observable{
+    addClub(club:Club,file:File,professor_id:number): Observable<any>{
 
         return Observable.create(observer => {
             let formData: any = new FormData();
@@ -73,7 +74,7 @@ export class ClubsService {
             xhr.send(formData);
         });
     }
-    updateClub(club:Club,file:File,id:number): Observable{
+    updateClub(club:Club,file:File,id:number): Observable<any>{
         let url = `${this.clubsUrl}/${id}`;
         return Observable.create(observer => {
             let formData: any = new FormData();

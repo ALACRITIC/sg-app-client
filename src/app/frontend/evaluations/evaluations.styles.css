@@ -46,7 +46,8 @@ a.selected {
     border-radius: 0.313em 0.313em 0 0;
     height: auto;
     display: block;
-    max-width: 10.000em; }
+    max-width: 10.000em;
+  }
   .profile .professor-name {
     clear: left;
     float: left;

@@ -5,6 +5,7 @@ import {Http,Headers,Response } from "@angular/http";
 import {QueryConstructor} from "../queryconstructor";
 import {Listing} from "../listing.model";
 import { Observable } from 'rxjs/Rx';
+import {handleError} from "../error_handler";
 @Injectable()
 
 
@@ -13,7 +14,7 @@ export class InternshipsService {
     private authToken = localStorage.getItem('auth_token');
     constructor(private http:Http, @Inject('ApiEndpoint') private api: string) {}
 
-    query(page:number, itemsPerPage: number) {
+    query(page:number, itemsPerPage: number):Promise<Listing<Internship>> {
         return this.http.get(this.internshipsUrl, {search:  QueryConstructor(page, itemsPerPage)})
             .toPromise()
             .then(res => {
@@ -25,14 +26,14 @@ export class InternshipsService {
 
                 return listing;
             } )
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
     get(id:number) {
         return this.http.get(this.internshipsUrl + `${id}`)
             .toPromise()
             .then(res => res.json() as Internship)
-            .catch(this.handleError);
+            .catch(handleError);
     }
     deleteInternship(id: number) {
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
@@ -43,7 +44,7 @@ export class InternshipsService {
 
     }
 
-    addInternship(internship:Internship,file:File): Observable{
+    addInternship(internship:Internship,file:File):Observable<any>{
         return Observable.create(observer => {
             let formData: any = new FormData();
             let xhr:XMLHttpRequest = new XMLHttpRequest();
@@ -69,7 +70,7 @@ export class InternshipsService {
             xhr.send(formData);
         });
     }
-    updateInternship(internship:Internship,file:File,id:number): Observable{
+    updateInternship(internship:Internship,file:File,id:number): Observable<any>{
         return Observable.create(observer => {
             let url = `${this.internshipsUrl}/${id}`;
             let formData: any = new FormData();

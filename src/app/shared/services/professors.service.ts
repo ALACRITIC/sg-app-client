@@ -3,12 +3,9 @@ import { Injectable, Inject } from '@angular/core';
 import { Http,Headers,Response,URLSearchParams } from '@angular/http';
 import { Listing } from '../listing.model';
 import {QueryConstructor} from '../queryconstructor';
-
 import {Professor} from "../models/professor.model";
-import {Evaluation} from "../models/evaluation.model";
 import { Observable } from 'rxjs/Rx';
-
-
+import { handleError } from '../error_handler';
 
 @Injectable()
 export class ProfessorsService {
@@ -29,49 +26,45 @@ export class ProfessorsService {
             .then(res => {
                 let body = res.json();
                 let listing = new Listing<Professor>();
-                console.log('params',params);
+
 
                 listing.collection = body.Items as Professor[] ;
                 listing.count = body.Count;
 
                 return listing;
             })
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
-    get(id?:number) {
+    get(id?:number):Promise<Professor>{
         return this.http.get(this.professorsUrl + `/${id}`)
             .toPromise()
             .then(res => { return res.json() as Professor })
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
     search(name:string){
         let params = new URLSearchParams();
-
             params.set('starts_with', name);
-
-
-
          return this.http.get(this.professorsUrl + `?`, {search: params})
                    .toPromise()
                    .then(res => {
                        let body = res.json();
                        let items = body.Items;
-                       console.log(items,'items');
+
                        return  items;
                      });
     }
 
-    departments() {
+    departments():Promise<string[]> {
         return this.http.get(this.professorsUrl +'/departments')
             .toPromise()
             .then(res => {return res.json() as Array<string>})
-            .catch(this.handleError);
+            .catch(handleError);
 
     }
 
-    deleteProfessor(id: number) {
+    deleteProfessor(id: number):Promise<any> {
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
         let url = `${this.professorsUrl}/${id}`;
         return this.http.delete(url, {headers: headers})
@@ -80,7 +73,7 @@ export class ProfessorsService {
 
     }
 
-    addProfessor(professor:Professor,file:File): Observable{
+    addProfessor(professor:Professor,file:File): Observable<any>{
         return Observable.create(observer => {
             let formData: any = new FormData();
             let xhr:XMLHttpRequest = new XMLHttpRequest();
@@ -107,7 +100,7 @@ export class ProfessorsService {
         });
     }
 
-    updateProfessor(professor:Professor,file:File,id:number): Observable{
+    updateProfessor(professor:Professor,file:File,id:number): Observable<any>{
         return Observable.create(observer => {
             let url = `${this.professorsUrl}/${id}`;
             let formData: any = new FormData();

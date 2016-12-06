@@ -35,7 +35,7 @@ export class AdminProfessors implements OnInit{
     }
 
     addProfessor($event) {
-        console.log($event.photo);
+
         this._service.addProfessor($event.professor,$event.photo)
             .subscribe((res) => this.professor = res);
     }

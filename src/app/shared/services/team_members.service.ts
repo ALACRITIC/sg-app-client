@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import {TeamMember} from "../models/team_member.model";
 import {QueryConstructor} from "../queryconstructor";
 import { Observable } from 'rxjs/Rx';
+import {handleError} from '../error_handler'
 
 @Injectable()
 
@@ -16,7 +17,7 @@ export class TeamMembersService {
     constructor(private http:Http, @Inject('ApiEndpoint') private api: string) {
     }
 
-    query(page:number, itemsPerPage: number) {
+    query(page:number, itemsPerPage: number):Promise<Listing<TeamMember>> {
         return this.http.get(this.teamMembersUrl, {search:  QueryConstructor(page, itemsPerPage)})
             .toPromise()
             .then(res => {
@@ -28,14 +29,14 @@ export class TeamMembersService {
 
                 return listing;
             })
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
-    get(id: number) {
+    get(id: number):Promise<TeamMember> {
         return this.http.get(this.teamMembersUrl + `/${id}`)
             .toPromise()
             .then(res => res.json() as TeamMember)
-            .catch(this.handleError);
+            .catch(handleError);
     }
     deleteMember(id: number) {
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
@@ -45,7 +46,7 @@ export class TeamMembersService {
             .then(() => null)
 
     }
-    addMember(member:TeamMember,file:File): Observable{
+    addMember(member:TeamMember,file:File): Observable<any>{
         return Observable.create(observer => {
             let formData: any = new FormData();
             let xhr:XMLHttpRequest = new XMLHttpRequest();
@@ -72,7 +73,7 @@ export class TeamMembersService {
             xhr.send(formData);
         });
     }
-    updateMember(member:TeamMember,file:File,id:number): Observable{
+    updateMember(member:TeamMember,file:File,id:number): Observable<any>{
         return Observable.create(observer => {
             let url = `${this.teamMembersUrl}/${id}`;
             let formData: any = new FormData();

@@ -4,6 +4,7 @@ import {Http,Headers,RequestOptions,Response} from "@angular/http";
 import {QueryConstructor} from "../queryconstructor";
 import {Listing} from "../listing.model";
 import {Evaluation} from "../models/evaluation.model";
+import {handleError} from "../error_handler";
 
 
 @Injectable()
@@ -26,7 +27,7 @@ export class EvaluationsService {
 
                 return listing;
             })
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
     deleteEvaluation(professor_id:number,id:number){

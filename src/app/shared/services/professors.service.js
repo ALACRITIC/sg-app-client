@@ -29,7 +29,7 @@ var ProfessorsService = (function () {
             .then(function (res) {
             var body = res.json();
             var listing = new listing_model_1.Listing();
-            console.log('params', params);
+
             listing.collection = body.Items;
             listing.count = body.Count;
             return listing;
@@ -50,7 +50,7 @@ var ProfessorsService = (function () {
             .then(function (res) {
             var body = res.json();
             var items = body.Items;
-            console.log(items, 'items');
+
             return items;
         });
     };

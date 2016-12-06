@@ -16,7 +16,7 @@ var AdminGuard = (function () {
     }
     AdminGuard.prototype.canActivate = function (route, state) {
         if (this.user.isLoggedIn()) {
-            console.log('yes');
+
             return true;
         }
         else {

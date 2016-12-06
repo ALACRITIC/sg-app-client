@@ -41,7 +41,7 @@ export class AdminClubs implements OnInit{
     }
     professorClub(event){
         this.club['professor_id'] = event.id;
-        console.log(event.id);
+
     }
     addClub($event) {
 

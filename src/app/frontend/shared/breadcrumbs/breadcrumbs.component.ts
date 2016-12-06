@@ -22,18 +22,15 @@ export class BreadcrumbComponent implements OnInit {
     constructor(private activatedRoute: ActivatedRoute,private router: Router) {
         this.breadcrumbs = [];
     }
-    goToParentRoute(name) {
-        let bread = name.toLowerCase();
-        this.router.navigate([`/${bread}`]);
-    }
-    ngOnInit() {
+
+    ngOnImit() {
         const ROUTE_DATA_BREADCRUMB: string = "breadcrumb";
 
         //subscribe to the NavigationEnd event
         this.router.events.filter(event => event instanceof NavigationEnd).subscribe(event => {
             //reset breadcrumbs
             this.breadcrumbs = [];
-            console.log(event.url,'event breadcrumb');
+
 
             //get the root route
             let currentRoute: ActivatedRoute = this.activatedRoute.root;
@@ -61,11 +58,11 @@ export class BreadcrumbComponent implements OnInit {
                     //get the route's URL segment
                     let routeURL: string = route.snapshot.url.map(segment => segment.path).join("/");
                     //append route URL to URL
-                    // console.log(routeURL);
+
                     url += `/${routeURL}`;
 
                     //add breadcrumb
-                    console.log(route.snapshot.params);
+
                     let breadcrumb: IBreadcrumb = {
                         name: route.snapshot.data[ROUTE_DATA_BREADCRUMB],
                         label: route.snapshot.params.name.replace(/_/g, " "),
@@ -78,4 +75,11 @@ export class BreadcrumbComponent implements OnInit {
             }
         });
     }
+
+    goToParentRoute(name) {
+        let bread = name.toLowerCase();
+        this.router.navigate([`/${bread}`]);
+    }
+
+
 }

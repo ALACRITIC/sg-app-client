@@ -3,6 +3,7 @@ import {Http, Headers, Response} from "@angular/http";
 import {QueryConstructor} from "../queryconstructor";
 import {Listing} from "../listing.model";
 import {ApplicationSubmission} from "../models/application_submission.model";
+import {handleError} from "../error_handler";
 
 @Injectable()
 
@@ -24,14 +25,14 @@ export class ApplicationSubmissionsService {
 
                 return listing;
             })
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
     get(templateId: number, submissionId: number) {
         return this.http.get(this.api + `/application_templates/${templateId}/application_submissions/${submissionId}`)
             .toPromise()
             .then(res => res.json())
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
     deleteSubmission(templateId: number, submissionId: number) {
