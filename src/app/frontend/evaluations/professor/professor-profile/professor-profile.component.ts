@@ -17,6 +17,7 @@ import {ProfessorEvaluationsComponent} from "../professor-evaluations/professor-
 export class ProfessorProfileComponent implements OnInit {
     @Output() professorName = new EventEmitter();
     public  professor: Professor;
+    public sub:any;
 
     constructor(private _profService:ProfessorsService,private _route:ActivatedRoute) {
         this.professor = new Professor();

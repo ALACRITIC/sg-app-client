@@ -5,21 +5,18 @@ import { Component, OnInit } from '@angular/core';
 import {EvaluationsService} from "../../../../shared/services/evaluations.service";
 import {Evaluation} from "../../../../shared/models/evaluation.model";
 import {Listing} from "../../../../shared/listing.model";
-import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
 import { ActivatedRoute } from '@angular/router';
-import {Evaluation} from "../../../../shared/models/evaluation.model";
+;
 
 @Component({
     selector: 'professor-evaluations',
     templateUrl: 'professor-evaluations.template.pug',
     styleUrls:['./professor-evaluations.styles.scss'],
-
-
 })
 export class ProfessorEvaluationsComponent implements OnInit {
     public listing: Listing<Evaluation>;
     public evaluation:Evaluation;
-    public selectedEvaluation;
+    public selectedEvaluation:Evaluation;
     public currentPage:number = 1;
     public sub:any;
     public id:number;
@@ -51,7 +48,7 @@ export class ProfessorEvaluationsComponent implements OnInit {
     private loadEvaluations(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage,this.id).then(listing => {
             this.currentPage = page;
-            this.listing = listing;
+            this.listing = listing as Listing<Evaluation>;
         });
     }
 }
