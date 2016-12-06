@@ -3,7 +3,6 @@
 .container-fluid.fluid-bread
     .container
         .breadcrumb(*ngFor='let breadcrumb of breadcrumbs')
-            |{{breadcrumb | json}}
             li.breadcrumb.list
                 a((click)="goToParentRoute(breadcrumb.name)") {{breadcrumb.name}}
             li.breadcrumb.list
