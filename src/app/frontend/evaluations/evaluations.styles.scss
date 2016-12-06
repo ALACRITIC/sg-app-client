@@ -84,7 +84,7 @@ a.selected {
     //professor profile image
     img.professor-image {
       border-radius: 0.313em 0.313em 0 0;
-      height: 155px;
+      max-height: 155px;
       display: block;
       max-width: 10.000em;
     }
