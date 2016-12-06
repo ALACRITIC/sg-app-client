@@ -12,7 +12,7 @@ interface IBreadcrumb {
 @Component({
     selector: "breadcrumb",
     template: require('./breadcrumbs.template.pug'),
-    styles: require(['./breadcrumbs.styles.scss'])
+    styleUrls:['./breadcrumbs.styles.scss']
 })
 
 export class BreadcrumbComponent implements OnInit {
@@ -23,7 +23,7 @@ export class BreadcrumbComponent implements OnInit {
         this.breadcrumbs = [];
     }
 
-    ngOnImit() {
+    ngOnInit() {
         const ROUTE_DATA_BREADCRUMB: string = "breadcrumb";
 
         //subscribe to the NavigationEnd event
@@ -65,7 +65,7 @@ export class BreadcrumbComponent implements OnInit {
 
                     let breadcrumb: IBreadcrumb = {
                         name: route.snapshot.data[ROUTE_DATA_BREADCRUMB],
-                        label: route.snapshot.params.name.replace(/_/g, " "),
+                        label: route.snapshot.params['name'].replace(/_/g, " "),
                         params: route.snapshot.params,
                         url: url
                     };

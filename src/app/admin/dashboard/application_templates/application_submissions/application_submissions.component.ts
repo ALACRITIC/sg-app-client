@@ -12,7 +12,7 @@ import { ActivatedRoute,Router } from '@angular/router';
     templateUrl: './application_submissions.template.pug'
 })
 
-export class AdminApplicationSubmissions implements OnInit, OnChanges{
+export class AdminApplicationSubmissions implements OnChanges{
     @Input() template_id:number;
     listing:Listing<ApplicationSubmission>;
 

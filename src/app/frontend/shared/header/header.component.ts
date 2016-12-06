@@ -3,7 +3,7 @@ import  {Component, ViewEncapsulation, Input} from '@angular/core';
 @Component({
     selector: 'header',
     templateUrl: './header.template.pug',
-    styleUrls: require(['./header.styles.scss']),
+    styleUrls: ['./header.styles.scss'],
     encapsulation: ViewEncapsulation.Emulated
 })
 

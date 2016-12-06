@@ -14,7 +14,7 @@ import {Club} from "../../../shared/models/club.model";
 })
 
 export class FrontClubProfile implements OnInit {
-    public club:Club;
+    public club:any;
     public sub:any;
 
     constructor(private _service:ClubsService, private _route:ActivatedRoute) {

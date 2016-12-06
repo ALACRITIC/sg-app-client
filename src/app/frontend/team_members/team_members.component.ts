@@ -6,9 +6,8 @@ import {Listing} from "../../shared/listing.model";
 @Component({
     encapsulation: ViewEncapsulation.Emulated,
     selector: 'team-members',
-    providers: [TeamMembersService],
     templateUrl: './team_members.template.pug',
-    style:require(['./team-members.styles.scss'])
+    styleUrls:['./team-members.styles.scss']
 })
 
 export class FrontTeamMembers implements OnInit{

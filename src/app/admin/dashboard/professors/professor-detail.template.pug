@@ -7,11 +7,13 @@
         .btn-group
         button.btn.btn-danger((click)='deleteProfessor(professor)') Delete Professor
         button.btn.btn-warning((click)='isEdit = true') Edit Professor
-
     .col-md-4.col-xs-12(*ngIf='isEdit')
         professor-form([inputProfessor]='professor', (outputProfessor) = 'updateProfessor($event)')
 
         a.btn.btn-primary((click)='isEdit = false') Cancel
+    .col-md-8.col-xs-12
+        admin-evaluations([professor_id]='professor.id')
 
-        .col-md-8.col-xs-12
-            admin-evaluations([professor_id]='professor.id')
+
+
+

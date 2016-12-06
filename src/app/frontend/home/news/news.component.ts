@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 @Component({
     selector: 'front-news',
     templateUrl: 'news.template.pug',
-    styles:require(['./news.styles.scss']),
+    styleUrls:['./news.styles.scss'],
     encapsulation: ViewEncapsulation.Emulated
 })
 

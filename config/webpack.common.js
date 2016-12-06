@@ -131,7 +131,7 @@ module.exports = {
         loader: 'file'
       },
 
-      { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
+      { test: /\.scss$/, loaders:  ['raw-loader', 'sass-loader'] },
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
 
 
