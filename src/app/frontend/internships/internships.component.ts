@@ -29,6 +29,7 @@ export class FrontInternships implements OnInit{
 
     private loadInternships(page:number, itemsPerPage: number) {
         this._service.query(page,itemsPerPage).then(listing => {
+
             this.listing = listing;
         });
     }

@@ -1,13 +1,13 @@
 navbar
 header(headerName='applications')
 
-.container-fluid.applications
+.applications
     .container.applications-body
         loading-spinner(*ngIf="!listing['collection']")
         .row
             .col-md-9.col-xs-12.template-body
                 accordion([closeOthers]="oneAtATime")
-                    accordion-group(*ngFor="let application_template of listing.collection" ,[heading]="application_template.name | uppercase",(click)="selectedTemp(application_template)",[ngClass]="{'active':selectedTemplate === application_template}")
+                    accordion-group(*ngFor="let application_template of listing?.collection" ,[heading]="application_template.name | uppercase",(click)="selectedTemp(application_template)",[ngClass]="{'active':selectedTemplate === application_template}")
                         .container.body((click)="$event.stopPropagation()")
                             .row
                                 .col-md-6.app-des
