@@ -13,7 +13,7 @@ import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/form
     templateUrl: './member-form.template.pug',
     styleUrls:['../../shared/styles/styles.css'],
 })
-export class AdminMemberForm implements OnInit,OnChanges {
+export class AdminMemberForm implements OnChanges {
     @Input() inputMember:TeamMember;
     @Output() outputMember = new EventEmitter();
 

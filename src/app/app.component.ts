@@ -12,7 +12,7 @@ import {Router, NavigationStart, NavigationEnd} from "@angular/router";
 @Component({
   // encapsulation: ViewEncapsulation.Emulated,
   selector: 'app',
-  styleUrls:require( ['./app.styles.scss']),
+  styleUrls:['./app.styles.scss'],
   template: `
  <div class="loading-overlay" *ngIf="loading"> 
    <i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw text-center"></i>

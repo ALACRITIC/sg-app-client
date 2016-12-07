@@ -10,12 +10,11 @@ import {AdminApplicationSubmissions} from "./application_submissions/application
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    providers: [ApplicationTemplatesService],
-    directives: [AdminApplicationSubmissions],
     template: require('./application_template-detail.template.pug'),
 })
 export class AdminApplicationTemplateDetail implements OnInit, OnDestroy{
     sub: any;
+    public isEdit:boolean;
     public application_template:ApplicationTemplate;
 
     constructor(private _service:ApplicationTemplatesService,private _router:Router, private _route:ActivatedRoute) {

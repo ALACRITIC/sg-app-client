@@ -64,7 +64,7 @@ export class ProfessorsService {
 
     }
 
-    deleteProfessor(id: number):Promise<any> {
+    deleteProfessor(id:string):Promise<any> {
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
         let url = `${this.professorsUrl}/${id}`;
         return this.http.delete(url, {headers: headers})
@@ -100,7 +100,7 @@ export class ProfessorsService {
         });
     }
 
-    updateProfessor(professor:Professor,file:File,id:number): Observable<any>{
+    updateProfessor(professor:Professor,file:File,id:string): Observable<any>{
         return Observable.create(observer => {
             let url = `${this.professorsUrl}/${id}`;
             let formData: any = new FormData();

@@ -31,10 +31,11 @@ export class ProfessorEvaluationsComponent implements OnInit {
     }
 
     ngOnInit() {
+        //TODO change to route snapshot
         this.sub = this._route.params.subscribe(params => {
             //+params['id'] is professor id
             this.id = +params['id'];
-            this.loadEvaluations(1, 5, this.id);
+            this.loadEvaluations(1, 5);
         });
     }
     selectEval(evaluation){

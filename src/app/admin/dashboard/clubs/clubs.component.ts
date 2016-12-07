@@ -5,7 +5,7 @@ import {Component, ViewEncapsulation, OnInit} from '@angular/core';
 import {Listing} from "../../../shared/listing.model";
 import {Club} from "../../../shared/models/club.model";
 import {ClubsService} from "../../../shared/services/clubs.service";
-import {ClassArray} from "../../../../../node_modules/awesome-typescript-loader/issues/product-designer/typings-custom/classnames";
+
 
 @Component({
     selector: 'clubs',
@@ -37,7 +37,7 @@ export class AdminClubs implements OnInit{
     };
 
     private loadClubs(page:number, itemsPerPage: number) {
-        this._service.query(page,itemsPerPage).then(listing => this.listing = listing);
+        this._service.query(page,itemsPerPage).then(listing => this.listing = listing as Listing<Club>);
     }
     professorClub(event){
         this.club['professor_id'] = event.id;

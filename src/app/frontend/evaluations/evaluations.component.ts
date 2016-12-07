@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
     encapsulation: ViewEncapsulation.Emulated,
     providers: [ProfessorsService],
     template: require('./evaluations.template.pug'),
-    style:require(['./evaluations.styles.scss'])
+    styleUrls:['./evaluations.styles.scss']
 })
 
 export class FrontProfessors implements OnInit {
@@ -67,7 +67,7 @@ export class FrontProfessors implements OnInit {
 
     private loadProfessors(page:number, itemsPerPage:number, department?:string) {
         this._service.query(page, itemsPerPage, department).then(listing => {
-            this.listing = listing;
+            this.listing = listing as Listing<Professor>;
             this.currentPage = page;
         });
     }

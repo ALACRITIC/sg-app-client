@@ -3,8 +3,7 @@ import {Component, OnInit,ViewEncapsulation} from "@angular/core";
 import {Listing} from "../../../shared/listing.model";
 import {Internship} from "../../../shared/models/internship.model";
 import {InternshipsService} from "../../../shared/services/internships.service";
-import {Internship} from "../../../shared/models/internship.model";
-import { CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 
 @Component({
     encapsulation: ViewEncapsulation.None,

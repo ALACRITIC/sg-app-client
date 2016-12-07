@@ -3,7 +3,7 @@
  */
 
 import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input } from '@angular/core';
-import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
+import { FileUploader} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
 import {Professor} from "../../../../shared/models/professor.model";
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
@@ -49,7 +49,7 @@ export class AdminProfessorForm implements OnChanges {
     updateProfessor(){
 
         if(this.uploader.queue.length !== 0){
-            var photo:FileItem =this.uploader.queue[0]._file;
+            var photo =this.uploader.queue[0]._file;
         }
         this.outputProfessor.emit({
             professor:this.professor,

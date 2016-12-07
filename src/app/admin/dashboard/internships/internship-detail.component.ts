@@ -26,6 +26,6 @@ export class AdminInternshipDetail implements OnInit {
         });
     }
     private loadInternship(id:number){
-        this._service.get(id).then((res) => this.internship = res);
+        this._service.get(id).then((res) => this.internship = res as Internship);
     }
 }

@@ -37,7 +37,7 @@ export class AdminApplicationSubmissions implements OnChanges{
 
     private loadSubmissions(page:number, itemsPerPage: number){
         this._service.query(page,itemsPerPage, this.template_id)
-                     .then(listing => this.listing = listing);
+                     .then(listing => this.listing = listing as Listing<ApplicationSubmission>);
     }
 
     deleteSubmission(submission:ApplicationSubmission) {

@@ -11,7 +11,7 @@ import {TypeaheadMatch} from "ng2-bootstrap";
 @Component({
     selector: 'professor-search',
     templateUrl: './professor-search.template.pug',
-    styles:require(['./professor-search.styles.scss'])
+    styleUrls: ['./professor-search.styles.scss']
 })
 export class ProfessorSearch  {
     @Output() selectedSearchItem = new EventEmitter();

@@ -6,9 +6,8 @@ import {Router} from "@angular/router";
 
 @Component({
     selector: 'clubs',
-    providers: [ClubsService],
     templateUrl: './clubs.template.pug',
-    style:require(['./clubs.styles.scss']),
+    styleUrls: ['./clubs.styles.scss'],
     encapsulation: ViewEncapsulation.Emulated
 
 })

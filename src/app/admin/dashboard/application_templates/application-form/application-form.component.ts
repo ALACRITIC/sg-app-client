@@ -3,7 +3,7 @@
  */
 import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input,Inject } from '@angular/core';
 import {ApplicationTemplate} from "../../../../shared/models/application_template.model";
-import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
+import { FileUploader} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -46,7 +46,7 @@ export class AdminApplicationForm implements OnChanges {
 
     onSubmit() {
         if(this.uploader.queue.length !== 0){
-            var document:FileItem =this.uploader.queue[0]._file;
+            var document =this.uploader.queue[0]._file;
         }
         this.outputApplication.emit({
             application:this.application_template,

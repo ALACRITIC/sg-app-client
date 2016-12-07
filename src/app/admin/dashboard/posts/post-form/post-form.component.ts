@@ -3,7 +3,7 @@
  */
 import { Component,EventEmitter,SimpleChange,OnChanges,Output,Input  } from '@angular/core';
 import {Post} from "../../../../shared/models/post.model";
-import { FileUploader, FileItem} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
+import { FileUploader} from "../../../../../../node_modules/ng2-file-upload/ng2-file-upload";
 import '../ckeditor.loader.ts';
 import {PostsService} from "../../../../shared/services/posts.service";
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
@@ -35,7 +35,7 @@ export class AdminPostForm implements OnChanges {
         this.form = fb.group({
             'title': ['', Validators.compose([Validators.required])],
             'styles': ['', Validators.compose([Validators.required])],
-            'featured': ['', Validators.nullValidator()]
+            'featured': ['', Validators.compose([Validators.nullValidator])]
         });
         this.title = this.form.controls['title'];
         this.styles = this.form.controls['styles'];
@@ -55,7 +55,7 @@ export class AdminPostForm implements OnChanges {
 
     updatePost(){
         if(this.uploader.queue.length !== 0){
-            var image:FileItem =this.uploader.queue[0]._file;
+            var image =this.uploader.queue[0]._file;
             var imageName =this.uploader.queue[0].file.name;
         }
         this.outputPost.emit({
@@ -70,7 +70,7 @@ export class AdminPostForm implements OnChanges {
 
     addPost(){
 
-        var image:FileItem =this.uploader.queue[0]._file;
+        var image =this.uploader.queue[0]._file;
         var imageName =this.uploader.queue[0].file.name;
         this._service.save(this.post, image,imageName).subscribe((res) => {
             this.post = res;

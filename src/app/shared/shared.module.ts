@@ -20,8 +20,6 @@ import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
 import { AccordionModule } from 'ng2-bootstrap/components/accordion';
 import {LoadingSpinner} from "./components/loading-spinner/loading-spinner.component";
 import { CollapseDirective } from 'ng2-bootstrap'
-import {HelloWorld} from "tao-lib-centr/components";
-import {BreadcrumbComponent} from "ng2-breadcrumbs/lib/BreadcrumbComponent";
 
 
 @NgModule({

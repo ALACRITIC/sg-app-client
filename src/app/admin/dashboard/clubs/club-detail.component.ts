@@ -27,7 +27,7 @@ export class AdminClubDetail implements OnInit {
     }
 
     private loadClub(id:number){
-        this._service.get(id).then((club)=> this.club = club);
+        this._service.get(id).then((club)=> this.club = club as Club);
     }
 
     deleteClub() {

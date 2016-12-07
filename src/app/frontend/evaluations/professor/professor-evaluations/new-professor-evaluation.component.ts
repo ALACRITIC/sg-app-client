@@ -9,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
     selector: 'new-evaluation',
     template: require('./new-evaluation.template.pug'),
-    styles: require(['./new-evaluation.styles.scss'])
+    styleUrls: ['./new-evaluation.styles.scss']
 })
 export class NewProfessorEvaluation {
     @Output() outputEvaluation = new EventEmitter();

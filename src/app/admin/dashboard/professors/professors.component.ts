@@ -44,7 +44,7 @@ export class AdminProfessors implements OnInit{
     }
 
     private loadProfessors(page:number, itemsPerPage: number, department?:string) {
-        this._service.query(page,itemsPerPage, department).then(listing => this.listing = listing);
+        this._service.query(page,itemsPerPage, department).then(listing => this.listing = listing as Listing<Professor>);
     }
 
 

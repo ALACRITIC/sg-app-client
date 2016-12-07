@@ -1,5 +1,4 @@
-import {Component, ViewEncapsulation , Input, OnInit} from '@angular/core';
-import {PAGINATION_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
+import {Component, ViewEncapsulation, Input, OnInit, OnChanges} from '@angular/core';
 import {Evaluation} from "../../../../shared/models/evaluation.model";
 import {Listing} from "../../../../shared/listing.model";
 import {EvaluationsService} from "../../../../shared/services/evaluations.service";
@@ -8,10 +7,9 @@ import {EvaluationsService} from "../../../../shared/services/evaluations.servic
     selector: 'admin-evaluations',
     encapsulation: ViewEncapsulation.None,
     providers: [EvaluationsService],
-    directives: [PAGINATION_DIRECTIVES],
     template: require('./evaluations.template.pug'),
 })
-export class AdminEvaluations implements OnInit{
+export class AdminEvaluations implements OnChanges{
     @Input() professor_id;
     public listing: Listing<Evaluation>;
     public evaluation:Evaluation;
@@ -35,7 +33,7 @@ export class AdminEvaluations implements OnInit{
 
     private loadEvaluations(page:number, itemsPerPage: number) {
 
-        this._service.query(page,itemsPerPage, this.professor_id ).then(listing => this.listing = listing);
+        this._service.query(page,itemsPerPage, this.professor_id ).then(listing => this.listing = listing as Listing<Evaluation>);
     }
 
     deleteEvaluation(evaluation:Evaluation){
