@@ -42,6 +42,5 @@ export const routing: ModuleWithProviders = RouterModule.forChild([
             breadcrumb: "Evaluations"
         }
     },
-
 ]);
 
