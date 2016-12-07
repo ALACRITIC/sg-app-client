@@ -8,21 +8,19 @@ import { AccordionModule } from 'ng2-bootstrap/components/accordion';
 @Component({
     providers: [ApplicationTemplatesService],
     templateUrl: './application_templates.template.pug',
-    styles:require(['./application_templates.styles.scss']),
+    styleUrls:['./application_templates.styles.scss'],
     encapsulation: ViewEncapsulation.Emulated,
-    providers:[AccordionModule]
 })
 
 export class FrontApplicationTemplates implements OnInit{
-    public listing: Listing<ApplicationTemplate>;
+    public listing: ApplicationTemplate[];
     public oneAtATime:boolean = true;
     public selectedTemplate;
 
     constructor(private _service:ApplicationTemplatesService) {}
 
     ngOnInit() {
-        this.listing = new Listing<ApplicationTemplate>();
-        this._service.query(1,999).then(listing => this.listing = listing);//load all
+        this._service.query(1,999).then(listing => this.listing = listing );//load all
     }
 
     selectedTemp(application_template:ApplicationTemplate){

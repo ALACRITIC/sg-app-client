@@ -11,7 +11,7 @@ import {TypeaheadMatch} from "ng2-bootstrap";
 @Component({
     selector: 'professor-search',
     templateUrl: './professor-search.template.pug',
-    styles:require(['./professor-search.styles.scss'])
+    styleUrls: ['./professor-search.styles.scss']
 })
 export class ProfessorSearch  {
     @Output() selectedSearchItem = new EventEmitter();
@@ -31,15 +31,15 @@ export class ProfessorSearch  {
     }
     public changeTypeaheadLoading(e:boolean):void {
         this.typeaheadLoading = e;
-        console.log('typeahead loading',e);
+
     }
 
     public changeTypeaheadNoResults(e:boolean):void {
         this.typeaheadNoResults = e;
-        console.log(e);
+
     }
     public typeaheadOnSelect(e:TypeaheadMatch):void {
         this.selectedSearchItem.emit(e.item);
-        console.log('Selected value: ', e.value);
+
     }
 }

@@ -1,7 +1,4 @@
 //todo put to use
-export function errorHandler(error:any) {
-    
-    let body = error.json().extract;
-    return Promise.reject(body.message || body);
-
+export function handleError(error:any) {
+    console.log('An error occurred', error)
 }

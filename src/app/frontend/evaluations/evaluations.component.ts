@@ -9,10 +9,9 @@ import { Router } from '@angular/router';
 
 @Component({
     encapsulation: ViewEncapsulation.Emulated,
-    selector: 'team-members',
     providers: [ProfessorsService],
     template: require('./evaluations.template.pug'),
-    style:require(['./evaluations.styles.scss'])
+    styleUrls:['./evaluations.styles.scss']
 })
 
 export class FrontProfessors implements OnInit {
@@ -34,11 +33,14 @@ export class FrontProfessors implements OnInit {
     };
 
     public filterDepts(department:string):void {
+
         //if Show All is selected return loading all the professors
-        if(department === "ShowAll"){
+        if(department === "All"){
             this.loadProfessors(1,10);
+        } else {
+            this.loadProfessors(1, 10, department);
         }
-        this.loadProfessors(1, 10, department);
+
     }
 
     public goToProfessor($event){
@@ -54,14 +56,18 @@ export class FrontProfessors implements OnInit {
     }
 
     loadDepartments(page:number,itemsPerPage:number,department?:string){
-        this.loadProfessors(page,itemsPerPage,department);
-        console.log(this.selectedDept);
-        this.selectedDept = department;
+        if(department === "All"){
+            this.loadProfessors(1,10);
+        } else {
+            this.loadProfessors(page,itemsPerPage,department);
+            this.selectedDept = department;
+        }
+
     }
 
     private loadProfessors(page:number, itemsPerPage:number, department?:string) {
         this._service.query(page, itemsPerPage, department).then(listing => {
-            this.listing = listing;
+            this.listing = listing as Listing<Professor>;
             this.currentPage = page;
         });
     }

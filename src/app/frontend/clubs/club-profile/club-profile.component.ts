@@ -10,11 +10,11 @@ import {Club} from "../../../shared/models/club.model";
     encapsulation: ViewEncapsulation.Emulated,
     selector: 'club-profile',
     template:require ('./club-profile.template.pug'),
-    styles:require(['./club-profile.styles.scss'])
+    styleUrls: ['./club-profile.styles.scss']
 })
 
 export class FrontClubProfile implements OnInit {
-    public club:Club;
+    public club:any;
     public sub:any;
 
     constructor(private _service:ClubsService, private _route:ActivatedRoute) {

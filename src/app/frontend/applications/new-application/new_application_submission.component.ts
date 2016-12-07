@@ -1,16 +1,15 @@
 
-import {Component, OnChanges Input, Inject, ViewEncapsulation} from '@angular/core';
+import {Component, OnChanges, Input, Inject, ViewEncapsulation} from '@angular/core';
 import {ApplicationTemplatesService} from "../../../shared/services/application_templates.service";
 import {ApplicationTemplate} from "../../../shared/models/application_template.model";
-import { FileUploader, FileItem} from "ng2-file-upload/ng2-file-upload";
-import {ApplicationSubmissionsService} from "../../../shared/services/application_submissions.service";
+import { FileUploader} from "ng2-file-upload/ng2-file-upload";
+
 
 @Component({
     selector: 'new-application-submission',
     encapsulation: ViewEncapsulation.Emulated,
     template:require ('./new_application_submission.template.pug'),
-    providers: [ApplicationSubmissionsService],
-    styles:require (['./new_application_submission.styles.scss'])
+    styleUrls: ['./new_application_submission.styles.scss']
 })
 
 export class NewApplicationSubmission implements OnChanges {
@@ -39,7 +38,7 @@ export class NewApplicationSubmission implements OnChanges {
         event.stopPropagation();
     }
 
-    public sendSubmission(item:FileItem) {
+    public sendSubmission(item) {
         this.downloaded = true;
         item.alias = "application_submission[document]";
         item.upload();

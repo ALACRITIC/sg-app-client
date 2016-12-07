@@ -8,7 +8,7 @@ import {ActivatedRoute} from "@angular/router";
     selector: 'post-detail',
     providers: [PostsService],
     template:require ('./post-detail.template.pug'),
-    styles:require(['./post-detail.styles.scss'])
+    styleUrls:['./post-detail.styles.scss']
 })
 
 export class FrontPostDetail implements OnInit, OnDestroy{
@@ -29,7 +29,7 @@ export class FrontPostDetail implements OnInit, OnDestroy{
         this.sub.unsubscribe();
     }
 
-    getPost(id:number){
+    getPost(id:string){
         this._service.get(id).then(res => this.post = res);
     }
 }

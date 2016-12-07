@@ -12,13 +12,12 @@ import {ProfessorEvaluationsComponent} from "../professor-evaluations/professor-
     encapsulation: ViewEncapsulation.Emulated,
     selector: 'professor-profile',
     templateUrl: 'professor-profile.template.pug',
-    styles:require(['./professor-profile.styles.scss']),
-    providers:[ProfessorsService],
-    directives:[ProfessorEvaluationsComponent]
+    styleUrls:['./professor-profile.styles.scss']
 })
 export class ProfessorProfileComponent implements OnInit {
     @Output() professorName = new EventEmitter();
     public  professor: Professor;
+    public sub:any;
 
     constructor(private _profService:ProfessorsService,private _route:ActivatedRoute) {
         this.professor = new Professor();

@@ -7,6 +7,7 @@ import { QueryConstructor} from '../queryconstructor'
 import 'rxjs/add/operator/toPromise';
 import {ApplicationTemplate} from "../models/application_template.model";
 import { Observable } from 'rxjs/Rx';
+import {handleError} from "../error_handler";
 
 @Injectable()
 export class ApplicationTemplatesService {
@@ -15,7 +16,7 @@ export class ApplicationTemplatesService {
     constructor(private http:Http, @Inject('ApiEndpoint') private api: string) {
     }
 
-    query(page:number, itemsPerPage: number) {
+    query(page:number, itemsPerPage: number):Promise<ApplicationTemplate[]> {
         return this.http.get(this.applicationTemplatesUrl, {search:  QueryConstructor(page, itemsPerPage)})
             .toPromise()
             .then(res => {
@@ -27,16 +28,16 @@ export class ApplicationTemplatesService {
 
                 return listing;
             } )
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
-    get(id:number) {
+    get(id:number):Promise<ApplicationTemplate> {
         return this.http.get(this.applicationTemplatesUrl + `/${id}`)
             .toPromise()
             .then(res => res.json())
-            .catch(this.handleError);
+            .catch(handleError);
     }
-    deleteApplicationTemplate(id: number) {
+    deleteApplicationTemplate(id: number):Promise<any> {
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
         let url = `${this.applicationTemplatesUrl}/${id}`;
         return this.http.delete(url, {headers: headers})
@@ -44,7 +45,7 @@ export class ApplicationTemplatesService {
             .then(() => null)
 
     }
-    addApplicationTemplate(application_template:ApplicationTemplate,file:File): Observable{
+    addApplicationTemplate(application_template:ApplicationTemplate,file:File): Observable<any>{
         return Observable.create(observer => {
             let formData: any = new FormData();
             let xhr:XMLHttpRequest = new XMLHttpRequest();
@@ -70,7 +71,7 @@ export class ApplicationTemplatesService {
         });
     }
 
-    updateApplicationTemplate(application_template:ApplicationTemplate,file:File,id:number): Observable{
+    updateApplicationTemplate(application_template:ApplicationTemplate,file:File,id:number): Observable<any>{
         return Observable.create(observer => {
             let url = `${this.applicationTemplatesUrl}/${id}`;
             let formData: any = new FormData();

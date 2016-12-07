@@ -2,16 +2,14 @@
  * Created by Taulant on 9/29/2016.
  */
 import { Component, OnInit,EventEmitter,SimpleChange,OnChanges,Output,Input } from '@angular/core';
-import { FileUploader, FileItem} from "ng2-file-upload/ng2-file-upload";
+import { FileUploader} from "ng2-file-upload/ng2-file-upload";
 import {Club} from "../../../../shared/models/club.model";
-import {ClubsService} from "../../../../shared/services/clubs.service";
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
     selector: 'club-form',
     templateUrl: 'club-form.template.pug',
     styleUrls:['../../shared/styles/styles.css'],
-    providers:[ClubsService]
 })
 export class AdminClubForm implements OnChanges {
     @Input() inputClub:Club;
@@ -46,7 +44,7 @@ export class AdminClubForm implements OnChanges {
 
     updateClub(){
         if(this.uploader.queue.length !== 0){
-            var logo:FileItem =this.uploader.queue[0]._file;
+            var logo =this.uploader.queue[0]._file;
         }
         this.outputClub.emit({
             club:this.club,

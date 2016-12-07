@@ -4,7 +4,7 @@ import {Component,ViewEncapsulation} from '@angular/core';
     encapsulation: ViewEncapsulation.Emulated,
     selector: 'professor-detail',
     templateUrl: 'professor-detail.template.pug',
-    styles:require(['./professor-detail.styles.scss'])
+    styleUrls:['./professor-detail.styles.scss']
 })
 
 export class ProfessorDetailComponent {

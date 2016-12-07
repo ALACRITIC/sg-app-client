@@ -28,7 +28,7 @@ export class AdminPosts implements OnInit{
     };
 
     private loadPosts(page:number, itemsPerPage: number) {
-        this._service.query(page,itemsPerPage).then(listing => this.listing = listing);
+        this._service.query(page,itemsPerPage).then(listing => this.listing = listing as Listing<Post>);
     }
 
 }

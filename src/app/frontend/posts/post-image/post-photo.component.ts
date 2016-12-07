@@ -7,7 +7,7 @@ import { Component,Input,ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.Emulated,
     selector: 'post-photo',
     template:require ('./post-photo.template.pug'),
-    styles:require(['./post-photo.styles.scss'])
+    styleUrls:['./post-photo.styles.scss']
 })
 export class FrontPostPhoto  {
     @Input() postImage;

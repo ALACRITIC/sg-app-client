@@ -45,7 +45,7 @@ var FrontProfessors = (function () {
     };
     FrontProfessors.prototype.loadDepartments = function (page, itemsPerPage, department) {
         this.loadProfessors(page, itemsPerPage, department);
-        console.log(this.selectedDept);
+
         this.selectedDept = department;
     };
     FrontProfessors.prototype.loadProfessors = function (page, itemsPerPage, department) {

@@ -9,6 +9,7 @@ import { Listing } from '../listing.model'
 import { QueryConstructor} from '../queryconstructor'
 import {Post} from "../models/post.model";
 import {Observable} from 'rxjs/Rx';
+import {handleError} from "../error_handler";
 
 @Injectable()
 export class PostsService {
@@ -21,8 +22,8 @@ export class PostsService {
     //get all POSTS
     query(page:number, itemsPerPage: number) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-        return this.http.get(this.postsUrl, {search:  QueryConstructor(page, itemsPerPage)},options)
+    let options = new RequestOptions({ headers: headers ,search:  QueryConstructor(page, itemsPerPage) });
+        return this.http.get(this.postsUrl,options)
             .toPromise()
             .then(res => {
                 let body = res.json();
@@ -33,37 +34,37 @@ export class PostsService {
 
                 return listing;
             } )
-            .catch(this.handleError);
+            .catch(handleError);
     }
     //get Featured
-    getFeatured(page:number, itemsPerPage: number) {
+    getFeatured(page:number, itemsPerPage: number):Promise<Post[]> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        return this.http.get(this.postsUrl + '/featured', {search:  QueryConstructor(page, itemsPerPage)},options)
+        let options = new RequestOptions({ headers: headers , search: QueryConstructor(page, itemsPerPage)});
+        return this.http.get(this.postsUrl + '/featured',options)
             .toPromise()
             .then(res => {
                 return res.json();
             })
-            .catch(this.handleError);
+            .catch(handleError);
     }
 
-    getRegular(page:number, itemsPerPage: number):Observable {
+    getRegular(page:number, itemsPerPage: number):Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        return this.http.get(this.postsUrl + '/regular', {search:  QueryConstructor(page, itemsPerPage)},options)
-            .map(res => res.json())
+        let options = new RequestOptions({ headers: headers , search:QueryConstructor(page, itemsPerPage)});
+        return this.http.get(this.postsUrl + '/regular',options)
+            .map((res) => res.json())
     }
 
     //get POST
-    get(id:string) {
+    get(id:string):Promise<Post> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
         return this.http.get(this.postsUrl + `/${id}`,options)
             .toPromise()
             .then(res => res.json())
-            .catch(this.handleError);
+            .catch(handleError);
     }
-    deletePost(id: number) {
+    deletePost(id: number):Promise<any> {
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
         let url = `${this.postsUrl}/${id}`;
         return this.http.delete(url, {headers: headers})
@@ -74,7 +75,7 @@ export class PostsService {
 
 
     //post POST
-    save(post:Post , file:File, fileName:string): Observable  {
+    save(post:Post , file:File, fileName:string): Observable<any>  {
 
         return Observable.create(observer =>  {
                     let formData: any = new FormData();
@@ -101,7 +102,7 @@ export class PostsService {
                     xhr.send(formData);
                 });
             }
-    edit(post:Post , file:File,fileName:string, id:number): Observable  {
+    edit(post:Post , file:File,fileName:string, id:number): Observable<any>  {
 
         return Observable.create(observer =>  {
             let formData: any = new FormData();

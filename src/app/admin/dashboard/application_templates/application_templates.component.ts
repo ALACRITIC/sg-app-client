@@ -6,8 +6,6 @@ import {Component, OnInit,ViewEncapsulation} from "@angular/core";
 import {Listing} from "../../../shared/listing.model";
 import {ApplicationTemplate} from "../../../shared/models/application_template.model";
 import {ApplicationTemplatesService} from "../../../shared/services/application_templates.service";
-import {AdminApplicationForm} from "./application-template-form/application-form.component";
-import { CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -16,7 +14,7 @@ import { CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
 })
 
 export class AdminApplicationTemplates implements OnInit{
-    listing: Listing<ApplicationTemplate>;
+    listing:ApplicationTemplate[];
     public currentPage:number = 1;
     public application_template:ApplicationTemplate;
     public isCollapsed:boolean;
@@ -27,7 +25,6 @@ export class AdminApplicationTemplates implements OnInit{
     }
 
     ngOnInit() {
-        this.listing = new Listing<ApplicationTemplate>();
         this.loadApplicationTemplates(1, 10);
     };
 
@@ -36,11 +33,11 @@ export class AdminApplicationTemplates implements OnInit{
     };
 
     private loadApplicationTemplates(page:number, itemsPerPage: number) {
-        this._service.query(page,itemsPerPage).then(listing => this.listing = listing);
+        this._service.query(page,itemsPerPage).then(listing => this.listing = listing as ApplicationTemplate[]);
     }
     addApplication($event){
         this._service.addApplicationTemplate($event.application,$event.document).subscribe((res) => {
-            this.application_template = res;
+            this.application_template = res as ApplicationTemplate;
             this.isCollapsed = true;
         });
     }

@@ -12,7 +12,7 @@ import { ActivatedRoute,Router } from '@angular/router';
     templateUrl: './application_submissions.template.pug'
 })
 
-export class AdminApplicationSubmissions implements OnInit, OnChanges{
+export class AdminApplicationSubmissions implements OnChanges{
     @Input() template_id:number;
     listing:Listing<ApplicationSubmission>;
 
@@ -37,7 +37,7 @@ export class AdminApplicationSubmissions implements OnInit, OnChanges{
 
     private loadSubmissions(page:number, itemsPerPage: number){
         this._service.query(page,itemsPerPage, this.template_id)
-                     .then(listing => this.listing = listing);
+                     .then(listing => this.listing = listing as Listing<ApplicationSubmission>);
     }
 
     deleteSubmission(submission:ApplicationSubmission) {

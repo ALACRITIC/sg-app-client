@@ -7,7 +7,7 @@ import {Component, Input,ViewEncapsulation} from '@angular/core';
     encapsulation: ViewEncapsulation.Emulated,
     selector: 'post-content',
     template:require ('./post-content.template.pug'),
-    styles:require(['./post-content.styles.scss'])
+    styleUrls:['./post-content.styles.scss']
 })
 export class FrontPostContent {
     @Input() postContent;

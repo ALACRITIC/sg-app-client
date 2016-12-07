@@ -6,9 +6,8 @@ import {Router} from "@angular/router";
 
 @Component({
     selector: 'clubs',
-    providers: [ClubsService],
     templateUrl: './clubs.template.pug',
-    style:require(['./clubs.styles.scss']),
+    styleUrls: ['./clubs.styles.scss'],
     encapsulation: ViewEncapsulation.Emulated
 
 })
@@ -20,10 +19,8 @@ export class FrontClubs implements OnInit{
 
     ngOnInit() {
         this.listing = new Listing<Club>();
-        this._service.query(1,999).then(listing => this.listing = listing);//load all
-        if(this.listing){
-            // console.log(this.listing.collection[3].name.split(' ').length)
-        }
+        this._service.query(1,999).then(listing => this.listing = listing as Listing<Club>);//load all
+
 
     }
     public goToProfile(club:Club){

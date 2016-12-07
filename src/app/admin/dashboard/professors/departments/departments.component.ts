@@ -18,7 +18,7 @@ export class AdminProfessorDepartments implements OnInit{
     ngOnInit() {
         this._service.departments().then(res => {
             this.departments = res;
-            this.departments.unshift("ShowAll");
+            this.departments.unshift("All");
             this.outputDepts.emit(this.departments);
         });
     }

@@ -1,6 +1,4 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-import {  FORM_DIRECTIVES } from '@angular/common';
 import {NavRoute} from "../../../../frontend/shared/navbar/navroute.model";//todo maybe move NavRoute to common?
 
 
@@ -47,7 +45,7 @@ export class Sidebar {
 
 
 isActive = false;
-    showMenu: string = '';
+showMenu: string = '';
 
 
 
