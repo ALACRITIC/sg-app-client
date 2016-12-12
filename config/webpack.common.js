@@ -104,6 +104,7 @@ module.exports = {
 
 
         //font-awesome
+     // {test: /\.scss?$/, loaders: ['style', 'css', 'sass']},
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml'},
       {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff"},
       {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff"},
@@ -128,7 +129,11 @@ module.exports = {
         loader: 'file'
       },
 
-      { test: /\.scss$/, loaders:  ['raw-loader', 'sass-loader'] },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
+      },
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
 
 
@@ -178,7 +183,17 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'src/assets',
       to: 'assets'
-    }]),
+
+    },
+    {
+      from: 'node_modules/font-awesome/css/font-awesome.min.css',
+      to: 'assets/font-awesome/css/font-awesome.min.css',
+    },
+    {
+      from: 'node_modules/font-awesome/fonts',
+      to: 'assets/font-awesome/fonts'
+    }
+    ]),
 
 
     new HtmlWebpackPlugin({

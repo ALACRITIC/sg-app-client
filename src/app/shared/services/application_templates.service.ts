@@ -16,7 +16,7 @@ export class ApplicationTemplatesService {
     constructor(private http:Http, @Inject('ApiEndpoint') private api: string) {
     }
 
-    query(page:number, itemsPerPage: number):Promise<ApplicationTemplate[]> {
+    query(page:number, itemsPerPage: number):Promise<any> {
         return this.http.get(this.applicationTemplatesUrl, {search:  QueryConstructor(page, itemsPerPage)})
             .toPromise()
             .then(res => {

@@ -32,7 +32,7 @@ export class EvaluationsService {
 
     deleteEvaluation(professor_id:number,id:number){
         let headers = new Headers({'Content-Type': 'application/json','Authorization':this.authToken});
-        return this.http.delete(this.api + `/professors/${professor_id}/evaluations` + `/${id}`,{headers: headers})
+        return this.http.delete(this.api + `/professors/${professor_id}/evaluations/${id}`,{headers: headers})
                 .toPromise()
                 .then(() => null)
 
