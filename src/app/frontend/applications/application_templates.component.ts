@@ -12,11 +12,13 @@ import {ApplicationTemplatesService} from "../../shared/services/application_tem
 })
 
 export class FrontApplicationTemplates implements OnInit{
-    public listing: ApplicationTemplate[];
+    public listing;
     public oneAtATime:boolean = true;
     public selectedTemplate;
 
-    constructor(private _service:ApplicationTemplatesService) {}
+    constructor(private _service:ApplicationTemplatesService) {
+        this.listing = new Listing<ApplicationTemplate>()
+    }
 
     ngOnInit() {
         this._service.query(1,999).then(listing => {
