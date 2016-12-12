@@ -25,7 +25,7 @@ if ('production' === ENV) {
 } else {
 
    //force production
-  enableProdMode();
+  //enableProdMode();
 
   _decorateModuleRef = (modRef: any) => {
     const appRef = modRef.injector.get(ApplicationRef);

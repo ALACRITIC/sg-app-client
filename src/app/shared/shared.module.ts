@@ -38,7 +38,7 @@ import {HomeFooter} from "../frontend/shared/footer/footer.component";
                    LoadingSpinner,
                    ProfessorSearch,
                    CollapseDirective,
-        HomeFooter,
+
 
 
 
@@ -56,7 +56,7 @@ import {HomeFooter} from "../frontend/shared/footer/footer.component";
               TypeaheadModule,
               AccordionModule,
               CollapseDirective,
-        HomeFooter,
+
 
 
     ]

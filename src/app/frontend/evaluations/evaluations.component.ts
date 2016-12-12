@@ -34,7 +34,7 @@ export class FrontProfessors implements OnInit {
 
     public filterDepts(department:string):void {
 
-        //if Show All is selected return loading all the professors
+        //If 'Show All' is selected, return loading all the professors
         if(department === "All"){
             this.loadProfessors(1,10);
         } else {
@@ -44,13 +44,16 @@ export class FrontProfessors implements OnInit {
     }
 
     public goToProfessor($event){
-        this._router.navigate([`professor/${$event.id}`]);
+        console.log($event);
+        this._router.navigate(['/professor' , $event.id, $event.name.replace(/ /g, "_")]);
     }
     public goToProfile(professor:Professor){
         this._router.navigate(['/professor',  professor.id, professor.name.replace(/ /g, "_") ]);
     }
 
-    //-------------fetching the list of departments through outputDepts event------------>
+
+    //Fetching the list of departments through outputDepts events
+
     public sideDepts($event){
        this.departments = $event;
     }

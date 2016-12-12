@@ -27,6 +27,7 @@ import {NewProfessorEvaluation} from "./evaluations/professor/professor-evaluati
 import {FrontPostPhoto} from "./posts/post-image/post-photo.component";
 import {FrontPostContent} from "./posts/post-content/post-content.component";
 import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -35,7 +36,7 @@ import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
 
 
 @NgModule({
-    imports: [CommonModule ,PaginationModule, routing, SharedModule, CarouselModule],
+    imports: [CommonModule , RouterModule,PaginationModule, routing, SharedModule, CarouselModule],
     declarations: [
         Home,
         FrontApplicationTemplates, 
@@ -50,7 +51,7 @@ import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
         NewApplicationSubmission,
         ProfessorDetailComponent,
         ProfessorEvaluationsComponent,
-
+        HomeFooter,
         FrontHeader,
         FrontClubDetail,
         BreadcrumbComponent,

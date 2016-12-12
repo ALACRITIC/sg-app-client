@@ -16,6 +16,10 @@
                         .row
                             .col-xs-12.col-sm-12.col-md-12
                                 a.internship-link(target='_blank',href='{{internship.link}}') More Info
+            .row(*ngIf="listing.count == 0")
+                .col-sm-12
+                    h6.text-muted.text-center
+                      | There are no internships at the moment. Check again later.
 
     .pagination-internships(*ngIf='listing.count > 10')
         pagination([totalItems]='listing.count', [(ngModel)]='currentPage', (pageChanged)='pageChanged($event)',[maxSize]="maxSize",class="pagination-sm")

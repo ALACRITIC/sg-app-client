@@ -33,7 +33,7 @@ export class UserService {
             )
             .toPromise()
             .then((res) => {
-
+                 console.log(res);
                 let body = res.json();
                 localStorage.setItem('auth_token', body.auth_token);
                 localStorage.setItem('role', body.role);
@@ -45,8 +45,16 @@ export class UserService {
     }
 
     logout() {
-        localStorage.removeItem('auth_token');
-        localStorage.removeItem('role');
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        let token = localStorage.getItem('auth_token');
+        this.http.delete( this.api + `/admins_sessions/${token}`, {headers: headers})
+            .toPromise()
+            .then(() => {
+            localStorage.removeItem('auth_token');
+            localStorage.removeItem('role');
+        })
+
     }
 
     isLoggedIn():boolean {

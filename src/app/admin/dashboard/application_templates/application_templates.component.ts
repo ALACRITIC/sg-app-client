@@ -14,7 +14,7 @@ import {ApplicationTemplatesService} from "../../../shared/services/application_
 })
 
 export class AdminApplicationTemplates implements OnInit{
-    listing:ApplicationTemplate[];
+    listing:Listing<ApplicationTemplate>;
     public currentPage:number = 1;
     public application_template:ApplicationTemplate;
     public isCollapsed:boolean;
@@ -22,6 +22,7 @@ export class AdminApplicationTemplates implements OnInit{
     constructor(private _service:ApplicationTemplatesService) {
         this.application_template = new ApplicationTemplate();
         this.isCollapsed = true;
+        this.listing = new Listing<ApplicationTemplate>();
     }
 
     ngOnInit() {
@@ -33,7 +34,7 @@ export class AdminApplicationTemplates implements OnInit{
     };
 
     private loadApplicationTemplates(page:number, itemsPerPage: number) {
-        this._service.query(page,itemsPerPage).then(listing => this.listing = listing as ApplicationTemplate[]);
+        this._service.query(page,itemsPerPage).then(listing => this.listing = listing as Listing<ApplicationTemplate>);
     }
     addApplication($event){
         this._service.addApplicationTemplate($event.application,$event.document).subscribe((res) => {

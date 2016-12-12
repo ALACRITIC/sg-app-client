@@ -23,7 +23,7 @@ export class ApplicationTemplatesService {
                 let body = res.json();
                 let listing = new Listing<ApplicationTemplate>();
 
-                listing.collection = body.Items as ApplicationTemplate[] ;
+                listing.collection = body.Items;
                 listing.count = body.Count;
 
                 return listing;
@@ -34,7 +34,7 @@ export class ApplicationTemplatesService {
     get(id:number):Promise<ApplicationTemplate> {
         return this.http.get(this.applicationTemplatesUrl + `/${id}`)
             .toPromise()
-            .then(res => res.json())
+            .then(res => res.json() )
             .catch(handleError);
     }
     deleteApplicationTemplate(id: number):Promise<any> {
