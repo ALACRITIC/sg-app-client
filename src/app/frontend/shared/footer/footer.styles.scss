@@ -7,12 +7,12 @@ body {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   background-color: #05162E;
-  padding: 15px 0;
+  height: 70px;
 
   /*margin-top: 20px;*/
   a {
@@ -21,6 +21,7 @@ body {
 }
 
 #cntr {
+  line-height: 70px;
   a {
     color: white;
   }

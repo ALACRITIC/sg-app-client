@@ -8,7 +8,7 @@ import {ProfessorsService} from "../../shared/services/professors.service";
 import { Router } from '@angular/router';
 
 @Component({
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     providers: [ProfessorsService],
     template: require('./evaluations.template.pug'),
     styleUrls:['./evaluations.styles.scss']

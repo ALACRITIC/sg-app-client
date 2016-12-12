@@ -7,7 +7,7 @@ import { FileUploader} from "ng2-file-upload/ng2-file-upload";
 
 @Component({
     selector: 'new-application-submission',
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     template:require ('./new_application_submission.template.pug'),
     styleUrls: ['./new_application_submission.styles.scss']
 })

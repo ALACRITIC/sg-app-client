@@ -8,7 +8,7 @@ import {ApplicationTemplatesService} from "../../shared/services/application_tem
     providers: [ApplicationTemplatesService],
     templateUrl: './application_templates.template.pug',
     styleUrls:['application_templates.styles.scss'],
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
 })
 
 export class FrontApplicationTemplates implements OnInit{

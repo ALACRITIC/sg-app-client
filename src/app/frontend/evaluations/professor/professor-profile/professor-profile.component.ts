@@ -9,7 +9,7 @@ import {ProfessorEvaluationsComponent} from "../professor-evaluations/professor-
 
 
 @Component({
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     selector: 'professor-profile',
     templateUrl: 'professor-profile.template.pug',
     styleUrls:['./professor-profile.styles.scss']
