@@ -6,7 +6,7 @@
         .container.applications-body
             loading-spinner(*ngIf="!listing['collection']")
             .row
-                .col-md-9.col-xs-12.template-body
+                .col-md-9.col-xs-12.template-body(*ngIf='listing?.collection')
                     accordion([closeOthers]="oneAtATime")
                         accordion-group(*ngFor="let application_template of listing?.collection" ,[heading]="application_template.name | uppercase",(click)="selectedTemp(application_template)",[ngClass]="{'active':selectedTemplate === application_template}")
                             .container.body((click)="$event.stopPropagation()")
