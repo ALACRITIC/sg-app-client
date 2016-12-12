@@ -4,7 +4,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     selector: 'loading-spinner',
     template: `<i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw loading"></i>
 <span class="sr-only">Loading...</span>`,

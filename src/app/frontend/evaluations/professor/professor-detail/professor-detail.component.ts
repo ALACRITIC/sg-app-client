@@ -1,7 +1,7 @@
 import {Component,ViewEncapsulation} from '@angular/core';
 
 @Component({
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     selector: 'professor-detail',
     templateUrl: 'professor-detail.template.pug',
     styleUrls:['./professor-detail.styles.scss']

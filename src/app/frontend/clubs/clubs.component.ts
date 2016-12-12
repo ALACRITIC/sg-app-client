@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
     selector: 'clubs',
     templateUrl: './clubs.template.pug',
     styleUrls: ['./clubs.styles.scss'],
-    encapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.None
 
 })
 

@@ -1,10 +1,9 @@
 //<---------------team member body----------------->
-.row.team-members {
-  background-color: #D3D3D3;
-  height: 100%;
-  padding-bottom: 80px;
-}
 
+.team-members{
+  height: 100%;
+  margin-bottom: 70px;
+}
 //<-----------------members profile styles ----------------------------->
 .members-profile {
   background-color: white;
@@ -176,14 +175,10 @@
   text-align: left;
 }
 
-.col-centered.pagination {
-  position: absolute;
-  width: 100%;
-  bottom: 30px;
-}
-
 .pagination-members {
-  margin-left: 11%;
+  position: absolute;
+  bottom: 60px;
+  left: 16.5%;
 }
 
 //mobile view
@@ -195,9 +190,9 @@
     text-align: center;
   }
   .row.team-members {
-    padding-bottom: 20px;
     margin-left: 6%;
     margin-right: 6%;
+    background-color: #D3D3D3;
   }
 
 }
@@ -226,4 +221,8 @@
     width: 100%;
     background-color: #D3D3D3;
   }
+}
+.team-members-styles{
+  background-color: #D3D3D3;
+  height: 100%;
 }

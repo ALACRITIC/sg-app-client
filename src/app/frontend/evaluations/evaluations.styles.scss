@@ -29,8 +29,8 @@ a.selected {
     background-color: #0D335F;
     color: white;
     font-weight: 400;
-    height: 80%;
-    min-height: 650px;
+    height: 100%;
+    min-height: 660px;
 
     //sidebar-header
     .dept-header {
@@ -138,7 +138,7 @@ a.selected {
   }
   .dept-sidebar {
     display: none;
-    min-height:900px ;
+    min-height:900px;
   }
   .pagination-professors {
     position: relative;

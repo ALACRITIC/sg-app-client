@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
     selector: 'front-news',
     templateUrl: 'news.template.pug',
     styleUrls:['./news.styles.scss'],
-    encapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.None
 })
 
 export class FrontNews implements OnInit {

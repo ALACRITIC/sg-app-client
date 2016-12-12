@@ -4,7 +4,7 @@ import {PostsService} from "../../shared/services/posts.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     selector: 'post-detail',
     providers: [PostsService],
     template:require ('./post-detail.template.pug'),

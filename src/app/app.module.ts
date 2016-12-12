@@ -20,6 +20,7 @@ import {SharedModule} from "./shared/shared.module";
 import {FrontModule} from "./frontend/front.module";
 import {FILE_UPLOAD_DIRECTIVES, FileUploader} from "ng2-file-upload/ng2-file-upload";
 import {BreadcrumbComponent} from "./frontend/shared/breadcrumbs/breadcrumbs.component";
+import {HomeFooter} from "./frontend/shared/footer/footer.component";
 
 
 // Application wide providers
@@ -42,6 +43,7 @@ type StoreType = {
   declarations: [
     App,
     NoContent,
+
 
   ],
   imports: [ // import Angular's modules

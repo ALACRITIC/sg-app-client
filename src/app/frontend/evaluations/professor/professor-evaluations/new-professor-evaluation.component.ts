@@ -1,12 +1,13 @@
 /**
  * Created by Centroida-2 on 10/28/2016.
  */
-import {Component, Output, EventEmitter} from '@angular/core';
+import {Component, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 import {Evaluation} from "../../../../shared/models/evaluation.model";
 import {EvaluationsService} from "../../../../shared/services/evaluations.service";
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: 'new-evaluation',
     template: require('./new-evaluation.template.pug'),
     styleUrls: ['./new-evaluation.styles.scss']

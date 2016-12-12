@@ -10,7 +10,7 @@ import {Router, NavigationStart, NavigationEnd} from "@angular/router";
 
 
 @Component({
-  // encapsulation: ViewEncapsulation.Emulated,
+  encapsulation: ViewEncapsulation.None,
   selector: 'app',
   styleUrls:['./app.styles.scss'],
   template: `

@@ -4,7 +4,7 @@
 import {Component, Input,ViewEncapsulation} from '@angular/core';
 
 @Component({
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     selector: 'post-content',
     template:require ('./post-content.template.pug'),
     styleUrls:['./post-content.styles.scss']

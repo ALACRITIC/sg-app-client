@@ -50,7 +50,7 @@ import {BreadcrumbComponent} from "./shared/breadcrumbs/breadcrumbs.component";
         NewApplicationSubmission,
         ProfessorDetailComponent,
         ProfessorEvaluationsComponent,
-        HomeFooter,
+
         FrontHeader,
         FrontClubDetail,
         BreadcrumbComponent,

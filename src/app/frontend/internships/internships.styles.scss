@@ -1,8 +1,8 @@
 //internships main container-fluid
 .internships {
   background-color: #D3D3D3;
-  height: 100%;
-
+  height: 100% !important;
+  margin-bottom: 70px;
   //internship body container
   .internship-body {
     background-color: #D3D3D3;
@@ -14,9 +14,6 @@
     .internships-centered {
       margin-left: auto;
       margin-right: auto;
-      padding-bottom: 70px;
-
-
       //internship list-item
       .internship-list {
         box-shadow: 0 0.250em 0.250em 0 rgba(0, 0, 0, 0.2);
@@ -93,18 +90,10 @@
   }
 }
 
-//pagination center
-.pagination-internship {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-.no-pagination{
-  padding-bottom: 80px;
-}
-.center-pagination{
-  width: 100%;
+.pagination-internships  {
   position: absolute;
-  bottom: 50px;
+  bottom: 60px;
+  left:21%
 }
 
 //tablet view

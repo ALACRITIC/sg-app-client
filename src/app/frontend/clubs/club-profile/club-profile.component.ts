@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import {Club} from "../../../shared/models/club.model";
 
 @Component({
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     selector: 'club-profile',
     template:require ('./club-profile.template.pug'),
     styleUrls: ['./club-profile.styles.scss']

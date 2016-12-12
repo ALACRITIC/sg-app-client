@@ -7,7 +7,7 @@ import {TeamMembersService} from "../../../shared/services/team_members.service"
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     selector: 'team-profile',
     templateUrl: './team-members-profile.template.pug',
     providers: [TeamMembersService],

@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Listing} from "../../shared/listing.model";
 import {InternshipsService} from "../../shared/services/internships.service";
 import {Internship} from "../../shared/models/internship.model";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: 'team-members',
     providers: [InternshipsService],
     templateUrl: './internships.template.pug',

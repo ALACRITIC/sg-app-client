@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {PostsService} from "../../shared/services/posts.service";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'home',
   providers: [PostsService],
   styleUrls:[ './home.style.scss' ],

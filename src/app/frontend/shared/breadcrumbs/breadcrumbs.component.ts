@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewEncapsulation} from "@angular/core";
 import {Router, ActivatedRoute, NavigationEnd, Params, PRIMARY_OUTLET} from "@angular/router";
 import "rxjs/add/operator/filter";
 
@@ -10,6 +10,7 @@ interface IBreadcrumb {
 }
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "breadcrumb",
     template: require('./breadcrumbs.template.pug'),
     styleUrls:['./breadcrumbs.styles.scss']

@@ -110,9 +110,6 @@ module.exports = {
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/octet-stream"},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"},
 
-
-
-
       {
         test: /\.css$/,
         loaders: ['to-string-loader', 'css-loader']

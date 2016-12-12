@@ -1,7 +1,7 @@
 /**
  * Created by Taulant on 9/21/2016.
  */
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {EvaluationsService} from "../../../../shared/services/evaluations.service";
 import {Evaluation} from "../../../../shared/models/evaluation.model";
 import {Listing} from "../../../../shared/listing.model";
@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 ;
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: 'professor-evaluations',
     templateUrl: 'professor-evaluations.template.pug',
     styleUrls:['./professor-evaluations.styles.scss'],

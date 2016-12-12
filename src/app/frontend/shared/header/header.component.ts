@@ -4,7 +4,7 @@ import  {Component, ViewEncapsulation, Input} from '@angular/core';
     selector: 'header',
     templateUrl: './header.template.pug',
     styleUrls: ['./header.styles.scss'],
-    encapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.None
 })
 
 export class FrontHeader {

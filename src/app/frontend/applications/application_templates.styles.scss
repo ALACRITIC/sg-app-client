@@ -1,6 +1,7 @@
 .applications {
   background-color: #D3D3D3;
-  padding-bottom: 30px;
+  height: 100%;
+
   //application template styles
   // centering accordions
   .template-body {
@@ -130,7 +131,7 @@
   .template-body {
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 20px;
+    //padding-bottom: 20px;
   }
 }
 
@@ -154,5 +155,8 @@
 
 }
 
-
+.application-template-styles
+{
+  height: 100% !important;
+}
 

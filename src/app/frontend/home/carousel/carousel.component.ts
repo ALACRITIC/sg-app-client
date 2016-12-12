@@ -10,7 +10,7 @@ import {Listing} from "../../../shared/listing.model";
 
 @Component({
     selector: 'news-carousel',
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     templateUrl: 'carousel.template.pug',
     styleUrls:['./carousel.styles.scss']
 })

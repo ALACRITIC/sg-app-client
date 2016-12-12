@@ -20,6 +20,7 @@ import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
 import { AccordionModule } from 'ng2-bootstrap/components/accordion';
 import {LoadingSpinner} from "./components/loading-spinner/loading-spinner.component";
 import { CollapseDirective } from 'ng2-bootstrap'
+import {HomeFooter} from "../frontend/shared/footer/footer.component";
 
 
 @NgModule({
@@ -37,6 +38,9 @@ import { CollapseDirective } from 'ng2-bootstrap'
                    LoadingSpinner,
                    ProfessorSearch,
                    CollapseDirective,
+        HomeFooter,
+
+
 
 
     ],
@@ -52,6 +56,7 @@ import { CollapseDirective } from 'ng2-bootstrap'
               TypeaheadModule,
               AccordionModule,
               CollapseDirective,
+        HomeFooter,
 
 
     ]
